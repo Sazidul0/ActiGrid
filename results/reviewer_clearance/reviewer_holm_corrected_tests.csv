@@ -1,0 +1,11 @@
+dataset,focal,comparator,n_seed_pairs,mean_delta_macro_f1,wilcoxon_p_macro_f1,mean_delta_cost,wilcoxon_p_cost,holm_p_macro_f1,holm_p_cost,holm_family_note
+MSU_ORNL_Power,ActiGrid-DQN-Final,UtilityEntropy-Matched,10,-0.0088362117646108,0.083984375,-0.0426378294587653,0.001953125,0.16796875,0.009765625,F1 and cost corrected as separate 5-comparison families
+MSU_ORNL_Power,ActiGrid-DQN-Final,UtilityNearestBudget,10,-0.0186406142721671,0.00390625,-0.0520685573594946,0.001953125,0.01953125,0.009765625,F1 and cost corrected as separate 5-comparison families
+MSU_ORNL_Power,ActiGrid-DQN-Final,RandomNearestBudget,10,-0.0020307564873731,0.6953125,-0.0520685573594946,0.001953125,0.6953125,0.009765625,F1 and cost corrected as separate 5-comparison families
+MSU_ORNL_Power,ActiGrid-DQN-Final,CostOrderNearestBudget,10,-0.0186406142721671,0.00390625,-0.0520685573594946,0.001953125,0.01953125,0.009765625,F1 and cost corrected as separate 5-comparison families
+MSU_ORNL_Power,ActiGrid-DQN-Final,Fusion-Full,10,-0.0215643760081779,0.00390625,-0.2520685573594946,0.001953125,0.01953125,0.009765625,F1 and cost corrected as separate 5-comparison families
+TU_Delft_2026_CPPS,ActiGrid-DQN-Final,UtilityEntropy-Matched,10,0.0785473074285737,0.001953125,0.0992654723153952,0.005859375,0.009765625,0.0234375,F1 and cost corrected as separate 5-comparison families
+TU_Delft_2026_CPPS,ActiGrid-DQN-Final,UtilityNearestBudget,10,0.1084227484009372,0.001953125,0.0532168400965501,0.01953125,0.009765625,0.05859375,F1 and cost corrected as separate 5-comparison families
+TU_Delft_2026_CPPS,ActiGrid-DQN-Final,RandomNearestBudget,10,0.1277476889243898,0.001953125,0.0532168400965501,0.01953125,0.009765625,0.05859375,F1 and cost corrected as separate 5-comparison families
+TU_Delft_2026_CPPS,ActiGrid-DQN-Final,CostOrderNearestBudget,10,0.1244291753687825,0.001953125,0.0532168400965501,0.01953125,0.009765625,0.05859375,F1 and cost corrected as separate 5-comparison families
+TU_Delft_2026_CPPS,ActiGrid-DQN-Final,Fusion-Full,10,-0.0210182190304233,0.048828125,-0.2801164932367831,0.001953125,0.048828125,0.009765625,F1 and cost corrected as separate 5-comparison families

@@ -1,0 +1,16 @@
+split,group,n_rows,n_normal,n_physical_fault_or_maintenance,n_data_injection,n_remote_trip,n_relay_setting
+train,data1 Sampled Scenarios.csv.arff,4966,173,927,569,452,2845
+train,data10 Sampled Scenarios.csv.arff,5569,326,1322,730,518,2673
+train,data11 Sampled Scenarios.csv.arff,5251,145,1137,816,552,2601
+train,data12 Sampled Scenarios.csv.arff,5224,384,1387,704,639,2110
+train,data14 Sampled Scenarios.csv.arff,5115,79,1274,595,586,2581
+train,data15 Sampled Scenarios.csv.arff,5276,514,1347,435,739,2241
+train,data3 Sampled Scenarios.csv.arff,5415,354,1250,573,345,2893
+train,data8 Sampled Scenarios.csv.arff,5315,356,1188,738,738,2295
+train,data9 Sampled Scenarios.csv.arff,5340,478,1292,660,568,2342
+val,data2 Sampled Scenarios.csv.arff,5069,322,1222,581,583,2361
+val,data6 Sampled Scenarios.csv.arff,4967,190,1287,533,524,2433
+val,data7 Sampled Scenarios.csv.arff,5236,208,1118,675,705,2530
+test,data13 Sampled Scenarios.csv.arff,5271,203,950,581,622,2915
+test,data4 Sampled Scenarios.csv.arff,5202,403,1397,619,557,2226
+test,data5 Sampled Scenarios.csv.arff,5161,270,1211,773,609,2298

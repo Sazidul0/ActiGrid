@@ -1,0 +1,2 @@
+dataset,method,macro_f1_mean,macro_f1_std,macro_f1_ci95,balanced_accuracy_mean,balanced_accuracy_std,balanced_accuracy_ci95,normalized_cost_mean,normalized_cost_std,normalized_cost_ci95,n_seeds
+TU_Delft_2026_CPPS,POSTHOC-CostMatchedStaticMix,0.7101342884377864,0.059563164400296964,0.042608920996271275,0.8187699906160836,0.027289792860927264,0.019521941786055617,0.7199480749746707,0.05802696877592659,0.041509992847428866,10

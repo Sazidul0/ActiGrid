@@ -1,0 +1,10 @@
+check,modality,value,detail
+suspicious_feature_names,physical,0.0,
+suspicious_feature_names,resource,0.0,
+suspicious_feature_names,network,0.0,
+group_overlap,train_val,0.0,must be 0
+group_overlap,train_test,0.0,must be 0
+group_overlap,val_test,0.0,must be 0
+best_single_feature_depth2_f1,physical,0.18154543720072577,phys__V1_a__max
+best_single_feature_depth2_f1,resource,0.3636010299284587,res__CPU 1 Usage (%)__mean
+best_single_feature_depth2_f1,network,0.27228634801578905,net__packet_count

@@ -1,0 +1,11 @@
+{
+  "dataset": "MSU_ORNL_Power",
+  "split_seed": 42,
+  "selected_lambda": 0.5,
+  "selected_entropy_threshold": 1.0,
+  "target_validation_cost": 0.7574122690128805,
+  "full_validation_macro_f1": 0.3784880870576471,
+  "selection_reason": "min validation cost with Macro-F1 >= full_val_f1-0.015",
+  "step_penalty": 0.0,
+  "sweep_episodes": 8000
+}

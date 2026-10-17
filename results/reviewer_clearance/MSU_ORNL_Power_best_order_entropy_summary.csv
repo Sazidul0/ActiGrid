@@ -1,0 +1,2 @@
+dataset,method,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_ci95,test_balanced_accuracy_mean,test_balanced_accuracy_std,test_balanced_accuracy_ci95,test_cost_mean,test_cost_std,test_cost_ci95,test_steps_mean,test_steps_std,test_steps_ci95,n_seeds
+MSU_ORNL_Power,BestOrder-EntropyStop,0.3858667533584029,0.013128269897023915,0.009391398534514891,0.4582553783249237,0.009562300354128675,0.006840457595460697,0.7867992836126391,0.006326379709788999,0.004525619415302071,3.933996418063196,0.031631898548945145,0.02262809707651046,10

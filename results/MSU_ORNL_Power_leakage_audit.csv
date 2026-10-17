@@ -1,0 +1,14 @@
+check,modality,value,detail
+suspicious_feature_names,pmu_r1,0.0,
+suspicious_feature_names,pmu_r2,0.0,
+suspicious_feature_names,pmu_r3,0.0,
+suspicious_feature_names,pmu_r4,0.0,
+suspicious_feature_names,cyber_logs,0.0,
+group_overlap,train_val,0.0,must be 0
+group_overlap,train_test,0.0,must be 0
+group_overlap,val_test,0.0,must be 0
+best_single_feature_depth2_f1,pmu_r1,0.1388959837213454,R1-PA5:IH
+best_single_feature_depth2_f1,pmu_r2,0.1928899340237585,R2-PM3:V
+best_single_feature_depth2_f1,pmu_r3,0.18124437624385153,R3:F
+best_single_feature_depth2_f1,pmu_r4,0.18389496562180327,R4:F
+best_single_feature_depth2_f1,cyber_logs,0.1290825714262332,control_panel_log3

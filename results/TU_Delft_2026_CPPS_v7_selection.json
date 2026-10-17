@@ -1,0 +1,11 @@
+{
+  "dataset": "TU_Delft_2026_CPPS",
+  "split_seed": 42,
+  "selected_lambda": 0.5,
+  "selected_entropy_threshold": 0.75,
+  "target_validation_cost": 0.5867293800773292,
+  "full_validation_macro_f1": 0.7728089503116188,
+  "selection_reason": "min validation cost with Macro-F1 >= full_val_f1-0.015",
+  "step_penalty": 0.0,
+  "sweep_episodes": 8000
+}

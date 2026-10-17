@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# datasets and run outputs (not redistributed)
+data/
+outputs*/
+*.zip
+*.rar
+*.7z

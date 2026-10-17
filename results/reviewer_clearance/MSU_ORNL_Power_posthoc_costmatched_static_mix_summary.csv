@@ -1,0 +1,2 @@
+dataset,method,macro_f1_mean,macro_f1_std,macro_f1_ci95,balanced_accuracy_mean,balanced_accuracy_std,balanced_accuracy_ci95,normalized_cost_mean,normalized_cost_std,normalized_cost_ci95,n_seeds
+MSU_ORNL_Power,POSTHOC-CostMatchedStaticMix,0.39937218830742915,0.009106675111274762,0.006514522931442536,0.4640886510997623,0.007867334572334501,0.00562795211804031,0.7479348215427913,0.019230905418360814,0.013756960999432995,10

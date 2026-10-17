@@ -1,0 +1,6 @@
+class_name,first_action,n,percentage
+data_injection,pmu_r2,1973,100.0
+normal,pmu_r2,876,100.0
+physical_fault_or_maintenance,pmu_r2,3558,100.0
+relay_setting,pmu_r2,7439,100.0
+remote_trip,pmu_r2,1788,100.0

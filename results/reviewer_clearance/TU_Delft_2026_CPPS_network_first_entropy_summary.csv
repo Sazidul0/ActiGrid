@@ -1,0 +1,2 @@
+dataset,method,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_ci95,test_balanced_accuracy_mean,test_balanced_accuracy_std,test_balanced_accuracy_ci95,test_cost_mean,test_cost_std,test_cost_ci95,test_steps_mean,test_steps_std,test_steps_ci95,n_seeds
+TU_Delft_2026_CPPS,NetworkFirst-EntropyStop,0.61867881159407,0.053170998012119775,0.03803624062626218,0.7532015303516678,0.03209360225134996,0.022958380008546133,0.59338905775076,0.018729609601329546,0.01339835557477661,1.7801671732522795,0.05618882880398866,0.04019506672432985,10

@@ -1,0 +1,1317 @@
+sample_idx,y_true,y_pred,cost,ratio,steps,group,acquired
+0,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+1,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+2,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+3,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+4,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+5,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+6,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+7,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+8,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+9,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+10,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+11,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+12,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+13,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+14,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+15,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+16,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+17,0,3,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+18,0,3,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+19,0,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+20,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+21,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+22,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+23,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+24,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+25,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+26,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+27,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+28,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network
+29,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network
+30,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+31,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network
+32,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network
+33,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+34,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+35,0,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+36,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+37,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+38,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+39,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+40,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+41,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+42,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+43,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+44,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical -> resource
+45,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource
+46,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+47,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+48,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+49,0,0,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network
+50,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+51,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+52,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+53,0,0,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network
+54,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+55,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+56,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+57,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> resource -> physical
+58,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+59,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+60,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline1,network -> physical
+244,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+245,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+246,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+247,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+248,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+249,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+250,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+251,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+252,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+253,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+254,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+255,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+256,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+257,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+258,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+259,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+260,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+261,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+262,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+263,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+264,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+265,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+266,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+267,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+268,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+269,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+270,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+271,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+272,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+273,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+274,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+275,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+276,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+277,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+278,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+279,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+280,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+281,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+282,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+283,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+284,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+285,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+286,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource
+287,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource
+288,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+289,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+290,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+291,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+292,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+293,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+294,0,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical -> resource
+295,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource
+296,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource
+297,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+298,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource
+299,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource
+300,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource
+301,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+302,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+303,0,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> resource -> physical
+304,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingbaseline__ied_injection_baseline5,network -> physical
+488,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+489,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+490,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+491,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+492,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+493,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+494,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+495,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+496,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+497,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+498,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+499,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+500,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+501,1,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+502,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+503,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+504,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+505,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+506,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+507,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+508,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+509,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+510,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+511,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+512,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+513,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+514,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+515,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+516,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+517,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+518,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+519,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+520,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+521,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+522,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+523,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+524,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+525,4,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+526,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource
+527,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+528,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfault__ied_injection_fault4,network
+529,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfault__ied_injection_fault4,network
+530,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+531,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfault__ied_injection_fault4,network
+532,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical -> resource
+533,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+534,1,0,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfault__ied_injection_fault4,network
+535,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource
+536,1,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+537,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+538,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+539,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+540,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+541,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource
+542,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource
+543,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+544,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+545,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+546,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+547,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> physical
+548,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfault__ied_injection_fault4,network -> resource -> physical
+852,0,1,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+853,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+854,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+855,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+856,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+857,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+858,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+859,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+860,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+861,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+862,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+863,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+864,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+865,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+866,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+867,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+868,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+869,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+870,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+871,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+872,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+873,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+874,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+875,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+876,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+877,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+878,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+879,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+880,1,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+881,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+882,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+883,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+884,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+885,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+886,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+887,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+888,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+889,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+890,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+891,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+892,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+893,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+894,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+895,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+896,1,1,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+897,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+898,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+899,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+900,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+901,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+902,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+903,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+904,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+905,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+906,1,1,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+907,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+908,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+909,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+910,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+911,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+912,1,1,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+913,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+914,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+915,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+916,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+917,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+918,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+919,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+920,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+921,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+922,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+923,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+924,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+925,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+926,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+927,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+928,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+929,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+930,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+931,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+932,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+933,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+934,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+935,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+936,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+937,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+938,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+939,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+940,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+941,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+942,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+943,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+944,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+945,1,1,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+946,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+947,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+948,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+949,1,3,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+950,1,3,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+951,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+952,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+953,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+954,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+955,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+956,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+957,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+958,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+959,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource -> physical
+960,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+961,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+962,1,3,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network
+963,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+964,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+965,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> resource
+966,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+967,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+968,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+969,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+970,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+971,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical
+972,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3,network -> physical -> resource
+973,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+974,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+975,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+976,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+977,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+978,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+979,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+980,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+981,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+982,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+983,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+984,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+985,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+986,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+987,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+988,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+989,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+990,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+991,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+992,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+993,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+994,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+995,0,0,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+996,0,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+997,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+998,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+999,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1000,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1001,1,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1002,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1003,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1004,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1005,4,4,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1006,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1007,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1008,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1009,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1010,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1011,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1012,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1013,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1014,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1015,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1016,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1017,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1018,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1019,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1020,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1021,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1022,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1023,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1024,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1025,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1026,1,1,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network
+1027,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1028,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1029,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1030,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1031,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1032,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1033,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1034,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1035,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1036,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1037,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1038,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1039,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1040,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1041,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1042,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1043,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1044,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1045,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1046,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1047,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1048,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1049,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1050,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1051,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1052,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1053,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1054,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1055,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1056,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1057,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1058,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1059,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1060,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1061,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1062,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1063,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1064,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1065,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1066,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1067,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1068,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1069,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1070,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1071,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1072,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1073,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1074,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1075,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1076,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1077,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1078,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1079,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource
+1080,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> resource -> physical
+1081,1,3,0.3333333432674408,0.3333333432674408,1,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network
+1082,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1083,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1084,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1085,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1086,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1087,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1088,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1089,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1090,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1091,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1092,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical
+1093,1,1,1.0000000298023224,1.0,3,goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4,network -> physical -> resource
+1581,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1582,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1583,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1584,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1585,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1586,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1587,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1588,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1589,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1590,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1591,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1592,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1593,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource -> physical
+1594,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1595,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1596,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1597,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1598,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1599,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1600,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1601,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1602,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1603,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1604,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1605,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1606,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1607,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1608,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1609,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1610,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1611,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1612,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1613,4,4,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource -> physical
+1614,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__viedspoofingduringfault__vied_injection_fault4,network
+1615,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__viedspoofingduringfault__vied_injection_fault4,network
+1616,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__viedspoofingduringfault__vied_injection_fault4,network
+1617,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__viedspoofingduringfault__vied_injection_fault4,network
+1618,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical
+1619,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource -> physical
+1620,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1621,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1622,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1623,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1624,4,4,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1625,4,4,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1626,4,4,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource -> physical
+1627,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__viedspoofingduringfault__vied_injection_fault4,network
+1628,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__viedspoofingduringfault__vied_injection_fault4,network
+1629,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical
+1630,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource
+1631,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource
+1632,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1633,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1634,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource -> physical
+1635,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1636,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1637,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> resource
+1638,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1639,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1640,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical
+1641,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfault__vied_injection_fault4,network -> physical -> resource
+1947,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1948,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1949,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1950,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1951,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1952,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1953,0,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource
+1954,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1955,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1956,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1957,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1958,0,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1959,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1960,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1961,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1962,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1963,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1964,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1965,1,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1966,1,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1967,1,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1968,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1969,1,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1970,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1971,1,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1972,1,0,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1973,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1974,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource
+1975,1,0,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1976,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1977,4,4,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1978,4,4,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1979,4,4,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1980,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1981,4,4,0.3333333432674408,0.3333333432674408,1,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network
+1982,4,4,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1983,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1984,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1985,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1986,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource
+1987,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1988,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1989,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1990,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1991,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1992,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1993,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+1994,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1995,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1996,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1997,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+1998,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+1999,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+2000,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+2001,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+2002,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource -> physical
+2003,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+2004,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource
+2005,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical
+2006,1,1,0.6666666865348816,0.6666666865348816,2,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> resource
+2007,1,1,1.0000000298023224,1.0,3,goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5,network -> physical -> resource
+2800,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2801,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2802,0,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2803,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2804,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2805,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2806,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2807,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2808,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2809,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2810,0,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2811,0,0,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2812,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2813,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2814,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2815,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2816,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2817,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2818,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2819,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2820,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2821,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2822,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2823,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2824,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2825,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2826,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2827,1,0,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2828,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2829,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2830,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2831,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2832,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2833,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2834,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2835,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2836,1,1,0.3333333432674408,0.3333333432674408,1,physical_fault__faults_with_reclosure__faults_with_reclosure4,network
+2837,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2838,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2839,1,0,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2840,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2841,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2842,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2843,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2844,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2845,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2846,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2847,1,1,0.3333333432674408,0.3333333432674408,1,physical_fault__faults_with_reclosure__faults_with_reclosure4,network
+2848,1,1,0.3333333432674408,0.3333333432674408,1,physical_fault__faults_with_reclosure__faults_with_reclosure4,network
+2849,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2850,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2851,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2852,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2853,1,1,0.3333333432674408,0.3333333432674408,1,physical_fault__faults_with_reclosure__faults_with_reclosure4,network
+2854,1,1,0.3333333432674408,0.3333333432674408,1,physical_fault__faults_with_reclosure__faults_with_reclosure4,network
+2855,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical -> resource
+2856,1,1,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2857,1,0,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource
+2858,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2859,1,1,0.6666666865348816,0.6666666865348816,2,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> physical
+2860,1,0,1.0000000298023224,1.0,3,physical_fault__faults_with_reclosure__faults_with_reclosure4,network -> resource -> physical
+2922,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2923,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2924,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2925,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+2926,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2927,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2928,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2929,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2930,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2931,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2932,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2933,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2934,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+2935,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2936,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2937,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2938,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2939,0,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2940,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+2941,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2942,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2943,0,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2944,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2945,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2946,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2947,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2948,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+2949,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2950,2,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2951,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2952,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2953,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2954,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2955,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2956,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2957,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2958,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2959,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2960,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2961,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+2962,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2963,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2964,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2965,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2966,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2967,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2968,2,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2969,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+2970,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2971,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2972,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2973,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2974,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2975,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2976,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2977,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2978,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2979,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2980,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2981,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2982,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2983,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2984,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+2985,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2986,2,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2987,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2988,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2989,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2990,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2991,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2992,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2993,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2994,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2995,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2996,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2997,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+2998,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+2999,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3000,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3001,2,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3002,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3003,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3004,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3005,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3006,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3007,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3008,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+3009,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3010,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3011,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3012,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3013,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3014,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3015,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3016,2,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3017,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3018,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3019,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3020,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3021,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3022,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3023,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3024,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3025,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3026,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3027,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3028,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3029,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3030,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3031,2,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3032,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3033,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3034,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3035,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3036,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3037,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3038,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3039,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3040,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3041,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3042,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3043,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3044,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3045,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3046,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3047,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3048,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3049,2,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3050,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3051,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3052,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3053,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3054,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3055,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3056,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3057,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3058,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3059,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3060,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+3061,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3062,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3063,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3064,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3065,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3066,0,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> resource -> physical
+3067,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3068,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3069,2,2,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3070,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3071,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3072,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3073,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3074,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3075,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3076,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3077,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3078,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3079,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3080,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3081,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3082,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3083,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3084,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3085,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3086,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3087,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3088,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3089,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+3090,2,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3091,2,2,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+3092,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3093,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3094,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3095,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3096,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3097,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3098,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3099,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3100,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3101,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3102,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3103,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3104,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3105,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> resource
+3106,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3107,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3108,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3109,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3110,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3111,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3112,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3113,0,2,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3114,0,1,0.3333333432674408,0.3333333432674408,1,reconnaissance__reconnaissance__nmap_aggressive,network
+3115,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3116,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3117,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3118,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3119,0,0,0.6666666865348816,0.6666666865348816,2,reconnaissance__reconnaissance__nmap_aggressive,network -> physical
+3120,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3121,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3122,0,0,1.0000000298023224,1.0,3,reconnaissance__reconnaissance__nmap_aggressive,network -> physical -> resource
+3909,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+3910,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3911,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3912,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3913,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3914,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3915,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3916,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3917,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3918,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+3919,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3920,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3921,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3922,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3923,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3924,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3925,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3926,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3927,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+3928,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3929,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3930,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+3931,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3932,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3933,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3934,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3935,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3936,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3937,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3938,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3939,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3940,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3941,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+3942,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3943,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3944,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3945,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3946,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3947,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3948,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+3949,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+3950,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3951,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3952,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3953,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3954,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3955,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3956,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3957,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3958,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3959,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3960,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3961,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3962,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3963,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3964,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3965,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3966,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3967,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> resource
+3968,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__baseline_priority_a__baseline_priority4,network
+3969,3,3,1.0000000298023224,1.0,3,resource_exhaustion__baseline_priority_a__baseline_priority4,network -> physical -> resource
+4458,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> resource
+4459,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4460,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4461,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4462,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4463,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> resource
+4464,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4465,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4466,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4467,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4468,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4469,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> resource
+4470,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> resource
+4471,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4472,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4473,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> resource
+4474,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4475,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4476,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> resource
+4477,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4478,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4479,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4480,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4481,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4482,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4483,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4484,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4485,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> resource
+4486,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical
+4487,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4488,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_a__fault_priority8,network
+4489,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4490,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4491,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4492,3,1,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_a__fault_priority8,network
+4493,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4494,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4495,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4496,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4497,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4498,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4499,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4500,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4501,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4502,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4503,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4504,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4505,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_a__fault_priority8,network
+4506,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4507,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4508,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4509,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4510,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4511,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4512,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4513,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4514,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4515,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4516,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4517,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4518,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_a__fault_priority8,network -> physical -> resource
+4580,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority10,network
+4581,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4582,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4583,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4584,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4585,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4586,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority10,network
+4587,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4588,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4589,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4590,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4591,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4592,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4593,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4594,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority10,network
+4595,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4596,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4597,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4598,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4599,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical
+4600,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4601,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4602,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4603,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4604,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4605,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4606,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4607,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4608,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4609,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4610,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical
+4611,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4612,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4613,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4614,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4615,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority10,network
+4616,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4617,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4618,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4619,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4620,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4621,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4622,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4623,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4624,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4625,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4626,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4627,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4628,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4629,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4630,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4631,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical -> resource
+4632,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4633,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4634,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4635,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4636,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4637,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4638,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4639,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> resource
+4640,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority10,network -> physical
+4702,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority3,network -> physical -> resource
+4703,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4704,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority3,network -> physical -> resource
+4705,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4706,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4707,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4708,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4709,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4710,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4711,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4712,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4713,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4714,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4715,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4716,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority3,network -> physical -> resource
+4717,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4718,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4719,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4720,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4721,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4722,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4723,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4724,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4725,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4726,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4727,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4728,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4729,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4730,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4731,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority3,network -> physical -> resource
+4732,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4733,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4734,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority3,network -> physical -> resource
+4735,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4736,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4737,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4738,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4739,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4740,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4741,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4742,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4743,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4744,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4745,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4746,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4747,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4748,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4749,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4750,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4751,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4752,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4753,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4754,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4755,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4756,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4757,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4758,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4759,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> resource
+4760,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4761,3,3,0.3333333432674408,0.3333333432674408,1,resource_exhaustion__fault_priority_b__fault_priority3,network
+4762,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority3,network -> physical
+4885,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4886,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4887,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4888,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4889,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4890,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4891,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4892,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical
+4893,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4894,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4895,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4896,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4897,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4898,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4899,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4900,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4901,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4902,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4903,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4904,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4905,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4906,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4907,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4908,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4909,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4910,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4911,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4912,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4913,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4914,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4915,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical
+4916,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4917,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical
+4918,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4919,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4920,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4921,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4922,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4923,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4924,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4925,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4926,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4927,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4928,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4929,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4930,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4931,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4932,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4933,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4934,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4935,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4936,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4937,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4938,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4939,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4940,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical
+4941,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4942,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4943,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+4944,3,3,0.6666666865348816,0.6666666865348816,2,resource_exhaustion__fault_priority_b__fault_priority6,network -> resource
+4945,3,3,1.0000000298023224,1.0,3,resource_exhaustion__fault_priority_b__fault_priority6,network -> physical -> resource
+5535,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5536,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5537,0,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5538,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5539,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5540,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5541,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5542,5,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5543,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5544,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5545,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5546,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5547,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5548,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5549,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5550,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5551,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5552,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5553,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5554,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5555,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5556,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5557,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5558,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5559,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5560,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5561,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5562,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5563,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5564,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5565,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5566,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5567,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5568,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5569,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5570,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5571,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5572,5,5,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5573,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5574,0,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5575,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5576,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5577,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5578,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5579,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5580,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5581,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5582,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5583,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5584,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5585,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5586,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5587,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5588,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5589,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5590,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5591,0,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5592,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5593,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5594,0,2,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5595,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5596,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5597,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5598,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5599,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5600,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5601,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5602,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5603,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5604,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5605,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5606,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5607,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5608,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5609,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5610,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5611,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5612,0,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network
+5613,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5614,0,2,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5615,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5616,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5617,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource -> physical
+5618,0,2,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5619,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5620,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5621,0,1,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5622,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5623,0,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> resource
+5624,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5625,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5626,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5627,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5628,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5629,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5630,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5631,0,1,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5632,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5633,0,1,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical
+5634,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5635,0,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_all_zero_during_normal,network -> physical -> resource
+5737,5,0,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5738,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5739,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5740,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5741,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5742,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5743,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5744,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5745,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5746,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5747,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5748,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5749,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5750,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5751,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5752,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5753,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5754,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5755,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5756,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5757,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5758,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5759,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5760,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5761,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5762,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5763,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5764,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5765,5,5,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5766,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5767,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5768,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5769,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5770,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5771,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5772,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5773,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5774,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5775,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5776,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5777,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5778,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5779,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5780,1,2,0.3333333432674408,0.3333333432674408,1,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network
+5781,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5782,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5783,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5784,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5785,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5786,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5787,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5788,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5789,1,2,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical
+5790,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5791,1,2,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical
+5792,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5793,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5794,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5795,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5796,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5797,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5798,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5799,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5800,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5801,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5802,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical
+5803,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5804,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5805,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5806,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5807,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5808,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5809,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5810,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5811,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical
+5812,1,1,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource -> physical
+5813,1,0,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> resource
+5814,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5815,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5816,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5817,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5818,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5819,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5820,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5821,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5822,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5823,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5824,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5825,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5826,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5827,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5828,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5829,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5830,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5831,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5832,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5833,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5834,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5835,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource
+5836,1,1,0.6666666865348816,0.6666666865348816,2,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical
+5837,1,0,1.0000000298023224,1.0,3,sv_injection__sv_injection__sv_injection_replay_normal_during_fault,network -> physical -> resource

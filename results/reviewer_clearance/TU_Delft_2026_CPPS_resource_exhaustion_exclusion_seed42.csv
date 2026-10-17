@@ -1,0 +1,4 @@
+dataset,method,excluded_class,n_remaining,macro_f1_5class,balanced_accuracy_5class
+TU_Delft_2026_CPPS,ActiGrid-DQN-seed42,resource_exhaustion,1011,0.7631416084516072,0.8412998913087616
+TU_Delft_2026_CPPS,Entropy-seed42,resource_exhaustion,1011,0.6688179975178902,0.7909689643069138
+TU_Delft_2026_CPPS,Fusion-Full-seed42,resource_exhaustion,1011,0.7567326728964023,0.8398239998560302

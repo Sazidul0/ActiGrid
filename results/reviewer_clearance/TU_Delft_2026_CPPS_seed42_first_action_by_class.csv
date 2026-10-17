@@ -1,0 +1,7 @@
+class_name,first_action,n,percentage
+goose_injection,network,43,100.0
+normal,network,428,100.0
+physical_fault,network,431,100.0
+reconnaissance,network,49,100.0
+resource_exhaustion,network,305,100.0
+sv_injection,network,60,100.0

@@ -1,0 +1,2 @@
+dataset,method,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_ci95,test_balanced_accuracy_mean,test_balanced_accuracy_std,test_balanced_accuracy_ci95,test_cost_mean,test_cost_std,test_cost_ci95,test_steps_mean,test_steps_std,test_steps_ci95,n_seeds
+TU_Delft_2026_CPPS,BestOrder-EntropyStop,0.7868088204080878,0.034661518714524664,0.02479535678447931,0.8668545500203507,0.012384065512005377,0.008859026788225075,0.6895643363728471,0.024082864315027635,0.017227843303735172,2.068693009118541,0.07224859294508303,0.05168352991120561,10
