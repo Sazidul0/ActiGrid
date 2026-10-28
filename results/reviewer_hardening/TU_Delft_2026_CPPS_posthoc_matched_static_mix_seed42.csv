@@ -1,0 +1,2 @@
+dataset,posthoc,target_cost,lower_k,upper_k,mix_upper_probability,expected_cost,macro_f1_mean,macro_f1_sd,macro_f1_ci95_low,macro_f1_ci95_high
+TU_Delft_2026_CPPS,True,0.6362715488509204,1,2,0.9088146465527613,0.6362715488509204,0.6202257534456193,0.004374991050918463,0.6114902462576802,0.6284638059592876

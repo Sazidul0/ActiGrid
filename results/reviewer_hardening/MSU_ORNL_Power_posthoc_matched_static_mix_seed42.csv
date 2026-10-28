@@ -1,0 +1,2 @@
+dataset,posthoc,target_cost,lower_k,upper_k,mix_upper_probability,expected_cost,macro_f1_mean,macro_f1_sd,macro_f1_ci95_low,macro_f1_ci95_high
+MSU_ORNL_Power,True,0.7612895085936817,3,4,0.8064475429684084,0.7612895085936817,0.4044659210733173,0.0012027215944503931,0.4021674312863859,0.4068312663935507

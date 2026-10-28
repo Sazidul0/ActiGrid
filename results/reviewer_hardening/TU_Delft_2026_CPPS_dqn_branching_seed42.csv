@@ -1,0 +1,17 @@
+dataset,class_name,decision_after_first,proportion_mean,proportion_std,n_seeds,n_test
+TU_Delft_2026_CPPS,goose_injection,STOP,0.023255813953488372,,1,43
+TU_Delft_2026_CPPS,goose_injection,network,0.37209302325581395,,1,43
+TU_Delft_2026_CPPS,goose_injection,physical,0.6046511627906976,,1,43
+TU_Delft_2026_CPPS,normal,STOP,0.21728971962616822,,1,428
+TU_Delft_2026_CPPS,normal,network,0.45794392523364486,,1,428
+TU_Delft_2026_CPPS,normal,physical,0.3247663551401869,,1,428
+TU_Delft_2026_CPPS,physical_fault,STOP,0.20185614849187936,,1,431
+TU_Delft_2026_CPPS,physical_fault,network,0.37819025522041766,,1,431
+TU_Delft_2026_CPPS,physical_fault,physical,0.419953596287703,,1,431
+TU_Delft_2026_CPPS,reconnaissance,STOP,0.42857142857142855,,1,49
+TU_Delft_2026_CPPS,reconnaissance,network,0.20408163265306123,,1,49
+TU_Delft_2026_CPPS,reconnaissance,physical,0.3673469387755102,,1,49
+TU_Delft_2026_CPPS,resource_exhaustion,STOP,0.9868852459016394,,1,305
+TU_Delft_2026_CPPS,resource_exhaustion,physical,0.013114754098360656,,1,305
+TU_Delft_2026_CPPS,sv_injection,network,0.1,,1,60
+TU_Delft_2026_CPPS,sv_injection,physical,0.9,,1,60

@@ -1,0 +1,10 @@
+dataset,split_seed,method,macro_f1,cost,detail
+MSU_ORNL_Power,42,BestFixedSubset,0.37203975531509687,0.8,pmu_r1+pmu_r2+pmu_r4+cyber_logs
+MSU_ORNL_Power,42,DQN,0.34446298703864986,0.7586158485819849,lambda=0.5
+MSU_ORNL_Power,42,OrderEntropy,0.3641471317714945,0.7859920685685046,pmu_r4 -> pmu_r1 -> pmu_r2 -> pmu_r3 -> cyber_logs
+MSU_ORNL_Power,123,BestFixedSubset,0.4314625450746855,0.8,pmu_r1+pmu_r2+pmu_r4+cyber_logs
+MSU_ORNL_Power,123,DQN,0.3938984991157514,0.7072756010904087,lambda=0.5
+MSU_ORNL_Power,123,OrderEntropy,0.4105571077999917,0.7094299212598426,pmu_r4 -> pmu_r1 -> pmu_r2 -> cyber_logs -> pmu_r3
+MSU_ORNL_Power,456,BestFixedSubset,0.38766866662320015,0.8,pmu_r1+pmu_r2+pmu_r4+cyber_logs
+MSU_ORNL_Power,456,DQN,0.351164907969512,0.7184682734759247,lambda=0.5
+MSU_ORNL_Power,456,OrderEntropy,0.365419644562792,0.7585100136995239,pmu_r4 -> pmu_r1 -> pmu_r2 -> cyber_logs -> pmu_r3

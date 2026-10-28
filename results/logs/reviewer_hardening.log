@@ -1,0 +1,1836 @@
+# Kaggle run of the reviewer-hardening stage (profile=conference, CPU), 2026-10-24.
+# Notebook config cells followed by the run output. The script that ran (sections 0-19)
+# is actigrid/pipeline.py + reviewer_clearance.py + controlled.py + hardening.py in this repository.
+
+ActiGrid checkpointed recovery
+Run cells top-to-bottom. Existing outputs under /kaggle/working/actigrid are reused.
+
+# ActiGrid checkpointed recovery configuration
+import os
+
+os.environ["ACTIGRID_MSU_ROOT"] = "/kaggle/input/datasets/sazidul001x94/power-system-attack-dataset"
+os.environ["ACTIGRID_TU_ROOT"] = "/kaggle/input/datasets/sazidul001x94/tu-delft-cyber-physical-power-system-cpps"
+os.environ["ACTIGRID_WORK_DIR"] = "/kaggle/working/actigrid"
+
+# Use full only if you want the journal-level extras.
+# Conference is much faster and covers the main PES reviewer issues.
+os.environ["ACTIGRID_PROFILE"] = "conference"
+os.environ["ACTIGRID_DATASETS"] = "both"
+
+# IMPORTANT: the same-backbone 10-seed experiment was already completed earlier.
+# Set this to 1 so it is not repeated.
+os.environ["ACTIGRID_SKIP_CONTROLLED"] = "1"
+os.environ["ACTIGRID_SKIP_DQN"] = "0"
+os.environ["ACTIGRID_FORCE"] = "0"
+
+print("Recovery config set.")
+Recovery config set.
+from pathlib import Path
+root=Path("/kaggle/working/actigrid")
+for sub in ["controlled_same_backbone","reviewer_hardening"]:
+    p=root/sub
+    print("\n", p, "exists=", p.exists())
+    if p.exists():
+        files=sorted([x for x in p.rglob("*") if x.is_file()])
+        print("files:", len(files))
+        for x in files[-30:]:
+            print(" ", x.relative_to(root), x.stat().st_size)
+ /kaggle/working/actigrid/controlled_same_backbone exists= False
+
+ /kaggle/working/actigrid/reviewer_hardening exists= False
+
+# ---- run output ----
+2026-10-24 18:16:30,454 | INFO | ================================================================================
+2026-10-24 18:16:30,455 | INFO | ActiGrid final controlled + reviewer-hardening pipeline starting
+2026-10-24 18:16:30,455 | INFO | Python: 3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]
+2026-10-24 18:16:30,456 | INFO | Platform: Linux-6.18.55+-x86_64-with-glibc2.39
+2026-10-24 18:16:30,457 | INFO | NumPy: 2.1.3 | pandas: 2.3.3 | torch: 2.11.0+cpu
+2026-10-24 18:16:30,458 | INFO | Device: cpu
+2026-10-24 18:16:30,459 | INFO | XGBoost available: True
+2026-10-24 18:16:30,460 | INFO | Scapy available: False
+2026-10-24 18:16:30,461 | INFO | Work dir: /kaggle/working/actigrid
+2026-10-24 18:16:30,461 | INFO | ================================================================================
+2026-10-24 18:16:30,464 | INFO | Dataset tree preview: /kaggle/input
+2026-10-24 18:16:31,660 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data1 Sampled Scenarios.csv.arff (4.78 MB)
+2026-10-24 18:16:31,661 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data10 Sampled Scenarios.csv.arff (5.32 MB)
+2026-10-24 18:16:31,662 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data11 Sampled Scenarios.csv.arff (5.06 MB)
+2026-10-24 18:16:31,663 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data12 Sampled Scenarios.csv.arff (5.00 MB)
+2026-10-24 18:16:31,664 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data13 Sampled Scenarios.csv.arff (5.07 MB)
+2026-10-24 18:16:31,666 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data14 Sampled Scenarios.csv.arff (4.92 MB)
+2026-10-24 18:16:31,667 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data15 Sampled Scenarios.csv.arff (5.06 MB)
+2026-10-24 18:16:31,668 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data2 Sampled Scenarios.csv.arff (4.88 MB)
+2026-10-24 18:16:31,669 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data3 Sampled Scenarios.csv.arff (5.20 MB)
+2026-10-24 18:16:31,670 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data4 Sampled Scenarios.csv.arff (5.00 MB)
+2026-10-24 18:16:31,672 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data5 Sampled Scenarios.csv.arff (4.97 MB)
+2026-10-24 18:16:31,673 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data6 Sampled Scenarios.csv.arff (4.78 MB)
+2026-10-24 18:16:31,674 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data7 Sampled Scenarios.csv.arff (5.04 MB)
+2026-10-24 18:16:31,675 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data8 Sampled Scenarios.csv.arff (5.09 MB)
+2026-10-24 18:16:31,676 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data9 Sampled Scenarios.csv.arff (5.13 MB)
+====================================================================================================
+ActiGrid: checkpointed recovery + reviewer-hardening pipeline
+Profile: conference | datasets: ['tu', 'msu'] | device: cpu
+MSU: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset
+TU : /kaggle/input/datasets/sazidul001x94/tu-delft-cyber-physical-power-system-cpps
+OUT: /kaggle/working/actigrid
+====================================================================================================
+[config] ACTIGRID_SKIP_CONTROLLED=1 -> controlled experiment skipped.
+2026-10-24 18:16:31,772 | INFO | Using explicit tudelft root: /kaggle/input/datasets/sazidul001x94/tu-delft-cyber-physical-power-system-cpps
+2026-10-24 18:16:32,347 | INFO | TU Delft manifest written to /kaggle/working/actigrid/tudelft_manifest.csv
+2026-10-24 18:16:32,375 | INFO | TU manifest counts:
+scenario             type        
+goose_injection      network         30
+                     packet_label    30
+                     physical        30
+                     resource        30
+normal               network          5
+                     physical         5
+                     resource         5
+physical_fault       network         10
+                     physical        10
+                     resource        10
+reconnaissance       network          8
+                     packet_label     8
+                     physical         4
+                     resource         4
+resource_exhaustion  network         28
+                     physical        28
+                     resource        28
+sv_injection         network          8
+                     packet_label     8
+                     physical         4
+                     resource         4
+2026-10-24 18:16:32,387 | INFO | TU run-key preview:
+      scenario     type                                   run_key                                                                                                                                                   relpath
+        normal  network                       baseline__baseline1                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline1/baseline1_anon.pcap
+        normal physical                       baseline__baseline1                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline1/baseline1_rscad.csv
+        normal resource                       baseline__baseline1                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline1/resource_monitor_baseline1.csv
+        normal  network                       baseline__baseline2                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline2/baseline2_anon.pcap
+        normal physical                       baseline__baseline2                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline2/baseline2_rscad.csv
+        normal resource                       baseline__baseline2                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline2/resource_monitor_baseline2.csv
+        normal  network                       baseline__baseline3                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline3/baseline3_anon.pcap
+        normal physical                       baseline__baseline3                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline3/baseline3_rscad.csv
+        normal resource                       baseline__baseline3                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline3/resource_monitor_baseline3.csv
+        normal  network                       baseline__baseline4                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline4/baseline4_anon.pcap
+        normal physical                       baseline__baseline4                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline4/baseline4_rscad.csv
+        normal resource                       baseline__baseline4                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline4/resource_monitor_baseline4.csv
+        normal  network                       baseline__baseline5                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline5/baseline5_anon.pcap
+        normal physical                       baseline__baseline5                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline5/baseline5_rscad.csv
+        normal resource                       baseline__baseline5                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline5/resource_monitor_baseline5.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure1            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure1/faults_no_reclosure1_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure1            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure1/faults_no_reclosure1_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure1 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure1/resource_monitor_faults_no_reclosure1.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure2            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure2/faults_no_reclosure2_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure2            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure2/faults_no_reclosure2_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure2 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure2/resource_monitor_faults_no_reclosure2.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure3            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure3/faults_no_reclosure3_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure3            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure3/faults_no_reclosure3_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure3 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure3/resource_monitor_faults_no_reclosure3.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure4            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure4/faults_no_reclosure4_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure4            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure4/faults_no_reclosure4_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure4 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure4/resource_monitor_faults_no_reclosure4.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure5            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure5/faults_no_reclosure5_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure5            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure5/faults_no_reclosure5_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure5 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure5/resource_monitor_faults_no_reclosure5.csv
+2026-10-24 18:16:32,389 | INFO | Scapy unavailable: using dependency-free native PCAP/PCAPNG readers.
+2026-10-24 18:16:32,396 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:32,801 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:32,997 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline1_anon.pcap | labels=ied_injection_baseline1_anon_labels.csv
+2026-10-24 18:16:36,039 | INFO | Packet GT ied_injection_baseline1_anon.pcap: malicious frames=54/291765 | observed malicious windows=8
+2026-10-24 18:16:36,044 | INFO | TU clock audit network->physical: ref=[1720188050,1720188110] other=[1720180850,1720180910] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:16:36,047 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=8/8
+2026-10-24 18:16:36,119 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline1: {'normal': 53, 'goose_injection': 8}
+2026-10-24 18:16:36,122 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:36,391 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:36,510 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline2_anon.pcap | labels=ied_injection_baseline2_anon_labels.csv
+2026-10-24 18:16:39,534 | INFO | Packet GT ied_injection_baseline2_anon.pcap: malicious frames=19/288614 | observed malicious windows=4
+2026-10-24 18:16:39,539 | INFO | TU clock audit network->physical: ref=[1720189772,1720189832] other=[1720182572,1720182632] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:16:39,542 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=4/4
+2026-10-24 18:16:39,607 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline2: {'normal': 57, 'goose_injection': 4}
+2026-10-24 18:16:39,610 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:39,898 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:40,031 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline3_anon.pcap | labels=ied_injection_baseline3_anon_labels.csv
+2026-10-24 18:16:43,207 | INFO | Packet GT ied_injection_baseline3_anon.pcap: malicious frames=20/289061 | observed malicious windows=3
+2026-10-24 18:16:43,212 | INFO | TU clock audit network->physical: ref=[1720189985,1720190045] other=[1720182785,1720182845] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:16:43,215 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-24 18:16:43,279 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline3: {'normal': 58, 'goose_injection': 3}
+2026-10-24 18:16:43,282 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:43,541 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:43,663 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline4_anon.pcap | labels=ied_injection_baseline4_anon_labels.csv
+2026-10-24 18:16:46,684 | INFO | Packet GT ied_injection_baseline4_anon.pcap: malicious frames=19/288720 | observed malicious windows=3
+2026-10-24 18:16:46,689 | INFO | TU clock audit network->physical: ref=[1720190214,1720190274] other=[1720183014,1720183074] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:16:46,692 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-24 18:16:46,756 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline4: {'normal': 58, 'goose_injection': 3}
+2026-10-24 18:16:46,758 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:47,075 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:47,197 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline5_anon.pcap | labels=ied_injection_baseline5_anon_labels.csv
+2026-10-24 18:16:50,245 | INFO | Packet GT ied_injection_baseline5_anon.pcap: malicious frames=17/288795 | observed malicious windows=4
+2026-10-24 18:16:50,250 | INFO | TU clock audit network->physical: ref=[1720190415,1720190475] other=[1720183215,1720183275] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:16:50,253 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=4/4
+2026-10-24 18:16:50,320 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline5: {'normal': 57, 'goose_injection': 4}
+2026-10-24 18:16:50,323 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:50,614 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:50,773 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault1_anon.pcap | labels=ied_injection_fault1_anon_labels.csv
+2026-10-24 18:16:53,874 | INFO | Packet GT ied_injection_fault1_anon.pcap: malicious frames=52/289135 | observed malicious windows=9
+2026-10-24 18:16:53,879 | INFO | TU clock audit network->physical: ref=[1720189222,1720189282] other=[1720182022,1720182082] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:16:53,882 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-24 18:16:53,952 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault1: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-24 18:16:53,955 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:54,261 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:54,434 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault2_anon.pcap | labels=ied_injection_fault2_anon_labels.csv
+2026-10-24 18:16:57,530 | INFO | Packet GT ied_injection_fault2_anon.pcap: malicious frames=36/288742 | observed malicious windows=6
+2026-10-24 18:16:57,536 | INFO | TU clock audit network->physical: ref=[1720192107,1720192167] other=[1720184907,1720184967] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:16:57,539 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=6/6
+2026-10-24 18:16:57,604 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault2: {'physical_fault': 43, 'normal': 12, 'goose_injection': 6}
+2026-10-24 18:16:57,606 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:16:57,929 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:16:58,053 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault3_anon.pcap | labels=ied_injection_fault3_anon_labels.csv
+2026-10-24 18:17:01,103 | INFO | Packet GT ied_injection_fault3_anon.pcap: malicious frames=34/288888 | observed malicious windows=5
+2026-10-24 18:17:01,109 | INFO | TU clock audit network->physical: ref=[1720192369,1720192429] other=[1720185169,1720185229] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:01,111 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=5/5
+2026-10-24 18:17:01,176 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault3: {'physical_fault': 44, 'normal': 12, 'goose_injection': 5}
+2026-10-24 18:17:01,179 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:01,485 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:01,625 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault4_anon.pcap | labels=ied_injection_fault4_anon_labels.csv
+2026-10-24 18:17:04,641 | INFO | Packet GT ied_injection_fault4_anon.pcap: malicious frames=43/288953 | observed malicious windows=8
+2026-10-24 18:17:04,647 | INFO | TU clock audit network->physical: ref=[1720192632,1720192692] other=[1720185432,1720185492] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:04,649 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=8/8
+2026-10-24 18:17:04,714 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault4: {'physical_fault': 41, 'normal': 12, 'goose_injection': 8}
+2026-10-24 18:17:04,716 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:05,042 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:05,187 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault5_anon.pcap | labels=ied_injection_fault5_anon_labels.csv
+2026-10-24 18:17:08,290 | INFO | Packet GT ied_injection_fault5_anon.pcap: malicious frames=61/288987 | observed malicious windows=9
+2026-10-24 18:17:08,295 | INFO | TU clock audit network->physical: ref=[1720192842,1720192902] other=[1720185642,1720185702] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:08,297 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-24 18:17:08,362 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault5: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-24 18:17:08,364 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:08,899 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:09,110 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure1_anon.pcap | labels=ied_injection_fault_reclosure1_anon_labels.csv
+2026-10-24 18:17:14,788 | INFO | Packet GT ied_injection_fault_reclosure1_anon.pcap: malicious frames=17/534272 | observed malicious windows=3
+2026-10-24 18:17:14,795 | INFO | TU clock audit network->physical: ref=[1720620914,1720621034] other=[1720613714,1720613825] raw_overlap=0/112 best_shift=+7200s best_overlap=112/112 APPLY
+2026-10-24 18:17:14,797 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-24 18:17:14,872 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure1: {'physical_fault': 94, 'normal': 24, 'goose_injection': 3}
+2026-10-24 18:17:14,875 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:15,489 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:15,539 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure2_anon.pcap | labels=ied_injection_fault_reclosure2_anon_labels.csv
+2026-10-24 18:17:15,599 | WARNING | TU run scenario=goose_injection has no malicious frame-aligned windows after parsing
+2026-10-24 18:17:15,601 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure2: {'physical_fault': 97, 'normal': 24}
+2026-10-24 18:17:15,603 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:16,076 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:16,264 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure3_anon.pcap | labels=ied_injection_fault_reclosure3_anon_labels.csv
+2026-10-24 18:17:22,106 | INFO | Packet GT ied_injection_fault_reclosure3_anon.pcap: malicious frames=9/547197 | observed malicious windows=2
+2026-10-24 18:17:22,112 | INFO | TU clock audit network->physical: ref=[1720621227,1720621347] other=[1720614027,1720614141] raw_overlap=0/115 best_shift=+7200s best_overlap=115/115 APPLY
+2026-10-24 18:17:22,115 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=2/2
+2026-10-24 18:17:22,187 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3: {'physical_fault': 95, 'normal': 24, 'goose_injection': 2}
+2026-10-24 18:17:22,189 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:22,821 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:23,083 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure4_anon.pcap | labels=ied_injection_fault_reclosure4_anon_labels.csv
+2026-10-24 18:17:28,719 | INFO | Packet GT ied_injection_fault_reclosure4_anon.pcap: malicious frames=12/525887 | observed malicious windows=3
+2026-10-24 18:17:28,725 | INFO | TU clock audit network->physical: ref=[1720621411,1720621531] other=[1720614211,1720614320] raw_overlap=0/110 best_shift=+7200s best_overlap=110/110 APPLY
+2026-10-24 18:17:28,728 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-24 18:17:28,801 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4: {'physical_fault': 94, 'normal': 24, 'goose_injection': 3}
+2026-10-24 18:17:28,803 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:29,230 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:29,429 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure5_anon.pcap | labels=ied_injection_fault_reclosure5_anon_labels.csv
+2026-10-24 18:17:35,245 | INFO | Packet GT ied_injection_fault_reclosure5_anon.pcap: malicious frames=10/546734 | observed malicious windows=2
+2026-10-24 18:17:35,252 | INFO | TU clock audit network->physical: ref=[1720621570,1720621690] other=[1720614370,1720614484] raw_overlap=0/115 best_shift=+7200s best_overlap=115/115 APPLY
+2026-10-24 18:17:35,255 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=2/2
+2026-10-24 18:17:35,327 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure5: {'physical_fault': 95, 'normal': 24, 'goose_injection': 2}
+2026-10-24 18:17:35,330 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:35,639 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:35,763 | INFO | Native PCAPNG parser (signature-detected): vied_injection_baseline1_anon.pcap | labels=vied_injection_baseline1_anon_labels.csv
+2026-10-24 18:17:38,835 | INFO | Packet GT vied_injection_baseline1_anon.pcap: malicious frames=64/289022 | observed malicious windows=10
+2026-10-24 18:17:38,841 | INFO | TU clock audit network->physical: ref=[1720188335,1720188395] other=[1720181135,1720181195] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:38,844 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=10/10
+2026-10-24 18:17:38,918 | INFO | TU window labels goose_injection__viedspoofingbaseline__vied_injection_baseline1: {'normal': 51, 'goose_injection': 10}
+2026-10-24 18:17:38,920 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline2 | physical=1 resource=2 network_views=1 labels=1
+2026-10-24 18:17:38,921 | ERROR | TU goose_injection__viedspoofingbaseline__vied_injection_baseline2 ambiguous pairing: physical=1 resource=2; skipping run instead of silently selecting a file
+2026-10-24 18:17:38,924 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline3 | physical=1 resource=0 network_views=1 labels=1
+2026-10-24 18:17:39,329 | INFO | Native PCAPNG parser (signature-detected): vied_injection_baseline3_anon.pcap | labels=vied_injection_baseline3_anon_labels.csv
+2026-10-24 18:17:42,466 | INFO | Packet GT vied_injection_baseline3_anon.pcap: malicious frames=21/288815 | observed malicious windows=4
+2026-10-24 18:17:42,472 | INFO | TU clock audit network->physical: ref=[1720191011,1720191071] other=[1720183811,1720183871] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:42,474 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=4/4
+2026-10-24 18:17:42,514 | INFO | TU window labels goose_injection__viedspoofingbaseline__vied_injection_baseline3: {'normal': 57, 'goose_injection': 4}
+2026-10-24 18:17:42,516 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline4 | physical=1 resource=2 network_views=1 labels=1
+2026-10-24 18:17:42,517 | ERROR | TU goose_injection__viedspoofingbaseline__vied_injection_baseline4 ambiguous pairing: physical=1 resource=2; skipping run instead of silently selecting a file
+2026-10-24 18:17:42,520 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline5 | physical=1 resource=0 network_views=1 labels=1
+2026-10-24 18:17:42,908 | INFO | Native PCAPNG parser (signature-detected): vied_injection_baseline5_anon.pcap | labels=vied_injection_baseline5_anon_labels.csv
+2026-10-24 18:17:46,017 | INFO | Packet GT vied_injection_baseline5_anon.pcap: malicious frames=35/289121 | observed malicious windows=8
+2026-10-24 18:17:46,023 | INFO | TU clock audit network->physical: ref=[1720191537,1720191597] other=[1720184337,1720184397] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:46,026 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=8/8
+2026-10-24 18:17:46,067 | INFO | TU window labels goose_injection__viedspoofingbaseline__vied_injection_baseline5: {'normal': 53, 'goose_injection': 8}
+2026-10-24 18:17:46,070 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:46,439 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:46,598 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault1_anon.pcap | labels=vied_injection_fault1_anon_labels.csv
+2026-10-24 18:17:49,632 | INFO | Packet GT vied_injection_fault1_anon.pcap: malicious frames=58/289280 | observed malicious windows=9
+2026-10-24 18:17:49,638 | INFO | TU clock audit network->physical: ref=[1720188861,1720188921] other=[1720181661,1720181721] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:49,641 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-24 18:17:49,707 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault1: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-24 18:17:49,710 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:49,985 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:50,109 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault2_anon.pcap | labels=vied_injection_fault2_anon_labels.csv
+2026-10-24 18:17:53,217 | INFO | Packet GT vied_injection_fault2_anon.pcap: malicious frames=63/289158 | observed malicious windows=10
+2026-10-24 18:17:53,224 | INFO | TU clock audit network->physical: ref=[1720193225,1720193285] other=[1720186025,1720186085] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:53,226 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=10/10
+2026-10-24 18:17:53,291 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault2: {'physical_fault': 39, 'normal': 12, 'goose_injection': 10}
+2026-10-24 18:17:53,294 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:53,626 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:53,753 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault3_anon.pcap | labels=vied_injection_fault3_anon_labels.csv
+2026-10-24 18:17:56,968 | INFO | Packet GT vied_injection_fault3_anon.pcap: malicious frames=67/289278 | observed malicious windows=11
+2026-10-24 18:17:56,974 | INFO | TU clock audit network->physical: ref=[1720193535,1720193595] other=[1720186335,1720186395] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:17:56,977 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=11/11
+2026-10-24 18:17:57,043 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault3: {'physical_fault': 38, 'normal': 12, 'goose_injection': 11}
+2026-10-24 18:17:57,046 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:17:57,303 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:17:57,446 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault4_anon.pcap | labels=vied_injection_fault4_anon_labels.csv
+2026-10-24 18:18:00,477 | INFO | Packet GT vied_injection_fault4_anon.pcap: malicious frames=70/289619 | observed malicious windows=12
+2026-10-24 18:18:00,485 | INFO | TU clock audit network->physical: ref=[1720193775,1720193835] other=[1720186575,1720186635] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:00,488 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=12/12
+2026-10-24 18:18:00,557 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault4: {'physical_fault': 37, 'normal': 12, 'goose_injection': 12}
+2026-10-24 18:18:00,560 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:18:00,870 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:01,029 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault5_anon.pcap | labels=vied_injection_fault5_anon_labels.csv
+2026-10-24 18:18:04,128 | INFO | Packet GT vied_injection_fault5_anon.pcap: malicious frames=56/289124 | observed malicious windows=9
+2026-10-24 18:18:04,135 | INFO | TU clock audit network->physical: ref=[1720194047,1720194107] other=[1720186847,1720186907] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:04,137 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-24 18:18:04,202 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault5: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-24 18:18:04,205 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:18:04,525 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:04,649 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure1_anon.pcap | labels=vied_injection_fault_reclosure1_anon_labels.csv
+2026-10-24 18:18:07,768 | INFO | Packet GT vied_injection_fault_reclosure1_anon.pcap: malicious frames=67/289370 | observed malicious windows=11
+2026-10-24 18:18:07,775 | INFO | TU clock audit network->physical: ref=[1720617862,1720617922] other=[1720610662,1720610722] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:07,777 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=11/11
+2026-10-24 18:18:07,843 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure1: {'physical_fault': 38, 'normal': 12, 'goose_injection': 11}
+2026-10-24 18:18:07,846 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:18:08,135 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:08,273 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure2_anon.pcap | labels=vied_injection_fault_reclosure2_anon_labels.csv
+2026-10-24 18:18:11,382 | INFO | Packet GT vied_injection_fault_reclosure2_anon.pcap: malicious frames=71/289975 | observed malicious windows=12
+2026-10-24 18:18:11,388 | INFO | TU clock audit network->physical: ref=[1720618098,1720618158] other=[1720610898,1720610958] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:11,391 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=12/12
+2026-10-24 18:18:11,480 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure2: {'physical_fault': 37, 'normal': 12, 'goose_injection': 12}
+2026-10-24 18:18:11,482 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:18:11,836 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:11,981 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure3_anon.pcap | labels=vied_injection_fault_reclosure3_anon_labels.csv
+2026-10-24 18:18:15,145 | INFO | Packet GT vied_injection_fault_reclosure3_anon.pcap: malicious frames=73/290372 | observed malicious windows=12
+2026-10-24 18:18:15,152 | INFO | TU clock audit network->physical: ref=[1720618382,1720618442] other=[1720611182,1720611242] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:15,155 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=12/12
+2026-10-24 18:18:15,220 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure3: {'physical_fault': 37, 'normal': 12, 'goose_injection': 12}
+2026-10-24 18:18:15,222 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:18:15,495 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:15,646 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure4_anon.pcap | labels=vied_injection_fault_reclosure4_anon_labels.csv
+2026-10-24 18:18:18,688 | INFO | Packet GT vied_injection_fault_reclosure4_anon.pcap: malicious frames=38/289824 | observed malicious windows=6
+2026-10-24 18:18:18,693 | INFO | TU clock audit network->physical: ref=[1720618502,1720618562] other=[1720611302,1720611362] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:18,696 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=6/6
+2026-10-24 18:18:18,761 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure4: {'physical_fault': 43, 'normal': 12, 'goose_injection': 6}
+2026-10-24 18:18:18,764 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-24 18:18:19,011 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:19,125 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure5_anon.pcap | labels=vied_injection_fault_reclosure5_anon_labels.csv
+2026-10-24 18:18:22,249 | INFO | Packet GT vied_injection_fault_reclosure5_anon.pcap: malicious frames=33/289416 | observed malicious windows=6
+2026-10-24 18:18:22,256 | INFO | TU clock audit network->physical: ref=[1720618673,1720618733] other=[1720611473,1720611533] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:22,258 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=6/6
+2026-10-24 18:18:22,335 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5: {'physical_fault': 43, 'normal': 12, 'goose_injection': 6}
+2026-10-24 18:18:22,338 | INFO | TU processing normal__baseline__baseline1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:22,595 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:22,638 | INFO | Native PCAPNG parser (signature-detected): baseline1_anon.pcap
+2026-10-24 18:18:25,733 | INFO | TU clock audit network->physical: ref=[1720438276,1720438336] other=[1720431076,1720431136] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:25,735 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:25,810 | INFO | TU window labels normal__baseline__baseline1: {'normal': 61}
+2026-10-24 18:18:25,813 | INFO | TU processing normal__baseline__baseline2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:26,153 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:26,191 | INFO | Native PCAPNG parser (signature-detected): baseline2_anon.pcap
+2026-10-24 18:18:29,140 | INFO | TU clock audit network->physical: ref=[1720438396,1720438456] other=[1720431196,1720431256] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:29,142 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:29,208 | INFO | TU window labels normal__baseline__baseline2: {'normal': 61}
+2026-10-24 18:18:29,210 | INFO | TU processing normal__baseline__baseline3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:29,453 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:29,488 | INFO | Native PCAPNG parser (signature-detected): baseline3_anon.pcap
+2026-10-24 18:18:32,423 | INFO | TU clock audit network->physical: ref=[1720438790,1720438850] other=[1720431590,1720431650] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:32,426 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:32,496 | INFO | TU window labels normal__baseline__baseline3: {'normal': 61}
+2026-10-24 18:18:32,498 | INFO | TU processing normal__baseline__baseline4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:32,710 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:32,748 | INFO | Native PCAPNG parser (signature-detected): baseline4_anon.pcap
+2026-10-24 18:18:35,686 | INFO | TU clock audit network->physical: ref=[1720438910,1720438970] other=[1720431710,1720431770] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:35,688 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:35,960 | INFO | TU window labels normal__baseline__baseline4: {'normal': 61}
+2026-10-24 18:18:35,962 | INFO | TU processing normal__baseline__baseline5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:36,415 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:36,458 | INFO | Native PCAPNG parser (signature-detected): baseline5_anon.pcap
+2026-10-24 18:18:39,430 | INFO | TU clock audit network->physical: ref=[1720439016,1720439076] other=[1720431816,1720431876] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:39,432 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:39,497 | INFO | TU window labels normal__baseline__baseline5: {'normal': 61}
+2026-10-24 18:18:39,500 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:39,885 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:39,944 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure1_anon.pcap
+2026-10-24 18:18:42,968 | INFO | TU clock audit network->physical: ref=[1720439173,1720439233] other=[1720431973,1720432033] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:42,970 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:43,038 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure1: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:18:43,041 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:43,340 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:43,386 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure2_anon.pcap
+2026-10-24 18:18:46,303 | INFO | TU clock audit network->physical: ref=[1720439348,1720439408] other=[1720432148,1720432208] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:46,305 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:46,371 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure2: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:18:46,374 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:46,763 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:46,812 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure3_anon.pcap
+2026-10-24 18:18:49,826 | INFO | TU clock audit network->physical: ref=[1720439512,1720439572] other=[1720432312,1720432372] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:49,828 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:49,893 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure3: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:18:49,895 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:50,203 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:50,243 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure4_anon.pcap
+2026-10-24 18:18:53,156 | INFO | TU clock audit network->physical: ref=[1720439683,1720439742] other=[1720432483,1720432542] raw_overlap=0/60 best_shift=+7200s best_overlap=60/60 APPLY
+2026-10-24 18:18:53,158 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:53,223 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure4: {'physical_fault': 48, 'normal': 12}
+2026-10-24 18:18:53,226 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:53,615 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:53,650 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure5_anon.pcap
+2026-10-24 18:18:56,597 | INFO | TU clock audit network->physical: ref=[1720439939,1720439999] other=[1720432739,1720432799] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:18:56,599 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:18:56,667 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure5: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:18:56,669 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:18:57,165 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:18:57,204 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure1_anon.pcap
+2026-10-24 18:19:00,268 | INFO | TU clock audit network->physical: ref=[1720617111,1720617171] other=[1720609911,1720609971] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:19:00,270 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:19:00,336 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure1: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:19:00,338 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:19:00,700 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:19:00,744 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure2_anon.pcap
+2026-10-24 18:19:03,833 | INFO | TU clock audit network->physical: ref=[1720617252,1720617312] other=[1720610052,1720610112] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:19:03,835 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:19:03,910 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure2: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:19:03,912 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:19:04,207 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:19:04,245 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure3_anon.pcap
+2026-10-24 18:19:07,175 | INFO | TU clock audit network->physical: ref=[1720617383,1720617443] other=[1720610183,1720610243] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:19:07,177 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:19:07,243 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure3: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:19:07,245 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:19:07,518 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:19:07,560 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure4_anon.pcap
+2026-10-24 18:19:10,498 | INFO | TU clock audit network->physical: ref=[1720617505,1720617565] other=[1720610305,1720610365] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:19:10,500 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:19:10,569 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure4: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:19:10,571 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:19:10,906 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:19:10,942 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure5_anon.pcap
+2026-10-24 18:19:13,980 | INFO | TU clock audit network->physical: ref=[1720617635,1720617695] other=[1720610435,1720610495] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:19:13,983 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:19:14,050 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure5: {'physical_fault': 49, 'normal': 12}
+2026-10-24 18:19:14,052 | INFO | TU processing reconnaissance__reconnaissance__nmap_aggressive | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:19:14,986 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:19:15,276 | INFO | Native PCAPNG parser (signature-detected): nmap_aggressive_attacker_anon.pcap | labels=nmap_aggressive_attacker_anon_labels.csv
+2026-10-24 18:19:25,140 | INFO | Packet GT nmap_aggressive_attacker_anon.pcap: malicious frames=8799/931816 | observed malicious windows=49
+2026-10-24 18:19:25,400 | INFO | Native PCAPNG parser (signature-detected): nmap_aggressive_vied_anon.pcap | labels=nmap_aggressive_vied_anon_labels.csv
+2026-10-24 18:19:35,243 | INFO | Packet GT nmap_aggressive_vied_anon.pcap: malicious frames=2360/919369 | observed malicious windows=6
+2026-10-24 18:19:35,256 | INFO | TU clock audit network->physical: ref=[1719497465,1719497665] other=[1719490265,1719490457] raw_overlap=0/193 best_shift=+7200s best_overlap=193/193 APPLY
+2026-10-24 18:19:35,259 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=49/49
+2026-10-24 18:19:35,332 | INFO | TU window labels reconnaissance__reconnaissance__nmap_aggressive: {'normal': 152, 'reconnaissance': 49}
+2026-10-24 18:19:35,334 | INFO | TU processing reconnaissance__reconnaissance__nmap_insane | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:19:36,443 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:19:36,810 | INFO | Native PCAPNG parser (signature-detected): nmap_insane_attacker_anon.pcap | labels=nmap_insane_attacker_anon_labels.csv
+2026-10-24 18:19:46,472 | INFO | Packet GT nmap_insane_attacker_anon.pcap: malicious frames=8781/910825 | observed malicious windows=44
+2026-10-24 18:19:46,715 | INFO | Native PCAPNG parser (signature-detected): nmap_insane_vied_anon.pcap | labels=nmap_insane_vied_anon_labels.csv
+2026-10-24 18:19:56,213 | INFO | Packet GT nmap_insane_vied_anon.pcap: malicious frames=2360/898859 | observed malicious windows=7
+2026-10-24 18:19:56,224 | INFO | TU clock audit network->physical: ref=[1719497106,1719497306] other=[1719489906,1719490093] raw_overlap=0/188 best_shift=+7200s best_overlap=188/188 APPLY
+2026-10-24 18:19:56,227 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=44/44
+2026-10-24 18:19:56,298 | INFO | TU window labels reconnaissance__reconnaissance__nmap_insane: {'normal': 157, 'reconnaissance': 44}
+2026-10-24 18:19:56,301 | INFO | TU processing reconnaissance__reconnaissance__nmap_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:19:57,329 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:19:57,670 | INFO | Native PCAPNG parser (signature-detected): nmap_normal_attacker_anon.pcap | labels=nmap_normal_attacker_anon_labels.csv
+2026-10-24 18:20:07,408 | INFO | Packet GT nmap_normal_attacker_anon.pcap: malicious frames=8800/926170 | observed malicious windows=44
+2026-10-24 18:20:07,656 | INFO | Native PCAPNG parser (signature-detected): nmap_normal_vied_anon.pcap | labels=nmap_normal_vied_anon_labels.csv
+2026-10-24 18:20:17,520 | INFO | Packet GT nmap_normal_vied_anon.pcap: malicious frames=2373/912538 | observed malicious windows=7
+2026-10-24 18:20:17,532 | INFO | TU clock audit network->physical: ref=[1719498004,1719498204] other=[1719490804,1719490995] raw_overlap=0/192 best_shift=+7200s best_overlap=192/192 APPLY
+2026-10-24 18:20:17,535 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=44/44
+2026-10-24 18:20:17,609 | INFO | TU window labels reconnaissance__reconnaissance__nmap_normal: {'normal': 157, 'reconnaissance': 44}
+2026-10-24 18:20:17,612 | INFO | TU processing reconnaissance__reconnaissance__nmap_polite | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:20:18,474 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:18,903 | INFO | Native PCAPNG parser (signature-detected): nmap_polite_attacker_anon.pcap | labels=nmap_polite_attacker_anon_labels.csv
+2026-10-24 18:20:28,865 | INFO | Packet GT nmap_polite_attacker_anon.pcap: malicious frames=1921/946189 | observed malicious windows=193
+2026-10-24 18:20:29,154 | INFO | Native PCAPNG parser (signature-detected): nmap_polite_vied_anon.pcap | labels=nmap_polite_vied_anon_labels.csv
+2026-10-24 18:20:39,108 | INFO | Packet GT nmap_polite_vied_anon.pcap: malicious frames=956/942019 | observed malicious windows=192
+2026-10-24 18:20:39,120 | INFO | TU clock audit network->physical: ref=[1719498533,1719498733] other=[1719491333,1719491529] raw_overlap=0/197 best_shift=+7200s best_overlap=197/197 APPLY
+2026-10-24 18:20:39,122 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=193/193
+2026-10-24 18:20:39,197 | INFO | TU window labels reconnaissance__reconnaissance__nmap_polite: {'reconnaissance': 193, 'normal': 8}
+2026-10-24 18:20:39,200 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:20:39,536 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:39,584 | INFO | Native PCAPNG parser (signature-detected): baseline_priority1_anon.pcap
+2026-10-24 18:20:42,488 | INFO | TU clock audit network->physical: ref=[1719312435,1719312495] other=[1719305235,1719305295] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:20:42,491 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:20:42,559 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority1: {'resource_exhaustion': 61}
+2026-10-24 18:20:42,561 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:20:42,842 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:42,881 | INFO | Native PCAPNG parser (signature-detected): baseline_priority2_anon.pcap
+2026-10-24 18:20:45,829 | INFO | TU clock audit network->physical: ref=[1719312679,1719312739] other=[1719305479,1719305539] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:20:45,832 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:20:45,901 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority2: {'resource_exhaustion': 61}
+2026-10-24 18:20:45,903 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:20:46,173 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:46,215 | INFO | Native PCAPNG parser (signature-detected): baseline_priority3_anon.pcap
+2026-10-24 18:20:49,170 | INFO | TU clock audit network->physical: ref=[1719312806,1719312866] other=[1719305606,1719305666] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:20:49,172 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:20:49,241 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority3: {'resource_exhaustion': 61}
+2026-10-24 18:20:49,244 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:20:49,456 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:49,495 | INFO | Native PCAPNG parser (signature-detected): baseline_priority4_anon.pcap
+2026-10-24 18:20:52,441 | INFO | TU clock audit network->physical: ref=[1719312955,1719313015] other=[1719305755,1719305815] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:20:52,443 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:20:52,511 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority4: {'resource_exhaustion': 61}
+2026-10-24 18:20:52,513 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:20:52,842 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:52,881 | INFO | Native PCAPNG parser (signature-detected): baseline_priority5_anon.pcap
+2026-10-24 18:20:55,887 | INFO | TU clock audit network->physical: ref=[1719313112,1719313172] other=[1719305912,1719305972] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:20:55,889 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:20:55,966 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority5: {'resource_exhaustion': 61}
+2026-10-24 18:20:55,969 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:20:56,227 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:56,280 | INFO | Native PCAPNG parser (signature-detected): fault_priority1_anon.pcap
+2026-10-24 18:20:59,258 | INFO | TU clock audit network->physical: ref=[1719313564,1719313624] other=[1719306364,1719306424] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:20:59,260 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:20:59,328 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority1: {'resource_exhaustion': 61}
+2026-10-24 18:20:59,331 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:20:59,639 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:20:59,682 | INFO | Native PCAPNG parser (signature-detected): fault_priority2_anon.pcap
+2026-10-24 18:21:02,769 | INFO | TU clock audit network->physical: ref=[1719315929,1719315989] other=[1719308729,1719308789] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:02,772 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:02,841 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority2: {'resource_exhaustion': 61}
+2026-10-24 18:21:02,843 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:03,073 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:03,109 | INFO | Native PCAPNG parser (signature-detected): fault_priority3_anon.pcap
+2026-10-24 18:21:06,063 | INFO | TU clock audit network->physical: ref=[1719316083,1719316143] other=[1719308883,1719308943] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:06,066 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:06,134 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority3: {'resource_exhaustion': 61}
+2026-10-24 18:21:06,137 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:06,446 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:06,491 | INFO | Native PCAPNG parser (signature-detected): fault_priority4_anon.pcap
+2026-10-24 18:21:09,402 | INFO | TU clock audit network->physical: ref=[1719316264,1719316324] other=[1719309064,1719309124] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:09,405 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:09,473 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority4: {'resource_exhaustion': 61}
+2026-10-24 18:21:09,476 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:09,801 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:09,847 | INFO | Native PCAPNG parser (signature-detected): fault_priority5_anon.pcap
+2026-10-24 18:21:12,795 | INFO | TU clock audit network->physical: ref=[1719316475,1719316535] other=[1719309275,1719309335] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:12,798 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:12,868 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority5: {'resource_exhaustion': 61}
+2026-10-24 18:21:12,870 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority6 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:13,177 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:13,220 | INFO | Native PCAPNG parser (signature-detected): fault_priority6_anon.pcap
+2026-10-24 18:21:16,288 | INFO | TU clock audit network->physical: ref=[1718984665,1718984725] other=[1718977465,1718977525] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:16,291 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:16,360 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority6: {'resource_exhaustion': 61}
+2026-10-24 18:21:16,363 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority7 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:16,631 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:16,671 | INFO | Native PCAPNG parser (signature-detected): fault_priority7_anon.pcap
+2026-10-24 18:21:19,591 | INFO | TU clock audit network->physical: ref=[1718984929,1718984989] other=[1718977729,1718977789] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:19,593 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:19,662 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority7: {'resource_exhaustion': 61}
+2026-10-24 18:21:19,665 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority8 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:19,917 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:19,954 | INFO | Native PCAPNG parser (signature-detected): fault_priority8_anon.pcap
+2026-10-24 18:21:21,969 | INFO | TU clock audit network->physical: ref=[1718985173,1718985233] other=[1718977973,1718978020] raw_overlap=0/40 best_shift=+7200s best_overlap=40/40 APPLY
+2026-10-24 18:21:21,972 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:22,045 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority8: {'resource_exhaustion': 61}
+2026-10-24 18:21:22,047 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:22,372 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:22,414 | INFO | Native PCAPNG parser (signature-detected): fault_priority1_anon.pcap
+2026-10-24 18:21:25,491 | INFO | TU clock audit network->physical: ref=[1719316945,1719317005] other=[1719309745,1719309805] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:25,493 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:25,563 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority1: {'resource_exhaustion': 61}
+2026-10-24 18:21:25,565 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority10 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:25,821 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:25,861 | INFO | Native PCAPNG parser (signature-detected): fault_priority10_anon.pcap
+2026-10-24 18:21:28,806 | INFO | TU clock audit network->physical: ref=[1718986863,1718986923] other=[1718979663,1718979723] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:28,809 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:28,878 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority10: {'resource_exhaustion': 61}
+2026-10-24 18:21:28,880 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:29,199 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:29,241 | INFO | Native PCAPNG parser (signature-detected): fault_priority2_anon.pcap
+2026-10-24 18:21:32,176 | INFO | TU clock audit network->physical: ref=[1719317156,1719317216] other=[1719309956,1719310016] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:32,178 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:32,249 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority2: {'resource_exhaustion': 61}
+2026-10-24 18:21:32,251 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:32,538 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:32,614 | INFO | Native PCAPNG parser (signature-detected): fault_priority3_anon.pcap
+2026-10-24 18:21:35,582 | INFO | TU clock audit network->physical: ref=[1719317390,1719317450] other=[1719310190,1719310250] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:35,584 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:35,654 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority3: {'resource_exhaustion': 61}
+2026-10-24 18:21:35,656 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:36,007 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:36,048 | INFO | Native PCAPNG parser (signature-detected): fault_priority4_anon.pcap
+2026-10-24 18:21:39,014 | INFO | TU clock audit network->physical: ref=[1719317646,1719317706] other=[1719310446,1719310506] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:39,016 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:39,089 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority4: {'resource_exhaustion': 61}
+2026-10-24 18:21:39,091 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:39,429 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:39,477 | INFO | Native PCAPNG parser (signature-detected): fault_priority5_anon.pcap
+2026-10-24 18:21:42,437 | INFO | TU clock audit network->physical: ref=[1719317910,1719317970] other=[1719310710,1719310770] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:42,439 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:42,508 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority5: {'resource_exhaustion': 61}
+2026-10-24 18:21:42,511 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority6 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:42,863 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:42,912 | INFO | Native PCAPNG parser (signature-detected): fault_priority6_anon.pcap
+2026-10-24 18:21:45,879 | INFO | TU clock audit network->physical: ref=[1718985529,1718985589] other=[1718978329,1718978389] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:45,881 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:45,951 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority6: {'resource_exhaustion': 61}
+2026-10-24 18:21:45,954 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority7 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:46,290 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:46,326 | INFO | Native PCAPNG parser (signature-detected): fault_priority7_anon.pcap
+2026-10-24 18:21:49,209 | INFO | TU clock audit network->physical: ref=[1718985817,1718985877] other=[1718978617,1718978677] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:49,211 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:49,281 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority7: {'resource_exhaustion': 61}
+2026-10-24 18:21:49,284 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority8 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:49,569 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:49,611 | INFO | Native PCAPNG parser (signature-detected): fault_priority8_anon.pcap
+2026-10-24 18:21:52,579 | INFO | TU clock audit network->physical: ref=[1718986198,1718986258] other=[1718978998,1718979058] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:52,581 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:52,651 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority8: {'resource_exhaustion': 61}
+2026-10-24 18:21:52,654 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority9 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:52,959 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:52,997 | INFO | Native PCAPNG parser (signature-detected): fault_priority9_anon.pcap
+2026-10-24 18:21:55,610 | INFO | TU clock audit network->physical: ref=[1718986548,1718986608] other=[1718979348,1718979408] raw_overlap=0/55 best_shift=+7200s best_overlap=55/55 APPLY
+2026-10-24 18:21:55,612 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:55,683 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority9: {'resource_exhaustion': 61}
+2026-10-24 18:21:55,685 | INFO | TU processing resource_exhaustion__only_vied__fault_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:55,997 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:56,039 | INFO | Native PCAPNG parser (signature-detected): fault_priority1_anon.pcap
+2026-10-24 18:21:59,053 | INFO | TU clock audit network->physical: ref=[1718983064,1718983124] other=[1718975864,1718975924] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:21:59,056 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:21:59,125 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority1: {'resource_exhaustion': 61}
+2026-10-24 18:21:59,127 | INFO | TU processing resource_exhaustion__only_vied__fault_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:21:59,368 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:21:59,408 | INFO | Native PCAPNG parser (signature-detected): fault_priority2_anon.pcap
+2026-10-24 18:22:02,446 | INFO | TU clock audit network->physical: ref=[1718983558,1718983618] other=[1718976358,1718976418] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:22:02,448 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:22:02,520 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority2: {'resource_exhaustion': 61}
+2026-10-24 18:22:02,523 | INFO | TU processing resource_exhaustion__only_vied__fault_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:22:02,870 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:22:02,907 | INFO | Native PCAPNG parser (signature-detected): fault_priority3_anon.pcap
+2026-10-24 18:22:05,886 | INFO | TU clock audit network->physical: ref=[1718983787,1718983847] other=[1718976587,1718976647] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:22:05,888 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:22:05,966 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority3: {'resource_exhaustion': 61}
+2026-10-24 18:22:05,969 | INFO | TU processing resource_exhaustion__only_vied__fault_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:22:06,289 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:22:06,330 | INFO | Native PCAPNG parser (signature-detected): fault_priority4_anon.pcap
+2026-10-24 18:22:09,221 | INFO | TU clock audit network->physical: ref=[1718984087,1718984147] other=[1718976887,1718976947] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:22:09,223 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:22:09,295 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority4: {'resource_exhaustion': 61}
+2026-10-24 18:22:09,298 | INFO | TU processing resource_exhaustion__only_vied__fault_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-24 18:22:09,611 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:22:09,652 | INFO | Native PCAPNG parser (signature-detected): fault_priority5_anon.pcap
+2026-10-24 18:22:12,648 | INFO | TU clock audit network->physical: ref=[1718984254,1718984314] other=[1718977054,1718977114] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-24 18:22:12,650 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-24 18:22:12,719 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority5: {'resource_exhaustion': 61}
+2026-10-24 18:22:12,722 | INFO | TU processing sv_injection__sv_injection__sv_injection_all_nines_during_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:22:13,195 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:22:13,479 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_nines_during_normal_attacker_anon.pcap | labels=sv_injection_all_nines_during_normal_attacker_anon_labels.csv
+2026-10-24 18:22:19,730 | INFO | Packet GT sv_injection_all_nines_during_normal_attacker_anon.pcap: malicious frames=144000/576712 | observed malicious windows=31
+2026-10-24 18:22:19,994 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_nines_during_normal_vied_anon.pcap | labels=sv_injection_all_nines_during_normal_vied_anon_labels.csv
+2026-10-24 18:22:25,823 | INFO | Packet GT sv_injection_all_nines_during_normal_vied_anon.pcap: malicious frames=144000/554325 | observed malicious windows=31
+2026-10-24 18:22:25,834 | INFO | TU clock audit network->physical: ref=[1721909119,1721909219] other=[1721901919,1721902009] raw_overlap=0/91 best_shift=+7200s best_overlap=91/91 APPLY
+2026-10-24 18:22:25,836 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=31/31
+2026-10-24 18:22:25,909 | INFO | TU window labels sv_injection__sv_injection__sv_injection_all_nines_during_normal: {'normal': 70, 'sv_injection': 31}
+2026-10-24 18:22:25,912 | INFO | TU processing sv_injection__sv_injection__sv_injection_all_zero_during_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:22:26,430 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:22:26,679 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_zero_during_normal_attacker_anon.pcap | labels=sv_injection_all_zero_during_normal_attacker_anon_labels.csv
+2026-10-24 18:22:32,704 | INFO | Packet GT sv_injection_all_zero_during_normal_attacker_anon.pcap: malicious frames=144000/552431 | observed malicious windows=31
+2026-10-24 18:22:32,926 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_zero_during_normal_vied_anon.pcap | labels=sv_injection_all_zero_during_normal_vied_anon_labels.csv
+2026-10-24 18:22:38,836 | INFO | Packet GT sv_injection_all_zero_during_normal_vied_anon.pcap: malicious frames=144000/565448 | observed malicious windows=31
+2026-10-24 18:22:38,851 | INFO | TU clock audit network->physical: ref=[1721908885,1721908985] other=[1721901685,1721901773] raw_overlap=0/89 best_shift=+7200s best_overlap=89/89 APPLY
+2026-10-24 18:22:38,854 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=31/31
+2026-10-24 18:22:38,925 | INFO | TU window labels sv_injection__sv_injection__sv_injection_all_zero_during_normal: {'normal': 70, 'sv_injection': 31}
+2026-10-24 18:22:38,928 | INFO | TU processing sv_injection__sv_injection__sv_injection_replay_fault_during_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:22:39,304 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:22:39,564 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_fault_during_normal_attacker_anon.pcap | labels=sv_injection_replay_fault_during_normal_attacker_anon_labels.csv
+2026-10-24 18:22:45,604 | INFO | Packet GT sv_injection_replay_fault_during_normal_attacker_anon.pcap: malicious frames=139800/566753 | observed malicious windows=31
+2026-10-24 18:22:45,823 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_fault_during_normal_vied_anon.pcap | labels=sv_injection_replay_fault_during_normal_vied_anon_labels.csv
+2026-10-24 18:22:51,991 | INFO | Packet GT sv_injection_replay_fault_during_normal_vied_anon.pcap: malicious frames=139800/564909 | observed malicious windows=31
+2026-10-24 18:22:52,005 | INFO | TU clock audit network->physical: ref=[1721908317,1721908417] other=[1721901117,1721901206] raw_overlap=0/90 best_shift=+7200s best_overlap=90/90 APPLY
+2026-10-24 18:22:52,007 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=31/31
+2026-10-24 18:22:52,079 | INFO | TU window labels sv_injection__sv_injection__sv_injection_replay_fault_during_normal: {'normal': 70, 'sv_injection': 31}
+2026-10-24 18:22:52,081 | INFO | TU processing sv_injection__sv_injection__sv_injection_replay_normal_during_fault | physical=1 resource=1 network_views=2 labels=2
+2026-10-24 18:22:52,587 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-24 18:22:52,911 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_normal_during_fault_attacker_anon.pcap | labels=sv_injection_replay_normal_during_fault_attacker_anon_labels.csv
+2026-10-24 18:22:58,121 | INFO | Packet GT sv_injection_replay_normal_during_fault_attacker_anon.pcap: malicious frames=134861/488278 | observed malicious windows=29
+2026-10-24 18:22:58,307 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_normal_during_fault_vied_anon.pcap | labels=sv_injection_replay_normal_during_fault_vied_anon_labels.csv
+2026-10-24 18:23:03,735 | INFO | Packet GT sv_injection_replay_normal_during_fault_vied_anon.pcap: malicious frames=134844/500279 | observed malicious windows=29
+2026-10-24 18:23:03,751 | INFO | TU clock audit network->physical: ref=[1721906414,1721906514] other=[1721899214,1721899290] raw_overlap=0/77 best_shift=+7200s best_overlap=77/77 APPLY
+2026-10-24 18:23:03,753 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=29/29
+2026-10-24 18:23:03,827 | INFO | TU window labels sv_injection__sv_injection__sv_injection_replay_normal_during_fault: {'physical_fault': 72, 'sv_injection': 29}
+2026-10-24 18:23:03,924 | INFO | TU leakage guard: no target/identifier fields in model features
+2026-10-24 18:23:03,996 | INFO | 
+================================================================================
+2026-10-24 18:23:03,997 | INFO | DATASET BUNDLE: TU_Delft_2026_CPPS
+2026-10-24 18:23:03,997 | INFO | Samples: 5838
+2026-10-24 18:23:04,000 | INFO | Groups/runs: 79
+2026-10-24 18:23:04,000 | INFO | Modalities:
+2026-10-24 18:23:04,001 | INFO |   physical                 shape=(5838, 40) cost=0.3333 features=40
+2026-10-24 18:23:04,002 | INFO |   resource                 shape=(5838, 60) cost=0.3333 features=60
+2026-10-24 18:23:04,003 | INFO |   network                  shape=(5838, 16) cost=0.3333 features=16
+2026-10-24 18:23:04,008 | INFO |   class 0 normal                       n=1853
+2026-10-24 18:23:04,009 | INFO |   class 1 physical_fault               n=1636
+2026-10-24 18:23:04,010 | INFO |   class 2 reconnaissance               n=330
+2026-10-24 18:23:04,011 | INFO |   class 3 resource_exhaustion          n=1708
+2026-10-24 18:23:04,012 | INFO |   class 4 goose_injection              n=189
+2026-10-24 18:23:04,013 | INFO |   class 5 sv_injection                 n=122
+2026-10-24 18:23:04,014 | INFO | ================================================================================
+
+2026-10-24 18:23:08,145 | INFO | Split TU_Delft_2026_CPPS: train=3246 val=1276 test=1316
+2026-10-24 18:23:08,147 | INFO | Train classes: normal=998, physical_fault=827, reconnaissance=237, resource_exhaustion=1037, goose_injection=116, sv_injection=31
+2026-10-24 18:23:08,149 | INFO | Val   classes: normal=427, physical_fault=378, reconnaissance=44, resource_exhaustion=366, goose_injection=30, sv_injection=31
+2026-10-24 18:23:08,150 | INFO | Test  classes: normal=428, physical_fault=431, reconnaissance=49, resource_exhaustion=305, goose_injection=43, sv_injection=60
+2026-10-24 18:23:08,151 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-24 18:23:08,173 | INFO | Scaled physical             train mean=0.0012 std=0.8902
+2026-10-24 18:23:08,185 | INFO | Scaled resource             train mean=-0.0000 std=0.8367
+2026-10-24 18:23:08,189 | INFO | Scaled network              train mean=-0.0034 std=0.9028
+[checkpoint subset] TU_Delft_2026_CPPS 42 RF physical 0.33586999795715555
+[checkpoint subset] TU_Delft_2026_CPPS 42 HGB physical 0.37331489000240686
+[checkpoint subset] TU_Delft_2026_CPPS 42 XGB physical 0.3713075767589978
+[checkpoint subset] TU_Delft_2026_CPPS 42 RF resource 0.5321271540859724
+[checkpoint subset] TU_Delft_2026_CPPS 42 HGB resource 0.5348107801007855
+[checkpoint subset] TU_Delft_2026_CPPS 42 XGB resource 0.5238751598625714
+[checkpoint subset] TU_Delft_2026_CPPS 42 RF network 0.8380199022536399
+[checkpoint subset] TU_Delft_2026_CPPS 42 HGB network 0.8495876969939351
+[checkpoint subset] TU_Delft_2026_CPPS 42 XGB network 0.848874733806232
+[checkpoint subset] TU_Delft_2026_CPPS 42 RF physical+resource 0.6056527210871682
+[checkpoint subset] TU_Delft_2026_CPPS 42 HGB physical+resource 0.5985536245530718
+[checkpoint subset] TU_Delft_2026_CPPS 42 XGB physical+resource 0.5464110424136651
+[checkpoint subset] TU_Delft_2026_CPPS 42 RF physical+network 0.8314204551828391
+[checkpoint subset] TU_Delft_2026_CPPS 42 HGB physical+network 0.8453837909557477
+[checkpoint subset] TU_Delft_2026_CPPS 42 XGB physical+network 0.8324407974606203
+[checkpoint subset] TU_Delft_2026_CPPS 42 RF resource+network 0.8666904224908821
+[checkpoint subset] TU_Delft_2026_CPPS 42 HGB resource+network 0.8702156866192436
+[checkpoint subset] TU_Delft_2026_CPPS 42 XGB resource+network 0.8685763212803473
+[checkpoint subset] TU_Delft_2026_CPPS 42 RF physical+resource+network 0.8861467460945526
+[checkpoint subset] TU_Delft_2026_CPPS 42 HGB physical+resource+network 0.8704482002538844
+[checkpoint subset] TU_Delft_2026_CPPS 42 XGB physical+resource+network 0.8653846279454372
+2026-10-24 18:24:17,433 | INFO | Split TU_Delft_2026_CPPS: train=3407 val=1216 test=1215
+2026-10-24 18:24:17,436 | INFO | Train classes: normal=1052, physical_fault=951, reconnaissance=237, resource_exhaustion=976, goose_injection=131, sv_injection=60
+2026-10-24 18:24:17,438 | INFO | Val   classes: normal=466, physical_fault=268, reconnaissance=49, resource_exhaustion=366, goose_injection=36, sv_injection=31
+2026-10-24 18:24:17,440 | INFO | Test  classes: normal=335, physical_fault=417, reconnaissance=44, resource_exhaustion=366, goose_injection=22, sv_injection=31
+2026-10-24 18:24:17,440 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-24 18:24:17,468 | INFO | Scaled physical             train mean=0.0011 std=0.8919
+2026-10-24 18:24:17,477 | INFO | Scaled resource             train mean=0.0000 std=0.8367
+2026-10-24 18:24:17,481 | INFO | Scaled network              train mean=-0.0033 std=0.9052
+[checkpoint subset] TU_Delft_2026_CPPS 123 RF physical 0.30991790453254725
+[checkpoint subset] TU_Delft_2026_CPPS 123 HGB physical 0.30303974670551764
+[checkpoint subset] TU_Delft_2026_CPPS 123 XGB physical 0.35857224702205776
+[checkpoint subset] TU_Delft_2026_CPPS 123 RF resource 0.6388046428181873
+[checkpoint subset] TU_Delft_2026_CPPS 123 HGB resource 0.6358550933967809
+[checkpoint subset] TU_Delft_2026_CPPS 123 XGB resource 0.6409195849375049
+[checkpoint subset] TU_Delft_2026_CPPS 123 RF network 0.8425619663236127
+[checkpoint subset] TU_Delft_2026_CPPS 123 HGB network 0.8536515998732654
+[checkpoint subset] TU_Delft_2026_CPPS 123 XGB network 0.8557737278607355
+[checkpoint subset] TU_Delft_2026_CPPS 123 RF physical+resource 0.7926002567135111
+[checkpoint subset] TU_Delft_2026_CPPS 123 HGB physical+resource 0.7937437960431127
+[checkpoint subset] TU_Delft_2026_CPPS 123 XGB physical+resource 0.6121743037551655
+[checkpoint subset] TU_Delft_2026_CPPS 123 RF physical+network 0.6968399548503772
+[checkpoint subset] TU_Delft_2026_CPPS 123 HGB physical+network 0.797974026920974
+[checkpoint subset] TU_Delft_2026_CPPS 123 XGB physical+network 0.8501615225208883
+[checkpoint subset] TU_Delft_2026_CPPS 123 RF resource+network 0.8869087441121338
+[checkpoint subset] TU_Delft_2026_CPPS 123 HGB resource+network 0.9019632372250065
+[checkpoint subset] TU_Delft_2026_CPPS 123 XGB resource+network 0.8921812692966092
+[checkpoint subset] TU_Delft_2026_CPPS 123 RF physical+resource+network 0.9580892153591574
+[checkpoint subset] TU_Delft_2026_CPPS 123 HGB physical+resource+network 0.9599218250239545
+[checkpoint subset] TU_Delft_2026_CPPS 123 XGB physical+resource+network 0.9573088450208099
+2026-10-24 18:25:29,960 | INFO | Split TU_Delft_2026_CPPS: train=3366 val=1256 test=1216
+2026-10-24 18:25:29,962 | INFO | Train classes: normal=1067, physical_fault=942, reconnaissance=237, resource_exhaustion=976, goose_injection=113, sv_injection=31
+2026-10-24 18:25:29,964 | INFO | Val   classes: normal=412, physical_fault=327, reconnaissance=49, resource_exhaustion=366, goose_injection=42, sv_injection=60
+2026-10-24 18:25:29,966 | INFO | Test  classes: normal=374, physical_fault=367, reconnaissance=44, resource_exhaustion=366, goose_injection=34, sv_injection=31
+2026-10-24 18:25:29,967 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-24 18:25:29,987 | INFO | Scaled physical             train mean=0.0010 std=0.9049
+2026-10-24 18:25:29,995 | INFO | Scaled resource             train mean=0.0000 std=0.8367
+2026-10-24 18:25:29,999 | INFO | Scaled network              train mean=-0.0023 std=0.9451
+[checkpoint subset] TU_Delft_2026_CPPS 456 RF physical 0.3844278643787094
+[checkpoint subset] TU_Delft_2026_CPPS 456 HGB physical 0.3847031501456512
+[checkpoint subset] TU_Delft_2026_CPPS 456 XGB physical 0.3787148904397488
+[checkpoint subset] TU_Delft_2026_CPPS 456 RF resource 0.6621207839732395
+[checkpoint subset] TU_Delft_2026_CPPS 456 HGB resource 0.6716494409646407
+[checkpoint subset] TU_Delft_2026_CPPS 456 XGB resource 0.6683269544680323
+[checkpoint subset] TU_Delft_2026_CPPS 456 RF network 0.8997703934526924
+[checkpoint subset] TU_Delft_2026_CPPS 456 HGB network 0.8985621063410477
+[checkpoint subset] TU_Delft_2026_CPPS 456 XGB network 0.8919325656384706
+[checkpoint subset] TU_Delft_2026_CPPS 456 RF physical+resource 0.7773227938620121
+[checkpoint subset] TU_Delft_2026_CPPS 456 HGB physical+resource 0.7956011884825656
+[checkpoint subset] TU_Delft_2026_CPPS 456 XGB physical+resource 0.571714658942244
+[checkpoint subset] TU_Delft_2026_CPPS 456 RF physical+network 0.8600972554713101
+[checkpoint subset] TU_Delft_2026_CPPS 456 HGB physical+network 0.8913782011223316
+[checkpoint subset] TU_Delft_2026_CPPS 456 XGB physical+network 0.8965950229049061
+[checkpoint subset] TU_Delft_2026_CPPS 456 RF resource+network 0.8719389286644087
+[checkpoint subset] TU_Delft_2026_CPPS 456 HGB resource+network 0.8862203289111386
+[checkpoint subset] TU_Delft_2026_CPPS 456 XGB resource+network 0.8716207196193343
+[checkpoint subset] TU_Delft_2026_CPPS 456 RF physical+resource+network 0.9079005789759682
+[checkpoint subset] TU_Delft_2026_CPPS 456 HGB physical+resource+network 0.8925923828798005
+[checkpoint subset] TU_Delft_2026_CPPS 456 XGB physical+resource+network 0.9045194431374282
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_strong_subset_validation_selected.csv
+[complete] strong frontier: /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_strong_subset_classifier_frontier.csv
+2026-10-24 18:26:39,827 | INFO | Split TU_Delft_2026_CPPS: train=3246 val=1276 test=1316
+2026-10-24 18:26:39,830 | INFO | Train classes: normal=998, physical_fault=827, reconnaissance=237, resource_exhaustion=1037, goose_injection=116, sv_injection=31
+2026-10-24 18:26:39,831 | INFO | Val   classes: normal=427, physical_fault=378, reconnaissance=44, resource_exhaustion=366, goose_injection=30, sv_injection=31
+2026-10-24 18:26:39,833 | INFO | Test  classes: normal=428, physical_fault=431, reconnaissance=49, resource_exhaustion=305, goose_injection=43, sv_injection=60
+2026-10-24 18:26:39,834 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-24 18:26:39,855 | INFO | Scaled physical             train mean=0.0012 std=0.8902
+2026-10-24 18:26:39,862 | INFO | Scaled resource             train mean=-0.0000 std=0.8367
+2026-10-24 18:26:39,866 | INFO | Scaled network              train mean=-0.0034 std=0.9028
+2026-10-24 18:26:45,955 | INFO | Training fusion classifier [hardening_TU_Delft_2026_CPPS_42] | epochs=35 | classes=6 | modalities=['physical', 'resource', 'network']
+2026-10-24 18:26:46,925 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 001 | loss 1.48576 | val Macro-F1 0.60043
+2026-10-24 18:26:47,424 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 002 | loss 0.88950 | val Macro-F1 0.61150
+2026-10-24 18:26:47,908 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 003 | loss 0.61506 | val Macro-F1 0.58293
+2026-10-24 18:26:48,382 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 004 | loss 0.49984 | val Macro-F1 0.68214
+2026-10-24 18:26:48,848 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 005 | loss 0.47385 | val Macro-F1 0.68396
+2026-10-24 18:26:49,321 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 006 | loss 0.46290 | val Macro-F1 0.59534
+2026-10-24 18:26:49,797 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 007 | loss 0.39321 | val Macro-F1 0.61243
+2026-10-24 18:26:50,262 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 008 | loss 0.40143 | val Macro-F1 0.61802
+2026-10-24 18:26:50,724 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 009 | loss 0.42034 | val Macro-F1 0.76726
+2026-10-24 18:26:51,201 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 010 | loss 0.36908 | val Macro-F1 0.76759
+2026-10-24 18:26:51,740 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 011 | loss 0.40851 | val Macro-F1 0.73510
+2026-10-24 18:26:52,223 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 012 | loss 0.36273 | val Macro-F1 0.65818
+2026-10-24 18:26:52,693 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 013 | loss 0.35057 | val Macro-F1 0.66220
+2026-10-24 18:26:53,162 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 014 | loss 0.35345 | val Macro-F1 0.65082
+2026-10-24 18:26:53,644 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 015 | loss 0.35063 | val Macro-F1 0.66028
+2026-10-24 18:26:54,097 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 016 | loss 0.32754 | val Macro-F1 0.69581
+2026-10-24 18:26:54,565 | INFO | Classifier hardening_TU_Delft_2026_CPPS_42 epoch 017 | loss 0.33410 | val Macro-F1 0.71233
+2026-10-24 18:26:54,566 | INFO | Early stopping classifier at epoch 17
+[checkpoint] saved fusion TU_Delft_2026_CPPS_hardening_fusion_seed42.pt
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_mask_calibration_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_label_aware_oracle_seed42.csv
+[dqn] TU_Delft_2026_CPPS_s42_lam0.25 5000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.25 10000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.25 15000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.25 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=42 lambda=0.25
+[dqn] TU_Delft_2026_CPPS_s42_lam0.5 5000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.5 10000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.5 15000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.5 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=42 lambda=0.5
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_cluster_bootstrap_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_posthoc_matched_static_mix_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_dqn_paths_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_dqn_branching_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_per_class_acquisition_cost_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_premature_stop_corruption_stress.csv
+[dqn] TU_Delft_2026_CPPS_s42_lam0.75 5000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.75 10000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.75 15000/20000
+[dqn] TU_Delft_2026_CPPS_s42_lam0.75 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=42 lambda=0.75
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_42 5000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_42 10000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_42 15000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_42 20000/20000
+[checkpoint ablation] TU_Delft_2026_CPPS seed=42 dense_off_critical_on
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_42 5000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_42 10000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_42 15000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_42 20000/20000
+[checkpoint ablation] TU_Delft_2026_CPPS seed=42 dense_on_critical_off
+2026-10-24 19:13:03,494 | INFO | Training fusion classifier [hardening_TU_Delft_2026_CPPS_123] | epochs=35 | classes=6 | modalities=['physical', 'resource', 'network']
+2026-10-24 19:13:03,943 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 001 | loss 1.49052 | val Macro-F1 0.58133
+2026-10-24 19:13:04,371 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 002 | loss 0.87606 | val Macro-F1 0.55224
+2026-10-24 19:13:04,794 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 003 | loss 0.60615 | val Macro-F1 0.63408
+2026-10-24 19:13:05,225 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 004 | loss 0.49327 | val Macro-F1 0.62019
+2026-10-24 19:13:05,660 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 005 | loss 0.43365 | val Macro-F1 0.73350
+2026-10-24 19:13:06,085 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 006 | loss 0.39829 | val Macro-F1 0.74276
+2026-10-24 19:13:06,520 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 007 | loss 0.42740 | val Macro-F1 0.75215
+2026-10-24 19:13:06,942 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 008 | loss 0.35878 | val Macro-F1 0.78709
+2026-10-24 19:13:07,372 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 009 | loss 0.34407 | val Macro-F1 0.81332
+2026-10-24 19:13:07,814 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 010 | loss 0.40112 | val Macro-F1 0.72307
+2026-10-24 19:13:08,239 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 011 | loss 0.36393 | val Macro-F1 0.80785
+2026-10-24 19:13:08,666 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 012 | loss 0.31231 | val Macro-F1 0.80960
+2026-10-24 19:13:09,090 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 013 | loss 0.36006 | val Macro-F1 0.78792
+2026-10-24 19:13:09,535 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 014 | loss 0.32417 | val Macro-F1 0.81485
+2026-10-24 19:13:09,971 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 015 | loss 0.39871 | val Macro-F1 0.80163
+2026-10-24 19:13:10,394 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 016 | loss 0.34452 | val Macro-F1 0.70903
+2026-10-24 19:13:10,818 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 017 | loss 0.35596 | val Macro-F1 0.73251
+2026-10-24 19:13:11,270 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 018 | loss 0.35495 | val Macro-F1 0.66766
+2026-10-24 19:13:11,742 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 019 | loss 0.33697 | val Macro-F1 0.67016
+2026-10-24 19:13:12,169 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 020 | loss 0.32528 | val Macro-F1 0.72377
+2026-10-24 19:13:12,585 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 021 | loss 0.35740 | val Macro-F1 0.82698
+2026-10-24 19:13:13,023 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 022 | loss 0.30940 | val Macro-F1 0.82757
+2026-10-24 19:13:13,445 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 023 | loss 0.29318 | val Macro-F1 0.69681
+2026-10-24 19:13:13,866 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 024 | loss 0.30696 | val Macro-F1 0.69525
+2026-10-24 19:13:14,310 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 025 | loss 0.30110 | val Macro-F1 0.67524
+2026-10-24 19:13:14,732 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 026 | loss 0.34323 | val Macro-F1 0.71251
+2026-10-24 19:13:15,157 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 027 | loss 0.28850 | val Macro-F1 0.81335
+2026-10-24 19:13:15,598 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 028 | loss 0.28619 | val Macro-F1 0.73033
+2026-10-24 19:13:16,020 | INFO | Classifier hardening_TU_Delft_2026_CPPS_123 epoch 029 | loss 0.30256 | val Macro-F1 0.73654
+2026-10-24 19:13:16,021 | INFO | Early stopping classifier at epoch 29
+[checkpoint] saved fusion TU_Delft_2026_CPPS_hardening_fusion_seed123.pt
+[dqn] TU_Delft_2026_CPPS_s123_lam0.25 5000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.25 10000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.25 15000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.25 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=123 lambda=0.25
+[dqn] TU_Delft_2026_CPPS_s123_lam0.5 5000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.5 10000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.5 15000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.5 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=123 lambda=0.5
+[dqn] TU_Delft_2026_CPPS_s123_lam0.75 5000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.75 10000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.75 15000/20000
+[dqn] TU_Delft_2026_CPPS_s123_lam0.75 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=123 lambda=0.75
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_123 5000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_123 10000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_123 15000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_123 20000/20000
+[checkpoint ablation] TU_Delft_2026_CPPS seed=123 dense_off_critical_on
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_123 5000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_123 10000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_123 15000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_123 20000/20000
+[checkpoint ablation] TU_Delft_2026_CPPS seed=123 dense_on_critical_off
+2026-10-24 19:56:49,871 | INFO | Training fusion classifier [hardening_TU_Delft_2026_CPPS_456] | epochs=35 | classes=6 | modalities=['physical', 'resource', 'network']
+2026-10-24 19:56:50,330 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 001 | loss 1.45105 | val Macro-F1 0.54532
+2026-10-24 19:56:50,755 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 002 | loss 0.84988 | val Macro-F1 0.52692
+2026-10-24 19:56:51,244 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 003 | loss 0.54636 | val Macro-F1 0.56267
+2026-10-24 19:56:51,706 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 004 | loss 0.50545 | val Macro-F1 0.55092
+2026-10-24 19:56:52,130 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 005 | loss 0.46064 | val Macro-F1 0.65040
+2026-10-24 19:56:52,573 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 006 | loss 0.40899 | val Macro-F1 0.62327
+2026-10-24 19:56:52,999 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 007 | loss 0.39632 | val Macro-F1 0.75674
+2026-10-24 19:56:53,437 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 008 | loss 0.40401 | val Macro-F1 0.75861
+2026-10-24 19:56:53,860 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 009 | loss 0.42585 | val Macro-F1 0.67468
+2026-10-24 19:56:54,289 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 010 | loss 0.36501 | val Macro-F1 0.64822
+2026-10-24 19:56:54,728 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 011 | loss 0.39560 | val Macro-F1 0.65831
+2026-10-24 19:56:55,145 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 012 | loss 0.36170 | val Macro-F1 0.78571
+2026-10-24 19:56:55,567 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 013 | loss 0.33860 | val Macro-F1 0.80166
+2026-10-24 19:56:56,012 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 014 | loss 0.34297 | val Macro-F1 0.78384
+2026-10-24 19:56:56,456 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 015 | loss 0.32147 | val Macro-F1 0.71953
+2026-10-24 19:56:56,888 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 016 | loss 0.33188 | val Macro-F1 0.68911
+2026-10-24 19:56:57,306 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 017 | loss 0.33115 | val Macro-F1 0.77190
+2026-10-24 19:56:57,725 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 018 | loss 0.32813 | val Macro-F1 0.67992
+2026-10-24 19:56:58,146 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 019 | loss 0.29165 | val Macro-F1 0.68401
+2026-10-24 19:56:58,574 | INFO | Classifier hardening_TU_Delft_2026_CPPS_456 epoch 020 | loss 0.30535 | val Macro-F1 0.66899
+2026-10-24 19:56:58,576 | INFO | Early stopping classifier at epoch 20
+[checkpoint] saved fusion TU_Delft_2026_CPPS_hardening_fusion_seed456.pt
+[dqn] TU_Delft_2026_CPPS_s456_lam0.25 5000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.25 10000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.25 15000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.25 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=456 lambda=0.25
+[dqn] TU_Delft_2026_CPPS_s456_lam0.5 5000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.5 10000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.5 15000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.5 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=456 lambda=0.5
+[dqn] TU_Delft_2026_CPPS_s456_lam0.75 5000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.75 10000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.75 15000/20000
+[dqn] TU_Delft_2026_CPPS_s456_lam0.75 20000/20000
+[checkpoint DQN] TU_Delft_2026_CPPS seed=456 lambda=0.75
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_456 5000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_456 10000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_456 15000/20000
+[dqn] TU_Delft_2026_CPPS_dense_off_critical_on_456 20000/20000
+[checkpoint ablation] TU_Delft_2026_CPPS seed=456 dense_off_critical_on
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_456 5000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_456 10000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_456 15000/20000
+[dqn] TU_Delft_2026_CPPS_dense_on_critical_off_456 20000/20000
+[checkpoint ablation] TU_Delft_2026_CPPS seed=456 dense_on_critical_off
+2026-10-24 20:40:43,795 | INFO | Split TU_Delft_2026_CPPS: train=3246 val=1276 test=1316
+2026-10-24 20:40:43,797 | INFO | Train classes: normal=998, physical_fault=827, reconnaissance=237, resource_exhaustion=1037, goose_injection=116, sv_injection=31
+2026-10-24 20:40:43,799 | INFO | Val   classes: normal=427, physical_fault=378, reconnaissance=44, resource_exhaustion=366, goose_injection=30, sv_injection=31
+2026-10-24 20:40:43,802 | INFO | Test  classes: normal=428, physical_fault=431, reconnaissance=49, resource_exhaustion=305, goose_injection=43, sv_injection=60
+2026-10-24 20:40:43,803 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-24 20:40:43,824 | INFO | Scaled physical             train mean=0.0012 std=0.8902
+2026-10-24 20:40:43,834 | INFO | Scaled resource             train mean=-0.0000 std=0.8367
+2026-10-24 20:40:43,838 | INFO | Scaled network              train mean=-0.0034 std=0.9028
+2026-10-24 20:40:43,843 | INFO | Training fusion classifier [splitrobust_TU_Delft_2026_CPPS_42] | epochs=35 | classes=6 | modalities=['physical', 'resource', 'network']
+2026-10-24 20:40:44,283 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 001 | loss 1.49121 | val Macro-F1 0.58465
+2026-10-24 20:40:44,719 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 002 | loss 0.88691 | val Macro-F1 0.58023
+2026-10-24 20:40:45,140 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 003 | loss 0.58599 | val Macro-F1 0.53425
+2026-10-24 20:40:45,571 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 004 | loss 0.49045 | val Macro-F1 0.57219
+2026-10-24 20:40:46,021 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 005 | loss 0.46842 | val Macro-F1 0.59948
+2026-10-24 20:40:46,450 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 006 | loss 0.40835 | val Macro-F1 0.63213
+2026-10-24 20:40:46,885 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 007 | loss 0.38563 | val Macro-F1 0.76605
+2026-10-24 20:40:47,316 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 008 | loss 0.39067 | val Macro-F1 0.76193
+2026-10-24 20:40:47,743 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 009 | loss 0.35343 | val Macro-F1 0.67147
+2026-10-24 20:40:48,176 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 010 | loss 0.38528 | val Macro-F1 0.73011
+2026-10-24 20:40:48,605 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 011 | loss 0.37016 | val Macro-F1 0.67796
+2026-10-24 20:40:49,026 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 012 | loss 0.35122 | val Macro-F1 0.68568
+2026-10-24 20:40:49,455 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 013 | loss 0.42709 | val Macro-F1 0.66155
+2026-10-24 20:40:49,874 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_42 epoch 014 | loss 0.31737 | val Macro-F1 0.71429
+2026-10-24 20:40:49,875 | INFO | Early stopping classifier at epoch 14
+[dqn] split42 5000/20000
+[dqn] split42 10000/20000
+[dqn] split42 15000/20000
+[dqn] split42 20000/20000
+[checkpoint split] TU_Delft_2026_CPPS split=42
+2026-10-24 20:49:57,144 | INFO | Split TU_Delft_2026_CPPS: train=3407 val=1216 test=1215
+2026-10-24 20:49:57,146 | INFO | Train classes: normal=1052, physical_fault=951, reconnaissance=237, resource_exhaustion=976, goose_injection=131, sv_injection=60
+2026-10-24 20:49:57,148 | INFO | Val   classes: normal=466, physical_fault=268, reconnaissance=49, resource_exhaustion=366, goose_injection=36, sv_injection=31
+2026-10-24 20:49:57,150 | INFO | Test  classes: normal=335, physical_fault=417, reconnaissance=44, resource_exhaustion=366, goose_injection=22, sv_injection=31
+2026-10-24 20:49:57,151 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-24 20:49:57,173 | INFO | Scaled physical             train mean=0.0011 std=0.8919
+2026-10-24 20:49:57,181 | INFO | Scaled resource             train mean=0.0000 std=0.8367
+2026-10-24 20:49:57,185 | INFO | Scaled network              train mean=-0.0033 std=0.9052
+2026-10-24 20:49:57,190 | INFO | Training fusion classifier [splitrobust_TU_Delft_2026_CPPS_123] | epochs=35 | classes=6 | modalities=['physical', 'resource', 'network']
+2026-10-24 20:49:57,639 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 001 | loss 1.49855 | val Macro-F1 0.64870
+2026-10-24 20:49:58,075 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 002 | loss 0.91076 | val Macro-F1 0.65937
+2026-10-24 20:49:58,501 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 003 | loss 0.60257 | val Macro-F1 0.65576
+2026-10-24 20:49:58,954 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 004 | loss 0.48554 | val Macro-F1 0.68477
+2026-10-24 20:49:59,388 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 005 | loss 0.50071 | val Macro-F1 0.69046
+2026-10-24 20:49:59,823 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 006 | loss 0.43616 | val Macro-F1 0.76348
+2026-10-24 20:50:00,252 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 007 | loss 0.42465 | val Macro-F1 0.77994
+2026-10-24 20:50:00,686 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 008 | loss 0.41253 | val Macro-F1 0.78843
+2026-10-24 20:50:01,138 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 009 | loss 0.39101 | val Macro-F1 0.81322
+2026-10-24 20:50:01,651 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 010 | loss 0.38081 | val Macro-F1 0.82200
+2026-10-24 20:50:02,085 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 011 | loss 0.37544 | val Macro-F1 0.81089
+2026-10-24 20:50:02,513 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 012 | loss 0.35671 | val Macro-F1 0.83849
+2026-10-24 20:50:02,946 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 013 | loss 0.36849 | val Macro-F1 0.79051
+2026-10-24 20:50:03,402 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 014 | loss 0.34092 | val Macro-F1 0.85672
+2026-10-24 20:50:03,836 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 015 | loss 0.37535 | val Macro-F1 0.82665
+2026-10-24 20:50:04,287 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 016 | loss 0.33476 | val Macro-F1 0.85079
+2026-10-24 20:50:04,770 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 017 | loss 0.32793 | val Macro-F1 0.81173
+2026-10-24 20:50:05,235 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 018 | loss 0.34336 | val Macro-F1 0.82890
+2026-10-24 20:50:05,659 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 019 | loss 0.35412 | val Macro-F1 0.82967
+2026-10-24 20:50:06,094 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 020 | loss 0.33907 | val Macro-F1 0.83268
+2026-10-24 20:50:06,516 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_123 epoch 021 | loss 0.32744 | val Macro-F1 0.82855
+2026-10-24 20:50:06,517 | INFO | Early stopping classifier at epoch 21
+[dqn] split123 5000/20000
+[dqn] split123 10000/20000
+[dqn] split123 15000/20000
+[dqn] split123 20000/20000
+[checkpoint split] TU_Delft_2026_CPPS split=123
+2026-10-24 20:59:11,628 | INFO | Split TU_Delft_2026_CPPS: train=3366 val=1256 test=1216
+2026-10-24 20:59:11,630 | INFO | Train classes: normal=1067, physical_fault=942, reconnaissance=237, resource_exhaustion=976, goose_injection=113, sv_injection=31
+2026-10-24 20:59:11,632 | INFO | Val   classes: normal=412, physical_fault=327, reconnaissance=49, resource_exhaustion=366, goose_injection=42, sv_injection=60
+2026-10-24 20:59:11,634 | INFO | Test  classes: normal=374, physical_fault=367, reconnaissance=44, resource_exhaustion=366, goose_injection=34, sv_injection=31
+2026-10-24 20:59:11,634 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-24 20:59:11,656 | INFO | Scaled physical             train mean=0.0010 std=0.9049
+2026-10-24 20:59:11,664 | INFO | Scaled resource             train mean=0.0000 std=0.8367
+2026-10-24 20:59:11,668 | INFO | Scaled network              train mean=-0.0023 std=0.9451
+2026-10-24 20:59:11,673 | INFO | Training fusion classifier [splitrobust_TU_Delft_2026_CPPS_456] | epochs=35 | classes=6 | modalities=['physical', 'resource', 'network']
+2026-10-24 20:59:12,102 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 001 | loss 1.48442 | val Macro-F1 0.65554
+2026-10-24 20:59:12,520 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 002 | loss 0.91416 | val Macro-F1 0.68291
+2026-10-24 20:59:12,963 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 003 | loss 0.58963 | val Macro-F1 0.69191
+2026-10-24 20:59:13,383 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 004 | loss 0.53464 | val Macro-F1 0.70775
+2026-10-24 20:59:13,833 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 005 | loss 0.46981 | val Macro-F1 0.74449
+2026-10-24 20:59:14,251 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 006 | loss 0.41969 | val Macro-F1 0.74810
+2026-10-24 20:59:14,674 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 007 | loss 0.39511 | val Macro-F1 0.78999
+2026-10-24 20:59:15,091 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 008 | loss 0.45341 | val Macro-F1 0.76430
+2026-10-24 20:59:15,507 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 009 | loss 0.35440 | val Macro-F1 0.79211
+2026-10-24 20:59:15,920 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 010 | loss 0.36200 | val Macro-F1 0.80566
+2026-10-24 20:59:16,355 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 011 | loss 0.37844 | val Macro-F1 0.80653
+2026-10-24 20:59:16,784 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 012 | loss 0.36890 | val Macro-F1 0.77577
+2026-10-24 20:59:17,207 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 013 | loss 0.35790 | val Macro-F1 0.79738
+2026-10-24 20:59:17,624 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 014 | loss 0.33798 | val Macro-F1 0.79959
+2026-10-24 20:59:18,068 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 015 | loss 0.30903 | val Macro-F1 0.81686
+2026-10-24 20:59:18,491 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 016 | loss 0.35204 | val Macro-F1 0.80888
+2026-10-24 20:59:18,912 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 017 | loss 0.32894 | val Macro-F1 0.80706
+2026-10-24 20:59:19,337 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 018 | loss 0.34482 | val Macro-F1 0.87100
+2026-10-24 20:59:19,769 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 019 | loss 0.34307 | val Macro-F1 0.80323
+2026-10-24 20:59:20,206 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 020 | loss 0.30184 | val Macro-F1 0.87312
+2026-10-24 20:59:20,628 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 021 | loss 0.32773 | val Macro-F1 0.84908
+2026-10-24 20:59:21,055 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 022 | loss 0.37331 | val Macro-F1 0.82886
+2026-10-24 20:59:21,513 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 023 | loss 0.33667 | val Macro-F1 0.83551
+2026-10-24 20:59:21,950 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 024 | loss 0.32520 | val Macro-F1 0.81248
+2026-10-24 20:59:22,398 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 025 | loss 0.29262 | val Macro-F1 0.85732
+2026-10-24 20:59:22,830 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 026 | loss 0.31222 | val Macro-F1 0.86818
+2026-10-24 20:59:23,243 | INFO | Classifier splitrobust_TU_Delft_2026_CPPS_456 epoch 027 | loss 0.30326 | val Macro-F1 0.86090
+2026-10-24 20:59:23,245 | INFO | Early stopping classifier at epoch 27
+[dqn] split456 5000/20000
+[dqn] split456 10000/20000
+[dqn] split456 15000/20000
+[dqn] split456 20000/20000
+[checkpoint split] TU_Delft_2026_CPPS split=456
+[saved] /kaggle/working/actigrid/reviewer_hardening/TU_Delft_2026_CPPS_repeated_group_split_summary.csv
+2026-10-24 21:08:24,927 | INFO | Using explicit msu root: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset
+2026-10-24 21:09:05,269 | INFO | MSU table signatures found: 1; using largest coherent set with 15 files
+2026-10-24 21:09:05,270 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data1 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,271 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data10 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,272 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data11 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,274 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data12 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,274 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data13 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,275 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data14 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,276 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data15 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,277 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data2 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,277 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data3 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,279 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data4 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,280 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data5 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,281 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data6 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,282 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data7 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,283 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data8 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,284 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data9 Sampled Scenarios.csv.arff
+2026-10-24 21:09:05,284 | INFO | Reading MSU: data1 Sampled Scenarios.csv.arff
+2026-10-24 21:09:06,501 | INFO | Reading MSU: data10 Sampled Scenarios.csv.arff
+2026-10-24 21:09:07,946 | INFO | Reading MSU: data11 Sampled Scenarios.csv.arff
+2026-10-24 21:09:09,286 | INFO | Reading MSU: data12 Sampled Scenarios.csv.arff
+2026-10-24 21:09:10,618 | INFO | Reading MSU: data13 Sampled Scenarios.csv.arff
+2026-10-24 21:09:12,019 | INFO | Reading MSU: data14 Sampled Scenarios.csv.arff
+2026-10-24 21:09:13,303 | INFO | Reading MSU: data15 Sampled Scenarios.csv.arff
+2026-10-24 21:09:14,656 | INFO | Reading MSU: data2 Sampled Scenarios.csv.arff
+2026-10-24 21:09:15,944 | INFO | Reading MSU: data3 Sampled Scenarios.csv.arff
+2026-10-24 21:09:17,377 | INFO | Reading MSU: data4 Sampled Scenarios.csv.arff
+2026-10-24 21:09:18,729 | INFO | Reading MSU: data5 Sampled Scenarios.csv.arff
+2026-10-24 21:09:20,053 | INFO | Reading MSU: data6 Sampled Scenarios.csv.arff
+2026-10-24 21:09:21,303 | INFO | Reading MSU: data7 Sampled Scenarios.csv.arff
+2026-10-24 21:09:22,694 | INFO | Reading MSU: data8 Sampled Scenarios.csv.arff
+2026-10-24 21:09:24,110 | INFO | Reading MSU: data9 Sampled Scenarios.csv.arff
+2026-10-24 21:09:25,912 | INFO | MSU scenario parse success: 100.00%
+2026-10-24 21:09:26,269 | INFO | MSU modality grouping:
+2026-10-24 21:09:26,270 | INFO |   pmu_r1: 29 columns | first=['R1-PA1:VH', 'R1-PM1:V', 'R1-PA2:VH', 'R1-PM2:V']
+2026-10-24 21:09:26,271 | INFO |   pmu_r2: 29 columns | first=['R2-PA1:VH', 'R2-PM1:V', 'R2-PA2:VH', 'R2-PM2:V']
+2026-10-24 21:09:26,271 | INFO |   pmu_r3: 29 columns | first=['R3-PA1:VH', 'R3-PM1:V', 'R3-PA2:VH', 'R3-PM2:V']
+2026-10-24 21:09:26,272 | INFO |   pmu_r4: 29 columns | first=['R4-PA1:VH', 'R4-PM1:V', 'R4-PA2:VH', 'R4-PM2:V']
+2026-10-24 21:09:26,273 | INFO |   cyber_logs: 12 columns | first=['control_panel_log1', 'control_panel_log2', 'control_panel_log3', 'control_panel_log4']
+2026-10-24 21:09:26,712 | INFO | 
+================================================================================
+2026-10-24 21:09:26,713 | INFO | DATASET BUNDLE: MSU_ORNL_Power
+2026-10-24 21:09:26,714 | INFO | Samples: 78377
+2026-10-24 21:09:26,722 | INFO | Groups/runs: 15
+2026-10-24 21:09:26,723 | INFO | Modalities:
+2026-10-24 21:09:26,724 | INFO |   pmu_r1                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-24 21:09:26,725 | INFO |   pmu_r2                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-24 21:09:26,725 | INFO |   pmu_r3                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-24 21:09:26,726 | INFO |   pmu_r4                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-24 21:09:26,727 | INFO |   cyber_logs               shape=(78377, 12) cost=0.2000 features=12
+2026-10-24 21:09:26,729 | INFO |   class 0 normal                       n=4405
+2026-10-24 21:09:26,730 | INFO |   class 1 physical_fault_or_maintenance n=18309
+2026-10-24 21:09:26,731 | INFO |   class 2 data_injection               n=9582
+2026-10-24 21:09:26,732 | INFO |   class 3 remote_trip                  n=8737
+2026-10-24 21:09:26,732 | INFO |   class 4 relay_setting                n=37344
+2026-10-24 21:09:26,733 | INFO | ================================================================================
+
+2026-10-24 21:09:56,149 | INFO | Split MSU_ORNL_Power: train=47471 val=15272 test=15634
+2026-10-24 21:09:56,151 | INFO | Train classes: normal=2809, physical_fault_or_maintenance=11124, data_injection=5820, remote_trip=5137, relay_setting=22581
+2026-10-24 21:09:56,153 | INFO | Val   classes: normal=720, physical_fault_or_maintenance=3627, data_injection=1789, remote_trip=1812, relay_setting=7324
+2026-10-24 21:09:56,155 | INFO | Test  classes: normal=876, physical_fault_or_maintenance=3558, data_injection=1973, remote_trip=1788, relay_setting=7439
+2026-10-24 21:09:56,156 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-24 21:09:56,255 | INFO | Scaled pmu_r1               train mean=0.0001 std=0.9190
+2026-10-24 21:09:56,306 | INFO | Scaled pmu_r2               train mean=-0.0013 std=0.9502
+2026-10-24 21:09:56,359 | INFO | Scaled pmu_r3               train mean=-0.0013 std=0.9307
+2026-10-24 21:09:56,409 | INFO | Scaled pmu_r4               train mean=-0.0005 std=0.9206
+2026-10-24 21:09:56,433 | INFO | Scaled cyber_logs           train mean=-0.0041 std=0.5815
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1 0.32058216468543843
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1 0.35013641655334754
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1 0.34877592166408905
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2 0.35310915033137497
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2 0.38536394127979523
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2 0.378107028003857
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r3 0.29913202621329527
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r3 0.35340784931116087
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r3 0.3471458164707871
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r4 0.3516192218593049
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r4 0.37770754363400727
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r4 0.3716409593766346
+[checkpoint subset] MSU_ORNL_Power 42 RF cyber_logs 0.0885800999972908
+[checkpoint subset] MSU_ORNL_Power 42 HGB cyber_logs 0.08852939584888826
+[checkpoint subset] MSU_ORNL_Power 42 XGB cyber_logs 0.1620602637190142
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2 0.386458300483054
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2 0.4151582134650956
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2 0.4051878374688155
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r3 0.3705894045051116
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r3 0.4247095748863732
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r3 0.41324302242524596
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r4 0.39434947311666396
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r4 0.4285643332661465
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r4 0.41511705652038244
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+cyber_logs 0.3300401832923162
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+cyber_logs 0.3692963965421322
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+cyber_logs 0.3624373359009283
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2+pmu_r3 0.377659629242881
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2+pmu_r3 0.41316472696700773
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2+pmu_r3 0.40654626446116193
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2+pmu_r4 0.3810541661727757
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2+pmu_r4 0.40132801389984757
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2+pmu_r4 0.400960830671921
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2+cyber_logs 0.3548539023036616
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2+cyber_logs 0.3813994503272117
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2+cyber_logs 0.3839585636031404
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r3+pmu_r4 0.37822620877348767
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r3+pmu_r4 0.41721926277921983
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r3+pmu_r4 0.4023735143852328
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r3+cyber_logs 0.3007549040231571
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r3+cyber_logs 0.3515766935996593
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r3+cyber_logs 0.3584511154632663
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r4+cyber_logs 0.35441224790070003
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r4+cyber_logs 0.37684365492481947
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r4+cyber_logs 0.37293779107574415
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2+pmu_r3 0.3982782538496969
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2+pmu_r3 0.4320388220210222
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2+pmu_r3 0.4225589500684264
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2+pmu_r4 0.4065766428034129
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2+pmu_r4 0.43891641030555506
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2+pmu_r4 0.4298088033775181
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2+cyber_logs 0.3887867968959804
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2+cyber_logs 0.42829314133858193
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2+cyber_logs 0.41298013576549153
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r3+pmu_r4 0.3998542215977703
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r3+pmu_r4 0.43121199625448287
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r3+pmu_r4 0.42397662871622066
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r3+cyber_logs 0.37409088602824164
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r3+cyber_logs 0.4239145838663217
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r3+cyber_logs 0.41485495134871425
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r4+cyber_logs 0.3956991994625599
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r4+cyber_logs 0.43018926713660494
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r4+cyber_logs 0.4201471578850401
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2+pmu_r3+pmu_r4 0.39265694514140803
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2+pmu_r3+pmu_r4 0.42737477587969036
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2+pmu_r3+pmu_r4 0.416516790554606
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2+pmu_r3+cyber_logs 0.3774062923441293
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2+pmu_r3+cyber_logs 0.4266962210168921
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2+pmu_r3+cyber_logs 0.41320881831115164
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2+pmu_r4+cyber_logs 0.38017392574672515
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2+pmu_r4+cyber_logs 0.4021560687024294
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2+pmu_r4+cyber_logs 0.39957159385124597
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r3+pmu_r4+cyber_logs 0.38134813435252324
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r3+pmu_r4+cyber_logs 0.4196660718348647
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r3+pmu_r4+cyber_logs 0.40778704331191057
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.4063697811694431
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.43216960347271505
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.42808910686945423
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.38767172229762364
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.4321285799501752
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.42201722773327016
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.40362009861110854
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.437960152320236
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.4243077228192738
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.3967997173572386
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.4327197682524576
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.424801062137972
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.3864303215677589
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.4290444925225702
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.4199676975930745
+[checkpoint subset] MSU_ORNL_Power 42 RF pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.4053336822088619
+[checkpoint subset] MSU_ORNL_Power 42 HGB pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.44003259522767235
+[checkpoint subset] MSU_ORNL_Power 42 XGB pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.43207148959956426
+2026-10-24 21:54:45,720 | INFO | Split MSU_ORNL_Power: train=47305 val=15197 test=15875
+2026-10-24 21:54:45,723 | INFO | Train classes: normal=2677, physical_fault_or_maintenance=10834, data_injection=5743, remote_trip=5332, relay_setting=22719
+2026-10-24 21:54:45,725 | INFO | Val   classes: normal=782, physical_fault_or_maintenance=3720, data_injection=1887, remote_trip=1716, relay_setting=7092
+2026-10-24 21:54:45,727 | INFO | Test  classes: normal=946, physical_fault_or_maintenance=3755, data_injection=1952, remote_trip=1689, relay_setting=7533
+2026-10-24 21:54:45,728 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-24 21:54:45,823 | INFO | Scaled pmu_r1               train mean=0.0004 std=0.9122
+2026-10-24 21:54:45,872 | INFO | Scaled pmu_r2               train mean=-0.0008 std=0.9468
+2026-10-24 21:54:45,920 | INFO | Scaled pmu_r3               train mean=-0.0008 std=0.9271
+2026-10-24 21:54:45,971 | INFO | Scaled pmu_r4               train mean=-0.0001 std=0.9111
+2026-10-24 21:54:45,994 | INFO | Scaled cyber_logs           train mean=-0.0042 std=0.5817
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1 0.32463782154055065
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1 0.35622781289023325
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1 0.3363378991733868
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2 0.35467975161857535
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2 0.39223344969254176
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2 0.3615082201742178
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r3 0.3176611825078978
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r3 0.37200951076005817
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r3 0.3723098780295455
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r4 0.3565058582125261
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r4 0.39393774507057405
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r4 0.37002646926755123
+[checkpoint subset] MSU_ORNL_Power 123 RF cyber_logs 0.08769254372008418
+[checkpoint subset] MSU_ORNL_Power 123 HGB cyber_logs 0.08759775891368263
+[checkpoint subset] MSU_ORNL_Power 123 XGB cyber_logs 0.1623366247964106
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2 0.3910251946190959
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2 0.4281245880132186
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2 0.40151924117999
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r3 0.3805016227675737
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r3 0.43025050069023213
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r3 0.4024714379837153
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r4 0.40543106585118094
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r4 0.4400448817634682
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r4 0.4139899258755146
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+cyber_logs 0.3297611027469232
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+cyber_logs 0.36279219106922334
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+cyber_logs 0.3481029830773063
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2+pmu_r3 0.3801441565422391
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2+pmu_r3 0.4215938360159807
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2+pmu_r3 0.390135224737607
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2+pmu_r4 0.3804376862789602
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2+pmu_r4 0.4088926116631203
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2+pmu_r4 0.39491221607317095
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2+cyber_logs 0.35825855083564795
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2+cyber_logs 0.3926173211549706
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2+cyber_logs 0.3706679160437717
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r3+pmu_r4 0.39027532755723016
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r3+pmu_r4 0.4351954737020593
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r3+pmu_r4 0.40230516158156016
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r3+cyber_logs 0.3156295056502832
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r3+cyber_logs 0.37747927060790054
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r3+cyber_logs 0.37707662308319995
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r4+cyber_logs 0.3631259517673963
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r4+cyber_logs 0.3878043758918214
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r4+cyber_logs 0.3814615813318759
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2+pmu_r3 0.3997431386717828
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2+pmu_r3 0.43777835521625885
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2+pmu_r3 0.40973923756861585
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2+pmu_r4 0.4132350749419871
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2+pmu_r4 0.44074270274774296
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2+pmu_r4 0.42278246808507997
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2+cyber_logs 0.3955826638596282
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2+cyber_logs 0.4336834440237314
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2+cyber_logs 0.4090214604449319
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r3+pmu_r4 0.4137662749617041
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r3+pmu_r4 0.44436160854069995
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r3+pmu_r4 0.419543234749186
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r3+cyber_logs 0.37831039039151915
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r3+cyber_logs 0.4293182191640123
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r3+cyber_logs 0.4052832867566393
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r4+cyber_logs 0.4050967838422775
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r4+cyber_logs 0.43921779068050065
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r4+cyber_logs 0.41682353842414716
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2+pmu_r3+pmu_r4 0.39613068462767015
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2+pmu_r3+pmu_r4 0.43568699464182714
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2+pmu_r3+pmu_r4 0.41141905299064413
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2+pmu_r3+cyber_logs 0.38355432163180464
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2+pmu_r3+cyber_logs 0.4306120458080402
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2+pmu_r3+cyber_logs 0.39880793708596984
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2+pmu_r4+cyber_logs 0.3803224402588448
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2+pmu_r4+cyber_logs 0.4087647085109859
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2+pmu_r4+cyber_logs 0.39862838134626216
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r3+pmu_r4+cyber_logs 0.3940644018912649
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r3+pmu_r4+cyber_logs 0.43604282568784036
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r3+pmu_r4+cyber_logs 0.40537939499361686
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.41158648104248696
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.4494162054044966
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.42628717156924056
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.3999486708789086
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.43778183942397286
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.413093210688494
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.4147706273362181
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.4469009366136752
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.4217246982889577
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.40814522841502326
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.4440400441355342
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.42068454056441124
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.3991144452904055
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.4413574944479667
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.41085484546009654
+[checkpoint subset] MSU_ORNL_Power 123 RF pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.41276406838915775
+[checkpoint subset] MSU_ORNL_Power 123 HGB pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.4464129233437806
+[checkpoint subset] MSU_ORNL_Power 123 XGB pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.4229774990193581
+2026-10-24 22:39:51,975 | INFO | Split MSU_ORNL_Power: train=47586 val=15462 test=15329
+2026-10-24 22:39:51,979 | INFO | Train classes: normal=2782, physical_fault_or_maintenance=11150, data_injection=5803, remote_trip=5334, relay_setting=22517
+2026-10-24 22:39:51,981 | INFO | Val   classes: normal=777, physical_fault_or_maintenance=3624, data_injection=1818, remote_trip=1785, relay_setting=7458
+2026-10-24 22:39:51,983 | INFO | Test  classes: normal=846, physical_fault_or_maintenance=3535, data_injection=1961, remote_trip=1618, relay_setting=7369
+2026-10-24 22:39:51,984 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-24 22:39:52,083 | INFO | Scaled pmu_r1               train mean=-0.0001 std=0.9215
+2026-10-24 22:39:52,132 | INFO | Scaled pmu_r2               train mean=-0.0015 std=0.9516
+2026-10-24 22:39:52,181 | INFO | Scaled pmu_r3               train mean=-0.0015 std=0.9330
+2026-10-24 22:39:52,232 | INFO | Scaled pmu_r4               train mean=0.0001 std=0.9194
+2026-10-24 22:39:52,255 | INFO | Scaled cyber_logs           train mean=-0.0042 std=0.5817
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1 0.32782990601946044
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1 0.34026051075071506
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1 0.35113459596570357
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2 0.34306050346290007
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2 0.37262777434542504
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2 0.36471192495510607
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r3 0.30457908663603905
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r3 0.37107277455201515
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r3 0.36292185532327836
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r4 0.3513159625983674
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r4 0.37335516310696304
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r4 0.3676271266561141
+[checkpoint subset] MSU_ORNL_Power 456 RF cyber_logs 0.08734447149892924
+[checkpoint subset] MSU_ORNL_Power 456 HGB cyber_logs 0.08729343058822626
+[checkpoint subset] MSU_ORNL_Power 456 XGB cyber_logs 0.16245179869348375
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2 0.38845743641296276
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2 0.42561900517252915
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2 0.4139710322195313
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r3 0.36461524487446917
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r3 0.4249220435890349
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r3 0.41146887185125375
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r4 0.39820152339587717
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r4 0.42596818397728853
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r4 0.41911939487635036
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+cyber_logs 0.3266788135638355
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+cyber_logs 0.3491117486734222
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+cyber_logs 0.3593435478184247
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2+pmu_r3 0.36350288249521323
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2+pmu_r3 0.41557413268292365
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2+pmu_r3 0.39820669726080654
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2+pmu_r4 0.3720122480424333
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2+pmu_r4 0.4038732172185789
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2+pmu_r4 0.38988734907707523
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2+cyber_logs 0.34625125166359616
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2+cyber_logs 0.3788545325070731
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2+cyber_logs 0.3778513710715125
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r3+pmu_r4 0.3684386331098128
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r3+pmu_r4 0.4164035225741288
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r3+pmu_r4 0.4043877605350762
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r3+cyber_logs 0.31272293180514027
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r3+cyber_logs 0.37191503931361103
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r3+cyber_logs 0.3674756999447257
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r4+cyber_logs 0.3563928753946442
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r4+cyber_logs 0.37950181617629364
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r4+cyber_logs 0.3721789151337839
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2+pmu_r3 0.3869545979687738
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2+pmu_r3 0.4322917841061912
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2+pmu_r3 0.4150116489185097
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2+pmu_r4 0.39995782313794875
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2+pmu_r4 0.4382960278532698
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2+pmu_r4 0.4318898147988074
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2+cyber_logs 0.3883443021413216
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2+cyber_logs 0.42576497647629774
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2+cyber_logs 0.42360506083565674
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r3+pmu_r4 0.4005299092817628
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r3+pmu_r4 0.4412431453465647
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r3+pmu_r4 0.4237008296690442
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r3+cyber_logs 0.36896726134140695
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r3+cyber_logs 0.4257453174763476
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r3+cyber_logs 0.4094487850618854
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r4+cyber_logs 0.401679734386455
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r4+cyber_logs 0.43388074516681224
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r4+cyber_logs 0.4159204135995666
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2+pmu_r3+pmu_r4 0.3775203720897717
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2+pmu_r3+pmu_r4 0.4345320768925115
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2+pmu_r3+pmu_r4 0.4116981340824995
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2+pmu_r3+cyber_logs 0.362761789459266
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2+pmu_r3+cyber_logs 0.41821473728621833
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2+pmu_r3+cyber_logs 0.40565341796484555
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2+pmu_r4+cyber_logs 0.36953339185970396
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2+pmu_r4+cyber_logs 0.40656130744070074
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2+pmu_r4+cyber_logs 0.39516205874465987
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r3+pmu_r4+cyber_logs 0.37330406320484466
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r3+pmu_r4+cyber_logs 0.4175308644691559
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r3+pmu_r4+cyber_logs 0.40218961343327875
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.3980222797327982
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.44181136941841376
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2+pmu_r3+pmu_r4 0.4330117116732303
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.3896635909401558
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.44069392338581714
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2+pmu_r3+cyber_logs 0.4243562721485771
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.4004032983152067
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.4401412567093697
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2+pmu_r4+cyber_logs 0.42442880535607896
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.39506919812906816
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.4322161846618533
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r3+pmu_r4+cyber_logs 0.42346546202667623
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.38062636655155513
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.429337751036868
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.41125181837876623
+[checkpoint subset] MSU_ORNL_Power 456 RF pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.39866398442448936
+[checkpoint subset] MSU_ORNL_Power 456 HGB pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.43422650289643017
+[checkpoint subset] MSU_ORNL_Power 456 XGB pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs 0.4274931044367462
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_strong_subset_validation_selected.csv
+[complete] strong frontier: /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_strong_subset_classifier_frontier.csv
+2026-10-24 23:24:47,360 | INFO | Split MSU_ORNL_Power: train=47471 val=15272 test=15634
+2026-10-24 23:24:47,363 | INFO | Train classes: normal=2809, physical_fault_or_maintenance=11124, data_injection=5820, remote_trip=5137, relay_setting=22581
+2026-10-24 23:24:47,365 | INFO | Val   classes: normal=720, physical_fault_or_maintenance=3627, data_injection=1789, remote_trip=1812, relay_setting=7324
+2026-10-24 23:24:47,366 | INFO | Test  classes: normal=876, physical_fault_or_maintenance=3558, data_injection=1973, remote_trip=1788, relay_setting=7439
+2026-10-24 23:24:47,367 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-24 23:24:47,461 | INFO | Scaled pmu_r1               train mean=0.0001 std=0.9190
+2026-10-24 23:24:47,508 | INFO | Scaled pmu_r2               train mean=-0.0013 std=0.9502
+2026-10-24 23:24:47,554 | INFO | Scaled pmu_r3               train mean=-0.0013 std=0.9307
+2026-10-24 23:24:47,601 | INFO | Scaled pmu_r4               train mean=-0.0005 std=0.9206
+2026-10-24 23:24:47,624 | INFO | Scaled cyber_logs           train mean=-0.0041 std=0.5815
+2026-10-24 23:24:47,633 | INFO | Training fusion classifier [hardening_MSU_ORNL_Power_42] | epochs=35 | classes=5 | modalities=['pmu_r1', 'pmu_r2', 'pmu_r3', 'pmu_r4', 'cyber_logs']
+2026-10-24 23:24:51,610 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 001 | loss 1.50006 | val Macro-F1 0.27549
+2026-10-24 23:24:55,436 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 002 | loss 1.38559 | val Macro-F1 0.32267
+2026-10-24 23:24:59,421 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 003 | loss 1.34200 | val Macro-F1 0.31100
+2026-10-24 23:25:03,444 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 004 | loss 1.31405 | val Macro-F1 0.31747
+2026-10-24 23:25:07,514 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 005 | loss 1.28247 | val Macro-F1 0.33060
+2026-10-24 23:25:11,455 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 006 | loss 1.26350 | val Macro-F1 0.33196
+2026-10-24 23:25:15,392 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 007 | loss 1.24227 | val Macro-F1 0.32344
+2026-10-24 23:25:19,274 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 008 | loss 1.22054 | val Macro-F1 0.32679
+2026-10-24 23:25:23,264 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 009 | loss 1.20875 | val Macro-F1 0.32720
+2026-10-24 23:25:27,127 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 010 | loss 1.19095 | val Macro-F1 0.33975
+2026-10-24 23:25:31,153 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 011 | loss 1.18046 | val Macro-F1 0.33553
+2026-10-24 23:25:35,170 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 012 | loss 1.16897 | val Macro-F1 0.34616
+2026-10-24 23:25:39,194 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 013 | loss 1.15555 | val Macro-F1 0.34576
+2026-10-24 23:25:43,130 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 014 | loss 1.14702 | val Macro-F1 0.34943
+2026-10-24 23:25:47,125 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 015 | loss 1.13343 | val Macro-F1 0.34736
+2026-10-24 23:25:50,987 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 016 | loss 1.11949 | val Macro-F1 0.35108
+2026-10-24 23:25:54,801 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 017 | loss 1.11016 | val Macro-F1 0.35966
+2026-10-24 23:25:58,729 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 018 | loss 1.10054 | val Macro-F1 0.37578
+2026-10-24 23:26:02,651 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 019 | loss 1.08615 | val Macro-F1 0.36554
+2026-10-24 23:26:06,504 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 020 | loss 1.08450 | val Macro-F1 0.36992
+2026-10-24 23:26:10,518 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 021 | loss 1.06798 | val Macro-F1 0.37634
+2026-10-24 23:26:14,239 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 022 | loss 1.05855 | val Macro-F1 0.37943
+2026-10-24 23:26:18,209 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 023 | loss 1.05670 | val Macro-F1 0.36913
+2026-10-24 23:26:22,124 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 024 | loss 1.04190 | val Macro-F1 0.36457
+2026-10-24 23:26:26,113 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 025 | loss 1.03124 | val Macro-F1 0.36956
+2026-10-24 23:26:29,961 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 026 | loss 1.03016 | val Macro-F1 0.37166
+2026-10-24 23:26:33,848 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 027 | loss 1.01600 | val Macro-F1 0.37311
+2026-10-24 23:26:37,671 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 028 | loss 1.01424 | val Macro-F1 0.37538
+2026-10-24 23:26:41,772 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 029 | loss 1.00667 | val Macro-F1 0.38381
+2026-10-24 23:26:45,711 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 030 | loss 0.99531 | val Macro-F1 0.38448
+2026-10-24 23:26:49,464 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 031 | loss 0.98823 | val Macro-F1 0.38442
+2026-10-24 23:26:53,398 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 032 | loss 0.98049 | val Macro-F1 0.38454
+2026-10-24 23:26:57,241 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 033 | loss 0.97563 | val Macro-F1 0.39021
+2026-10-24 23:27:01,222 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 034 | loss 0.96895 | val Macro-F1 0.37956
+2026-10-24 23:27:05,364 | INFO | Classifier hardening_MSU_ORNL_Power_42 epoch 035 | loss 0.96409 | val Macro-F1 0.38428
+[checkpoint] saved fusion MSU_ORNL_Power_hardening_fusion_seed42.pt
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_mask_calibration_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_label_aware_oracle_seed42.csv
+[dqn] MSU_ORNL_Power_s42_lam0.25 5000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.25 10000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.25 15000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.25 20000/20000
+2026-10-24 23:44:18,992 | INFO | Evaluated final DQN 5000/15634
+2026-10-24 23:45:26,050 | INFO | Evaluated final DQN 10000/15634
+2026-10-24 23:46:33,356 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=42 lambda=0.25
+[dqn] MSU_ORNL_Power_s42_lam0.5 5000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.5 10000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.5 15000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.5 20000/20000
+2026-10-25 00:04:01,000 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 00:05:15,844 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 00:06:32,384 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=42 lambda=0.5
+2026-10-25 00:07:53,183 | INFO | Evaluated final DQN 5000/15272
+2026-10-25 00:09:03,711 | INFO | Evaluated final DQN 10000/15272
+2026-10-25 00:10:13,229 | INFO | Evaluated final DQN 15000/15272
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_cluster_bootstrap_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_posthoc_matched_static_mix_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_dqn_paths_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_dqn_branching_seed42.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_per_class_acquisition_cost_seed42.csv
+2026-10-25 00:12:51,673 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 00:13:59,586 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 00:15:07,100 | INFO | Evaluated final DQN 15000/15634
+2026-10-25 00:16:25,900 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 00:17:35,204 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 00:18:43,607 | INFO | Evaluated final DQN 15000/15634
+2026-10-25 00:19:59,127 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 00:21:06,800 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 00:22:13,950 | INFO | Evaluated final DQN 15000/15634
+2026-10-25 00:23:21,677 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 00:24:20,082 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 00:25:18,176 | INFO | Evaluated final DQN 15000/15634
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_premature_stop_corruption_stress.csv
+[dqn] MSU_ORNL_Power_s42_lam0.75 5000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.75 10000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.75 15000/20000
+[dqn] MSU_ORNL_Power_s42_lam0.75 20000/20000
+2026-10-25 00:42:43,748 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 00:43:51,599 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 00:44:59,663 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=42 lambda=0.75
+[dqn] MSU_ORNL_Power_dense_off_critical_on_42 5000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_42 10000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_42 15000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_42 20000/20000
+2026-10-25 01:00:20,680 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 01:01:06,032 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 01:01:51,776 | INFO | Evaluated final DQN 15000/15634
+[checkpoint ablation] MSU_ORNL_Power seed=42 dense_off_critical_on
+[dqn] MSU_ORNL_Power_dense_on_critical_off_42 5000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_42 10000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_42 15000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_42 20000/20000
+2026-10-25 01:19:05,755 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 01:20:13,904 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 01:21:21,531 | INFO | Evaluated final DQN 15000/15634
+[checkpoint ablation] MSU_ORNL_Power seed=42 dense_on_critical_off
+2026-10-25 01:21:30,844 | INFO | Training fusion classifier [hardening_MSU_ORNL_Power_123] | epochs=35 | classes=5 | modalities=['pmu_r1', 'pmu_r2', 'pmu_r3', 'pmu_r4', 'cyber_logs']
+2026-10-25 01:21:34,924 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 001 | loss 1.52056 | val Macro-F1 0.27163
+2026-10-25 01:21:39,008 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 002 | loss 1.39086 | val Macro-F1 0.28915
+2026-10-25 01:21:43,133 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 003 | loss 1.34334 | val Macro-F1 0.30603
+2026-10-25 01:21:47,185 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 004 | loss 1.32189 | val Macro-F1 0.31496
+2026-10-25 01:21:51,234 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 005 | loss 1.28765 | val Macro-F1 0.31431
+2026-10-25 01:21:55,236 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 006 | loss 1.26697 | val Macro-F1 0.32570
+2026-10-25 01:21:59,180 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 007 | loss 1.23992 | val Macro-F1 0.33076
+2026-10-25 01:22:03,272 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 008 | loss 1.22193 | val Macro-F1 0.34201
+2026-10-25 01:22:07,429 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 009 | loss 1.20795 | val Macro-F1 0.34305
+2026-10-25 01:22:11,421 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 010 | loss 1.19843 | val Macro-F1 0.32850
+2026-10-25 01:22:15,364 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 011 | loss 1.18054 | val Macro-F1 0.35455
+2026-10-25 01:22:19,424 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 012 | loss 1.16857 | val Macro-F1 0.35204
+2026-10-25 01:22:23,510 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 013 | loss 1.15815 | val Macro-F1 0.35024
+2026-10-25 01:22:27,690 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 014 | loss 1.14135 | val Macro-F1 0.35079
+2026-10-25 01:22:31,770 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 015 | loss 1.13834 | val Macro-F1 0.36307
+2026-10-25 01:22:35,797 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 016 | loss 1.11788 | val Macro-F1 0.36027
+2026-10-25 01:22:39,855 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 017 | loss 1.11652 | val Macro-F1 0.35936
+2026-10-25 01:22:44,002 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 018 | loss 1.10456 | val Macro-F1 0.36798
+2026-10-25 01:22:48,022 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 019 | loss 1.08902 | val Macro-F1 0.37586
+2026-10-25 01:22:52,158 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 020 | loss 1.08243 | val Macro-F1 0.38765
+2026-10-25 01:22:56,017 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 021 | loss 1.07230 | val Macro-F1 0.37606
+2026-10-25 01:22:59,918 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 022 | loss 1.06897 | val Macro-F1 0.37152
+2026-10-25 01:23:04,075 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 023 | loss 1.05148 | val Macro-F1 0.37623
+2026-10-25 01:23:08,101 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 024 | loss 1.04337 | val Macro-F1 0.37134
+2026-10-25 01:23:12,231 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 025 | loss 1.03672 | val Macro-F1 0.37021
+2026-10-25 01:23:16,412 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 026 | loss 1.02778 | val Macro-F1 0.37546
+2026-10-25 01:23:20,459 | INFO | Classifier hardening_MSU_ORNL_Power_123 epoch 027 | loss 1.01988 | val Macro-F1 0.37152
+2026-10-25 01:23:20,460 | INFO | Early stopping classifier at epoch 27
+[checkpoint] saved fusion MSU_ORNL_Power_hardening_fusion_seed123.pt
+[dqn] MSU_ORNL_Power_s123_lam0.25 5000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.25 10000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.25 15000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.25 20000/20000
+2026-10-25 01:40:52,149 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 01:42:00,654 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 01:43:08,213 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=123 lambda=0.25
+[dqn] MSU_ORNL_Power_s123_lam0.5 5000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.5 10000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.5 15000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.5 20000/20000
+2026-10-25 02:00:21,506 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 02:01:30,820 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 02:02:41,590 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=123 lambda=0.5
+[dqn] MSU_ORNL_Power_s123_lam0.75 5000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.75 10000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.75 15000/20000
+[dqn] MSU_ORNL_Power_s123_lam0.75 20000/20000
+2026-10-25 02:19:43,592 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 02:20:52,041 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 02:21:59,874 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=123 lambda=0.75
+[dqn] MSU_ORNL_Power_dense_off_critical_on_123 5000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_123 10000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_123 15000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_123 20000/20000
+2026-10-25 02:36:56,296 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 02:37:41,372 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 02:38:26,304 | INFO | Evaluated final DQN 15000/15634
+[checkpoint ablation] MSU_ORNL_Power seed=123 dense_off_critical_on
+[dqn] MSU_ORNL_Power_dense_on_critical_off_123 5000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_123 10000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_123 15000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_123 20000/20000
+2026-10-25 02:55:24,765 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 02:56:31,281 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 02:57:37,598 | INFO | Evaluated final DQN 15000/15634
+[checkpoint ablation] MSU_ORNL_Power seed=123 dense_on_critical_off
+2026-10-25 02:57:46,669 | INFO | Training fusion classifier [hardening_MSU_ORNL_Power_456] | epochs=35 | classes=5 | modalities=['pmu_r1', 'pmu_r2', 'pmu_r3', 'pmu_r4', 'cyber_logs']
+2026-10-25 02:57:50,755 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 001 | loss 1.51019 | val Macro-F1 0.27977
+2026-10-25 02:57:54,835 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 002 | loss 1.38359 | val Macro-F1 0.29954
+2026-10-25 02:57:58,779 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 003 | loss 1.34999 | val Macro-F1 0.31158
+2026-10-25 02:58:02,886 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 004 | loss 1.32230 | val Macro-F1 0.30793
+2026-10-25 02:58:06,978 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 005 | loss 1.29191 | val Macro-F1 0.33303
+2026-10-25 02:58:11,066 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 006 | loss 1.26960 | val Macro-F1 0.33041
+2026-10-25 02:58:14,979 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 007 | loss 1.24199 | val Macro-F1 0.33894
+2026-10-25 02:58:19,063 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 008 | loss 1.22279 | val Macro-F1 0.33738
+2026-10-25 02:58:23,025 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 009 | loss 1.20211 | val Macro-F1 0.34360
+2026-10-25 02:58:27,055 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 010 | loss 1.18707 | val Macro-F1 0.34652
+2026-10-25 02:58:31,073 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 011 | loss 1.17808 | val Macro-F1 0.35053
+2026-10-25 02:58:35,146 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 012 | loss 1.15894 | val Macro-F1 0.34722
+2026-10-25 02:58:39,118 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 013 | loss 1.14865 | val Macro-F1 0.35192
+2026-10-25 02:58:43,111 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 014 | loss 1.13322 | val Macro-F1 0.35620
+2026-10-25 02:58:47,130 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 015 | loss 1.12861 | val Macro-F1 0.36397
+2026-10-25 02:58:51,252 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 016 | loss 1.12082 | val Macro-F1 0.36932
+2026-10-25 02:58:55,421 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 017 | loss 1.10663 | val Macro-F1 0.35618
+2026-10-25 02:58:59,368 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 018 | loss 1.09613 | val Macro-F1 0.37112
+2026-10-25 02:59:03,414 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 019 | loss 1.08424 | val Macro-F1 0.35774
+2026-10-25 02:59:07,326 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 020 | loss 1.07958 | val Macro-F1 0.36375
+2026-10-25 02:59:11,489 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 021 | loss 1.06837 | val Macro-F1 0.36564
+2026-10-25 02:59:15,490 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 022 | loss 1.05552 | val Macro-F1 0.36777
+2026-10-25 02:59:19,406 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 023 | loss 1.05174 | val Macro-F1 0.36575
+2026-10-25 02:59:23,484 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 024 | loss 1.04238 | val Macro-F1 0.37337
+2026-10-25 02:59:27,504 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 025 | loss 1.03202 | val Macro-F1 0.37259
+2026-10-25 02:59:31,563 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 026 | loss 1.02890 | val Macro-F1 0.36733
+2026-10-25 02:59:35,574 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 027 | loss 1.02272 | val Macro-F1 0.38035
+2026-10-25 02:59:39,720 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 028 | loss 1.01391 | val Macro-F1 0.36634
+2026-10-25 02:59:43,876 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 029 | loss 1.00432 | val Macro-F1 0.37216
+2026-10-25 02:59:47,895 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 030 | loss 0.99345 | val Macro-F1 0.38157
+2026-10-25 02:59:52,028 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 031 | loss 0.99208 | val Macro-F1 0.37514
+2026-10-25 02:59:56,059 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 032 | loss 0.98326 | val Macro-F1 0.37294
+2026-10-25 03:00:00,104 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 033 | loss 0.97554 | val Macro-F1 0.38023
+2026-10-25 03:00:04,185 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 034 | loss 0.96915 | val Macro-F1 0.38216
+2026-10-25 03:00:08,253 | INFO | Classifier hardening_MSU_ORNL_Power_456 epoch 035 | loss 0.96090 | val Macro-F1 0.38142
+[checkpoint] saved fusion MSU_ORNL_Power_hardening_fusion_seed456.pt
+[dqn] MSU_ORNL_Power_s456_lam0.25 5000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.25 10000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.25 15000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.25 20000/20000
+2026-10-25 03:17:53,792 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 03:19:04,700 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 03:20:14,648 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=456 lambda=0.25
+[dqn] MSU_ORNL_Power_s456_lam0.5 5000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.5 10000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.5 15000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.5 20000/20000
+2026-10-25 03:37:38,792 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 03:38:43,071 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 03:39:48,394 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=456 lambda=0.5
+[dqn] MSU_ORNL_Power_s456_lam0.75 5000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.75 10000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.75 15000/20000
+[dqn] MSU_ORNL_Power_s456_lam0.75 20000/20000
+2026-10-25 03:56:37,024 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 03:57:42,483 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 03:58:47,993 | INFO | Evaluated final DQN 15000/15634
+[checkpoint DQN] MSU_ORNL_Power seed=456 lambda=0.75
+[dqn] MSU_ORNL_Power_dense_off_critical_on_456 5000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_456 10000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_456 15000/20000
+[dqn] MSU_ORNL_Power_dense_off_critical_on_456 20000/20000
+2026-10-25 04:14:04,913 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 04:14:50,562 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 04:15:36,779 | INFO | Evaluated final DQN 15000/15634
+[checkpoint ablation] MSU_ORNL_Power seed=456 dense_off_critical_on
+[dqn] MSU_ORNL_Power_dense_on_critical_off_456 5000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_456 10000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_456 15000/20000
+[dqn] MSU_ORNL_Power_dense_on_critical_off_456 20000/20000
+2026-10-25 04:33:13,542 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 04:34:24,290 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 04:35:35,307 | INFO | Evaluated final DQN 15000/15634
+[checkpoint ablation] MSU_ORNL_Power seed=456 dense_on_critical_off
+2026-10-25 04:36:14,350 | INFO | Split MSU_ORNL_Power: train=47471 val=15272 test=15634
+2026-10-25 04:36:14,353 | INFO | Train classes: normal=2809, physical_fault_or_maintenance=11124, data_injection=5820, remote_trip=5137, relay_setting=22581
+2026-10-25 04:36:14,355 | INFO | Val   classes: normal=720, physical_fault_or_maintenance=3627, data_injection=1789, remote_trip=1812, relay_setting=7324
+2026-10-25 04:36:14,357 | INFO | Test  classes: normal=876, physical_fault_or_maintenance=3558, data_injection=1973, remote_trip=1788, relay_setting=7439
+2026-10-25 04:36:14,358 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-25 04:36:14,462 | INFO | Scaled pmu_r1               train mean=0.0001 std=0.9190
+2026-10-25 04:36:14,512 | INFO | Scaled pmu_r2               train mean=-0.0013 std=0.9502
+2026-10-25 04:36:14,562 | INFO | Scaled pmu_r3               train mean=-0.0013 std=0.9307
+2026-10-25 04:36:14,615 | INFO | Scaled pmu_r4               train mean=-0.0005 std=0.9206
+2026-10-25 04:36:14,639 | INFO | Scaled cyber_logs           train mean=-0.0041 std=0.5815
+2026-10-25 04:36:14,645 | INFO | Training fusion classifier [splitrobust_MSU_ORNL_Power_42] | epochs=35 | classes=5 | modalities=['pmu_r1', 'pmu_r2', 'pmu_r3', 'pmu_r4', 'cyber_logs']
+2026-10-25 04:36:18,581 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 001 | loss 1.50879 | val Macro-F1 0.29858
+2026-10-25 04:36:22,490 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 002 | loss 1.38778 | val Macro-F1 0.30092
+2026-10-25 04:36:26,566 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 003 | loss 1.34840 | val Macro-F1 0.30271
+2026-10-25 04:36:30,667 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 004 | loss 1.32466 | val Macro-F1 0.32235
+2026-10-25 04:36:34,762 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 005 | loss 1.29402 | val Macro-F1 0.32729
+2026-10-25 04:36:38,966 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 006 | loss 1.26970 | val Macro-F1 0.32350
+2026-10-25 04:36:43,055 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 007 | loss 1.24399 | val Macro-F1 0.33281
+2026-10-25 04:36:47,274 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 008 | loss 1.22681 | val Macro-F1 0.32671
+2026-10-25 04:36:51,475 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 009 | loss 1.20655 | val Macro-F1 0.33426
+2026-10-25 04:36:55,566 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 010 | loss 1.19755 | val Macro-F1 0.33045
+2026-10-25 04:36:59,440 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 011 | loss 1.18006 | val Macro-F1 0.35170
+2026-10-25 04:37:03,584 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 012 | loss 1.16245 | val Macro-F1 0.33586
+2026-10-25 04:37:07,634 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 013 | loss 1.15528 | val Macro-F1 0.34696
+2026-10-25 04:37:11,825 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 014 | loss 1.14639 | val Macro-F1 0.34363
+2026-10-25 04:37:15,872 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 015 | loss 1.13128 | val Macro-F1 0.36626
+2026-10-25 04:37:19,957 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 016 | loss 1.12028 | val Macro-F1 0.35733
+2026-10-25 04:37:24,082 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 017 | loss 1.10099 | val Macro-F1 0.36347
+2026-10-25 04:37:28,165 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 018 | loss 1.09757 | val Macro-F1 0.36658
+2026-10-25 04:37:32,364 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 019 | loss 1.09366 | val Macro-F1 0.36785
+2026-10-25 04:37:36,631 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 020 | loss 1.07978 | val Macro-F1 0.37517
+2026-10-25 04:37:40,776 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 021 | loss 1.06898 | val Macro-F1 0.36514
+2026-10-25 04:37:44,954 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 022 | loss 1.05361 | val Macro-F1 0.37194
+2026-10-25 04:37:49,102 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 023 | loss 1.05276 | val Macro-F1 0.37029
+2026-10-25 04:37:53,216 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 024 | loss 1.03689 | val Macro-F1 0.37497
+2026-10-25 04:37:57,247 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 025 | loss 1.03273 | val Macro-F1 0.36874
+2026-10-25 04:38:01,216 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 026 | loss 1.02494 | val Macro-F1 0.36644
+2026-10-25 04:38:05,235 | INFO | Classifier splitrobust_MSU_ORNL_Power_42 epoch 027 | loss 1.01848 | val Macro-F1 0.36349
+2026-10-25 04:38:05,237 | INFO | Early stopping classifier at epoch 27
+[dqn] split42 5000/20000
+[dqn] split42 10000/20000
+[dqn] split42 15000/20000
+[dqn] split42 20000/20000
+2026-10-25 04:55:34,629 | INFO | Evaluated final DQN 5000/15272
+2026-10-25 04:56:44,844 | INFO | Evaluated final DQN 10000/15272
+2026-10-25 04:57:55,695 | INFO | Evaluated final DQN 15000/15272
+2026-10-25 04:59:09,228 | INFO | Evaluated final DQN 5000/15634
+2026-10-25 05:00:18,939 | INFO | Evaluated final DQN 10000/15634
+2026-10-25 05:01:27,650 | INFO | Evaluated final DQN 15000/15634
+[checkpoint split] MSU_ORNL_Power split=42
+2026-10-25 05:02:31,379 | INFO | Split MSU_ORNL_Power: train=47305 val=15197 test=15875
+2026-10-25 05:02:31,383 | INFO | Train classes: normal=2677, physical_fault_or_maintenance=10834, data_injection=5743, remote_trip=5332, relay_setting=22719
+2026-10-25 05:02:31,386 | INFO | Val   classes: normal=782, physical_fault_or_maintenance=3720, data_injection=1887, remote_trip=1716, relay_setting=7092
+2026-10-25 05:02:31,388 | INFO | Test  classes: normal=946, physical_fault_or_maintenance=3755, data_injection=1952, remote_trip=1689, relay_setting=7533
+2026-10-25 05:02:31,390 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-25 05:02:31,513 | INFO | Scaled pmu_r1               train mean=0.0004 std=0.9122
+2026-10-25 05:02:31,572 | INFO | Scaled pmu_r2               train mean=-0.0008 std=0.9468
+2026-10-25 05:02:31,626 | INFO | Scaled pmu_r3               train mean=-0.0008 std=0.9271
+2026-10-25 05:02:31,679 | INFO | Scaled pmu_r4               train mean=-0.0001 std=0.9111
+2026-10-25 05:02:31,704 | INFO | Scaled cyber_logs           train mean=-0.0042 std=0.5817
+2026-10-25 05:02:31,712 | INFO | Training fusion classifier [splitrobust_MSU_ORNL_Power_123] | epochs=35 | classes=5 | modalities=['pmu_r1', 'pmu_r2', 'pmu_r3', 'pmu_r4', 'cyber_logs']
+2026-10-25 05:02:35,965 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 001 | loss 1.51338 | val Macro-F1 0.21532
+2026-10-25 05:02:40,208 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 002 | loss 1.39677 | val Macro-F1 0.31836
+2026-10-25 05:02:44,403 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 003 | loss 1.34666 | val Macro-F1 0.31706
+2026-10-25 05:02:48,511 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 004 | loss 1.31677 | val Macro-F1 0.31623
+2026-10-25 05:02:52,656 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 005 | loss 1.28593 | val Macro-F1 0.32389
+2026-10-25 05:02:56,951 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 006 | loss 1.26228 | val Macro-F1 0.32683
+2026-10-25 05:03:01,208 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 007 | loss 1.24267 | val Macro-F1 0.33028
+2026-10-25 05:03:05,454 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 008 | loss 1.22916 | val Macro-F1 0.33175
+2026-10-25 05:03:09,648 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 009 | loss 1.21483 | val Macro-F1 0.33427
+2026-10-25 05:03:13,910 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 010 | loss 1.20249 | val Macro-F1 0.34089
+2026-10-25 05:03:18,244 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 011 | loss 1.19357 | val Macro-F1 0.32748
+2026-10-25 05:03:22,626 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 012 | loss 1.17763 | val Macro-F1 0.34032
+2026-10-25 05:03:27,092 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 013 | loss 1.16332 | val Macro-F1 0.34041
+2026-10-25 05:03:31,280 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 014 | loss 1.15186 | val Macro-F1 0.33337
+2026-10-25 05:03:35,547 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 015 | loss 1.14288 | val Macro-F1 0.36201
+2026-10-25 05:03:39,920 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 016 | loss 1.13631 | val Macro-F1 0.35278
+2026-10-25 05:03:44,198 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 017 | loss 1.11788 | val Macro-F1 0.35829
+2026-10-25 05:03:48,405 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 018 | loss 1.10999 | val Macro-F1 0.35320
+2026-10-25 05:03:52,609 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 019 | loss 1.10032 | val Macro-F1 0.35840
+2026-10-25 05:03:56,760 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 020 | loss 1.08927 | val Macro-F1 0.36144
+2026-10-25 05:04:00,981 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 021 | loss 1.08424 | val Macro-F1 0.36764
+2026-10-25 05:04:05,229 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 022 | loss 1.07403 | val Macro-F1 0.35456
+2026-10-25 05:04:09,371 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 023 | loss 1.06766 | val Macro-F1 0.36260
+2026-10-25 05:04:13,398 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 024 | loss 1.05502 | val Macro-F1 0.37017
+2026-10-25 05:04:17,604 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 025 | loss 1.04507 | val Macro-F1 0.36380
+2026-10-25 05:04:21,870 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 026 | loss 1.04085 | val Macro-F1 0.37354
+2026-10-25 05:04:26,158 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 027 | loss 1.03331 | val Macro-F1 0.37332
+2026-10-25 05:04:30,291 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 028 | loss 1.01780 | val Macro-F1 0.38248
+2026-10-25 05:04:34,232 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 029 | loss 1.02264 | val Macro-F1 0.38531
+2026-10-25 05:04:38,464 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 030 | loss 1.00825 | val Macro-F1 0.37839
+2026-10-25 05:04:42,605 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 031 | loss 1.00428 | val Macro-F1 0.37083
+2026-10-25 05:04:46,637 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 032 | loss 0.99389 | val Macro-F1 0.38348
+2026-10-25 05:04:50,677 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 033 | loss 0.98800 | val Macro-F1 0.38688
+2026-10-25 05:04:54,850 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 034 | loss 0.98055 | val Macro-F1 0.37890
+2026-10-25 05:04:58,982 | INFO | Classifier splitrobust_MSU_ORNL_Power_123 epoch 035 | loss 0.97616 | val Macro-F1 0.38774
+[dqn] split123 5000/20000
+[dqn] split123 10000/20000
+[dqn] split123 15000/20000
+[dqn] split123 20000/20000
+2026-10-25 05:22:36,021 | INFO | Evaluated final DQN 5000/15197
+2026-10-25 05:23:41,423 | INFO | Evaluated final DQN 10000/15197
+2026-10-25 05:24:47,648 | INFO | Evaluated final DQN 15000/15197
+2026-10-25 05:25:56,714 | INFO | Evaluated final DQN 5000/15875
+2026-10-25 05:27:01,937 | INFO | Evaluated final DQN 10000/15875
+2026-10-25 05:28:07,294 | INFO | Evaluated final DQN 15000/15875
+[checkpoint split] MSU_ORNL_Power split=123
+2026-10-25 05:29:12,302 | INFO | Split MSU_ORNL_Power: train=47586 val=15462 test=15329
+2026-10-25 05:29:12,305 | INFO | Train classes: normal=2782, physical_fault_or_maintenance=11150, data_injection=5803, remote_trip=5334, relay_setting=22517
+2026-10-25 05:29:12,307 | INFO | Val   classes: normal=777, physical_fault_or_maintenance=3624, data_injection=1818, remote_trip=1785, relay_setting=7458
+2026-10-25 05:29:12,309 | INFO | Test  classes: normal=846, physical_fault_or_maintenance=3535, data_injection=1961, remote_trip=1618, relay_setting=7369
+2026-10-25 05:29:12,309 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-25 05:29:12,409 | INFO | Scaled pmu_r1               train mean=-0.0001 std=0.9215
+2026-10-25 05:29:12,457 | INFO | Scaled pmu_r2               train mean=-0.0015 std=0.9516
+2026-10-25 05:29:12,506 | INFO | Scaled pmu_r3               train mean=-0.0015 std=0.9330
+2026-10-25 05:29:12,554 | INFO | Scaled pmu_r4               train mean=0.0001 std=0.9194
+2026-10-25 05:29:12,579 | INFO | Scaled cyber_logs           train mean=-0.0042 std=0.5817
+2026-10-25 05:29:12,589 | INFO | Training fusion classifier [splitrobust_MSU_ORNL_Power_456] | epochs=35 | classes=5 | modalities=['pmu_r1', 'pmu_r2', 'pmu_r3', 'pmu_r4', 'cyber_logs']
+2026-10-25 05:29:16,584 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 001 | loss 1.52363 | val Macro-F1 0.25403
+2026-10-25 05:29:20,581 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 002 | loss 1.39465 | val Macro-F1 0.30388
+2026-10-25 05:29:24,581 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 003 | loss 1.34882 | val Macro-F1 0.31847
+2026-10-25 05:29:28,619 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 004 | loss 1.31453 | val Macro-F1 0.31332
+2026-10-25 05:29:32,809 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 005 | loss 1.29036 | val Macro-F1 0.31709
+2026-10-25 05:29:36,708 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 006 | loss 1.26718 | val Macro-F1 0.34476
+2026-10-25 05:29:40,627 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 007 | loss 1.24273 | val Macro-F1 0.33426
+2026-10-25 05:29:44,582 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 008 | loss 1.23426 | val Macro-F1 0.34359
+2026-10-25 05:29:48,562 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 009 | loss 1.21810 | val Macro-F1 0.36363
+2026-10-25 05:29:52,660 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 010 | loss 1.20266 | val Macro-F1 0.36287
+2026-10-25 05:29:56,659 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 011 | loss 1.18982 | val Macro-F1 0.35979
+2026-10-25 05:30:00,592 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 012 | loss 1.17960 | val Macro-F1 0.37133
+2026-10-25 05:30:04,590 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 013 | loss 1.16971 | val Macro-F1 0.36719
+2026-10-25 05:30:08,472 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 014 | loss 1.15649 | val Macro-F1 0.36542
+2026-10-25 05:30:12,460 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 015 | loss 1.14525 | val Macro-F1 0.38024
+2026-10-25 05:30:16,478 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 016 | loss 1.13678 | val Macro-F1 0.37550
+2026-10-25 05:30:20,455 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 017 | loss 1.12835 | val Macro-F1 0.37814
+2026-10-25 05:30:24,453 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 018 | loss 1.11337 | val Macro-F1 0.38922
+2026-10-25 05:30:28,312 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 019 | loss 1.10366 | val Macro-F1 0.38525
+2026-10-25 05:30:32,330 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 020 | loss 1.09919 | val Macro-F1 0.37892
+2026-10-25 05:30:36,332 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 021 | loss 1.08300 | val Macro-F1 0.38063
+2026-10-25 05:30:40,400 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 022 | loss 1.07060 | val Macro-F1 0.38327
+2026-10-25 05:30:44,500 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 023 | loss 1.06852 | val Macro-F1 0.39965
+2026-10-25 05:30:48,329 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 024 | loss 1.05966 | val Macro-F1 0.38503
+2026-10-25 05:30:52,179 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 025 | loss 1.05149 | val Macro-F1 0.39486
+2026-10-25 05:30:56,012 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 026 | loss 1.04597 | val Macro-F1 0.38642
+2026-10-25 05:30:59,945 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 027 | loss 1.03439 | val Macro-F1 0.38515
+2026-10-25 05:31:04,127 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 028 | loss 1.02561 | val Macro-F1 0.39255
+2026-10-25 05:31:08,015 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 029 | loss 1.02491 | val Macro-F1 0.40349
+2026-10-25 05:31:12,050 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 030 | loss 1.01871 | val Macro-F1 0.39368
+2026-10-25 05:31:15,989 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 031 | loss 1.00167 | val Macro-F1 0.39644
+2026-10-25 05:31:20,024 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 032 | loss 0.99696 | val Macro-F1 0.39614
+2026-10-25 05:31:24,236 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 033 | loss 0.99472 | val Macro-F1 0.39504
+2026-10-25 05:31:28,343 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 034 | loss 0.98616 | val Macro-F1 0.40088
+2026-10-25 05:31:32,434 | INFO | Classifier splitrobust_MSU_ORNL_Power_456 epoch 035 | loss 0.98676 | val Macro-F1 0.40300
+[dqn] split456 5000/20000
+[dqn] split456 10000/20000
+[dqn] split456 15000/20000
+[dqn] split456 20000/20000
+2026-10-25 05:48:14,298 | INFO | Evaluated final DQN 5000/15462
+2026-10-25 05:49:18,941 | INFO | Evaluated final DQN 10000/15462
+2026-10-25 05:50:24,821 | INFO | Evaluated final DQN 15000/15462
+2026-10-25 05:51:33,787 | INFO | Evaluated final DQN 5000/15329
+2026-10-25 05:52:38,698 | INFO | Evaluated final DQN 10000/15329
+2026-10-25 05:53:43,899 | INFO | Evaluated final DQN 15000/15329
+[checkpoint split] MSU_ORNL_Power split=456
+[saved] /kaggle/working/actigrid/reviewer_hardening/MSU_ORNL_Power_repeated_group_split_summary.csv
+[saved] /kaggle/working/actigrid/reviewer_hardening/hardening_dqn_selected_summary.csv
+
+REVIEW HARDENING COMPLETE
+Output: /kaggle/working/actigrid/reviewer_hardening
+ZIP: /kaggle/working/actigrid/reviewer_hardening.zip

@@ -1,0 +1,8 @@
+dataset,seed,mask_int,temperature
+TU_Delft_2026_CPPS,123,1,2.0
+TU_Delft_2026_CPPS,123,2,3.0
+TU_Delft_2026_CPPS,123,3,2.0
+TU_Delft_2026_CPPS,123,4,2.0
+TU_Delft_2026_CPPS,123,5,1.25
+TU_Delft_2026_CPPS,123,6,2.0
+TU_Delft_2026_CPPS,123,7,2.0

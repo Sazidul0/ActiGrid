@@ -1,0 +1,48 @@
+{
+  "equivalence_margin_macro_f1": 0.02,
+  "conference_split_seeds": [
+    42,
+    123,
+    456
+  ],
+  "full_split_seeds": [
+    42,
+    123,
+    456,
+    789,
+    2027
+  ],
+  "conference_dqn_seeds": [
+    42,
+    123,
+    456
+  ],
+  "full_dqn_seeds": [
+    42,
+    123,
+    456,
+    789,
+    2027
+  ],
+  "conference_lambda_grid": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "full_lambda_grid": [
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "conference_bootstrap_reps": 3000,
+  "full_bootstrap_reps": 10000,
+  "subset_rf_estimators": 300,
+  "subset_xgb_estimators": 400,
+  "subset_hgb_iter": 250,
+  "run_mlp_in_full": true,
+  "corruption_noise_std": 2.0
+}

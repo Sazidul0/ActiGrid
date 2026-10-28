@@ -1,0 +1,2 @@
+dataset,oracle_label_aware,macro_f1,mean_min_cost,median_min_cost,fraction_no_correct_subset
+TU_Delft_2026_CPPS,True,0.9145207150954494,0.42147922998986836,0.3333333333333333,0.08130699088145897

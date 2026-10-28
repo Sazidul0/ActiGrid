@@ -1,0 +1,10 @@
+dataset,split_seed,method,macro_f1,cost,detail
+TU_Delft_2026_CPPS,42,BestFixedSubset,0.8020542834476431,1.0,physical+resource+network
+TU_Delft_2026_CPPS,42,DQN,0.7862865757856436,0.729483304415068,lambda=0.5
+TU_Delft_2026_CPPS,42,OrderEntropy,0.8036156938597155,0.807497467071935,resource -> physical -> network
+TU_Delft_2026_CPPS,123,BestFixedSubset,0.8918468957533481,1.0,physical+resource+network
+TU_Delft_2026_CPPS,123,DQN,0.8088522454875345,0.6219478923352167,lambda=0.5
+TU_Delft_2026_CPPS,123,OrderEntropy,0.8225388552057896,0.6620027434842249,resource -> network -> physical
+TU_Delft_2026_CPPS,456,BestFixedSubset,0.8064403466959198,1.0,physical+resource+network
+TU_Delft_2026_CPPS,456,DQN,0.8184186458173922,0.7678180053388994,lambda=0.5
+TU_Delft_2026_CPPS,456,OrderEntropy,0.8024001613256968,0.725328947368421,resource -> physical -> network

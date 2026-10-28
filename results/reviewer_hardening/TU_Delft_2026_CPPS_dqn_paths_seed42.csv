@@ -1,0 +1,1317 @@
+dataset,seed,sample_idx,class_name,correct,first_action,second_action_or_stop,third_action_or_stop,path,steps,cost
+TU_Delft_2026_CPPS,42,0,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,4,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,6,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,7,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,8,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,9,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,10,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,11,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,12,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,13,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,14,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,15,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,16,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,17,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,18,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,19,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,20,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,21,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,22,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,23,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,24,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,25,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,26,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,27,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,28,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,29,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,30,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,31,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,32,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,33,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,34,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,35,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,36,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,37,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,38,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,39,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,40,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,41,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,42,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,43,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,44,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,45,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,46,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,47,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,48,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,49,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,50,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,51,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,52,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,53,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,54,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,55,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,56,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,57,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,58,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,59,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,60,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,244,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,245,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,246,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,247,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,248,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,249,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,250,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,251,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,252,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,253,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,254,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,255,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,256,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,257,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,258,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,259,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,260,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,261,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,262,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,263,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,264,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,265,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,266,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,267,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,268,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,269,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,270,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,271,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,272,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,273,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,274,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,275,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,276,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,277,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,278,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,279,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,280,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,281,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,282,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,283,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,284,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,285,goose_injection,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,286,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,287,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,288,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,289,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,290,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,291,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,292,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,293,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,294,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,295,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,296,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,297,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,298,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,299,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,300,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,301,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,302,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,303,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,304,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,488,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,489,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,490,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,491,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,492,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,493,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,494,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,495,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,496,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,497,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,498,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,499,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,500,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,501,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,502,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,503,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,504,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,505,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,506,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,507,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,508,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,509,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,510,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,511,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,512,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,513,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,514,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,515,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,516,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,517,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,518,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,519,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,520,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,521,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,522,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,523,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,524,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,525,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,526,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,527,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,528,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,529,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,530,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,531,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,532,goose_injection,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,533,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,534,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,535,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,536,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,537,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,538,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,539,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,540,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,541,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,542,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,543,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,544,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,545,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,546,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,547,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,548,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,852,normal,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,853,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,854,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,855,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,856,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,857,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,858,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,859,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,860,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,861,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,862,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,863,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,864,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,865,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,866,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,867,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,868,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,869,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,870,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,871,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,872,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,873,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,874,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,875,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,876,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,877,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,878,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,879,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,880,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,881,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,882,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,883,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,884,goose_injection,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,885,goose_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,886,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,887,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,888,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,889,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,890,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,891,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,892,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,893,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,894,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,895,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,896,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,897,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,898,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,899,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,900,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,901,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,902,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,903,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,904,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,905,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,906,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,907,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,908,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,909,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,910,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,911,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,912,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,913,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,914,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,915,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,916,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,917,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,918,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,919,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,920,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,921,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,922,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,923,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,924,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,925,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,926,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,927,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,928,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,929,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,930,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,931,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,932,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,933,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,934,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,935,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,936,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,937,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,938,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,939,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,940,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,941,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,942,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,943,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,944,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,945,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,946,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,947,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,948,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,949,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,950,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,951,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,952,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,953,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,954,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,955,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,956,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,957,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,958,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,959,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,960,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,961,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,962,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,963,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,964,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,965,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,966,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,967,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,968,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,969,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,970,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,971,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,972,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,973,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,974,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,975,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,976,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,977,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,978,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,979,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,980,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,981,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,982,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,983,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,984,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,985,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,986,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,987,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,988,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,989,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,990,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,991,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,992,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,993,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,994,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,995,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,996,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,997,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,998,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,999,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1000,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1001,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1002,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1003,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1004,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1005,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1006,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1007,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1008,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1009,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1010,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1011,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1012,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1013,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1014,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1015,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1016,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1017,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1018,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1019,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1020,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1021,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1022,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1023,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1024,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1025,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1026,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1027,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1028,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1029,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1030,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1031,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1032,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1033,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1034,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1035,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1036,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1037,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1038,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1039,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1040,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1041,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1042,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1043,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1044,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1045,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1046,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1047,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1048,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1049,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1050,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1051,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1052,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1053,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1054,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1055,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1056,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1057,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1058,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1059,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1060,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1061,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1062,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1063,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1064,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1065,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1066,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1067,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1068,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1069,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1070,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1071,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1072,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1073,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1074,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1075,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1076,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1077,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1078,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1079,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1080,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1081,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1082,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1083,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1084,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1085,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1086,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1087,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1088,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1089,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1090,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1091,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1092,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1093,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1581,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1582,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1583,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1584,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1585,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1586,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1587,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1588,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1589,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1590,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1591,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1592,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1593,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1594,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1595,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1596,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1597,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1598,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1599,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1600,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1601,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1602,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1603,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1604,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1605,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1606,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1607,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1608,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1609,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1610,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1611,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1612,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1613,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1614,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1615,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1616,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1617,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1618,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1619,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1620,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1621,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1622,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1623,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1624,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1625,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1626,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1627,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1628,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1629,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1630,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1631,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1632,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1633,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1634,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1635,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1636,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1637,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1638,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1639,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1640,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1641,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1947,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1948,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1949,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1950,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1951,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1952,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1953,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1954,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1955,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1956,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1957,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1958,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1959,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1960,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1961,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1962,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1963,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1964,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1965,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1966,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1967,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1968,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1969,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1970,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1971,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1972,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1973,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1974,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1975,physical_fault,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1976,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1977,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1978,goose_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1979,goose_injection,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1980,goose_injection,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1981,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1982,goose_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1983,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1984,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1985,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1986,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1987,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1988,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1989,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1990,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1991,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1992,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,1993,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1994,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1995,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1996,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,1997,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1998,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,1999,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2000,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2001,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2002,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2003,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2004,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2005,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2006,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2007,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2800,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2801,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2802,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2803,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2804,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2805,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2806,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2807,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2808,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2809,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2810,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2811,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2812,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2813,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2814,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2815,physical_fault,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2816,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2817,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2818,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2819,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2820,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2821,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2822,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2823,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2824,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2825,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2826,physical_fault,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2827,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2828,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2829,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2830,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2831,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2832,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2833,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2834,physical_fault,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2835,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2836,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2837,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2838,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2839,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2840,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2841,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2842,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2843,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2844,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2845,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2846,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2847,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2848,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2849,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2850,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2851,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2852,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2853,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2854,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2855,physical_fault,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2856,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2857,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2858,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2859,physical_fault,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2860,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2922,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2923,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2924,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2925,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2926,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2927,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2928,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2929,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2930,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2931,reconnaissance,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2932,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2933,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2934,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2935,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2936,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2937,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2938,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2939,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2940,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2941,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2942,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2943,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2944,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2945,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2946,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2947,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2948,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2949,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2950,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2951,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2952,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2953,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2954,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2955,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2956,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2957,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2958,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2959,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2960,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2961,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2962,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2963,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2964,reconnaissance,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2965,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2966,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2967,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2968,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2969,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2970,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2971,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2972,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2973,reconnaissance,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2974,reconnaissance,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2975,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2976,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2977,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2978,reconnaissance,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2979,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2980,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2981,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2982,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2983,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2984,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2985,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2986,reconnaissance,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2987,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2988,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2989,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2990,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2991,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2992,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2993,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,2994,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,2995,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2996,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2997,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2998,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,2999,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3000,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3001,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3002,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3003,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3004,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3005,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3006,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3007,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3008,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3009,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3010,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3011,reconnaissance,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3012,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3013,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3014,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3015,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3016,reconnaissance,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3017,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3018,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3019,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3020,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3021,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3022,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3023,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3024,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3025,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3026,reconnaissance,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3027,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3028,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3029,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3030,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3031,reconnaissance,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3032,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3033,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3034,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3035,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3036,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3037,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3038,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3039,reconnaissance,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3040,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3041,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3042,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3043,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3044,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3045,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3046,normal,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3047,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3048,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3049,reconnaissance,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3050,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3051,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3052,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3053,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3054,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3055,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3056,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3057,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3058,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3059,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3060,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3061,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3062,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3063,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3064,reconnaissance,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3065,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3066,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3067,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3068,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3069,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3070,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3071,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3072,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3073,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3074,reconnaissance,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3075,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3076,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3077,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3078,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3079,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3080,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3081,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3082,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3083,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3084,reconnaissance,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3085,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3086,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3087,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3088,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3089,reconnaissance,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3090,reconnaissance,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3091,reconnaissance,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3092,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3093,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3094,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3095,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3096,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3097,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3098,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3099,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3100,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3101,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3102,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3103,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3104,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3105,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3106,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3107,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3108,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3109,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3110,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3111,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3112,normal,False,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3113,normal,False,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3114,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3115,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3116,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3117,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3118,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3119,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3120,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3121,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3122,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,3909,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3910,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3911,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3912,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3913,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3914,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3915,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3916,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3917,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3918,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3919,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3920,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3921,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3922,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3923,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3924,resource_exhaustion,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3925,resource_exhaustion,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,3926,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3927,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3928,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3929,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3930,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3931,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3932,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3933,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3934,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3935,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3936,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3937,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3938,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3939,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3940,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3941,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3942,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3943,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3944,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3945,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3946,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3947,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3948,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3949,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3950,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3951,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3952,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3953,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3954,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3955,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3956,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3957,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3958,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3959,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3960,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3961,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3962,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3963,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3964,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3965,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3966,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3967,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3968,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,3969,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4458,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4459,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4460,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4461,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4462,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4463,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4464,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4465,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4466,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4467,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4468,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4469,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4470,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4471,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4472,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4473,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4474,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4475,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4476,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4477,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4478,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4479,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4480,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4481,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4482,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4483,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4484,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4485,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4486,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4487,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4488,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4489,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4490,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4491,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4492,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4493,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4494,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4495,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4496,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4497,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4498,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4499,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4500,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4501,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4502,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4503,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4504,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4505,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4506,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4507,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4508,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4509,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4510,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4511,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4512,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4513,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4514,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4515,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4516,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4517,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4518,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4580,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4581,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4582,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4583,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4584,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4585,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4586,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4587,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4588,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4589,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4590,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4591,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4592,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4593,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4594,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4595,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4596,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4597,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4598,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4599,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4600,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4601,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4602,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4603,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4604,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4605,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4606,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4607,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4608,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4609,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4610,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4611,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4612,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4613,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4614,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4615,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4616,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4617,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4618,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4619,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4620,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4621,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4622,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4623,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4624,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4625,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4626,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4627,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4628,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4629,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4630,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4631,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4632,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4633,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4634,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4635,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4636,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4637,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4638,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4639,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4640,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4702,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4703,resource_exhaustion,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,4704,resource_exhaustion,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,4705,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4706,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4707,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4708,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4709,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4710,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4711,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4712,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4713,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4714,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4715,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4716,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4717,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4718,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4719,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4720,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4721,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4722,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4723,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4724,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4725,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4726,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4727,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4728,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4729,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4730,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4731,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4732,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4733,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4734,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4735,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4736,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4737,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4738,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4739,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4740,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4741,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4742,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4743,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4744,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4745,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4746,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4747,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4748,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4749,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4750,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4751,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4752,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4753,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4754,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4755,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4756,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4757,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4758,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4759,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4760,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4761,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4762,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4885,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4886,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4887,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4888,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4889,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4890,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4891,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4892,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4893,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4894,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4895,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4896,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4897,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4898,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4899,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4900,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4901,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4902,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4903,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4904,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4905,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4906,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4907,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4908,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4909,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4910,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4911,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4912,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4913,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4914,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4915,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4916,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4917,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4918,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4919,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4920,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4921,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4922,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4923,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4924,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4925,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4926,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4927,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4928,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4929,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4930,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4931,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4932,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4933,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4934,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4935,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4936,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4937,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4938,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4939,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4940,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4941,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4942,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4943,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4944,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,4945,resource_exhaustion,True,resource,STOP,STOP,resource -> STOP,1,0.3333333432674408
+TU_Delft_2026_CPPS,42,5535,normal,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5536,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5537,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5538,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5539,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5540,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5541,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5542,sv_injection,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5543,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5544,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5545,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5546,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5547,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5548,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5549,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5550,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5551,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5552,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5553,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5554,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5555,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5556,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5557,sv_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5558,sv_injection,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5559,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5560,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5561,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5562,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5563,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5564,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5565,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5566,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5567,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5568,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5569,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5570,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5571,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5572,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5573,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5574,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5575,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5576,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5577,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5578,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5579,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5580,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5581,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5582,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5583,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5584,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5585,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5586,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5587,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5588,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5589,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5590,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5591,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5592,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5593,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5594,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5595,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5596,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5597,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5598,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5599,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5600,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5601,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5602,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5603,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5604,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5605,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5606,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5607,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5608,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5609,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5610,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5611,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5612,normal,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5613,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5614,normal,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5615,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5616,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5617,normal,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5618,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5619,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5620,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5621,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5622,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5623,normal,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5624,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5625,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5626,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5627,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5628,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5629,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5630,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5631,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5632,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5633,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5634,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5635,normal,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5737,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5738,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5739,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5740,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5741,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5742,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5743,sv_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5744,sv_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5745,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5746,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5747,sv_injection,True,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5748,sv_injection,True,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5749,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5750,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5751,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5752,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5753,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5754,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5755,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5756,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5757,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5758,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5759,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5760,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5761,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5762,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5763,sv_injection,True,resource,physical,network,resource -> physical -> network -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5764,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5765,sv_injection,True,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5766,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5767,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5768,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5769,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5770,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5771,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5772,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5773,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5774,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5775,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5776,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5777,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5778,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5779,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5780,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5781,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5782,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5783,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5784,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5785,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5786,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5787,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5788,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5789,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5790,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5791,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5792,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5793,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5794,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5795,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5796,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5797,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5798,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5799,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5800,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5801,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5802,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5803,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5804,physical_fault,False,resource,physical,STOP,resource -> physical -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5805,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5806,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5807,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5808,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5809,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5810,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5811,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5812,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5813,physical_fault,False,resource,network,physical,resource -> network -> physical -> STOP,3,1.0000000298023224
+TU_Delft_2026_CPPS,42,5814,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5815,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5816,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5817,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5818,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5819,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5820,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5821,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5822,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5823,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5824,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5825,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5826,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5827,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5828,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5829,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5830,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5831,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5832,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5833,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5834,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5835,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5836,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816
+TU_Delft_2026_CPPS,42,5837,physical_fault,False,resource,network,STOP,resource -> network -> STOP,2,0.6666666865348816

@@ -1,0 +1,14 @@
+{
+  "profile": "conference",
+  "datasets": [
+    "tu",
+    "msu"
+  ],
+  "torch": "2.11.0+cpu",
+  "device": "cpu",
+  "xgboost": true,
+  "scipy": true,
+  "msu_root": "/kaggle/input/datasets/sazidul001x94/power-system-attack-dataset",
+  "tu_root": "/kaggle/input/datasets/sazidul001x94/tu-delft-cyber-physical-power-system-cpps",
+  "work_dir": "/kaggle/working/actigrid"
+}

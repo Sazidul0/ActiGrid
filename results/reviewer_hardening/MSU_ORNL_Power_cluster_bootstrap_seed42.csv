@@ -1,0 +1,2 @@
+dataset,comparison,bootstrap_reps,mean_diff,ci95_low,ci95_high,prob_diff_gt_0
+MSU_ORNL_Power,DQN-minus-order_entropy,3000,-0.01503606723972746,-0.030010806040612514,-0.0038586378071635563,0.0

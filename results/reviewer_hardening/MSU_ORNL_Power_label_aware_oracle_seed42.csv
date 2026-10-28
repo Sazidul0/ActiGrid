@@ -1,0 +1,2 @@
+dataset,oracle_label_aware,macro_f1,mean_min_cost,median_min_cost,fraction_no_correct_subset
+MSU_ORNL_Power,True,0.7925372488575275,0.39165920429832424,0.2,0.19124984009210694
