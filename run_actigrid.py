@@ -2,22 +2,26 @@
 
 Stages
 ------
-controlled  final same-backbone experiment behind the paper's tables and
-            figures (actigrid.controlled); default
+controlled  same-backbone ten-seed experiment (actigrid.controlled; paper
+            Table I); default
 v7        lambda sweep plus the ten-seed v7 evaluation (actigrid.pipeline.main)
 reviewer  exhaustive fixed subsets and fixed-order entropy stopping on the
           per-seed backbones (actigrid.reviewer_clearance); reads the frozen
           v7 results from --prior-results (default: results/)
 hardening   subset-specific tree classifiers on three group splits, DQN lambda
             frontier on three backbones, calibration, bootstrap, branching and
-            corruption tests (actigrid.hardening; paper Tables II-III)
+            corruption tests (actigrid.hardening; paper Tables II and IV,
+            Figs. 3-4)
 greedy-voi  Greedy-VOI and calibrated entropy stopping on the frozen hardening
-            backbones, no retraining (actigrid.greedy_voi; paper Fig. 1); reads
+            backbones, no retraining (actigrid.greedy_voi; paper Fig. 2); reads
             the hardening outputs from --hardening-dir
+hgb-sequential  entropy stopping over per-subset HGB models versus static HGB
+            subsets on the three group splits (actigrid.hgb_sequential; paper
+            Table III, Fig. 2)
 
 Examples
 --------
-Final same-backbone experiment (paper Tables I-II):
+Same-backbone experiment (paper Table I):
 
     python run_actigrid.py --stage controlled --config configs/paper_v7.json \
         --msu-root data/msu_ornl --tudelft-root data/tudelft_cpps --work-dir outputs
@@ -43,6 +47,11 @@ Greedy-VOI on the released hardening checkpoints (results/reviewer_hardening/cac
         --msu-root data/msu_ornl --tudelft-root data/tudelft_cpps --work-dir outputs \
         --hardening-dir results/reviewer_hardening
 
+Sequential stopping over per-subset HGB (paper Table III):
+
+    python run_actigrid.py --stage hgb-sequential --config configs/paper_v7.json \
+        --msu-root data/msu_ornl --tudelft-root data/tudelft_cpps --work-dir outputs
+
 Quick smoke test of the controlled stage (few epochs/episodes, two seeds):
 
     python run_actigrid.py --config configs/paper_v7.json --quick \
@@ -57,21 +66,23 @@ from actigrid import pipeline
 
 def parse_args():
     p = argparse.ArgumentParser(description="Run an ActiGrid experiment stage.")
-    p.add_argument("--stage", choices=["controlled", "v7", "reviewer", "hardening", "greedy-voi"],
+    p.add_argument("--stage", choices=["controlled", "v7", "reviewer", "hardening", "greedy-voi",
+                            "hgb-sequential"],
                    default="controlled",
                    help="controlled: same-backbone experiment (Table I); hardening: stronger "
-                        "baselines and stress tests (Tables II-III); greedy-voi: non-RL sequential "
-                        "controls (Fig. 1); v7/reviewer: earlier stages (see README).")
+                        "baselines and stress tests (Tables II, IV); greedy-voi: non-RL sequential "
+                        "controls (Fig. 2); hgb-sequential: stopping over per-subset HGB "
+                        "(Table III); v7/reviewer: earlier stages (see README).")
     p.add_argument("--prior-results", default=None,
                    help="Folder with the frozen v7 selection/result files (default: results/).")
     p.add_argument("--profile", choices=["conference", "full"], default="conference",
                    help="hardening: conference = the paper's run; full = more splits, seeds and lambdas.")
     p.add_argument("--force", action="store_true",
-                   help="hardening: recompute outputs that already exist instead of resuming.")
+                   help="hardening, hgb-sequential: recompute outputs that already exist instead of resuming.")
     p.add_argument("--skip-dqn", action="store_true",
                    help="hardening: train no DQN (subset frontier and calibration only).")
     p.add_argument("--hardening-dir", default=None,
-                   help="greedy-voi: folder with the hardening outputs and cache/ "
+                   help="greedy-voi, hgb-sequential: folder with the hardening outputs and cache/ "
                         "(default: <work-dir>/reviewer_hardening, else results/reviewer_hardening).")
     p.add_argument("--summaries-only", action="store_true",
                    help="greedy-voi: rebuild the summary files from existing frontier CSVs.")
@@ -128,6 +139,9 @@ def main():
     elif args.stage == "greedy-voi":
         from actigrid import greedy_voi
         greedy_voi.greedy_voi_main(args.hardening_dir, fast=args.quick, summaries_only=args.summaries_only)
+    elif args.stage == "hgb-sequential":
+        from actigrid import hgb_sequential
+        hgb_sequential.hgb_sequential_main(args.hardening_dir, force=args.force, fast=args.quick)
     else:
         from actigrid import reviewer_clearance
         reviewer_clearance.reviewer_clearance_main(args.prior_results, fast=args.quick)

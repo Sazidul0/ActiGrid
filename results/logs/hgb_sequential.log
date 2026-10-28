@@ -1,0 +1,1018 @@
+# Kaggle run of the sequential-over-HGB stage, 2026-10-28 (Tesla T4 session; the HGB models train on CPU).
+# Run output only. The script that ran is actigrid/hgb_sequential.py in this repository
+# (its embedded base source equals actigrid/pipeline.py et al.).
+
+# ---- run output ----
+
+
+
+
+
+[ok] MSU input: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset
+[ok] TU input : /kaggle/input/datasets/sazidul001x94/tu-delft-cyber-physical-power-system-cpps
+[ok] rev-hard : /kaggle/input/datasets/rejaulislam12/rev-hard
+2026-10-28 04:45:58,393 | INFO | ================================================================================
+2026-10-28 04:45:58,394 | INFO | ActiGrid final controlled + reviewer-hardening pipeline starting
+2026-10-28 04:45:58,395 | INFO | Python: 3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]
+2026-10-28 04:45:58,395 | INFO | Platform: Linux-6.18.55+-x86_64-with-glibc2.39
+2026-10-28 04:45:58,396 | INFO | NumPy: 2.1.3 | pandas: 2.3.3 | torch: 2.11.0+cu128
+2026-10-28 04:45:58,397 | INFO | Device: cuda
+2026-10-28 04:45:58,446 | INFO | GPU: Tesla T4
+2026-10-28 04:45:58,447 | INFO | CUDA memory: 15.64 GB
+2026-10-28 04:45:58,447 | INFO | XGBoost available: True
+2026-10-28 04:45:58,448 | INFO | Scapy available: False
+2026-10-28 04:45:58,449 | INFO | Work dir: /kaggle/working/actigrid
+2026-10-28 04:45:58,450 | INFO | ================================================================================
+2026-10-28 04:45:58,451 | INFO | Dataset tree preview: /kaggle/input
+2026-10-28 04:46:02,526 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_cluster_bootstrap_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,528 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_dqn_branching_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,529 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_dqn_lambda_frontier.csv (0.00 MB)
+2026-10-28 04:46:02,530 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_dqn_paths_seed42.csv (2.03 MB)
+2026-10-28 04:46:02,532 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_dqn_reward_architecture_ablations.csv (0.00 MB)
+2026-10-28 04:46:02,533 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_label_aware_oracle_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,534 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_mask_calibration_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,535 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_per_class_acquisition_cost_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,537 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_posthoc_matched_static_mix_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,538 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_premature_stop_corruption_stress.csv (0.00 MB)
+2026-10-28 04:46:02,539 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_repeated_group_split_policy_audit.csv (0.00 MB)
+2026-10-28 04:46:02,540 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_repeated_group_split_policy_audit.partial.csv (0.00 MB)
+2026-10-28 04:46:02,541 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_repeated_group_split_summary.csv (0.00 MB)
+2026-10-28 04:46:02,543 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_strong_subset_classifier_frontier.csv (0.03 MB)
+2026-10-28 04:46:02,544 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_strong_subset_classifier_frontier.partial.csv (0.03 MB)
+2026-10-28 04:46:02,545 | INFO |   datasets/rejaulislam12/rev-hard/MSU_ORNL_Power_strong_subset_validation_selected.csv (0.00 MB)
+2026-10-28 04:46:02,546 | INFO |   datasets/rejaulislam12/rev-hard/PAPER_READY_SUMMARY.md (0.00 MB)
+2026-10-28 04:46:02,548 | INFO |   datasets/rejaulislam12/rev-hard/README.md (0.00 MB)
+2026-10-28 04:46:02,549 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_cluster_bootstrap_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,550 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_dqn_branching_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,552 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_dqn_lambda_frontier.csv (0.00 MB)
+2026-10-28 04:46:02,553 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_dqn_paths_seed42.csv (0.15 MB)
+2026-10-28 04:46:02,554 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_dqn_reward_architecture_ablations.csv (0.00 MB)
+2026-10-28 04:46:02,555 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_label_aware_oracle_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,557 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_mask_calibration_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,558 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_per_class_acquisition_cost_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,559 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_posthoc_matched_static_mix_seed42.csv (0.00 MB)
+2026-10-28 04:46:02,561 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_premature_stop_corruption_stress.csv (0.00 MB)
+2026-10-28 04:46:02,562 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_repeated_group_split_policy_audit.csv (0.00 MB)
+2026-10-28 04:46:02,563 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_repeated_group_split_policy_audit.partial.csv (0.00 MB)
+2026-10-28 04:46:02,564 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_repeated_group_split_summary.csv (0.00 MB)
+2026-10-28 04:46:02,566 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_strong_subset_classifier_frontier.csv (0.01 MB)
+2026-10-28 04:46:02,567 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_strong_subset_classifier_frontier.partial.csv (0.01 MB)
+2026-10-28 04:46:02,568 | INFO |   datasets/rejaulislam12/rev-hard/TU_Delft_2026_CPPS_strong_subset_validation_selected.csv (0.00 MB)
+2026-10-28 04:46:02,570 | INFO |   datasets/rejaulislam12/rev-hard/cache/MSU_ORNL_Power_hardening_fusion_seed123.pt (0.58 MB)
+2026-10-28 04:46:02,571 | INFO |   datasets/rejaulislam12/rev-hard/cache/MSU_ORNL_Power_hardening_fusion_seed42.pt (0.58 MB)
+2026-10-28 04:46:02,572 | INFO |   datasets/rejaulislam12/rev-hard/cache/MSU_ORNL_Power_hardening_fusion_seed456.pt (0.58 MB)
+2026-10-28 04:46:02,574 | INFO |   datasets/rejaulislam12/rev-hard/cache/MSU_ORNL_Power_splitrobust_fusion_split123.pt (0.58 MB)
+2026-10-28 04:46:02,575 | INFO |   datasets/rejaulislam12/rev-hard/cache/MSU_ORNL_Power_splitrobust_fusion_split42.pt (0.58 MB)
+2026-10-28 04:46:02,576 | INFO |   datasets/rejaulislam12/rev-hard/cache/MSU_ORNL_Power_splitrobust_fusion_split456.pt (0.58 MB)
+2026-10-28 04:46:02,577 | INFO |   datasets/rejaulislam12/rev-hard/cache/TU_Delft_2026_CPPS_hardening_fusion_seed123.pt (0.41 MB)
+2026-10-28 04:46:02,579 | INFO |   datasets/rejaulislam12/rev-hard/cache/TU_Delft_2026_CPPS_hardening_fusion_seed42.pt (0.41 MB)
+2026-10-28 04:46:02,580 | INFO |   datasets/rejaulislam12/rev-hard/cache/TU_Delft_2026_CPPS_hardening_fusion_seed456.pt (0.41 MB)
+2026-10-28 04:46:02,581 | INFO |   datasets/rejaulislam12/rev-hard/cache/TU_Delft_2026_CPPS_splitrobust_fusion_split123.pt (0.41 MB)
+2026-10-28 04:46:02,583 | INFO |   datasets/rejaulislam12/rev-hard/cache/TU_Delft_2026_CPPS_splitrobust_fusion_split42.pt (0.41 MB)
+2026-10-28 04:46:02,584 | INFO |   datasets/rejaulislam12/rev-hard/cache/TU_Delft_2026_CPPS_splitrobust_fusion_split456.pt (0.41 MB)
+2026-10-28 04:46:02,585 | INFO |   datasets/rejaulislam12/rev-hard/hardening_dqn_selected_summary.csv (0.00 MB)
+2026-10-28 04:46:02,586 | INFO |   datasets/rejaulislam12/rev-hard/hardening_protocol.json (0.00 MB)
+2026-10-28 04:46:02,588 | INFO |   datasets/rejaulislam12/rev-hard/run_manifest.json (0.00 MB)
+2026-10-28 04:46:02,589 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data1 Sampled Scenarios.csv.arff (4.78 MB)
+2026-10-28 04:46:02,590 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data10 Sampled Scenarios.csv.arff (5.32 MB)
+2026-10-28 04:46:02,591 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data11 Sampled Scenarios.csv.arff (5.06 MB)
+2026-10-28 04:46:02,593 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data12 Sampled Scenarios.csv.arff (5.00 MB)
+2026-10-28 04:46:02,594 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data13 Sampled Scenarios.csv.arff (5.07 MB)
+2026-10-28 04:46:02,595 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data14 Sampled Scenarios.csv.arff (4.92 MB)
+2026-10-28 04:46:02,596 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data15 Sampled Scenarios.csv.arff (5.06 MB)
+2026-10-28 04:46:02,598 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data2 Sampled Scenarios.csv.arff (4.88 MB)
+2026-10-28 04:46:02,599 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data3 Sampled Scenarios.csv.arff (5.20 MB)
+2026-10-28 04:46:02,600 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data4 Sampled Scenarios.csv.arff (5.00 MB)
+2026-10-28 04:46:02,601 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data5 Sampled Scenarios.csv.arff (4.97 MB)
+2026-10-28 04:46:02,602 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data6 Sampled Scenarios.csv.arff (4.78 MB)
+2026-10-28 04:46:02,604 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data7 Sampled Scenarios.csv.arff (5.04 MB)
+2026-10-28 04:46:02,607 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data8 Sampled Scenarios.csv.arff (5.09 MB)
+2026-10-28 04:46:02,608 | INFO |   datasets/sazidul001x94/power-system-attack-dataset/data9 Sampled Scenarios.csv.arff (5.13 MB)
+[ok] embedded ActiGrid dataset/split utilities initialized; training main was NOT called
+[info] This run trains ONLY subset-specific HGB models and policy-selection logic.
+[info] No DQN/fusion/RF/XGBoost training is executed.
+
+2026-10-28 04:46:03,005 | INFO | TU Delft manifest written to /kaggle/working/actigrid/tudelft_manifest.csv
+2026-10-28 04:46:03,026 | INFO | TU manifest counts:
+scenario             type        
+goose_injection      network         30
+                     packet_label    30
+                     physical        30
+                     resource        30
+normal               network          5
+                     physical         5
+                     resource         5
+physical_fault       network         10
+                     physical        10
+                     resource        10
+reconnaissance       network          8
+                     packet_label     8
+                     physical         4
+                     resource         4
+resource_exhaustion  network         28
+                     physical        28
+                     resource        28
+sv_injection         network          8
+                     packet_label     8
+                     physical         4
+                     resource         4
+2026-10-28 04:46:03,034 | INFO | TU run-key preview:
+      scenario     type                                   run_key                                                                                                                                                   relpath
+        normal  network                       baseline__baseline1                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline1/baseline1_anon.pcap
+        normal physical                       baseline__baseline1                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline1/baseline1_rscad.csv
+        normal resource                       baseline__baseline1                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline1/resource_monitor_baseline1.csv
+        normal  network                       baseline__baseline2                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline2/baseline2_anon.pcap
+        normal physical                       baseline__baseline2                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline2/baseline2_rscad.csv
+        normal resource                       baseline__baseline2                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline2/resource_monitor_baseline2.csv
+        normal  network                       baseline__baseline3                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline3/baseline3_anon.pcap
+        normal physical                       baseline__baseline3                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline3/baseline3_rscad.csv
+        normal resource                       baseline__baseline3                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline3/resource_monitor_baseline3.csv
+        normal  network                       baseline__baseline4                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline4/baseline4_anon.pcap
+        normal physical                       baseline__baseline4                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline4/baseline4_rscad.csv
+        normal resource                       baseline__baseline4                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline4/resource_monitor_baseline4.csv
+        normal  network                       baseline__baseline5                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline5/baseline5_anon.pcap
+        normal physical                       baseline__baseline5                                                   2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline5/baseline5_rscad.csv
+        normal resource                       baseline__baseline5                                        2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Baseline/baseline5/resource_monitor_baseline5.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure1            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure1/faults_no_reclosure1_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure1            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure1/faults_no_reclosure1_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure1 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure1/resource_monitor_faults_no_reclosure1.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure2            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure2/faults_no_reclosure2_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure2            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure2/faults_no_reclosure2_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure2 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure2/resource_monitor_faults_no_reclosure2.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure3            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure3/faults_no_reclosure3_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure3            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure3/faults_no_reclosure3_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure3 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure3/resource_monitor_faults_no_reclosure3.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure4            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure4/faults_no_reclosure4_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure4            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure4/faults_no_reclosure4_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure4 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure4/resource_monitor_faults_no_reclosure4.csv
+physical_fault  network faults_no_reclosure__faults_no_reclosure5            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure5/faults_no_reclosure5_anon.pcap
+physical_fault physical faults_no_reclosure__faults_no_reclosure5            2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure5/faults_no_reclosure5_rscad.csv
+physical_fault resource faults_no_reclosure__faults_no_reclosure5 2026_03_17_CPPS_Dataset_CyberSec_DigitalSubstation_TUD/Scenarios/Fault/faults_no_reclosure/faults_no_reclosure5/resource_monitor_faults_no_reclosure5.csv
+2026-10-28 04:46:03,036 | INFO | Scapy unavailable: using dependency-free native PCAP/PCAPNG readers.
+2026-10-28 04:46:03,042 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:03,488 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:03,819 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline1_anon.pcap | labels=ied_injection_baseline1_anon_labels.csv
+2026-10-28 04:46:07,470 | INFO | Packet GT ied_injection_baseline1_anon.pcap: malicious frames=54/291765 | observed malicious windows=8
+2026-10-28 04:46:07,476 | INFO | TU clock audit network->physical: ref=[1720188050,1720188110] other=[1720180850,1720180910] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:07,478 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=8/8
+2026-10-28 04:46:07,544 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline1: {'normal': 53, 'goose_injection': 8}
+2026-10-28 04:46:07,545 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:07,952 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:08,324 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline2_anon.pcap | labels=ied_injection_baseline2_anon_labels.csv
+2026-10-28 04:46:12,023 | INFO | Packet GT ied_injection_baseline2_anon.pcap: malicious frames=19/288614 | observed malicious windows=4
+2026-10-28 04:46:12,029 | INFO | TU clock audit network->physical: ref=[1720189772,1720189832] other=[1720182572,1720182632] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:12,030 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=4/4
+2026-10-28 04:46:12,089 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline2: {'normal': 57, 'goose_injection': 4}
+2026-10-28 04:46:12,090 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:12,529 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:12,962 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline3_anon.pcap | labels=ied_injection_baseline3_anon_labels.csv
+2026-10-28 04:46:16,691 | INFO | Packet GT ied_injection_baseline3_anon.pcap: malicious frames=20/289061 | observed malicious windows=3
+2026-10-28 04:46:16,695 | INFO | TU clock audit network->physical: ref=[1720189985,1720190045] other=[1720182785,1720182845] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:16,698 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-28 04:46:16,757 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline3: {'normal': 58, 'goose_injection': 3}
+2026-10-28 04:46:16,759 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:17,154 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:17,482 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline4_anon.pcap | labels=ied_injection_baseline4_anon_labels.csv
+2026-10-28 04:46:21,164 | INFO | Packet GT ied_injection_baseline4_anon.pcap: malicious frames=19/288720 | observed malicious windows=3
+2026-10-28 04:46:21,169 | INFO | TU clock audit network->physical: ref=[1720190214,1720190274] other=[1720183014,1720183074] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:21,172 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-28 04:46:21,234 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline4: {'normal': 58, 'goose_injection': 3}
+2026-10-28 04:46:21,236 | INFO | TU processing goose_injection__iedspoofingbaseline__ied_injection_baseline5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:21,617 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:21,957 | INFO | Native PCAPNG parser (signature-detected): ied_injection_baseline5_anon.pcap | labels=ied_injection_baseline5_anon_labels.csv
+2026-10-28 04:46:25,455 | INFO | Packet GT ied_injection_baseline5_anon.pcap: malicious frames=17/288795 | observed malicious windows=4
+2026-10-28 04:46:25,462 | INFO | TU clock audit network->physical: ref=[1720190415,1720190475] other=[1720183215,1720183275] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:25,464 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=4/4
+2026-10-28 04:46:25,526 | INFO | TU window labels goose_injection__iedspoofingbaseline__ied_injection_baseline5: {'normal': 57, 'goose_injection': 4}
+2026-10-28 04:46:25,529 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:25,930 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:26,257 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault1_anon.pcap | labels=ied_injection_fault1_anon_labels.csv
+2026-10-28 04:46:29,833 | INFO | Packet GT ied_injection_fault1_anon.pcap: malicious frames=52/289135 | observed malicious windows=9
+2026-10-28 04:46:29,838 | INFO | TU clock audit network->physical: ref=[1720189222,1720189282] other=[1720182022,1720182082] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:29,840 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-28 04:46:29,904 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault1: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-28 04:46:29,907 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:30,345 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:30,642 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault2_anon.pcap | labels=ied_injection_fault2_anon_labels.csv
+2026-10-28 04:46:34,472 | INFO | Packet GT ied_injection_fault2_anon.pcap: malicious frames=36/288742 | observed malicious windows=6
+2026-10-28 04:46:34,478 | INFO | TU clock audit network->physical: ref=[1720192107,1720192167] other=[1720184907,1720184967] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:34,480 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=6/6
+2026-10-28 04:46:34,538 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault2: {'physical_fault': 43, 'normal': 12, 'goose_injection': 6}
+2026-10-28 04:46:34,540 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:35,000 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:35,309 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault3_anon.pcap | labels=ied_injection_fault3_anon_labels.csv
+2026-10-28 04:46:38,888 | INFO | Packet GT ied_injection_fault3_anon.pcap: malicious frames=34/288888 | observed malicious windows=5
+2026-10-28 04:46:38,894 | INFO | TU clock audit network->physical: ref=[1720192369,1720192429] other=[1720185169,1720185229] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:38,896 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=5/5
+2026-10-28 04:46:38,957 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault3: {'physical_fault': 44, 'normal': 12, 'goose_injection': 5}
+2026-10-28 04:46:38,959 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:39,372 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:39,733 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault4_anon.pcap | labels=ied_injection_fault4_anon_labels.csv
+2026-10-28 04:46:43,324 | INFO | Packet GT ied_injection_fault4_anon.pcap: malicious frames=43/288953 | observed malicious windows=8
+2026-10-28 04:46:43,330 | INFO | TU clock audit network->physical: ref=[1720192632,1720192692] other=[1720185432,1720185492] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:43,333 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=8/8
+2026-10-28 04:46:43,394 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault4: {'physical_fault': 41, 'normal': 12, 'goose_injection': 8}
+2026-10-28 04:46:43,396 | INFO | TU processing goose_injection__iedspoofingduringfault__ied_injection_fault5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:43,803 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:44,171 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault5_anon.pcap | labels=ied_injection_fault5_anon_labels.csv
+2026-10-28 04:46:47,768 | INFO | Packet GT ied_injection_fault5_anon.pcap: malicious frames=61/288987 | observed malicious windows=9
+2026-10-28 04:46:47,774 | INFO | TU clock audit network->physical: ref=[1720192842,1720192902] other=[1720185642,1720185702] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:46:47,776 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-28 04:46:47,838 | INFO | TU window labels goose_injection__iedspoofingduringfault__ied_injection_fault5: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-28 04:46:47,840 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:48,409 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:48,760 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure1_anon.pcap | labels=ied_injection_fault_reclosure1_anon_labels.csv
+2026-10-28 04:46:55,020 | INFO | Packet GT ied_injection_fault_reclosure1_anon.pcap: malicious frames=17/534272 | observed malicious windows=3
+2026-10-28 04:46:55,028 | INFO | TU clock audit network->physical: ref=[1720620914,1720621034] other=[1720613714,1720613825] raw_overlap=0/112 best_shift=+7200s best_overlap=112/112 APPLY
+2026-10-28 04:46:55,031 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-28 04:46:55,101 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure1: {'physical_fault': 94, 'normal': 24, 'goose_injection': 3}
+2026-10-28 04:46:55,104 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:55,638 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:55,869 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure2_anon.pcap | labels=ied_injection_fault_reclosure2_anon_labels.csv
+2026-10-28 04:46:55,925 | WARNING | TU run scenario=goose_injection has no malicious frame-aligned windows after parsing
+2026-10-28 04:46:55,926 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure2: {'physical_fault': 97, 'normal': 24}
+2026-10-28 04:46:55,928 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:46:56,480 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:46:56,848 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure3_anon.pcap | labels=ied_injection_fault_reclosure3_anon_labels.csv
+2026-10-28 04:47:03,045 | INFO | Packet GT ied_injection_fault_reclosure3_anon.pcap: malicious frames=9/547197 | observed malicious windows=2
+2026-10-28 04:47:03,052 | INFO | TU clock audit network->physical: ref=[1720621227,1720621347] other=[1720614027,1720614141] raw_overlap=0/115 best_shift=+7200s best_overlap=115/115 APPLY
+2026-10-28 04:47:03,054 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=2/2
+2026-10-28 04:47:03,122 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure3: {'physical_fault': 95, 'normal': 24, 'goose_injection': 2}
+2026-10-28 04:47:03,123 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:03,679 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:04,030 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure4_anon.pcap | labels=ied_injection_fault_reclosure4_anon_labels.csv
+2026-10-28 04:47:10,081 | INFO | Packet GT ied_injection_fault_reclosure4_anon.pcap: malicious frames=12/525887 | observed malicious windows=3
+2026-10-28 04:47:10,088 | INFO | TU clock audit network->physical: ref=[1720621411,1720621531] other=[1720614211,1720614320] raw_overlap=0/110 best_shift=+7200s best_overlap=110/110 APPLY
+2026-10-28 04:47:10,090 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=3/3
+2026-10-28 04:47:10,157 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure4: {'physical_fault': 94, 'normal': 24, 'goose_injection': 3}
+2026-10-28 04:47:10,159 | INFO | TU processing goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:10,700 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:11,072 | INFO | Native PCAPNG parser (signature-detected): ied_injection_fault_reclosure5_anon.pcap | labels=ied_injection_fault_reclosure5_anon_labels.csv
+2026-10-28 04:47:17,372 | INFO | Packet GT ied_injection_fault_reclosure5_anon.pcap: malicious frames=10/546734 | observed malicious windows=2
+2026-10-28 04:47:17,378 | INFO | TU clock audit network->physical: ref=[1720621570,1720621690] other=[1720614370,1720614484] raw_overlap=0/115 best_shift=+7200s best_overlap=115/115 APPLY
+2026-10-28 04:47:17,380 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=2/2
+2026-10-28 04:47:17,445 | INFO | TU window labels goose_injection__iedspoofingduringfaultreclosure__ied_injection_fault_reclosure5: {'physical_fault': 95, 'normal': 24, 'goose_injection': 2}
+2026-10-28 04:47:17,447 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:17,836 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:18,188 | INFO | Native PCAPNG parser (signature-detected): vied_injection_baseline1_anon.pcap | labels=vied_injection_baseline1_anon_labels.csv
+2026-10-28 04:47:22,056 | INFO | Packet GT vied_injection_baseline1_anon.pcap: malicious frames=64/289022 | observed malicious windows=10
+2026-10-28 04:47:22,063 | INFO | TU clock audit network->physical: ref=[1720188335,1720188395] other=[1720181135,1720181195] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:22,065 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=10/10
+2026-10-28 04:47:22,125 | INFO | TU window labels goose_injection__viedspoofingbaseline__vied_injection_baseline1: {'normal': 51, 'goose_injection': 10}
+2026-10-28 04:47:22,127 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline2 | physical=1 resource=2 network_views=1 labels=1
+2026-10-28 04:47:22,127 | ERROR | TU goose_injection__viedspoofingbaseline__vied_injection_baseline2 ambiguous pairing: physical=1 resource=2; skipping run instead of silently selecting a file
+2026-10-28 04:47:22,130 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline3 | physical=1 resource=0 network_views=1 labels=1
+2026-10-28 04:47:22,686 | INFO | Native PCAPNG parser (signature-detected): vied_injection_baseline3_anon.pcap | labels=vied_injection_baseline3_anon_labels.csv
+2026-10-28 04:47:26,227 | INFO | Packet GT vied_injection_baseline3_anon.pcap: malicious frames=21/288815 | observed malicious windows=4
+2026-10-28 04:47:26,232 | INFO | TU clock audit network->physical: ref=[1720191011,1720191071] other=[1720183811,1720183871] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:26,235 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=4/4
+2026-10-28 04:47:26,273 | INFO | TU window labels goose_injection__viedspoofingbaseline__vied_injection_baseline3: {'normal': 57, 'goose_injection': 4}
+2026-10-28 04:47:26,275 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline4 | physical=1 resource=2 network_views=1 labels=1
+2026-10-28 04:47:26,276 | ERROR | TU goose_injection__viedspoofingbaseline__vied_injection_baseline4 ambiguous pairing: physical=1 resource=2; skipping run instead of silently selecting a file
+2026-10-28 04:47:26,279 | INFO | TU processing goose_injection__viedspoofingbaseline__vied_injection_baseline5 | physical=1 resource=0 network_views=1 labels=1
+2026-10-28 04:47:27,052 | INFO | Native PCAPNG parser (signature-detected): vied_injection_baseline5_anon.pcap | labels=vied_injection_baseline5_anon_labels.csv
+2026-10-28 04:47:30,812 | INFO | Packet GT vied_injection_baseline5_anon.pcap: malicious frames=35/289121 | observed malicious windows=8
+2026-10-28 04:47:30,818 | INFO | TU clock audit network->physical: ref=[1720191537,1720191597] other=[1720184337,1720184397] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:30,820 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=8/8
+2026-10-28 04:47:30,858 | INFO | TU window labels goose_injection__viedspoofingbaseline__vied_injection_baseline5: {'normal': 53, 'goose_injection': 8}
+2026-10-28 04:47:30,859 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:31,284 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:31,545 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault1_anon.pcap | labels=vied_injection_fault1_anon_labels.csv
+2026-10-28 04:47:35,174 | INFO | Packet GT vied_injection_fault1_anon.pcap: malicious frames=58/289280 | observed malicious windows=9
+2026-10-28 04:47:35,179 | INFO | TU clock audit network->physical: ref=[1720188861,1720188921] other=[1720181661,1720181721] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:35,182 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-28 04:47:35,242 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault1: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-28 04:47:35,244 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:35,688 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:36,044 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault2_anon.pcap | labels=vied_injection_fault2_anon_labels.csv
+2026-10-28 04:47:39,641 | INFO | Packet GT vied_injection_fault2_anon.pcap: malicious frames=63/289158 | observed malicious windows=10
+2026-10-28 04:47:39,646 | INFO | TU clock audit network->physical: ref=[1720193225,1720193285] other=[1720186025,1720186085] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:39,649 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=10/10
+2026-10-28 04:47:39,724 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault2: {'physical_fault': 39, 'normal': 12, 'goose_injection': 10}
+2026-10-28 04:47:39,727 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:40,139 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:40,448 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault3_anon.pcap | labels=vied_injection_fault3_anon_labels.csv
+2026-10-28 04:47:44,146 | INFO | Packet GT vied_injection_fault3_anon.pcap: malicious frames=67/289278 | observed malicious windows=11
+2026-10-28 04:47:44,151 | INFO | TU clock audit network->physical: ref=[1720193535,1720193595] other=[1720186335,1720186395] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:44,154 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=11/11
+2026-10-28 04:47:44,211 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault3: {'physical_fault': 38, 'normal': 12, 'goose_injection': 11}
+2026-10-28 04:47:44,213 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:44,608 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:44,923 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault4_anon.pcap | labels=vied_injection_fault4_anon_labels.csv
+2026-10-28 04:47:48,328 | INFO | Packet GT vied_injection_fault4_anon.pcap: malicious frames=70/289619 | observed malicious windows=12
+2026-10-28 04:47:48,334 | INFO | TU clock audit network->physical: ref=[1720193775,1720193835] other=[1720186575,1720186635] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:48,336 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=12/12
+2026-10-28 04:47:48,397 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault4: {'physical_fault': 37, 'normal': 12, 'goose_injection': 12}
+2026-10-28 04:47:48,400 | INFO | TU processing goose_injection__viedspoofingduringfault__vied_injection_fault5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:48,790 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:49,087 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault5_anon.pcap | labels=vied_injection_fault5_anon_labels.csv
+2026-10-28 04:47:52,568 | INFO | Packet GT vied_injection_fault5_anon.pcap: malicious frames=56/289124 | observed malicious windows=9
+2026-10-28 04:47:52,574 | INFO | TU clock audit network->physical: ref=[1720194047,1720194107] other=[1720186847,1720186907] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:52,577 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=9/9
+2026-10-28 04:47:52,636 | INFO | TU window labels goose_injection__viedspoofingduringfault__vied_injection_fault5: {'physical_fault': 40, 'normal': 12, 'goose_injection': 9}
+2026-10-28 04:47:52,638 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure1 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:53,063 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:53,403 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure1_anon.pcap | labels=vied_injection_fault_reclosure1_anon_labels.csv
+2026-10-28 04:47:57,144 | INFO | Packet GT vied_injection_fault_reclosure1_anon.pcap: malicious frames=67/289370 | observed malicious windows=11
+2026-10-28 04:47:57,151 | INFO | TU clock audit network->physical: ref=[1720617862,1720617922] other=[1720610662,1720610722] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:47:57,154 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=11/11
+2026-10-28 04:47:57,214 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure1: {'physical_fault': 38, 'normal': 12, 'goose_injection': 11}
+2026-10-28 04:47:57,216 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure2 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:47:57,593 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:47:57,908 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure2_anon.pcap | labels=vied_injection_fault_reclosure2_anon_labels.csv
+2026-10-28 04:48:01,488 | INFO | Packet GT vied_injection_fault_reclosure2_anon.pcap: malicious frames=71/289975 | observed malicious windows=12
+2026-10-28 04:48:01,494 | INFO | TU clock audit network->physical: ref=[1720618098,1720618158] other=[1720610898,1720610958] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:01,496 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=12/12
+2026-10-28 04:48:01,696 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure2: {'physical_fault': 37, 'normal': 12, 'goose_injection': 12}
+2026-10-28 04:48:01,699 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure3 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:48:02,075 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:02,418 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure3_anon.pcap | labels=vied_injection_fault_reclosure3_anon_labels.csv
+2026-10-28 04:48:06,012 | INFO | Packet GT vied_injection_fault_reclosure3_anon.pcap: malicious frames=73/290372 | observed malicious windows=12
+2026-10-28 04:48:06,017 | INFO | TU clock audit network->physical: ref=[1720618382,1720618442] other=[1720611182,1720611242] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:06,020 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=12/12
+2026-10-28 04:48:06,081 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure3: {'physical_fault': 37, 'normal': 12, 'goose_injection': 12}
+2026-10-28 04:48:06,083 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure4 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:48:06,452 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:06,745 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure4_anon.pcap | labels=vied_injection_fault_reclosure4_anon_labels.csv
+2026-10-28 04:48:10,292 | INFO | Packet GT vied_injection_fault_reclosure4_anon.pcap: malicious frames=38/289824 | observed malicious windows=6
+2026-10-28 04:48:10,298 | INFO | TU clock audit network->physical: ref=[1720618502,1720618562] other=[1720611302,1720611362] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:10,301 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=6/6
+2026-10-28 04:48:10,358 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure4: {'physical_fault': 43, 'normal': 12, 'goose_injection': 6}
+2026-10-28 04:48:10,359 | INFO | TU processing goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5 | physical=1 resource=1 network_views=1 labels=1
+2026-10-28 04:48:10,752 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:11,096 | INFO | Native PCAPNG parser (signature-detected): vied_injection_fault_reclosure5_anon.pcap | labels=vied_injection_fault_reclosure5_anon_labels.csv
+2026-10-28 04:48:14,818 | INFO | Packet GT vied_injection_fault_reclosure5_anon.pcap: malicious frames=33/289416 | observed malicious windows=6
+2026-10-28 04:48:14,825 | INFO | TU clock audit network->physical: ref=[1720618673,1720618733] other=[1720611473,1720611533] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:14,827 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=6/6
+2026-10-28 04:48:14,887 | INFO | TU window labels goose_injection__viedspoofingduringfaultreclosure__vied_injection_fault_reclosure5: {'physical_fault': 43, 'normal': 12, 'goose_injection': 6}
+2026-10-28 04:48:14,889 | INFO | TU processing normal__baseline__baseline1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:15,302 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:15,448 | INFO | Native PCAPNG parser (signature-detected): baseline1_anon.pcap
+2026-10-28 04:48:18,945 | INFO | TU clock audit network->physical: ref=[1720438276,1720438336] other=[1720431076,1720431136] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:18,947 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:19,005 | INFO | TU window labels normal__baseline__baseline1: {'normal': 61}
+2026-10-28 04:48:19,007 | INFO | TU processing normal__baseline__baseline2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:19,486 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:19,590 | INFO | Native PCAPNG parser (signature-detected): baseline2_anon.pcap
+2026-10-28 04:48:23,217 | INFO | TU clock audit network->physical: ref=[1720438396,1720438456] other=[1720431196,1720431256] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:23,219 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:23,278 | INFO | TU window labels normal__baseline__baseline2: {'normal': 61}
+2026-10-28 04:48:23,280 | INFO | TU processing normal__baseline__baseline3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:23,650 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:23,790 | INFO | Native PCAPNG parser (signature-detected): baseline3_anon.pcap
+2026-10-28 04:48:27,244 | INFO | TU clock audit network->physical: ref=[1720438790,1720438850] other=[1720431590,1720431650] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:27,246 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:27,310 | INFO | TU window labels normal__baseline__baseline3: {'normal': 61}
+2026-10-28 04:48:27,312 | INFO | TU processing normal__baseline__baseline4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:27,681 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:27,792 | INFO | Native PCAPNG parser (signature-detected): baseline4_anon.pcap
+2026-10-28 04:48:31,406 | INFO | TU clock audit network->physical: ref=[1720438910,1720438970] other=[1720431710,1720431770] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:31,408 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:31,468 | INFO | TU window labels normal__baseline__baseline4: {'normal': 61}
+2026-10-28 04:48:31,471 | INFO | TU processing normal__baseline__baseline5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:31,840 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:31,951 | INFO | Native PCAPNG parser (signature-detected): baseline5_anon.pcap
+2026-10-28 04:48:35,236 | INFO | TU clock audit network->physical: ref=[1720439016,1720439076] other=[1720431816,1720431876] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:35,238 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:35,295 | INFO | TU window labels normal__baseline__baseline5: {'normal': 61}
+2026-10-28 04:48:35,297 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:35,678 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:35,856 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure1_anon.pcap
+2026-10-28 04:48:39,411 | INFO | TU clock audit network->physical: ref=[1720439173,1720439233] other=[1720431973,1720432033] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:39,414 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:39,487 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure1: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:48:39,489 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:39,951 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:40,050 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure2_anon.pcap
+2026-10-28 04:48:43,586 | INFO | TU clock audit network->physical: ref=[1720439348,1720439408] other=[1720432148,1720432208] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:43,588 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:43,648 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure2: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:48:43,650 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:44,044 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:44,150 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure3_anon.pcap
+2026-10-28 04:48:47,742 | INFO | TU clock audit network->physical: ref=[1720439512,1720439572] other=[1720432312,1720432372] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:47,744 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:47,805 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure3: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:48:47,807 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:48,208 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:48,334 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure4_anon.pcap
+2026-10-28 04:48:51,896 | INFO | TU clock audit network->physical: ref=[1720439683,1720439742] other=[1720432483,1720432542] raw_overlap=0/60 best_shift=+7200s best_overlap=60/60 APPLY
+2026-10-28 04:48:51,898 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:51,958 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure4: {'physical_fault': 48, 'normal': 12}
+2026-10-28 04:48:51,960 | INFO | TU processing physical_fault__faults_no_reclosure__faults_no_reclosure5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:52,335 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:52,456 | INFO | Native PCAPNG parser (signature-detected): faults_no_reclosure5_anon.pcap
+2026-10-28 04:48:56,130 | INFO | TU clock audit network->physical: ref=[1720439939,1720439999] other=[1720432739,1720432799] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:48:56,133 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:48:56,192 | INFO | TU window labels physical_fault__faults_no_reclosure__faults_no_reclosure5: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:48:56,194 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:48:56,579 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:48:56,681 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure1_anon.pcap
+2026-10-28 04:49:00,181 | INFO | TU clock audit network->physical: ref=[1720617111,1720617171] other=[1720609911,1720609971] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:49:00,184 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:49:00,244 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure1: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:49:00,246 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:49:00,605 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:49:00,718 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure2_anon.pcap
+2026-10-28 04:49:04,330 | INFO | TU clock audit network->physical: ref=[1720617252,1720617312] other=[1720610052,1720610112] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:49:04,332 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:49:04,392 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure2: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:49:04,394 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:49:04,774 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:49:04,882 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure3_anon.pcap
+2026-10-28 04:49:08,170 | INFO | TU clock audit network->physical: ref=[1720617383,1720617443] other=[1720610183,1720610243] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:49:08,173 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:49:08,230 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure3: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:49:08,233 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:49:08,624 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:49:08,742 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure4_anon.pcap
+2026-10-28 04:49:12,149 | INFO | TU clock audit network->physical: ref=[1720617505,1720617565] other=[1720610305,1720610365] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:49:12,151 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:49:12,209 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure4: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:49:12,210 | INFO | TU processing physical_fault__faults_with_reclosure__faults_with_reclosure5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:49:12,560 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:49:12,670 | INFO | Native PCAPNG parser (signature-detected): faults_with_reclosure5_anon.pcap
+2026-10-28 04:49:16,068 | INFO | TU clock audit network->physical: ref=[1720617635,1720617695] other=[1720610435,1720610495] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:49:16,070 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:49:16,130 | INFO | TU window labels physical_fault__faults_with_reclosure__faults_with_reclosure5: {'physical_fault': 49, 'normal': 12}
+2026-10-28 04:49:16,131 | INFO | TU processing reconnaissance__reconnaissance__nmap_aggressive | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:49:16,872 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:49:17,368 | INFO | Native PCAPNG parser (signature-detected): nmap_aggressive_attacker_anon.pcap | labels=nmap_aggressive_attacker_anon_labels.csv
+2026-10-28 04:49:27,996 | INFO | Packet GT nmap_aggressive_attacker_anon.pcap: malicious frames=8799/931816 | observed malicious windows=49
+2026-10-28 04:49:28,393 | INFO | Native PCAPNG parser (signature-detected): nmap_aggressive_vied_anon.pcap | labels=nmap_aggressive_vied_anon_labels.csv
+2026-10-28 04:49:39,057 | INFO | Packet GT nmap_aggressive_vied_anon.pcap: malicious frames=2360/919369 | observed malicious windows=6
+2026-10-28 04:49:39,070 | INFO | TU clock audit network->physical: ref=[1719497465,1719497665] other=[1719490265,1719490457] raw_overlap=0/193 best_shift=+7200s best_overlap=193/193 APPLY
+2026-10-28 04:49:39,073 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=49/49
+2026-10-28 04:49:39,142 | INFO | TU window labels reconnaissance__reconnaissance__nmap_aggressive: {'normal': 152, 'reconnaissance': 49}
+2026-10-28 04:49:39,145 | INFO | TU processing reconnaissance__reconnaissance__nmap_insane | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:49:39,889 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:49:40,297 | INFO | Native PCAPNG parser (signature-detected): nmap_insane_attacker_anon.pcap | labels=nmap_insane_attacker_anon_labels.csv
+2026-10-28 04:49:50,357 | INFO | Packet GT nmap_insane_attacker_anon.pcap: malicious frames=8781/910825 | observed malicious windows=44
+2026-10-28 04:49:50,721 | INFO | Native PCAPNG parser (signature-detected): nmap_insane_vied_anon.pcap | labels=nmap_insane_vied_anon_labels.csv
+2026-10-28 04:50:00,902 | INFO | Packet GT nmap_insane_vied_anon.pcap: malicious frames=2360/898859 | observed malicious windows=7
+2026-10-28 04:50:00,914 | INFO | TU clock audit network->physical: ref=[1719497106,1719497306] other=[1719489906,1719490093] raw_overlap=0/188 best_shift=+7200s best_overlap=188/188 APPLY
+2026-10-28 04:50:00,917 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=44/44
+2026-10-28 04:50:00,982 | INFO | TU window labels reconnaissance__reconnaissance__nmap_insane: {'normal': 157, 'reconnaissance': 44}
+2026-10-28 04:50:00,984 | INFO | TU processing reconnaissance__reconnaissance__nmap_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:50:01,692 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:50:02,112 | INFO | Native PCAPNG parser (signature-detected): nmap_normal_attacker_anon.pcap | labels=nmap_normal_attacker_anon_labels.csv
+2026-10-28 04:50:12,329 | INFO | Packet GT nmap_normal_attacker_anon.pcap: malicious frames=8800/926170 | observed malicious windows=44
+2026-10-28 04:50:12,711 | INFO | Native PCAPNG parser (signature-detected): nmap_normal_vied_anon.pcap | labels=nmap_normal_vied_anon_labels.csv
+2026-10-28 04:50:22,880 | INFO | Packet GT nmap_normal_vied_anon.pcap: malicious frames=2373/912538 | observed malicious windows=7
+2026-10-28 04:50:22,891 | INFO | TU clock audit network->physical: ref=[1719498004,1719498204] other=[1719490804,1719490995] raw_overlap=0/192 best_shift=+7200s best_overlap=192/192 APPLY
+2026-10-28 04:50:22,894 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=44/44
+2026-10-28 04:50:22,957 | INFO | TU window labels reconnaissance__reconnaissance__nmap_normal: {'normal': 157, 'reconnaissance': 44}
+2026-10-28 04:50:22,959 | INFO | TU processing reconnaissance__reconnaissance__nmap_polite | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:50:23,759 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:50:24,240 | INFO | Native PCAPNG parser (signature-detected): nmap_polite_attacker_anon.pcap | labels=nmap_polite_attacker_anon_labels.csv
+2026-10-28 04:50:34,757 | INFO | Packet GT nmap_polite_attacker_anon.pcap: malicious frames=1921/946189 | observed malicious windows=193
+2026-10-28 04:50:35,116 | INFO | Native PCAPNG parser (signature-detected): nmap_polite_vied_anon.pcap | labels=nmap_polite_vied_anon_labels.csv
+2026-10-28 04:50:45,824 | INFO | Packet GT nmap_polite_vied_anon.pcap: malicious frames=956/942019 | observed malicious windows=192
+2026-10-28 04:50:45,835 | INFO | TU clock audit network->physical: ref=[1719498533,1719498733] other=[1719491333,1719491529] raw_overlap=0/197 best_shift=+7200s best_overlap=197/197 APPLY
+2026-10-28 04:50:45,837 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=193/193
+2026-10-28 04:50:45,902 | INFO | TU window labels reconnaissance__reconnaissance__nmap_polite: {'reconnaissance': 193, 'normal': 8}
+2026-10-28 04:50:45,904 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:50:46,288 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:50:46,409 | INFO | Native PCAPNG parser (signature-detected): baseline_priority1_anon.pcap
+2026-10-28 04:50:50,024 | INFO | TU clock audit network->physical: ref=[1719312435,1719312495] other=[1719305235,1719305295] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:50:50,026 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:50:50,092 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority1: {'resource_exhaustion': 61}
+2026-10-28 04:50:50,094 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:50:50,530 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:50:50,645 | INFO | Native PCAPNG parser (signature-detected): baseline_priority2_anon.pcap
+2026-10-28 04:50:54,135 | INFO | TU clock audit network->physical: ref=[1719312679,1719312739] other=[1719305479,1719305539] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:50:54,137 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:50:54,200 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority2: {'resource_exhaustion': 61}
+2026-10-28 04:50:54,203 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:50:54,569 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:50:54,696 | INFO | Native PCAPNG parser (signature-detected): baseline_priority3_anon.pcap
+2026-10-28 04:50:58,235 | INFO | TU clock audit network->physical: ref=[1719312806,1719312866] other=[1719305606,1719305666] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:50:58,237 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:50:58,297 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority3: {'resource_exhaustion': 61}
+2026-10-28 04:50:58,299 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:50:58,702 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:50:58,813 | INFO | Native PCAPNG parser (signature-detected): baseline_priority4_anon.pcap
+2026-10-28 04:51:02,325 | INFO | TU clock audit network->physical: ref=[1719312955,1719313015] other=[1719305755,1719305815] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:02,327 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:02,387 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority4: {'resource_exhaustion': 61}
+2026-10-28 04:51:02,389 | INFO | TU processing resource_exhaustion__baseline_priority_a__baseline_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:02,774 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:02,894 | INFO | Native PCAPNG parser (signature-detected): baseline_priority5_anon.pcap
+2026-10-28 04:51:06,517 | INFO | TU clock audit network->physical: ref=[1719313112,1719313172] other=[1719305912,1719305972] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:06,519 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:06,581 | INFO | TU window labels resource_exhaustion__baseline_priority_a__baseline_priority5: {'resource_exhaustion': 61}
+2026-10-28 04:51:06,584 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:06,923 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:07,000 | INFO | Native PCAPNG parser (signature-detected): fault_priority1_anon.pcap
+2026-10-28 04:51:10,298 | INFO | TU clock audit network->physical: ref=[1719313564,1719313624] other=[1719306364,1719306424] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:10,300 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:10,363 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority1: {'resource_exhaustion': 61}
+2026-10-28 04:51:10,366 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:10,717 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:10,819 | INFO | Native PCAPNG parser (signature-detected): fault_priority2_anon.pcap
+2026-10-28 04:51:14,428 | INFO | TU clock audit network->physical: ref=[1719315929,1719315989] other=[1719308729,1719308789] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:14,430 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:14,502 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority2: {'resource_exhaustion': 61}
+2026-10-28 04:51:14,504 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:14,885 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:14,997 | INFO | Native PCAPNG parser (signature-detected): fault_priority3_anon.pcap
+2026-10-28 04:51:18,647 | INFO | TU clock audit network->physical: ref=[1719316083,1719316143] other=[1719308883,1719308943] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:18,649 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:18,715 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority3: {'resource_exhaustion': 61}
+2026-10-28 04:51:18,717 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:19,098 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:19,224 | INFO | Native PCAPNG parser (signature-detected): fault_priority4_anon.pcap
+2026-10-28 04:51:22,774 | INFO | TU clock audit network->physical: ref=[1719316264,1719316324] other=[1719309064,1719309124] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:22,777 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:22,837 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority4: {'resource_exhaustion': 61}
+2026-10-28 04:51:22,839 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:23,209 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:23,347 | INFO | Native PCAPNG parser (signature-detected): fault_priority5_anon.pcap
+2026-10-28 04:51:26,622 | INFO | TU clock audit network->physical: ref=[1719316475,1719316535] other=[1719309275,1719309335] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:26,625 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:26,685 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority5: {'resource_exhaustion': 61}
+2026-10-28 04:51:26,687 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority6 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:27,098 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:27,197 | INFO | Native PCAPNG parser (signature-detected): fault_priority6_anon.pcap
+2026-10-28 04:51:30,791 | INFO | TU clock audit network->physical: ref=[1718984665,1718984725] other=[1718977465,1718977525] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:30,793 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:30,852 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority6: {'resource_exhaustion': 61}
+2026-10-28 04:51:30,855 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority7 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:31,347 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:31,471 | INFO | Native PCAPNG parser (signature-detected): fault_priority7_anon.pcap
+2026-10-28 04:51:34,901 | INFO | TU clock audit network->physical: ref=[1718984929,1718984989] other=[1718977729,1718977789] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:34,904 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:34,964 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority7: {'resource_exhaustion': 61}
+2026-10-28 04:51:34,966 | INFO | TU processing resource_exhaustion__fault_priority_a__fault_priority8 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:35,339 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:35,444 | INFO | Native PCAPNG parser (signature-detected): fault_priority8_anon.pcap
+2026-10-28 04:51:37,934 | INFO | TU clock audit network->physical: ref=[1718985173,1718985233] other=[1718977973,1718978020] raw_overlap=0/40 best_shift=+7200s best_overlap=40/40 APPLY
+2026-10-28 04:51:37,936 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:37,997 | INFO | TU window labels resource_exhaustion__fault_priority_a__fault_priority8: {'resource_exhaustion': 61}
+2026-10-28 04:51:37,998 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:38,408 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:38,503 | INFO | Native PCAPNG parser (signature-detected): fault_priority1_anon.pcap
+2026-10-28 04:51:42,118 | INFO | TU clock audit network->physical: ref=[1719316945,1719317005] other=[1719309745,1719309805] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:42,120 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:42,180 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority1: {'resource_exhaustion': 61}
+2026-10-28 04:51:42,182 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority10 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:42,591 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:42,694 | INFO | Native PCAPNG parser (signature-detected): fault_priority10_anon.pcap
+2026-10-28 04:51:46,108 | INFO | TU clock audit network->physical: ref=[1718986863,1718986923] other=[1718979663,1718979723] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:46,110 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:46,174 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority10: {'resource_exhaustion': 61}
+2026-10-28 04:51:46,176 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:46,604 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:46,754 | INFO | Native PCAPNG parser (signature-detected): fault_priority2_anon.pcap
+2026-10-28 04:51:50,215 | INFO | TU clock audit network->physical: ref=[1719317156,1719317216] other=[1719309956,1719310016] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:50,217 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:50,284 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority2: {'resource_exhaustion': 61}
+2026-10-28 04:51:50,287 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:50,695 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:50,797 | INFO | Native PCAPNG parser (signature-detected): fault_priority3_anon.pcap
+2026-10-28 04:51:54,334 | INFO | TU clock audit network->physical: ref=[1719317390,1719317450] other=[1719310190,1719310250] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:54,337 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:54,396 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority3: {'resource_exhaustion': 61}
+2026-10-28 04:51:54,398 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:54,811 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:54,920 | INFO | Native PCAPNG parser (signature-detected): fault_priority4_anon.pcap
+2026-10-28 04:51:58,378 | INFO | TU clock audit network->physical: ref=[1719317646,1719317706] other=[1719310446,1719310506] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:51:58,380 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:51:58,441 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority4: {'resource_exhaustion': 61}
+2026-10-28 04:51:58,443 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:51:58,883 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:51:58,990 | INFO | Native PCAPNG parser (signature-detected): fault_priority5_anon.pcap
+2026-10-28 04:52:02,414 | INFO | TU clock audit network->physical: ref=[1719317910,1719317970] other=[1719310710,1719310770] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:02,416 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:02,475 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority5: {'resource_exhaustion': 61}
+2026-10-28 04:52:02,477 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority6 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:02,950 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:03,064 | INFO | Native PCAPNG parser (signature-detected): fault_priority6_anon.pcap
+2026-10-28 04:52:06,557 | INFO | TU clock audit network->physical: ref=[1718985529,1718985589] other=[1718978329,1718978389] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:06,560 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:06,621 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority6: {'resource_exhaustion': 61}
+2026-10-28 04:52:06,623 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority7 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:07,019 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:07,147 | INFO | Native PCAPNG parser (signature-detected): fault_priority7_anon.pcap
+2026-10-28 04:52:10,575 | INFO | TU clock audit network->physical: ref=[1718985817,1718985877] other=[1718978617,1718978677] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:10,577 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:10,637 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority7: {'resource_exhaustion': 61}
+2026-10-28 04:52:10,639 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority8 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:11,008 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:11,149 | INFO | Native PCAPNG parser (signature-detected): fault_priority8_anon.pcap
+2026-10-28 04:52:14,569 | INFO | TU clock audit network->physical: ref=[1718986198,1718986258] other=[1718978998,1718979058] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:14,572 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:14,635 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority8: {'resource_exhaustion': 61}
+2026-10-28 04:52:14,638 | INFO | TU processing resource_exhaustion__fault_priority_b__fault_priority9 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:15,018 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:15,138 | INFO | Native PCAPNG parser (signature-detected): fault_priority9_anon.pcap
+2026-10-28 04:52:18,411 | INFO | TU clock audit network->physical: ref=[1718986548,1718986608] other=[1718979348,1718979408] raw_overlap=0/55 best_shift=+7200s best_overlap=55/55 APPLY
+2026-10-28 04:52:18,413 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:18,477 | INFO | TU window labels resource_exhaustion__fault_priority_b__fault_priority9: {'resource_exhaustion': 61}
+2026-10-28 04:52:18,479 | INFO | TU processing resource_exhaustion__only_vied__fault_priority1 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:18,859 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:18,944 | INFO | Native PCAPNG parser (signature-detected): fault_priority1_anon.pcap
+2026-10-28 04:52:22,374 | INFO | TU clock audit network->physical: ref=[1718983064,1718983124] other=[1718975864,1718975924] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:22,376 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:22,440 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority1: {'resource_exhaustion': 61}
+2026-10-28 04:52:22,442 | INFO | TU processing resource_exhaustion__only_vied__fault_priority2 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:22,877 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:22,995 | INFO | Native PCAPNG parser (signature-detected): fault_priority2_anon.pcap
+2026-10-28 04:52:26,441 | INFO | TU clock audit network->physical: ref=[1718983558,1718983618] other=[1718976358,1718976418] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:26,443 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:26,503 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority2: {'resource_exhaustion': 61}
+2026-10-28 04:52:26,505 | INFO | TU processing resource_exhaustion__only_vied__fault_priority3 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:26,878 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:26,983 | INFO | Native PCAPNG parser (signature-detected): fault_priority3_anon.pcap
+2026-10-28 04:52:30,504 | INFO | TU clock audit network->physical: ref=[1718983787,1718983847] other=[1718976587,1718976647] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:30,506 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:30,570 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority3: {'resource_exhaustion': 61}
+2026-10-28 04:52:30,572 | INFO | TU processing resource_exhaustion__only_vied__fault_priority4 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:30,970 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:31,072 | INFO | Native PCAPNG parser (signature-detected): fault_priority4_anon.pcap
+2026-10-28 04:52:34,635 | INFO | TU clock audit network->physical: ref=[1718984087,1718984147] other=[1718976887,1718976947] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:34,637 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:34,697 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority4: {'resource_exhaustion': 61}
+2026-10-28 04:52:34,698 | INFO | TU processing resource_exhaustion__only_vied__fault_priority5 | physical=1 resource=1 network_views=1 labels=0
+2026-10-28 04:52:35,104 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:35,175 | INFO | Native PCAPNG parser (signature-detected): fault_priority5_anon.pcap
+2026-10-28 04:52:38,717 | INFO | TU clock audit network->physical: ref=[1718984254,1718984314] other=[1718977054,1718977114] raw_overlap=0/61 best_shift=+7200s best_overlap=61/61 APPLY
+2026-10-28 04:52:38,719 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=0/0
+2026-10-28 04:52:38,780 | INFO | TU window labels resource_exhaustion__only_vied__fault_priority5: {'resource_exhaustion': 61}
+2026-10-28 04:52:38,783 | INFO | TU processing sv_injection__sv_injection__sv_injection_all_nines_during_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:52:39,265 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:39,633 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_nines_during_normal_attacker_anon.pcap | labels=sv_injection_all_nines_during_normal_attacker_anon_labels.csv
+2026-10-28 04:52:46,572 | INFO | Packet GT sv_injection_all_nines_during_normal_attacker_anon.pcap: malicious frames=144000/576712 | observed malicious windows=31
+2026-10-28 04:52:46,940 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_nines_during_normal_vied_anon.pcap | labels=sv_injection_all_nines_during_normal_vied_anon_labels.csv
+2026-10-28 04:52:53,540 | INFO | Packet GT sv_injection_all_nines_during_normal_vied_anon.pcap: malicious frames=144000/554325 | observed malicious windows=31
+2026-10-28 04:52:53,551 | INFO | TU clock audit network->physical: ref=[1721909119,1721909219] other=[1721901919,1721902009] raw_overlap=0/91 best_shift=+7200s best_overlap=91/91 APPLY
+2026-10-28 04:52:53,554 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=31/31
+2026-10-28 04:52:53,621 | INFO | TU window labels sv_injection__sv_injection__sv_injection_all_nines_during_normal: {'normal': 70, 'sv_injection': 31}
+2026-10-28 04:52:53,623 | INFO | TU processing sv_injection__sv_injection__sv_injection_all_zero_during_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:52:54,161 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:52:54,526 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_zero_during_normal_attacker_anon.pcap | labels=sv_injection_all_zero_during_normal_attacker_anon_labels.csv
+2026-10-28 04:53:01,006 | INFO | Packet GT sv_injection_all_zero_during_normal_attacker_anon.pcap: malicious frames=144000/552431 | observed malicious windows=31
+2026-10-28 04:53:01,350 | INFO | Native PCAPNG parser (signature-detected): sv_injection_all_zero_during_normal_vied_anon.pcap | labels=sv_injection_all_zero_during_normal_vied_anon_labels.csv
+2026-10-28 04:53:08,053 | INFO | Packet GT sv_injection_all_zero_during_normal_vied_anon.pcap: malicious frames=144000/565448 | observed malicious windows=31
+2026-10-28 04:53:08,065 | INFO | TU clock audit network->physical: ref=[1721908885,1721908985] other=[1721901685,1721901773] raw_overlap=0/89 best_shift=+7200s best_overlap=89/89 APPLY
+2026-10-28 04:53:08,067 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=31/31
+2026-10-28 04:53:08,130 | INFO | TU window labels sv_injection__sv_injection__sv_injection_all_zero_during_normal: {'normal': 70, 'sv_injection': 31}
+2026-10-28 04:53:08,132 | INFO | TU processing sv_injection__sv_injection__sv_injection_replay_fault_during_normal | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:53:08,676 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:53:09,003 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_fault_during_normal_attacker_anon.pcap | labels=sv_injection_replay_fault_during_normal_attacker_anon_labels.csv
+2026-10-28 04:53:15,432 | INFO | Packet GT sv_injection_replay_fault_during_normal_attacker_anon.pcap: malicious frames=139800/566753 | observed malicious windows=31
+2026-10-28 04:53:15,726 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_fault_during_normal_vied_anon.pcap | labels=sv_injection_replay_fault_during_normal_vied_anon_labels.csv
+2026-10-28 04:53:22,578 | INFO | Packet GT sv_injection_replay_fault_during_normal_vied_anon.pcap: malicious frames=139800/564909 | observed malicious windows=31
+2026-10-28 04:53:22,590 | INFO | TU clock audit network->physical: ref=[1721908317,1721908417] other=[1721901117,1721901206] raw_overlap=0/90 best_shift=+7200s best_overlap=90/90 APPLY
+2026-10-28 04:53:22,592 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=31/31
+2026-10-28 04:53:22,654 | INFO | TU window labels sv_injection__sv_injection__sv_injection_replay_fault_during_normal: {'normal': 70, 'sv_injection': 31}
+2026-10-28 04:53:22,656 | INFO | TU processing sv_injection__sv_injection__sv_injection_replay_normal_during_fault | physical=1 resource=1 network_views=2 labels=2
+2026-10-28 04:53:23,159 | INFO | TU resource preprocessing: dropping identifier/categorical fields ['PID', 'USER', 'COMMAND', 'S']
+2026-10-28 04:53:23,517 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_normal_during_fault_attacker_anon.pcap | labels=sv_injection_replay_normal_during_fault_attacker_anon_labels.csv
+2026-10-28 04:53:29,232 | INFO | Packet GT sv_injection_replay_normal_during_fault_attacker_anon.pcap: malicious frames=134861/488278 | observed malicious windows=29
+2026-10-28 04:53:29,602 | INFO | Native PCAPNG parser (signature-detected): sv_injection_replay_normal_during_fault_vied_anon.pcap | labels=sv_injection_replay_normal_during_fault_vied_anon_labels.csv
+2026-10-28 04:53:35,729 | INFO | Packet GT sv_injection_replay_normal_during_fault_vied_anon.pcap: malicious frames=134844/500279 | observed malicious windows=29
+2026-10-28 04:53:35,744 | INFO | TU clock audit network->physical: ref=[1721906414,1721906514] other=[1721899214,1721899290] raw_overlap=0/77 best_shift=+7200s best_overlap=77/77 APPLY
+2026-10-28 04:53:35,746 | INFO | TU clock audit network->physical after shift: malicious_windows_in_reference=29/29
+2026-10-28 04:53:35,810 | INFO | TU window labels sv_injection__sv_injection__sv_injection_replay_normal_during_fault: {'physical_fault': 72, 'sv_injection': 29}
+2026-10-28 04:53:35,890 | INFO | TU leakage guard: no target/identifier fields in model features
+2026-10-28 04:53:35,949 | INFO | 
+================================================================================
+2026-10-28 04:53:35,950 | INFO | DATASET BUNDLE: TU_Delft_2026_CPPS
+2026-10-28 04:53:35,950 | INFO | Samples: 5838
+2026-10-28 04:53:35,952 | INFO | Groups/runs: 79
+2026-10-28 04:53:35,953 | INFO | Modalities:
+2026-10-28 04:53:35,954 | INFO |   physical                 shape=(5838, 40) cost=0.3333 features=40
+2026-10-28 04:53:35,954 | INFO |   resource                 shape=(5838, 60) cost=0.3333 features=60
+2026-10-28 04:53:35,955 | INFO |   network                  shape=(5838, 16) cost=0.3333 features=16
+2026-10-28 04:53:35,959 | INFO |   class 0 normal                       n=1853
+2026-10-28 04:53:35,959 | INFO |   class 1 physical_fault               n=1636
+2026-10-28 04:53:35,960 | INFO |   class 2 reconnaissance               n=330
+2026-10-28 04:53:35,960 | INFO |   class 3 resource_exhaustion          n=1708
+2026-10-28 04:53:35,961 | INFO |   class 4 goose_injection              n=189
+2026-10-28 04:53:35,963 | INFO |   class 5 sv_injection                 n=122
+2026-10-28 04:53:35,963 | INFO | ================================================================================
+
+[checkpoint] saved processed tu bundle -> /kaggle/working/actigrid/hgb_sequential/cache/tu_dataset_bundle.joblib
+
+================================================================================================
+HGB SEQUENTIAL AUDIT | dataset=TU_Delft_2026_CPPS | split_seed=42
+================================================================================================
+2026-10-28 04:53:39,431 | INFO | Split TU_Delft_2026_CPPS: train=3246 val=1276 test=1316
+2026-10-28 04:53:39,433 | INFO | Train classes: normal=998, physical_fault=827, reconnaissance=237, resource_exhaustion=1037, goose_injection=116, sv_injection=31
+2026-10-28 04:53:39,436 | INFO | Val   classes: normal=427, physical_fault=378, reconnaissance=44, resource_exhaustion=366, goose_injection=30, sv_injection=31
+2026-10-28 04:53:39,438 | INFO | Test  classes: normal=428, physical_fault=431, reconnaissance=49, resource_exhaustion=305, goose_injection=43, sv_injection=60
+2026-10-28 04:53:39,439 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-28 04:53:39,464 | INFO | Scaled physical             train mean=0.0012 std=0.8902
+2026-10-28 04:53:39,474 | INFO | Scaled resource             train mean=-0.0000 std=0.8367
+2026-10-28 04:53:39,478 | INFO | Scaled network              train mean=-0.0034 std=0.9028
+train=3246 | validation calibration=638 | validation policy=638 | test=1316
+[fit HGB] TU_Delft_2026_CPPS split=42 subset=physical
+[fit HGB] TU_Delft_2026_CPPS split=42 subset=resource
+[fit HGB] TU_Delft_2026_CPPS split=42 subset=network
+[fit HGB] TU_Delft_2026_CPPS split=42 subset=physical+resource
+[fit HGB] TU_Delft_2026_CPPS split=42 subset=physical+network
+[fit HGB] TU_Delft_2026_CPPS split=42 subset=resource+network
+[fit HGB] TU_Delft_2026_CPPS split=42 subset=physical+resource+network
+[sequential-raw] TU_Delft_2026_CPPS split=42: 6 orders x 33 thresholds
+  evaluated 6/6 orders
+[sequential-calibrated] TU_Delft_2026_CPPS split=42: 6 orders x 33 thresholds
+  evaluated 6/6 orders
+[cross-check] max |new HGB test F1 - rev-hard HGB test F1| = 0.000000000000
+
+================================================================================================
+HGB SEQUENTIAL AUDIT | dataset=TU_Delft_2026_CPPS | split_seed=123
+================================================================================================
+2026-10-28 04:54:17,301 | INFO | Split TU_Delft_2026_CPPS: train=3407 val=1216 test=1215
+2026-10-28 04:54:17,303 | INFO | Train classes: normal=1052, physical_fault=951, reconnaissance=237, resource_exhaustion=976, goose_injection=131, sv_injection=60
+2026-10-28 04:54:17,305 | INFO | Val   classes: normal=466, physical_fault=268, reconnaissance=49, resource_exhaustion=366, goose_injection=36, sv_injection=31
+2026-10-28 04:54:17,308 | INFO | Test  classes: normal=335, physical_fault=417, reconnaissance=44, resource_exhaustion=366, goose_injection=22, sv_injection=31
+2026-10-28 04:54:17,308 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-28 04:54:17,328 | INFO | Scaled physical             train mean=0.0011 std=0.8919
+2026-10-28 04:54:17,335 | INFO | Scaled resource             train mean=0.0000 std=0.8367
+2026-10-28 04:54:17,339 | INFO | Scaled network              train mean=-0.0033 std=0.9052
+train=3407 | validation calibration=608 | validation policy=608 | test=1215
+[fit HGB] TU_Delft_2026_CPPS split=123 subset=physical
+[fit HGB] TU_Delft_2026_CPPS split=123 subset=resource
+[fit HGB] TU_Delft_2026_CPPS split=123 subset=network
+[fit HGB] TU_Delft_2026_CPPS split=123 subset=physical+resource
+[fit HGB] TU_Delft_2026_CPPS split=123 subset=physical+network
+[fit HGB] TU_Delft_2026_CPPS split=123 subset=resource+network
+[fit HGB] TU_Delft_2026_CPPS split=123 subset=physical+resource+network
+[sequential-raw] TU_Delft_2026_CPPS split=123: 6 orders x 33 thresholds
+  evaluated 6/6 orders
+[sequential-calibrated] TU_Delft_2026_CPPS split=123: 6 orders x 33 thresholds
+  evaluated 6/6 orders
+[cross-check] max |new HGB test F1 - rev-hard HGB test F1| = 0.000000000000
+
+================================================================================================
+HGB SEQUENTIAL AUDIT | dataset=TU_Delft_2026_CPPS | split_seed=456
+================================================================================================
+2026-10-28 04:54:56,349 | INFO | Split TU_Delft_2026_CPPS: train=3366 val=1256 test=1216
+2026-10-28 04:54:56,350 | INFO | Train classes: normal=1067, physical_fault=942, reconnaissance=237, resource_exhaustion=976, goose_injection=113, sv_injection=31
+2026-10-28 04:54:56,352 | INFO | Val   classes: normal=412, physical_fault=327, reconnaissance=49, resource_exhaustion=366, goose_injection=42, sv_injection=60
+2026-10-28 04:54:56,354 | INFO | Test  classes: normal=374, physical_fault=367, reconnaissance=44, resource_exhaustion=366, goose_injection=34, sv_injection=31
+2026-10-28 04:54:56,355 | INFO | Train groups=47 Val groups=16 Test groups=16
+2026-10-28 04:54:56,371 | INFO | Scaled physical             train mean=0.0010 std=0.9049
+2026-10-28 04:54:56,379 | INFO | Scaled resource             train mean=0.0000 std=0.8367
+2026-10-28 04:54:56,382 | INFO | Scaled network              train mean=-0.0023 std=0.9451
+train=3366 | validation calibration=628 | validation policy=628 | test=1216
+[fit HGB] TU_Delft_2026_CPPS split=456 subset=physical
+[fit HGB] TU_Delft_2026_CPPS split=456 subset=resource
+[fit HGB] TU_Delft_2026_CPPS split=456 subset=network
+[fit HGB] TU_Delft_2026_CPPS split=456 subset=physical+resource
+[fit HGB] TU_Delft_2026_CPPS split=456 subset=physical+network
+[fit HGB] TU_Delft_2026_CPPS split=456 subset=resource+network
+[fit HGB] TU_Delft_2026_CPPS split=456 subset=physical+resource+network
+[sequential-raw] TU_Delft_2026_CPPS split=456: 6 orders x 33 thresholds
+  evaluated 6/6 orders
+[sequential-calibrated] TU_Delft_2026_CPPS split=456: 6 orders x 33 thresholds
+  evaluated 6/6 orders
+[cross-check] max |new HGB test F1 - rev-hard HGB test F1| = 0.000000000000
+2026-10-28 04:56:07,501 | INFO | MSU table signatures found: 1; using largest coherent set with 15 files
+2026-10-28 04:56:07,502 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data1 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,503 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data10 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,503 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data11 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,504 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data12 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,504 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data13 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,505 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data14 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,506 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data15 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,507 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data2 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,507 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data3 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,508 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data4 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,508 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data5 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,509 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data6 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,510 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data7 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,512 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data8 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,513 | INFO |   MSU file: /kaggle/input/datasets/sazidul001x94/power-system-attack-dataset/data9 Sampled Scenarios.csv.arff
+2026-10-28 04:56:07,514 | INFO | Reading MSU: data1 Sampled Scenarios.csv.arff
+2026-10-28 04:56:08,558 | INFO | Reading MSU: data10 Sampled Scenarios.csv.arff
+2026-10-28 04:56:09,837 | INFO | Reading MSU: data11 Sampled Scenarios.csv.arff
+2026-10-28 04:56:11,013 | INFO | Reading MSU: data12 Sampled Scenarios.csv.arff
+2026-10-28 04:56:12,174 | INFO | Reading MSU: data13 Sampled Scenarios.csv.arff
+2026-10-28 04:56:13,336 | INFO | Reading MSU: data14 Sampled Scenarios.csv.arff
+2026-10-28 04:56:14,435 | INFO | Reading MSU: data15 Sampled Scenarios.csv.arff
+2026-10-28 04:56:15,602 | INFO | Reading MSU: data2 Sampled Scenarios.csv.arff
+2026-10-28 04:56:16,693 | INFO | Reading MSU: data3 Sampled Scenarios.csv.arff
+2026-10-28 04:56:17,918 | INFO | Reading MSU: data4 Sampled Scenarios.csv.arff
+2026-10-28 04:56:19,082 | INFO | Reading MSU: data5 Sampled Scenarios.csv.arff
+2026-10-28 04:56:20,263 | INFO | Reading MSU: data6 Sampled Scenarios.csv.arff
+2026-10-28 04:56:21,338 | INFO | Reading MSU: data7 Sampled Scenarios.csv.arff
+2026-10-28 04:56:22,518 | INFO | Reading MSU: data8 Sampled Scenarios.csv.arff
+2026-10-28 04:56:23,722 | INFO | Reading MSU: data9 Sampled Scenarios.csv.arff
+2026-10-28 04:56:25,289 | INFO | MSU scenario parse success: 100.00%
+2026-10-28 04:56:25,576 | INFO | MSU modality grouping:
+2026-10-28 04:56:25,577 | INFO |   pmu_r1: 29 columns | first=['R1-PA1:VH', 'R1-PM1:V', 'R1-PA2:VH', 'R1-PM2:V']
+2026-10-28 04:56:25,578 | INFO |   pmu_r2: 29 columns | first=['R2-PA1:VH', 'R2-PM1:V', 'R2-PA2:VH', 'R2-PM2:V']
+2026-10-28 04:56:25,578 | INFO |   pmu_r3: 29 columns | first=['R3-PA1:VH', 'R3-PM1:V', 'R3-PA2:VH', 'R3-PM2:V']
+2026-10-28 04:56:25,579 | INFO |   pmu_r4: 29 columns | first=['R4-PA1:VH', 'R4-PM1:V', 'R4-PA2:VH', 'R4-PM2:V']
+2026-10-28 04:56:25,580 | INFO |   cyber_logs: 12 columns | first=['control_panel_log1', 'control_panel_log2', 'control_panel_log3', 'control_panel_log4']
+2026-10-28 04:56:25,935 | INFO | 
+================================================================================
+2026-10-28 04:56:25,936 | INFO | DATASET BUNDLE: MSU_ORNL_Power
+2026-10-28 04:56:25,936 | INFO | Samples: 78377
+2026-10-28 04:56:25,944 | INFO | Groups/runs: 15
+2026-10-28 04:56:25,945 | INFO | Modalities:
+2026-10-28 04:56:25,945 | INFO |   pmu_r1                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-28 04:56:25,946 | INFO |   pmu_r2                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-28 04:56:25,946 | INFO |   pmu_r3                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-28 04:56:25,947 | INFO |   pmu_r4                   shape=(78377, 29) cost=0.2000 features=29
+2026-10-28 04:56:25,948 | INFO |   cyber_logs               shape=(78377, 12) cost=0.2000 features=12
+2026-10-28 04:56:25,950 | INFO |   class 0 normal                       n=4405
+2026-10-28 04:56:25,951 | INFO |   class 1 physical_fault_or_maintenance n=18309
+2026-10-28 04:56:25,952 | INFO |   class 2 data_injection               n=9582
+2026-10-28 04:56:25,952 | INFO |   class 3 remote_trip                  n=8737
+2026-10-28 04:56:25,953 | INFO |   class 4 relay_setting                n=37344
+2026-10-28 04:56:25,954 | INFO | ================================================================================
+
+[checkpoint] saved processed msu bundle -> /kaggle/working/actigrid/hgb_sequential/cache/msu_dataset_bundle.joblib
+
+================================================================================================
+HGB SEQUENTIAL AUDIT | dataset=MSU_ORNL_Power | split_seed=42
+================================================================================================
+2026-10-28 04:56:50,158 | INFO | Split MSU_ORNL_Power: train=47471 val=15272 test=15634
+2026-10-28 04:56:50,160 | INFO | Train classes: normal=2809, physical_fault_or_maintenance=11124, data_injection=5820, remote_trip=5137, relay_setting=22581
+2026-10-28 04:56:50,162 | INFO | Val   classes: normal=720, physical_fault_or_maintenance=3627, data_injection=1789, remote_trip=1812, relay_setting=7324
+2026-10-28 04:56:50,164 | INFO | Test  classes: normal=876, physical_fault_or_maintenance=3558, data_injection=1973, remote_trip=1788, relay_setting=7439
+2026-10-28 04:56:50,164 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-28 04:56:50,250 | INFO | Scaled pmu_r1               train mean=0.0001 std=0.9190
+2026-10-28 04:56:50,289 | INFO | Scaled pmu_r2               train mean=-0.0013 std=0.9502
+2026-10-28 04:56:50,328 | INFO | Scaled pmu_r3               train mean=-0.0013 std=0.9307
+2026-10-28 04:56:50,368 | INFO | Scaled pmu_r4               train mean=-0.0005 std=0.9206
+2026-10-28 04:56:50,388 | INFO | Scaled cyber_logs           train mean=-0.0041 std=0.5815
+train=47471 | validation calibration=7636 | validation policy=7636 | test=15634
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r3
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r3
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2+pmu_r3
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2+pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2+pmu_r3
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2+pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r2+pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=42 subset=pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs
+[sequential-raw] MSU_ORNL_Power split=42: 120 orders x 33 thresholds
+  evaluated 20/120 orders
+  evaluated 40/120 orders
+  evaluated 60/120 orders
+  evaluated 80/120 orders
+  evaluated 100/120 orders
+  evaluated 120/120 orders
+[sequential-calibrated] MSU_ORNL_Power split=42: 120 orders x 33 thresholds
+  evaluated 20/120 orders
+  evaluated 40/120 orders
+  evaluated 60/120 orders
+  evaluated 80/120 orders
+  evaluated 100/120 orders
+  evaluated 120/120 orders
+[cross-check] max |new HGB test F1 - rev-hard HGB test F1| = 0.000000000000
+
+================================================================================================
+HGB SEQUENTIAL AUDIT | dataset=MSU_ORNL_Power | split_seed=123
+================================================================================================
+2026-10-28 05:08:46,760 | INFO | Split MSU_ORNL_Power: train=47305 val=15197 test=15875
+2026-10-28 05:08:46,763 | INFO | Train classes: normal=2677, physical_fault_or_maintenance=10834, data_injection=5743, remote_trip=5332, relay_setting=22719
+2026-10-28 05:08:46,765 | INFO | Val   classes: normal=782, physical_fault_or_maintenance=3720, data_injection=1887, remote_trip=1716, relay_setting=7092
+2026-10-28 05:08:46,767 | INFO | Test  classes: normal=946, physical_fault_or_maintenance=3755, data_injection=1952, remote_trip=1689, relay_setting=7533
+2026-10-28 05:08:46,768 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-28 05:08:46,850 | INFO | Scaled pmu_r1               train mean=0.0004 std=0.9122
+2026-10-28 05:08:46,890 | INFO | Scaled pmu_r2               train mean=-0.0008 std=0.9468
+2026-10-28 05:08:46,929 | INFO | Scaled pmu_r3               train mean=-0.0008 std=0.9271
+2026-10-28 05:08:46,970 | INFO | Scaled pmu_r4               train mean=-0.0001 std=0.9111
+2026-10-28 05:08:46,992 | INFO | Scaled cyber_logs           train mean=-0.0042 std=0.5817
+train=47305 | validation calibration=7598 | validation policy=7599 | test=15875
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r3
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r3
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2+pmu_r3
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2+pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2+pmu_r3
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2+pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r2+pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=123 subset=pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs
+[sequential-raw] MSU_ORNL_Power split=123: 120 orders x 33 thresholds
+  evaluated 20/120 orders
+  evaluated 40/120 orders
+  evaluated 60/120 orders
+  evaluated 80/120 orders
+  evaluated 100/120 orders
+  evaluated 120/120 orders
+[sequential-calibrated] MSU_ORNL_Power split=123: 120 orders x 33 thresholds
+  evaluated 20/120 orders
+  evaluated 40/120 orders
+  evaluated 60/120 orders
+  evaluated 80/120 orders
+  evaluated 100/120 orders
+  evaluated 120/120 orders
+[cross-check] max |new HGB test F1 - rev-hard HGB test F1| = 0.000000000000
+
+================================================================================================
+HGB SEQUENTIAL AUDIT | dataset=MSU_ORNL_Power | split_seed=456
+================================================================================================
+2026-10-28 05:20:52,211 | INFO | Split MSU_ORNL_Power: train=47586 val=15462 test=15329
+2026-10-28 05:20:52,214 | INFO | Train classes: normal=2782, physical_fault_or_maintenance=11150, data_injection=5803, remote_trip=5334, relay_setting=22517
+2026-10-28 05:20:52,216 | INFO | Val   classes: normal=777, physical_fault_or_maintenance=3624, data_injection=1818, remote_trip=1785, relay_setting=7458
+2026-10-28 05:20:52,217 | INFO | Test  classes: normal=846, physical_fault_or_maintenance=3535, data_injection=1961, remote_trip=1618, relay_setting=7369
+2026-10-28 05:20:52,218 | INFO | Train groups=9 Val groups=3 Test groups=3
+2026-10-28 05:20:52,300 | INFO | Scaled pmu_r1               train mean=-0.0001 std=0.9215
+2026-10-28 05:20:52,339 | INFO | Scaled pmu_r2               train mean=-0.0015 std=0.9516
+2026-10-28 05:20:52,380 | INFO | Scaled pmu_r3               train mean=-0.0015 std=0.9330
+2026-10-28 05:20:52,420 | INFO | Scaled pmu_r4               train mean=0.0001 std=0.9194
+2026-10-28 05:20:52,442 | INFO | Scaled cyber_logs           train mean=-0.0042 std=0.5817
+train=47586 | validation calibration=7731 | validation policy=7731 | test=15329
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r3
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r3
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2+pmu_r3
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2+pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2+pmu_r3
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2+pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2+pmu_r3+pmu_r4
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2+pmu_r3+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r2+pmu_r3+pmu_r4+cyber_logs
+[fit HGB] MSU_ORNL_Power split=456 subset=pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs
+[sequential-raw] MSU_ORNL_Power split=456: 120 orders x 33 thresholds
+  evaluated 20/120 orders
+  evaluated 40/120 orders
+  evaluated 60/120 orders
+  evaluated 80/120 orders
+  evaluated 100/120 orders
+  evaluated 120/120 orders
+[sequential-calibrated] MSU_ORNL_Power split=456: 120 orders x 33 thresholds
+  evaluated 20/120 orders
+  evaluated 40/120 orders
+  evaluated 60/120 orders
+  evaluated 80/120 orders
+  evaluated 100/120 orders
+  evaluated 120/120 orders
+[cross-check] max |new HGB test F1 - rev-hard HGB test F1| = 0.000000000000
+
+================================================================================================
+SEQUENTIAL-OVER-HGB AUDIT COMPLETE
+Output: /kaggle/working/actigrid/hgb_sequential
+ZIP   : /kaggle/working/actigrid/hgb_sequential.zip
+Upload hgb_sequential.zip back to ChatGPT for paper integration.
+================================================================================================

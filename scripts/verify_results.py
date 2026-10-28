@@ -3,6 +3,7 @@
 Cross-checks three sources against each other:
   * results/reviewer_hardening/  (--stage hardening; log results/logs/reviewer_hardening.log)
   * results/next_addon/          (--stage greedy-voi; log results/logs/greedy_voi.log)
+  * results/hgb_sequential/      (--stage hgb-sequential; log results/logs/hgb_sequential.log)
   * the two Kaggle run logs and the stage code in actigrid/
 
 It recomputes every derived file from its per-row inputs (summaries, selections,
@@ -24,6 +25,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 HARD = ROOT / "results" / "reviewer_hardening"
 ADDON = ROOT / "results" / "next_addon"
+HGBSEQ = ROOT / "results" / "hgb_sequential"
 LOGS = ROOT / "results" / "logs"
 CODE = ROOT / "actigrid"
 TU, MSU = "TU_Delft_2026_CPPS", "MSU_ORNL_Power"
@@ -155,7 +157,7 @@ for ds in DATASETS:
         check(robust[(ds, "42")] == {PRIMARY[ds]},
               f"{ds} repeated split seed 42 reproduces the primary split {'/'.join(PRIMARY[ds])}")
         check(all(robust[(ds, s)] != {PRIMARY[ds]} for s in ("123", "456") if (ds, s) in robust),
-              f"{ds} split seeds 123 and 456 differ from the primary split")
+              f"{ds} partition seeds 123 and 456 differ from the primary split")
     else:
         note(f"{ds}: split-robust training lines not in this log (run was resumed past them)")
 test_counts = {}
@@ -340,7 +342,58 @@ for r in read(ADDON / "calibration_summary.csv"):
           f"(the Kaggle file had the validation mean {val_raw:.4f}; see README)")
 
 # ============================================================================
-section("5. Values quoted in the paper")
+section("5. hgb_sequential/ derived files")
+log3 = "\n".join(short_lines(LOGS / "hgb_sequential.log"))
+check(log3.count("max |new HGB test F1 - rev-hard HGB test F1| = 0.000000000000") == 6,
+      "run log: static HGB reproduces the hardening frontier on all six dataset/partition runs")
+check("SEQUENTIAL-OVER-HGB AUDIT COMPLETE" in log3, "hgb-sequential run completed")
+rep = read(HGBSEQ / "HGB_SEQUENTIAL_REPRESENTATIVE_RESULTS.csv")
+matched_all = []
+for ds in DATASETS:
+    front = [r for r in read(HARD / f"{ds}_strong_subset_classifier_frontier.csv") if r["model"] == "HGB"]
+    for s_ in SEEDS:
+        static = read(HGBSEQ / f"{ds}_split{s_}_static_hgb.csv")
+        old = {r["subset"]: float(r["test_macro_f1"]) for r in front if r["split_seed"] == s_}
+        check(len(static) == len(old) and all(close(r["test_macro_f1"], old[r["subset"]], 1e-12) for r in static),
+              f"{ds} partition {s_}: {len(static)} static HGB scores equal the hardening frontier")
+        for mode in ("raw", "calibrated"):
+            q = read(HGBSEQ / f"{ds}_split{s_}_sequential_hgb_{mode}.csv")
+            keep = pareto_mask([r["selection_cost"] for r in q], [r["selection_macro_f1"] for r in q])
+            vp = [r for r, k in zip(q, keep) if k]
+            flags_ok = all((r["validation_pareto"] == "True") == k for r, k in zip(q, keep))
+            best = sorted(vp, key=lambda r: (-float(r["selection_macro_f1"]), float(r["selection_cost"])))[0]
+            want = [r for r in rep if r["dataset"] == ds and r["split_seed"] == s_
+                    and r["method"] == f"Sequential HGB {mode}"][0]
+            check(flags_ok and close(best["test_macro_f1"], want["test_macro_f1"], 1e-12)
+                  and close(best["test_cost"], want["test_cost"], 1e-12),
+                  f"{ds} partition {s_} {mode}: Pareto flags and chosen policy recomputed from the policy half")
+        pr = read(HGBSEQ / f"{ds}_split{s_}_representative_seq_predictions.csv")
+        y = np.array([int(r["y_true"]) for r in pr]); yp = np.array([int(r["y_pred_seq_hgb"]) for r in pr])
+        cost = np.mean([float(r["cost_seq_hgb"]) for r in pr])
+        want = [r for r in rep if r["dataset"] == ds and r["split_seed"] == s_
+                and r["method"] == "Sequential HGB calibrated"][0]
+        check(close(macro_f1(y, yp), want["test_macro_f1"], 1e-9) and close(cost, want["test_cost"], 1e-9),
+              f"{ds} partition {s_}: calibrated policy predictions give F1 {macro_f1(y, yp):.4f}, cost {cost:.3f}")
+        matched_all += read(HGBSEQ / f"{ds}_split{s_}_matched_budget.csv")
+hgb_summ = read(HGBSEQ / "HGB_SEQUENTIAL_SPLIT_SUMMARY.csv")
+ok = True
+for r in hgb_summ:
+    v = [float(x["test_macro_f1"]) for x in rep if x["dataset"] == r["dataset"] and x["method"] == r["method"]]
+    c = [float(x["test_cost"]) for x in rep if x["dataset"] == r["dataset"] and x["method"] == r["method"]]
+    ok &= close(r["mean_test_macro_f1"], np.mean(v)) and close(r["sd_test_macro_f1"], np.std(v, ddof=1)) \
+        and close(r["mean_test_cost"], np.mean(c))
+check(ok and len(hgb_summ) == 6, "split summary = mean/SD of the representative results")
+ok = True
+for r in read(HGBSEQ / "HGB_SEQUENTIAL_MATCHED_BUDGET_SUMMARY.csv"):
+    d = [float(x["delta_f1_seq_minus_static"]) for x in matched_all if x["dataset"] == r["dataset"]
+         and x["sequential_method"] == r["sequential_method"] and close(x["budget"], r["budget"], 1e-9)]
+    ok &= len(d) == 3 and close(r["delta_f1_mean"], np.mean(d))
+check(ok, "matched-budget summary = mean over the three per-partition tables")
+note("HGB_CALIBRATION_SUMMARY.csv reports ECE on the calibration half that fits the temperatures "
+     "(in-sample); the paper does not use it.")
+
+# ============================================================================
+section("6. Values quoted in the paper")
 
 
 def rd(ds, name):
@@ -417,6 +470,22 @@ paper = [  # (quoted value, recomputed value, tolerance, where)
     (3, n_dqn_pareto(TU, ("456",)), 0, "TU DQN Pareto points, seed 456"),
     (0, n_dqn_pareto(MSU, SEEDS), 0, "MSU DQN Pareto points, all seeds"),
 ]
+hs = {(r["dataset"], r["method"]): r for r in hgb_summ}
+for ds, key, f1, sd, cost in [
+        (TU, "Static HGB (best validation F1)", 0.8972, 0.0580, 0.778),
+        (TU, "Sequential HGB raw", 0.9254, 0.0443, 0.520),
+        (TU, "Sequential HGB calibrated", 0.9282, 0.0378, 0.571),
+        (MSU, "Static HGB (best validation F1)", 0.4376, 0.0077, 0.933),
+        (MSU, "Sequential HGB raw", 0.4395, 0.0057, 0.879),
+        (MSU, "Sequential HGB calibrated", 0.4400, 0.0066, 0.861)]:
+    r = hs[(ds, key)]
+    paper += [(f1, float(r["mean_test_macro_f1"]), 5e-5, f"Table III {ds} {key} mean"),
+              (sd, float(r["sd_test_macro_f1"]), 5e-5, f"Table III {ds} {key} SD"),
+              (cost, float(r["mean_test_cost"]), 5e-4, f"Table III {ds} {key} cost")]
+tu_mid = [float(x["delta_f1_seq_minus_static"]) for x in matched_all if x["dataset"] == TU
+          and x["sequential_method"] == "HGB-seq-calibrated" and close(x["budget"], 2 / 3, 1e-6)]
+paper += [(0.039, min(tu_mid), 5e-4, "TU sequential minus static at budget 2/3, smallest"),
+          (0.100, max(tu_mid), 5e-4, "TU sequential minus static at budget 2/3, largest")]
 for quoted, value, tol, where in paper:
     check(close(quoted, value, tol), f"{where}: paper {quoted} vs data {value:.4f}")
 for ds, n in ((TU, 6), (MSU, 31)):

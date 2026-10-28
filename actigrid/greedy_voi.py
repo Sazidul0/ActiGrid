@@ -1,7 +1,7 @@
-"""Greedy-VOI add-on: non-RL sequential controls on frozen backbones.
+"""Greedy-VOI add-on: non-RL sequential controls on frozen backbones (paper Fig. 2).
 
 Reuses the three fusion checkpoints that the hardening stage trained on the
-primary split (backbone seeds 42/123/456) and, without retraining any fusion,
+primary split (initialization seeds 42/123/456) and, without retraining any fusion,
 DQN or tree model, adds:
   * Greedy-VOI: one small HGB regressor per modality predicts the one-step
     entropy reduction per unit cost from the current posterior, entropy and
@@ -627,7 +627,7 @@ def greedy_voi_main(hardening_dir: Optional[str] = None, fast: bool = False, sum
     """Run the Greedy-VOI add-on. Call pipeline.setup() first.
 
     hardening_dir   folder with the hardening outputs and cache/ (see module docstring).
-    fast            smoke test: backbone seed 42 only. Not for results.
+    fast            smoke test: initialization seed 42 only. Not for results.
     summaries_only  skip inference; rebuild the comparison/AUC/calibration summaries
                     from the frontier CSVs already in <work_dir>/next_addon/.
     """

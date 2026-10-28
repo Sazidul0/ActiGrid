@@ -1,11 +1,12 @@
-"""Generate the figures of the current paper from the released result files.
+"""Generate the result figures of the paper from the released result files.
 
 Usage (from the repository root):
     python scripts/make_paper_figures.py
 
 Every plotted number is read from results/; nothing is retrained or hand-typed.
 Run scripts/verify_results.py first; it recomputes every file read here from
-its per-row inputs.
+its per-row inputs. Fig. 1 (the method diagram) is drawn by
+scripts/make_method_diagram.py.
 
 Sources
 -------
@@ -14,14 +15,17 @@ results/next_addon/all_same_backbone_pareto_points.csv
     entropy settings that are Pareto optimal on validation (the candidates
     behind the paper's Pareto counts; nothing is filtered on test results).
 results/reviewer_hardening/<ds>_strong_subset_validation_selected.csv
-    Validation-selected HGB subset models on split seed 42 (= primary split).
+    Validation-selected static HGB subset models on partition 42 (= primary split).
+results/hgb_sequential/<ds>_split42_sequential_hgb_calibrated.csv
+    Entropy stopping over the per-subset HGB models of partition 42; the
+    settings that are Pareto optimal on the policy half of validation.
 results/reviewer_hardening/TU_Delft_2026_CPPS_dqn_branching_seed42.csv
 results/reviewer_hardening/<ds>_mask_calibration_seed42.csv
 
 Writes (into figures/):
-    fig_frontier.pdf / .png      Macro-F1 vs. normalized cost, primary split (Fig. 1)
-    fig_calibration.pdf / .png   mask-wise test ECE before/after scaling (Fig. 2)
-    fig_branching.pdf / .png     decision after resource telemetry, TU Delft (Fig. 3)
+    fig_frontier.pdf / .png      Macro-F1 vs. normalized cost, primary split (Fig. 2)
+    fig_calibration.pdf / .png   mask-wise test ECE before/after scaling (Fig. 3)
+    fig_branching.pdf / .png     decision after resource telemetry, TU Delft (Fig. 4)
 """
 
 import csv
@@ -38,11 +42,12 @@ from matplotlib.patches import Patch
 ROOT = Path(__file__).resolve().parents[1]
 ADDON = ROOT / "results" / "next_addon"
 HARD = ROOT / "results" / "reviewer_hardening"
+HGBSEQ = ROOT / "results" / "hgb_sequential"
 OUT = ROOT / "figures"
 OUT.mkdir(exist_ok=True)
 
 TU, MSU = "TU_Delft_2026_CPPS", "MSU_ORNL_Power"
-SEED = "42"  # primary split and backbone seed shared by every source below
+SEED = "42"  # partition 42 (= primary split) and initialization seed 42
 
 # Categorical slots in fixed order (checked with the dataviz palette validator).
 BLUE, BRICK, OCHRE, GREEN = "#2d68a6", "#b8472f", "#c4951a", "#3b8752"
@@ -114,22 +119,31 @@ def frontier_data(ds):
     hgb = sorted((float(r["normalized_cost"]), float(r["test_macro_f1"]))
                  for r in read(HARD / f"{ds}_strong_subset_validation_selected.csv")
                  if r["split_seed"] == SEED and r["model"] == "HGB")
+    # Entropy stopping over the per subset HGB models of split 42 (the primary
+    # split): the calibrated settings that are Pareto optimal on the policy
+    # half of validation, shown at their test scores.
+    hgb_seq = sorted({(float(r["test_cost"]), float(r["test_macro_f1"]))
+                      for r in read(HGBSEQ / f"{ds}_split{SEED}_sequential_hgb_calibrated.csv")
+                      if r["validation_pareto"] == "True"})
     # One threshold sweep, so cost order is threshold order and a line is meaningful.
     voi = sorted(pts["Greedy-VOI"])
-    return sorted(pts["Calibrated-OrderEntropy"]), voi, sorted(pts["DQN"]), hgb
+    return sorted(pts["Calibrated-OrderEntropy"]), voi, sorted(pts["DQN"]), hgb, hgb_seq
 
 
 def fig_frontier():
     fig, axes = plt.subplots(1, 2, figsize=(COL_W, 1.85))
     panels = [(TU, "(a) TU Delft", (0.5, 0.9)), (MSU, "(b) MSU/ORNL", (0.25, 0.46))]
     for ax, (ds, label, ylim) in zip(axes, panels):
-        ent, voi, dqn, hgb = frontier_data(ds)
+        ent, voi, dqn, hgb, hgb_seq = frontier_data(ds)
         ax.plot(*zip(*voi), color=OCHRE, lw=0.9, marker="^", ms=2.4, zorder=3)
         # Entropy settings come from different orders, so they are not one curve.
+        # Hollow markers are validation-chosen settings of a sequential rule.
         ax.scatter(*zip(*ent), s=7, marker="o", facecolor="white", edgecolor=BLUE,
                    linewidth=0.7, zorder=4)
+        ax.scatter(*zip(*hgb_seq), s=5, marker="s", facecolor="white", edgecolor=GREEN,
+                   linewidth=0.6, zorder=4)
         ax.plot(*zip(*hgb), color=GREEN, lw=1.1, marker="s", ms=3.4,
-                mec="white", mew=0.6, zorder=4)
+                mec="white", mew=0.6, zorder=5)
         # On MSU/ORNL two lambdas land 1 pt apart; no outline, so they merge cleanly.
         ax.scatter(*zip(*dqn), s=12, marker="D", color=BRICK, linewidth=0, zorder=5)
         ax.set_xlim(0.15, 1.04)
@@ -139,14 +153,16 @@ def fig_frontier():
         ax.set_title(label, loc="left", fontsize=8, color=INK, pad=3)
         grid(ax, "both")
     axes[0].set_ylabel("Macro-F1")
-    handles = [
-        Line2D([], [], lw=0, marker="o", ms=2.9, mfc="white", mec=BLUE, mew=0.7,
-               label="Calibrated entropy"),
-        Line2D([], [], color=OCHRE, lw=0.9, marker="^", ms=2.4, label="Greedy-VOI"),
-        Line2D([], [], color=BRICK, lw=0, marker="D", ms=3.4, mec="white", label="DQN"),
-        Line2D([], [], color=GREEN, lw=1.1, marker="s", ms=3.4, mec="white", label="HGB per subset"),
-    ]
-    fig.legend(handles=handles, loc="lower center", ncol=4, bbox_to_anchor=(0.5, 0.97),
+    ent_h = Line2D([], [], lw=0, marker="o", ms=2.9, mfc="white", mec=BLUE, mew=0.7,
+                   label="Calibrated entropy")
+    voi_h = Line2D([], [], color=OCHRE, lw=0.9, marker="^", ms=2.4, label="Greedy-VOI")
+    dqn_h = Line2D([], [], color=BRICK, lw=0, marker="D", ms=3.4, mec="white", label="DQN")
+    hgb_h = Line2D([], [], color=GREEN, lw=1.1, marker="s", ms=3.4, mec="white", label="Static HGB")
+    seq_h = Line2D([], [], lw=0, marker="s", ms=2.6, mfc="white", mec=GREEN, mew=0.6,
+                   label="Sequential HGB")
+    # The legend fills column by column; this order reads row by row.
+    handles = [ent_h, hgb_h, voi_h, seq_h, dqn_h]
+    fig.legend(handles=handles, loc="lower center", ncol=3, bbox_to_anchor=(0.5, 0.97),
                handlelength=1.6, columnspacing=1.0, handletextpad=0.4)
     fig.tight_layout(w_pad=1.0)
     save(fig, "fig_frontier")

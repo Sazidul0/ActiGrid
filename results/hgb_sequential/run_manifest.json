@@ -1,0 +1,24 @@
+{
+  "datasets": [
+    "TU_Delft_2026_CPPS",
+    "MSU_ORNL_Power"
+  ],
+  "split_seeds": [
+    42,
+    123,
+    456
+  ],
+  "hgb": {
+    "max_iter": 250,
+    "learning_rate": 0.08,
+    "max_leaf_nodes": 31,
+    "l2_regularization": 0.0001,
+    "class_weighting": "balanced sample weights"
+  },
+  "validation_calibration_fraction": 0.5,
+  "temperature_grid_min": 0.2,
+  "temperature_grid_max": 4.999999999999999,
+  "temperature_grid_n": 121,
+  "threshold_quantiles": 31,
+  "selection_rule": "validation-calibration for T; disjoint validation-policy half for order/threshold; test final only"
+}

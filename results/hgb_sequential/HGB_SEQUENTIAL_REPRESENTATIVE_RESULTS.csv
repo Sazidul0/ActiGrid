@@ -1,0 +1,19 @@
+dataset,split_seed,method,descriptor,test_macro_f1,test_cost
+TU_Delft_2026_CPPS,42,Static HGB (best validation F1),physical+network,0.8453837909557477,0.6666666666666666
+TU_Delft_2026_CPPS,42,Sequential HGB raw,network>physical>resource; tau=0.129044,0.8746467970138841,0.4116008105369807
+TU_Delft_2026_CPPS,42,Sequential HGB calibrated,network>physical>resource; tau=0.688292,0.8847256957756372,0.4670719351570415
+TU_Delft_2026_CPPS,123,Static HGB (best validation F1),physical+resource+network,0.9599218250239545,1.0
+TU_Delft_2026_CPPS,123,Sequential HGB raw,network>physical>resource; tau=0.00327873,0.9445438214985497,0.6458161865569274
+TU_Delft_2026_CPPS,123,Sequential HGB calibrated,network>physical>resource; tau=0.220077,0.9532249592341983,0.7242798353909465
+TU_Delft_2026_CPPS,456,Static HGB (best validation F1),resource+network,0.8862203289111386,0.6666666666666666
+TU_Delft_2026_CPPS,456,Sequential HGB raw,network>resource>physical; tau=0.0315169,0.9568723611864295,0.5021929824561403
+TU_Delft_2026_CPPS,456,Sequential HGB calibrated,network>resource>physical; tau=0.73459,0.9466497094242953,0.522203947368421
+MSU_ORNL_Power,42,Static HGB (best validation F1),pmu_r1+pmu_r2+pmu_r3+pmu_r4,0.43216960347271505,0.8
+MSU_ORNL_Power,42,Sequential HGB raw,cyber_logs>pmu_r4>pmu_r1>pmu_r3>pmu_r2; tau=0.369464,0.43933610285685204,0.9129333503901752
+MSU_ORNL_Power,42,Sequential HGB calibrated,cyber_logs>pmu_r4>pmu_r1>pmu_r3>pmu_r2; tau=1.03101,0.4397050500680028,0.8926570295509786
+MSU_ORNL_Power,123,Static HGB (best validation F1),pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs,0.4464129233437806,1.0
+MSU_ORNL_Power,123,Sequential HGB raw,pmu_r4>pmu_r3>pmu_r1>pmu_r2>cyber_logs; tau=0.5809,0.4453049409738309,0.8169574803149606
+MSU_ORNL_Power,123,Sequential HGB calibrated,pmu_r4>pmu_r1>cyber_logs>pmu_r3>pmu_r2; tau=1.12799,0.4467058949890834,0.7994204724409448
+MSU_ORNL_Power,456,Static HGB (best validation F1),pmu_r1+pmu_r2+pmu_r3+pmu_r4+cyber_logs,0.43422650289643017,1.0
+MSU_ORNL_Power,456,Sequential HGB raw,pmu_r4>pmu_r1>pmu_r3>cyber_logs>pmu_r2; tau=0.248739,0.4339770350071094,0.9058386065627242
+MSU_ORNL_Power,456,Sequential HGB calibrated,pmu_r4>pmu_r1>cyber_logs>pmu_r3>pmu_r2; tau=0.923006,0.4335223296204392,0.890273338117294

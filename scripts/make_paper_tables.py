@@ -1,4 +1,4 @@
-"""Rebuild the numbers in the paper's Tables I-III from the result files.
+"""Rebuild the numbers in the paper's Tables I-IV from the result files.
 
 Usage (from the repository root):
     python scripts/make_paper_tables.py
@@ -6,7 +6,8 @@ Usage (from the repository root):
 Reads results/controlled_same_backbone/ (ten seeds, one shared backbone per
 seed; Table I and the paired effects quoted in the text) and
 results/reviewer_hardening/ (three group splits and validation-selected HGB
-subsets, Table II; seed-42 calibration and corruption, Table III). Prints
+subsets, Table II; seed-42 calibration and corruption, Table IV) and
+results/hgb_sequential/ (static versus sequential HGB, Table III). Prints
 LaTeX table rows; nothing is retrained.
 """
 import csv
@@ -16,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CTL = ROOT / "results" / "controlled_same_backbone"
 HARD = ROOT / "results" / "reviewer_hardening"
+HGBSEQ = ROOT / "results" / "hgb_sequential"
 
 # (dataset key, short label, number of modalities M)
 DATASETS = [("TU_Delft_2026_CPPS", "TU Delft", 3), ("MSU_ORNL_Power", "MSU/ORNL", 5)]
@@ -92,7 +94,7 @@ def table_hardening():
 
 
 def table_calibration_corruption():
-    print("\n% Table III: mask-wise test ECE (mean over masks) and first-modality corruption, seed-42 DQN")
+    print("\n% Table IV: mask-wise test ECE (mean over masks) and first-modality corruption, seed-42 DQN")
     for ds, label, M in DATASETS:
         cal = rows(f"{ds}_mask_calibration_seed42.csv")
         raw = statistics.mean(float(r["test_ece_raw"]) for r in cal)
@@ -105,8 +107,31 @@ def table_calibration_corruption():
               f" -> {float(corr['zero']['adv_cost']):.3f} (zero), {float(corr['noise']['adv_cost']):.3f} (noise)")
 
 
+def table_hgb_sequential():
+    print("\n% Table III: static versus sequential HGB over partition seeds 42, 123, 456 (mean +- s.d.)")
+    with open(HGBSEQ / "HGB_SEQUENTIAL_SPLIT_SUMMARY.csv", newline="") as f:
+        summ = {(r["dataset"], r["method"]): r for r in csv.DictReader(f)}
+    names = [("Static HGB (best validation F1)", "Static HGB"),
+             ("Sequential HGB raw", "Sequential HGB, raw"),
+             ("Sequential HGB calibrated", "Sequential HGB, calibrated")]
+    for ds, label, M in DATASETS:
+        for key, name in names:
+            r = summ[(ds, key)]
+            print(f"{label:9s} & {name:26s} & ${float(r['mean_test_macro_f1']):.4f}\\pm"
+                  f"{float(r['sd_test_macro_f1']):.4f}$ & {float(r['mean_test_cost']):.3f} \\\\")
+    with open(HGBSEQ / "HGB_SEQUENTIAL_ALL_MATCHED_BUDGETS.csv", newline="") as f:
+        cal = [r for r in csv.DictReader(f) if r["sequential_method"] == "HGB-seq-calibrated"]
+    for ds, label, M in DATASETS:
+        for b in sorted({float(r["budget"]) for r in cal if r["dataset"] == ds}):
+            d = [float(r["delta_f1_seq_minus_static"]) for r in cal
+                 if r["dataset"] == ds and abs(float(r["budget"]) - b) < 1e-9]
+            print(f"%   {label}: validation budget {b:.3f}, calibrated sequential minus static Macro-F1 "
+                  f"per partition " + ", ".join(f"{x:+.3f}" for x in d))
+
+
 if __name__ == "__main__":
     table_main(read("controlled_summary.csv", "method"))
     table_paired(read("controlled_paired_effects.csv", "comparator"))
     table_hardening()
+    table_hgb_sequential()
     table_calibration_corruption()

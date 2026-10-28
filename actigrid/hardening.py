@@ -1,15 +1,18 @@
-"""Reviewer-hardening suite (paper Table II and III, Figs. 1-3 inputs).
+"""Reviewer-hardening suite (paper Tables II and IV, inputs to Figs. 2-4).
 
 Builds on the same pipeline as the controlled experiment and adds:
   * subset-specific RF / HGB / XGBoost classifiers for every nonempty modality
-    subset on three group-disjoint splits (validation-selected per size k),
-  * three fusion backbones (seeds 42/123/456) on the primary split, each with a
-    DQN lambda frontier (0.25/0.5/0.75) and two reward ablations,
-  * for backbone seed 42: per-mask ECE with temperature scaling, a run-level
+    subset on three group-disjoint partitions (partition seeds 42/123/456;
+    validation-selected per size k),
+  * three fusion backbones on the primary split (initialization seeds
+    42/123/456), each with a DQN lambda frontier (0.25/0.5/0.75) and two reward
+    ablations,
+  * for initialization seed 42: per-mask ECE with temperature scaling, a run-level
     cluster bootstrap of DQN minus order+entropy, acquisition paths and
     branching, a label-aware oracle, a post-hoc matched-cost static mixture,
     and a first-acquired-modality corruption stress test,
-  * a repeated group-split audit (DQN, order+entropy, best fixed subset).
+  * a repeated group-split audit (DQN, order+entropy, best fixed subset), whose
+    fusion model and DQN use one fixed model seed (4242) on every partition.
 
 Outputs go to <work_dir>/reviewer_hardening/. The released copy is in
 results/reviewer_hardening/ and the run log is results/logs/reviewer_hardening.log.
@@ -810,7 +813,7 @@ def hardening_main(profile: str = "conference", force: bool = False, skip_dqn: b
                    fast: bool = False):
     """Run the reviewer-hardening suite. Call pipeline.setup() first.
 
-    profile   "conference" (the paper: 3 splits, 3 backbone seeds, lambda 0.25/0.5/0.75,
+    profile   "conference" (the paper: 3 partitions, 3 initialization seeds, lambda 0.25/0.5/0.75,
               3,000 bootstrap replicates) or "full" (5 splits/seeds, 7 lambdas, MLP
               subsets, Dueling DDQN, 10,000 replicates).
     force     recompute outputs that already exist; otherwise every stage resumes
