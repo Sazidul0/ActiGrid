@@ -1,0 +1,6 @@
+,normal,physical_fault_or_maintenance,data_injection,remote_trip,relay_setting
+normal,686,39,35,55,61
+physical_fault_or_maintenance,41,1368,721,561,867
+data_injection,19,622,468,301,563
+remote_trip,70,474,312,558,374
+relay_setting,223,1500,899,703,4114

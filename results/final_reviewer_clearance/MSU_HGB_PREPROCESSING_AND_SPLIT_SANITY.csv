@@ -1,0 +1,4 @@
+protocol,preprocessing,accuracy,balanced_accuracy,macro_f1
+file_disjoint,current_pooled_median,0.4617500319815786,0.45898128334882066,0.44003259522767235
+file_disjoint,train_only_median,0.4601509530510426,0.45398095547379214,0.43704903055684313
+stratified_random_row_80_20,train_only_median,0.7755805052309263,0.8126278746018256,0.7697224587313081

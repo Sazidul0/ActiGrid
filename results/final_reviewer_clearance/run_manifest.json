@@ -1,0 +1,42 @@
+{
+  "primary_split_seed": 42,
+  "control_seeds": [
+    42,
+    123,
+    456
+  ],
+  "dqn_lambda": 0.5,
+  "dqn_episodes": 20000,
+  "backbone_fraction": 0.7,
+  "msu_hgb_delta_corrected_minus_current": -0.0029835646708292196,
+  "outputs": [
+    "FINAL_REVIEWER_CLEARANCE.md",
+    "MSU_CROSS_SPLIT_DUPLICATE_ROWS.csv",
+    "MSU_DUPLICATE_AUDIT_SUMMARY.csv",
+    "MSU_HGB_PREPROCESSING_AND_SPLIT_SANITY.csv",
+    "MSU_NAN_INF_AUDIT.csv",
+    "MSU_ORNL_Power_backbone_policy_holdout_control.csv",
+    "MSU_ORNL_Power_holdout_policy_corruption_and_mimicry.csv",
+    "MSU_ORNL_Power_policy_holdout_dqn_seed123_test_trace.csv",
+    "MSU_ORNL_Power_policy_holdout_dqn_seed42_test_trace.csv",
+    "MSU_ORNL_Power_policy_holdout_dqn_seed456_test_trace.csv",
+    "MSU_ORNL_Power_single_modality_neural_vs_HGB.csv",
+    "MSU_ORNL_Power_train_class_group_support.csv",
+    "MSU_ORNL_Power_train_val_posterior_audit.csv",
+    "MSU_TRAIN_ONLY_IMPUTATION_AFFECTED_CELLS.csv",
+    "MSU_file_disjoint_current_pooled_median_confusion_counts.csv",
+    "MSU_file_disjoint_current_pooled_median_confusion_normalized.csv",
+    "MSU_file_disjoint_train_only_median_confusion_counts.csv",
+    "MSU_file_disjoint_train_only_median_confusion_normalized.csv",
+    "MSU_random_row_train_only_confusion_counts.csv",
+    "MSU_random_row_train_only_confusion_normalized.csv",
+    "TU_Delft_2026_CPPS_backbone_policy_holdout_control.csv",
+    "TU_Delft_2026_CPPS_holdout_policy_corruption_and_mimicry.csv",
+    "TU_Delft_2026_CPPS_policy_holdout_dqn_seed123_test_trace.csv",
+    "TU_Delft_2026_CPPS_policy_holdout_dqn_seed42_test_trace.csv",
+    "TU_Delft_2026_CPPS_policy_holdout_dqn_seed456_test_trace.csv",
+    "TU_Delft_2026_CPPS_single_modality_neural_vs_HGB.csv",
+    "TU_Delft_2026_CPPS_train_class_group_support.csv",
+    "TU_Delft_2026_CPPS_train_val_posterior_audit.csv"
+  ]
+}

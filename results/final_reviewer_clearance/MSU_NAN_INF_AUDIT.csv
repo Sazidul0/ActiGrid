@@ -1,0 +1,16 @@
+modality,split,rows,rows_with_nan_or_inf,cells_nan_or_inf
+pmu_r1,train,47471,1781,1781
+pmu_r1,val,15272,551,551
+pmu_r1,test,15634,545,545
+pmu_r2,train,47471,1606,1606
+pmu_r2,val,15272,481,481
+pmu_r2,test,15634,520,520
+pmu_r3,train,47471,1639,1639
+pmu_r3,val,15272,467,467
+pmu_r3,test,15634,527,527
+pmu_r4,train,47471,1757,1757
+pmu_r4,val,15272,529,529
+pmu_r4,test,15634,503,503
+cyber_logs,train,47471,0,0
+cyber_logs,val,15272,0,0
+cyber_logs,test,15634,0,0

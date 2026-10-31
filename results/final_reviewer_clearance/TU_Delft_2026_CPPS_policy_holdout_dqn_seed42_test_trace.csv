@@ -1,0 +1,1317 @@
+sample_idx,y_true,y_pred,cost,steps,acquired
+0,0,0,0.6666666865348816,2,network > physical
+1,0,0,1.0000000298023224,3,network > resource > physical
+2,0,0,1.0000000298023224,3,network > resource > physical
+3,0,0,0.6666666865348816,2,network > physical
+4,0,0,1.0000000298023224,3,network > resource > physical
+5,0,0,1.0000000298023224,3,network > resource > physical
+6,0,0,0.6666666865348816,2,network > resource
+7,0,0,0.6666666865348816,2,network > physical
+8,0,0,0.6666666865348816,2,network > resource
+9,0,0,1.0000000298023224,3,network > resource > physical
+10,0,4,0.6666666865348816,2,network > resource
+11,0,0,1.0000000298023224,3,network > resource > physical
+12,0,0,0.6666666865348816,2,network > resource
+13,0,0,1.0000000298023224,3,network > resource > physical
+14,0,0,1.0000000298023224,3,network > physical > resource
+15,0,0,1.0000000298023224,3,network > resource > physical
+16,0,0,1.0000000298023224,3,network > resource > physical
+17,0,0,1.0000000298023224,3,network > resource > physical
+18,0,0,1.0000000298023224,3,network > resource > physical
+19,0,0,1.0000000298023224,3,network > physical > resource
+20,0,0,1.0000000298023224,3,network > physical > resource
+21,0,0,1.0000000298023224,3,network > physical > resource
+22,0,0,0.6666666865348816,2,network > physical
+23,0,0,0.6666666865348816,2,network > resource
+24,0,0,1.0000000298023224,3,network > resource > physical
+25,0,0,1.0000000298023224,3,network > physical > resource
+26,0,0,1.0000000298023224,3,network > resource > physical
+27,4,4,1.0000000298023224,3,network > physical > resource
+28,4,4,1.0000000298023224,3,network > physical > resource
+29,4,4,0.6666666865348816,2,network > physical
+30,4,4,0.6666666865348816,2,network > physical
+31,4,4,0.6666666865348816,2,network > physical
+32,4,4,0.6666666865348816,2,network > physical
+33,4,4,0.6666666865348816,2,network > physical
+34,4,4,0.3333333432674408,1,network
+35,0,4,0.6666666865348816,2,network > physical
+36,0,0,0.6666666865348816,2,network > resource
+37,0,1,0.6666666865348816,2,network > physical
+38,0,1,1.0000000298023224,3,network > physical > resource
+39,0,1,1.0000000298023224,3,network > resource > physical
+40,0,1,0.6666666865348816,2,network > physical
+41,0,1,0.6666666865348816,2,network > physical
+42,0,1,1.0000000298023224,3,network > resource > physical
+43,0,1,0.6666666865348816,2,network > physical
+44,0,0,0.6666666865348816,2,network > resource
+45,0,0,0.6666666865348816,2,network > resource
+46,0,1,0.6666666865348816,2,network > physical
+47,0,1,0.6666666865348816,2,network > physical
+48,0,1,1.0000000298023224,3,network > resource > physical
+49,0,0,0.6666666865348816,2,network > resource
+50,0,1,0.6666666865348816,2,network > physical
+51,0,0,0.6666666865348816,2,network > resource
+52,0,1,0.6666666865348816,2,network > physical
+53,0,0,0.3333333432674408,1,network
+54,0,1,1.0000000298023224,3,network > resource > physical
+55,0,1,0.6666666865348816,2,network > physical
+56,0,1,0.6666666865348816,2,network > physical
+57,0,1,1.0000000298023224,3,network > resource > physical
+58,0,1,0.6666666865348816,2,network > physical
+59,0,1,0.6666666865348816,2,network > physical
+60,0,1,1.0000000298023224,3,network > physical > resource
+244,0,0,0.6666666865348816,2,network > physical
+245,0,0,1.0000000298023224,3,network > resource > physical
+246,0,0,1.0000000298023224,3,network > resource > physical
+247,0,0,1.0000000298023224,3,network > physical > resource
+248,0,0,1.0000000298023224,3,network > resource > physical
+249,0,0,0.6666666865348816,2,network > resource
+250,0,0,1.0000000298023224,3,network > physical > resource
+251,0,0,1.0000000298023224,3,network > resource > physical
+252,0,0,1.0000000298023224,3,network > resource > physical
+253,0,0,1.0000000298023224,3,network > physical > resource
+254,0,0,1.0000000298023224,3,network > resource > physical
+255,0,0,1.0000000298023224,3,network > resource > physical
+256,0,0,0.6666666865348816,2,network > physical
+257,0,0,1.0000000298023224,3,network > physical > resource
+258,0,0,1.0000000298023224,3,network > resource > physical
+259,0,0,1.0000000298023224,3,network > physical > resource
+260,0,0,1.0000000298023224,3,network > resource > physical
+261,0,0,1.0000000298023224,3,network > resource > physical
+262,0,0,1.0000000298023224,3,network > physical > resource
+263,0,0,1.0000000298023224,3,network > resource > physical
+264,0,0,1.0000000298023224,3,network > resource > physical
+265,0,0,1.0000000298023224,3,network > physical > resource
+266,0,0,1.0000000298023224,3,network > resource > physical
+267,0,0,1.0000000298023224,3,network > physical > resource
+268,0,0,1.0000000298023224,3,network > physical > resource
+269,0,0,1.0000000298023224,3,network > resource > physical
+270,0,0,1.0000000298023224,3,network > resource > physical
+271,0,0,1.0000000298023224,3,network > physical > resource
+272,0,0,0.6666666865348816,2,network > physical
+273,0,0,1.0000000298023224,3,network > resource > physical
+274,0,0,1.0000000298023224,3,network > physical > resource
+275,0,0,1.0000000298023224,3,network > resource > physical
+276,0,0,1.0000000298023224,3,network > resource > physical
+277,0,0,0.6666666865348816,2,network > physical
+278,0,0,1.0000000298023224,3,network > physical > resource
+279,0,0,1.0000000298023224,3,network > physical > resource
+280,0,0,1.0000000298023224,3,network > resource > physical
+281,0,0,1.0000000298023224,3,network > resource > physical
+282,4,4,1.0000000298023224,3,network > resource > physical
+283,4,4,0.6666666865348816,2,network > resource
+284,4,4,0.3333333432674408,1,network
+285,4,4,1.0000000298023224,3,network > physical > resource
+286,0,0,1.0000000298023224,3,network > resource > physical
+287,0,0,0.3333333432674408,1,network
+288,0,1,0.6666666865348816,2,network > physical
+289,0,0,0.6666666865348816,2,network > resource
+290,0,1,0.6666666865348816,2,network > physical
+291,0,1,0.6666666865348816,2,network > physical
+292,0,1,1.0000000298023224,3,network > resource > physical
+293,0,1,1.0000000298023224,3,network > resource > physical
+294,0,4,1.0000000298023224,3,network > resource > physical
+295,0,0,0.3333333432674408,1,network
+296,0,0,0.3333333432674408,1,network
+297,0,0,0.6666666865348816,2,network > resource
+298,0,0,0.6666666865348816,2,network > resource
+299,0,0,0.6666666865348816,2,network > resource
+300,0,0,0.3333333432674408,1,network
+301,0,1,1.0000000298023224,3,network > resource > physical
+302,0,1,1.0000000298023224,3,network > resource > physical
+303,0,1,1.0000000298023224,3,network > resource > physical
+304,0,1,1.0000000298023224,3,network > physical > resource
+488,0,0,1.0000000298023224,3,network > resource > physical
+489,0,0,1.0000000298023224,3,network > resource > physical
+490,0,0,1.0000000298023224,3,network > physical > resource
+491,0,0,1.0000000298023224,3,network > resource > physical
+492,0,0,1.0000000298023224,3,network > resource > physical
+493,0,0,0.6666666865348816,2,network > physical
+494,0,0,1.0000000298023224,3,network > resource > physical
+495,0,0,1.0000000298023224,3,network > resource > physical
+496,0,0,1.0000000298023224,3,network > physical > resource
+497,0,0,1.0000000298023224,3,network > resource > physical
+498,0,0,1.0000000298023224,3,network > resource > physical
+499,0,0,1.0000000298023224,3,network > physical > resource
+500,1,1,1.0000000298023224,3,network > physical > resource
+501,1,4,0.6666666865348816,2,network > physical
+502,1,1,1.0000000298023224,3,network > resource > physical
+503,1,1,0.6666666865348816,2,network > physical
+504,1,1,1.0000000298023224,3,network > resource > physical
+505,1,1,1.0000000298023224,3,network > resource > physical
+506,1,1,0.6666666865348816,2,network > physical
+507,1,1,1.0000000298023224,3,network > resource > physical
+508,1,1,1.0000000298023224,3,network > resource > physical
+509,1,1,0.6666666865348816,2,network > physical
+510,1,1,1.0000000298023224,3,network > resource > physical
+511,1,1,1.0000000298023224,3,network > resource > physical
+512,1,1,0.6666666865348816,2,network > physical
+513,1,1,1.0000000298023224,3,network > resource > physical
+514,1,1,1.0000000298023224,3,network > resource > physical
+515,1,1,0.6666666865348816,2,network > physical
+516,1,1,1.0000000298023224,3,network > resource > physical
+517,1,1,1.0000000298023224,3,network > resource > physical
+518,1,1,0.6666666865348816,2,network > physical
+519,1,4,0.6666666865348816,2,network > resource
+520,1,1,1.0000000298023224,3,network > resource > physical
+521,1,1,1.0000000298023224,3,network > physical > resource
+522,1,1,1.0000000298023224,3,network > resource > physical
+523,1,1,1.0000000298023224,3,network > resource > physical
+524,1,1,1.0000000298023224,3,network > resource > physical
+525,4,4,1.0000000298023224,3,network > resource > physical
+526,4,4,0.6666666865348816,2,network > physical
+527,4,4,0.3333333432674408,1,network
+528,4,4,1.0000000298023224,3,network > physical > resource
+529,4,4,0.6666666865348816,2,network > physical
+530,4,4,1.0000000298023224,3,network > physical > resource
+531,4,4,0.6666666865348816,2,network > physical
+532,4,4,1.0000000298023224,3,network > resource > physical
+533,1,0,0.6666666865348816,2,network > resource
+534,1,1,1.0000000298023224,3,network > resource > physical
+535,1,1,1.0000000298023224,3,network > resource > physical
+536,1,1,1.0000000298023224,3,network > resource > physical
+537,1,1,0.6666666865348816,2,network > physical
+538,1,1,0.6666666865348816,2,network > physical
+539,1,1,1.0000000298023224,3,network > resource > physical
+540,1,1,0.6666666865348816,2,network > physical
+541,1,0,0.3333333432674408,1,network
+542,1,0,0.6666666865348816,2,network > resource
+543,1,1,0.6666666865348816,2,network > physical
+544,1,1,0.6666666865348816,2,network > physical
+545,1,1,1.0000000298023224,3,network > resource > physical
+546,1,1,0.6666666865348816,2,network > physical
+547,1,1,0.6666666865348816,2,network > physical
+548,1,0,0.6666666865348816,2,network > resource
+852,0,0,0.3333333432674408,1,network
+853,0,0,1.0000000298023224,3,network > physical > resource
+854,0,1,0.3333333432674408,1,network
+855,0,0,1.0000000298023224,3,network > resource > physical
+856,0,0,1.0000000298023224,3,network > physical > resource
+857,0,0,0.6666666865348816,2,network > resource
+858,0,0,1.0000000298023224,3,network > physical > resource
+859,0,0,1.0000000298023224,3,network > resource > physical
+860,0,1,0.6666666865348816,2,network > resource
+861,0,1,0.6666666865348816,2,network > resource
+862,0,1,0.6666666865348816,2,network > resource
+863,0,0,1.0000000298023224,3,network > resource > physical
+864,0,0,1.0000000298023224,3,network > resource > physical
+865,0,1,0.6666666865348816,2,network > resource
+866,0,1,0.6666666865348816,2,network > resource
+867,0,1,0.6666666865348816,2,network > resource
+868,0,1,0.6666666865348816,2,network > resource
+869,0,0,1.0000000298023224,3,network > physical > resource
+870,0,0,1.0000000298023224,3,network > resource > physical
+871,0,1,0.6666666865348816,2,network > resource
+872,0,1,0.6666666865348816,2,network > resource
+873,0,1,0.6666666865348816,2,network > resource
+874,0,1,0.6666666865348816,2,network > resource
+875,0,0,1.0000000298023224,3,network > physical > resource
+876,1,1,1.0000000298023224,3,network > physical > resource
+877,1,1,0.6666666865348816,2,network > resource
+878,1,1,1.0000000298023224,3,network > resource > physical
+879,1,1,1.0000000298023224,3,network > resource > physical
+880,1,1,1.0000000298023224,3,network > physical > resource
+881,1,0,1.0000000298023224,3,network > physical > resource
+882,1,0,1.0000000298023224,3,network > resource > physical
+883,1,0,1.0000000298023224,3,network > resource > physical
+884,4,4,0.3333333432674408,1,network
+885,4,4,0.6666666865348816,2,network > resource
+886,1,1,1.0000000298023224,3,network > physical > resource
+887,1,4,1.0000000298023224,3,network > resource > physical
+888,1,4,1.0000000298023224,3,network > resource > physical
+889,1,4,1.0000000298023224,3,network > physical > resource
+890,1,4,1.0000000298023224,3,network > physical > resource
+891,1,1,1.0000000298023224,3,network > physical > resource
+892,1,1,1.0000000298023224,3,network > resource > physical
+893,1,1,1.0000000298023224,3,network > physical > resource
+894,1,1,1.0000000298023224,3,network > physical > resource
+895,1,1,1.0000000298023224,3,network > resource > physical
+896,1,1,0.3333333432674408,1,network
+897,1,1,0.6666666865348816,2,network > physical
+898,1,1,1.0000000298023224,3,network > resource > physical
+899,1,1,0.6666666865348816,2,network > physical
+900,1,1,0.3333333432674408,1,network
+901,1,1,0.6666666865348816,2,network > physical
+902,1,1,0.3333333432674408,1,network
+903,1,1,0.6666666865348816,2,network > physical
+904,1,1,1.0000000298023224,3,network > resource > physical
+905,1,1,0.6666666865348816,2,network > resource
+906,1,1,0.6666666865348816,2,network > resource
+907,1,0,0.3333333432674408,1,network
+908,1,1,0.3333333432674408,1,network
+909,1,1,0.6666666865348816,2,network > physical
+910,1,1,1.0000000298023224,3,network > resource > physical
+911,1,1,0.6666666865348816,2,network > physical
+912,1,1,0.6666666865348816,2,network > resource
+913,1,1,1.0000000298023224,3,network > resource > physical
+914,1,1,0.3333333432674408,1,network
+915,1,1,0.6666666865348816,2,network > physical
+916,1,1,1.0000000298023224,3,network > resource > physical
+917,1,1,0.6666666865348816,2,network > physical
+918,1,1,0.3333333432674408,1,network
+919,1,1,0.6666666865348816,2,network > physical
+920,1,1,0.3333333432674408,1,network
+921,1,1,0.6666666865348816,2,network > physical
+922,1,1,1.0000000298023224,3,network > resource > physical
+923,1,1,0.6666666865348816,2,network > physical
+924,1,1,0.3333333432674408,1,network
+925,1,1,0.6666666865348816,2,network > physical
+926,1,1,0.3333333432674408,1,network
+927,1,1,0.6666666865348816,2,network > physical
+928,1,1,1.0000000298023224,3,network > resource > physical
+929,1,1,0.6666666865348816,2,network > physical
+930,1,1,0.3333333432674408,1,network
+931,1,1,0.6666666865348816,2,network > physical
+932,1,1,0.3333333432674408,1,network
+933,1,1,0.6666666865348816,2,network > physical
+934,1,1,1.0000000298023224,3,network > resource > physical
+935,1,1,0.6666666865348816,2,network > physical
+936,1,1,1.0000000298023224,3,network > resource > physical
+937,1,1,0.6666666865348816,2,network > resource
+938,1,1,1.0000000298023224,3,network > resource > physical
+939,1,1,0.6666666865348816,2,network > resource
+940,1,1,0.6666666865348816,2,network > resource
+941,1,1,0.6666666865348816,2,network > resource
+942,1,1,0.6666666865348816,2,network > physical
+943,1,1,1.0000000298023224,3,network > resource > physical
+944,1,1,0.6666666865348816,2,network > resource
+945,1,0,0.3333333432674408,1,network
+946,1,1,0.6666666865348816,2,network > resource
+947,1,1,1.0000000298023224,3,network > resource > physical
+948,1,1,1.0000000298023224,3,network > resource > physical
+949,1,1,1.0000000298023224,3,network > resource > physical
+950,1,3,0.3333333432674408,1,network
+951,1,1,1.0000000298023224,3,network > resource > physical
+952,1,1,1.0000000298023224,3,network > resource > physical
+953,1,1,1.0000000298023224,3,network > resource > physical
+954,1,1,1.0000000298023224,3,network > resource > physical
+955,1,1,1.0000000298023224,3,network > resource > physical
+956,1,1,1.0000000298023224,3,network > resource > physical
+957,1,1,0.6666666865348816,2,network > resource
+958,1,1,0.6666666865348816,2,network > resource
+959,1,1,0.6666666865348816,2,network > resource
+960,1,1,1.0000000298023224,3,network > resource > physical
+961,1,1,0.6666666865348816,2,network > resource
+962,1,1,1.0000000298023224,3,network > physical > resource
+963,1,1,0.6666666865348816,2,network > resource
+964,1,1,1.0000000298023224,3,network > resource > physical
+965,1,1,1.0000000298023224,3,network > resource > physical
+966,1,0,1.0000000298023224,3,network > resource > physical
+967,1,0,0.3333333432674408,1,network
+968,1,0,0.3333333432674408,1,network
+969,1,0,0.3333333432674408,1,network
+970,1,0,0.3333333432674408,1,network
+971,1,0,0.3333333432674408,1,network
+972,1,0,0.3333333432674408,1,network
+973,0,0,1.0000000298023224,3,network > physical > resource
+974,0,0,1.0000000298023224,3,network > resource > physical
+975,0,0,0.6666666865348816,2,network > physical
+976,0,1,0.6666666865348816,2,network > resource
+977,0,4,0.6666666865348816,2,network > resource
+978,0,0,1.0000000298023224,3,network > resource > physical
+979,0,0,0.6666666865348816,2,network > physical
+980,0,0,1.0000000298023224,3,network > resource > physical
+981,0,1,0.6666666865348816,2,network > resource
+982,0,1,0.6666666865348816,2,network > resource
+983,0,0,1.0000000298023224,3,network > resource > physical
+984,0,0,1.0000000298023224,3,network > resource > physical
+985,0,0,1.0000000298023224,3,network > physical > resource
+986,0,0,1.0000000298023224,3,network > resource > physical
+987,0,0,1.0000000298023224,3,network > resource > physical
+988,0,0,1.0000000298023224,3,network > resource > physical
+989,0,0,1.0000000298023224,3,network > resource > physical
+990,0,0,1.0000000298023224,3,network > resource > physical
+991,0,0,1.0000000298023224,3,network > physical > resource
+992,0,1,0.6666666865348816,2,network > resource
+993,0,1,0.6666666865348816,2,network > resource
+994,0,0,1.0000000298023224,3,network > resource > physical
+995,0,0,1.0000000298023224,3,network > resource > physical
+996,0,0,1.0000000298023224,3,network > resource > physical
+997,1,1,1.0000000298023224,3,network > physical > resource
+998,1,1,1.0000000298023224,3,network > resource > physical
+999,1,1,1.0000000298023224,3,network > resource > physical
+1000,1,1,0.6666666865348816,2,network > resource
+1001,1,1,1.0000000298023224,3,network > physical > resource
+1002,1,1,1.0000000298023224,3,network > physical > resource
+1003,4,4,0.6666666865348816,2,network > physical
+1004,4,4,1.0000000298023224,3,network > physical > resource
+1005,4,4,1.0000000298023224,3,network > resource > physical
+1006,1,1,0.3333333432674408,1,network
+1007,1,1,1.0000000298023224,3,network > resource > physical
+1008,1,1,0.3333333432674408,1,network
+1009,1,1,0.6666666865348816,2,network > physical
+1010,1,1,0.6666666865348816,2,network > physical
+1011,1,1,0.6666666865348816,2,network > physical
+1012,1,1,0.3333333432674408,1,network
+1013,1,1,1.0000000298023224,3,network > resource > physical
+1014,1,1,0.3333333432674408,1,network
+1015,1,1,0.6666666865348816,2,network > physical
+1016,1,1,0.6666666865348816,2,network > physical
+1017,1,1,0.6666666865348816,2,network > physical
+1018,1,1,0.3333333432674408,1,network
+1019,1,1,0.6666666865348816,2,network > resource
+1020,1,1,0.3333333432674408,1,network
+1021,1,1,0.6666666865348816,2,network > physical
+1022,1,1,0.6666666865348816,2,network > physical
+1023,1,1,0.6666666865348816,2,network > physical
+1024,1,1,0.3333333432674408,1,network
+1025,1,0,0.3333333432674408,1,network
+1026,1,1,0.3333333432674408,1,network
+1027,1,1,0.6666666865348816,2,network > physical
+1028,1,1,0.6666666865348816,2,network > physical
+1029,1,1,0.6666666865348816,2,network > physical
+1030,1,1,0.3333333432674408,1,network
+1031,1,1,1.0000000298023224,3,network > resource > physical
+1032,1,1,1.0000000298023224,3,network > resource > physical
+1033,1,1,0.6666666865348816,2,network > physical
+1034,1,1,0.6666666865348816,2,network > physical
+1035,1,1,0.6666666865348816,2,network > physical
+1036,1,1,0.3333333432674408,1,network
+1037,1,1,1.0000000298023224,3,network > resource > physical
+1038,1,1,0.3333333432674408,1,network
+1039,1,1,0.6666666865348816,2,network > physical
+1040,1,1,0.6666666865348816,2,network > physical
+1041,1,1,0.6666666865348816,2,network > physical
+1042,1,1,0.3333333432674408,1,network
+1043,1,1,0.6666666865348816,2,network > resource
+1044,1,1,0.3333333432674408,1,network
+1045,1,1,0.6666666865348816,2,network > physical
+1046,1,1,0.6666666865348816,2,network > physical
+1047,1,1,0.6666666865348816,2,network > physical
+1048,1,1,0.3333333432674408,1,network
+1049,1,1,1.0000000298023224,3,network > resource > physical
+1050,1,1,0.6666666865348816,2,network > physical
+1051,1,1,0.3333333432674408,1,network
+1052,1,1,1.0000000298023224,3,network > resource > physical
+1053,1,1,0.3333333432674408,1,network
+1054,1,1,0.6666666865348816,2,network > physical
+1055,1,1,1.0000000298023224,3,network > resource > physical
+1056,1,1,1.0000000298023224,3,network > resource > physical
+1057,1,1,1.0000000298023224,3,network > resource > physical
+1058,1,1,1.0000000298023224,3,network > resource > physical
+1059,1,1,0.6666666865348816,2,network > resource
+1060,1,1,0.6666666865348816,2,network > resource
+1061,1,1,1.0000000298023224,3,network > resource > physical
+1062,1,0,0.6666666865348816,2,network > resource
+1063,1,1,1.0000000298023224,3,network > resource > physical
+1064,1,1,1.0000000298023224,3,network > physical > resource
+1065,1,1,0.6666666865348816,2,network > resource
+1066,1,1,0.6666666865348816,2,network > resource
+1067,1,1,1.0000000298023224,3,network > resource > physical
+1068,1,1,0.6666666865348816,2,network > resource
+1069,1,1,1.0000000298023224,3,network > physical > resource
+1070,1,1,1.0000000298023224,3,network > physical > resource
+1071,1,1,1.0000000298023224,3,network > physical > resource
+1072,1,1,1.0000000298023224,3,network > physical > resource
+1073,1,0,1.0000000298023224,3,network > physical > resource
+1074,1,0,1.0000000298023224,3,network > physical > resource
+1075,1,1,1.0000000298023224,3,network > resource > physical
+1076,1,1,1.0000000298023224,3,network > resource > physical
+1077,1,1,1.0000000298023224,3,network > physical > resource
+1078,1,1,1.0000000298023224,3,network > physical > resource
+1079,1,1,1.0000000298023224,3,network > physical > resource
+1080,1,1,0.6666666865348816,2,network > resource
+1081,1,1,1.0000000298023224,3,network > physical > resource
+1082,1,1,0.6666666865348816,2,network > resource
+1083,1,0,0.3333333432674408,1,network
+1084,1,0,0.3333333432674408,1,network
+1085,1,0,0.3333333432674408,1,network
+1086,1,0,0.3333333432674408,1,network
+1087,1,0,0.3333333432674408,1,network
+1088,1,0,0.3333333432674408,1,network
+1089,1,0,0.3333333432674408,1,network
+1090,1,0,0.3333333432674408,1,network
+1091,1,0,0.3333333432674408,1,network
+1092,1,0,0.3333333432674408,1,network
+1093,1,0,0.3333333432674408,1,network
+1581,0,0,0.6666666865348816,2,network > physical
+1582,0,0,1.0000000298023224,3,network > resource > physical
+1583,0,0,1.0000000298023224,3,network > resource > physical
+1584,0,0,1.0000000298023224,3,network > resource > physical
+1585,0,0,1.0000000298023224,3,network > physical > resource
+1586,0,0,1.0000000298023224,3,network > resource > physical
+1587,0,0,1.0000000298023224,3,network > resource > physical
+1588,0,0,1.0000000298023224,3,network > physical > resource
+1589,0,0,1.0000000298023224,3,network > resource > physical
+1590,0,0,1.0000000298023224,3,network > resource > physical
+1591,0,0,1.0000000298023224,3,network > physical > resource
+1592,0,0,1.0000000298023224,3,network > resource > physical
+1593,1,1,1.0000000298023224,3,network > physical > resource
+1594,1,1,1.0000000298023224,3,network > physical > resource
+1595,1,1,1.0000000298023224,3,network > physical > resource
+1596,1,1,1.0000000298023224,3,network > resource > physical
+1597,1,1,1.0000000298023224,3,network > resource > physical
+1598,1,1,1.0000000298023224,3,network > physical > resource
+1599,1,1,1.0000000298023224,3,network > physical > resource
+1600,1,1,1.0000000298023224,3,network > resource > physical
+1601,1,1,1.0000000298023224,3,network > physical > resource
+1602,1,1,1.0000000298023224,3,network > resource > physical
+1603,1,1,1.0000000298023224,3,network > resource > physical
+1604,1,1,1.0000000298023224,3,network > physical > resource
+1605,1,1,1.0000000298023224,3,network > resource > physical
+1606,1,1,1.0000000298023224,3,network > resource > physical
+1607,1,1,1.0000000298023224,3,network > physical > resource
+1608,1,1,1.0000000298023224,3,network > resource > physical
+1609,1,1,1.0000000298023224,3,network > physical > resource
+1610,1,1,1.0000000298023224,3,network > physical > resource
+1611,1,1,1.0000000298023224,3,network > resource > physical
+1612,1,1,1.0000000298023224,3,network > physical > resource
+1613,4,4,1.0000000298023224,3,network > physical > resource
+1614,4,4,1.0000000298023224,3,network > physical > resource
+1615,4,4,0.3333333432674408,1,network
+1616,4,4,1.0000000298023224,3,network > physical > resource
+1617,4,4,0.3333333432674408,1,network
+1618,4,4,0.6666666865348816,2,network > physical
+1619,1,0,0.6666666865348816,2,network > resource
+1620,1,1,1.0000000298023224,3,network > physical > resource
+1621,1,1,1.0000000298023224,3,network > resource > physical
+1622,1,1,1.0000000298023224,3,network > physical > resource
+1623,1,1,1.0000000298023224,3,network > resource > physical
+1624,4,4,0.6666666865348816,2,network > physical
+1625,4,4,0.6666666865348816,2,network > physical
+1626,4,4,1.0000000298023224,3,network > physical > resource
+1627,4,4,0.3333333432674408,1,network
+1628,4,4,0.3333333432674408,1,network
+1629,4,4,0.6666666865348816,2,network > physical
+1630,1,4,1.0000000298023224,3,network > resource > physical
+1631,1,0,0.6666666865348816,2,network > resource
+1632,1,3,0.6666666865348816,2,network > physical
+1633,1,1,1.0000000298023224,3,network > physical > resource
+1634,1,1,1.0000000298023224,3,network > physical > resource
+1635,1,1,1.0000000298023224,3,network > physical > resource
+1636,1,1,1.0000000298023224,3,network > physical > resource
+1637,1,1,1.0000000298023224,3,network > resource > physical
+1638,1,1,1.0000000298023224,3,network > physical > resource
+1639,1,1,1.0000000298023224,3,network > physical > resource
+1640,1,1,0.6666666865348816,2,network > physical
+1641,1,1,1.0000000298023224,3,network > resource > physical
+1947,0,1,0.6666666865348816,2,network > resource
+1948,0,0,0.6666666865348816,2,network > physical
+1949,0,0,0.6666666865348816,2,network > physical
+1950,0,1,0.6666666865348816,2,network > resource
+1951,0,0,1.0000000298023224,3,network > resource > physical
+1952,0,0,1.0000000298023224,3,network > resource > physical
+1953,0,0,0.6666666865348816,2,network > resource
+1954,0,1,0.3333333432674408,1,network
+1955,0,0,1.0000000298023224,3,network > physical > resource
+1956,0,0,1.0000000298023224,3,network > physical > resource
+1957,0,0,1.0000000298023224,3,network > resource > physical
+1958,0,0,1.0000000298023224,3,network > physical > resource
+1959,1,1,1.0000000298023224,3,network > physical > resource
+1960,1,1,1.0000000298023224,3,network > physical > resource
+1961,1,1,1.0000000298023224,3,network > resource > physical
+1962,1,1,1.0000000298023224,3,network > resource > physical
+1963,1,1,1.0000000298023224,3,network > resource > physical
+1964,1,1,1.0000000298023224,3,network > physical > resource
+1965,1,0,1.0000000298023224,3,network > resource > physical
+1966,1,0,1.0000000298023224,3,network > resource > physical
+1967,1,0,1.0000000298023224,3,network > resource > physical
+1968,1,0,1.0000000298023224,3,network > resource > physical
+1969,1,0,1.0000000298023224,3,network > physical > resource
+1970,1,0,1.0000000298023224,3,network > resource > physical
+1971,1,0,1.0000000298023224,3,network > resource > physical
+1972,1,0,1.0000000298023224,3,network > resource > physical
+1973,1,0,1.0000000298023224,3,network > resource > physical
+1974,1,1,1.0000000298023224,3,network > resource > physical
+1975,1,0,1.0000000298023224,3,network > physical > resource
+1976,1,1,1.0000000298023224,3,network > physical > resource
+1977,4,4,0.6666666865348816,2,network > physical
+1978,4,4,1.0000000298023224,3,network > physical > resource
+1979,4,4,0.6666666865348816,2,network > physical
+1980,4,4,0.6666666865348816,2,network > physical
+1981,4,4,1.0000000298023224,3,network > physical > resource
+1982,4,4,0.6666666865348816,2,network > physical
+1983,1,1,1.0000000298023224,3,network > resource > physical
+1984,1,1,1.0000000298023224,3,network > resource > physical
+1985,1,1,1.0000000298023224,3,network > resource > physical
+1986,1,1,1.0000000298023224,3,network > resource > physical
+1987,1,1,1.0000000298023224,3,network > resource > physical
+1988,1,1,1.0000000298023224,3,network > physical > resource
+1989,1,0,0.6666666865348816,2,network > physical
+1990,1,0,1.0000000298023224,3,network > physical > resource
+1991,1,1,1.0000000298023224,3,network > resource > physical
+1992,1,1,1.0000000298023224,3,network > resource > physical
+1993,1,1,1.0000000298023224,3,network > physical > resource
+1994,1,1,1.0000000298023224,3,network > resource > physical
+1995,1,1,1.0000000298023224,3,network > resource > physical
+1996,1,1,1.0000000298023224,3,network > resource > physical
+1997,1,1,0.6666666865348816,2,network > resource
+1998,1,1,1.0000000298023224,3,network > resource > physical
+1999,1,1,1.0000000298023224,3,network > physical > resource
+2000,1,1,1.0000000298023224,3,network > physical > resource
+2001,1,1,0.6666666865348816,2,network > physical
+2002,1,1,1.0000000298023224,3,network > resource > physical
+2003,1,1,1.0000000298023224,3,network > resource > physical
+2004,1,1,1.0000000298023224,3,network > resource > physical
+2005,1,1,1.0000000298023224,3,network > physical > resource
+2006,1,1,1.0000000298023224,3,network > resource > physical
+2007,1,1,1.0000000298023224,3,network > resource > physical
+2800,0,0,1.0000000298023224,3,network > resource > physical
+2801,0,0,0.6666666865348816,2,network > physical
+2802,0,0,1.0000000298023224,3,network > resource > physical
+2803,0,0,1.0000000298023224,3,network > physical > resource
+2804,0,1,0.3333333432674408,1,network
+2805,0,0,1.0000000298023224,3,network > physical > resource
+2806,0,0,1.0000000298023224,3,network > physical > resource
+2807,0,0,0.6666666865348816,2,network > physical
+2808,0,1,0.6666666865348816,2,network > resource
+2809,0,0,0.6666666865348816,2,network > physical
+2810,0,0,1.0000000298023224,3,network > physical > resource
+2811,0,0,1.0000000298023224,3,network > physical > resource
+2812,1,1,1.0000000298023224,3,network > physical > resource
+2813,1,1,1.0000000298023224,3,network > physical > resource
+2814,1,1,1.0000000298023224,3,network > physical > resource
+2815,1,1,0.6666666865348816,2,network > physical
+2816,1,1,0.3333333432674408,1,network
+2817,1,1,1.0000000298023224,3,network > physical > resource
+2818,1,1,0.6666666865348816,2,network > resource
+2819,1,0,0.6666666865348816,2,network > physical
+2820,1,1,0.3333333432674408,1,network
+2821,1,0,1.0000000298023224,3,network > physical > resource
+2822,1,0,1.0000000298023224,3,network > physical > resource
+2823,1,0,0.6666666865348816,2,network > physical
+2824,1,1,0.6666666865348816,2,network > resource
+2825,1,0,1.0000000298023224,3,network > resource > physical
+2826,1,0,1.0000000298023224,3,network > physical > resource
+2827,1,0,0.6666666865348816,2,network > physical
+2828,1,1,0.3333333432674408,1,network
+2829,1,1,1.0000000298023224,3,network > resource > physical
+2830,1,1,1.0000000298023224,3,network > resource > physical
+2831,1,0,0.6666666865348816,2,network > physical
+2832,1,0,1.0000000298023224,3,network > physical > resource
+2833,1,0,1.0000000298023224,3,network > physical > resource
+2834,1,1,0.3333333432674408,1,network
+2835,1,0,1.0000000298023224,3,network > resource > physical
+2836,1,1,1.0000000298023224,3,network > resource > physical
+2837,1,0,1.0000000298023224,3,network > physical > resource
+2838,1,1,0.3333333432674408,1,network
+2839,1,0,1.0000000298023224,3,network > physical > resource
+2840,1,1,0.3333333432674408,1,network
+2841,1,0,1.0000000298023224,3,network > resource > physical
+2842,1,1,0.6666666865348816,2,network > resource
+2843,1,1,1.0000000298023224,3,network > resource > physical
+2844,1,1,0.3333333432674408,1,network
+2845,1,0,0.6666666865348816,2,network > physical
+2846,1,1,0.3333333432674408,1,network
+2847,1,0,1.0000000298023224,3,network > resource > physical
+2848,1,1,1.0000000298023224,3,network > resource > physical
+2849,1,1,0.3333333432674408,1,network
+2850,1,1,0.3333333432674408,1,network
+2851,1,1,0.6666666865348816,2,network > physical
+2852,1,1,0.3333333432674408,1,network
+2853,1,1,1.0000000298023224,3,network > resource > physical
+2854,1,1,1.0000000298023224,3,network > resource > physical
+2855,1,1,1.0000000298023224,3,network > resource > physical
+2856,1,1,0.3333333432674408,1,network
+2857,1,1,1.0000000298023224,3,network > physical > resource
+2858,1,1,1.0000000298023224,3,network > resource > physical
+2859,1,1,1.0000000298023224,3,network > resource > physical
+2860,1,1,0.6666666865348816,2,network > resource
+2922,0,0,1.0000000298023224,3,network > resource > physical
+2923,0,0,1.0000000298023224,3,network > physical > resource
+2924,0,2,1.0000000298023224,3,network > physical > resource
+2925,0,0,0.6666666865348816,2,network > physical
+2926,0,0,1.0000000298023224,3,network > physical > resource
+2927,0,5,0.6666666865348816,2,network > physical
+2928,0,0,1.0000000298023224,3,network > physical > resource
+2929,2,2,0.3333333432674408,1,network
+2930,2,2,0.3333333432674408,1,network
+2931,2,2,0.3333333432674408,1,network
+2932,0,0,1.0000000298023224,3,network > physical > resource
+2933,0,2,0.6666666865348816,2,network > physical
+2934,0,2,0.6666666865348816,2,network > physical
+2935,2,2,1.0000000298023224,3,network > physical > resource
+2936,2,2,0.6666666865348816,2,network > resource
+2937,2,2,0.3333333432674408,1,network
+2938,0,2,1.0000000298023224,3,network > physical > resource
+2939,0,2,0.6666666865348816,2,network > physical
+2940,0,2,1.0000000298023224,3,network > physical > resource
+2941,0,0,1.0000000298023224,3,network > physical > resource
+2942,2,2,0.3333333432674408,1,network
+2943,0,2,0.6666666865348816,2,network > physical
+2944,0,2,1.0000000298023224,3,network > physical > resource
+2945,0,2,0.6666666865348816,2,network > physical
+2946,0,2,1.0000000298023224,3,network > physical > resource
+2947,2,2,1.0000000298023224,3,network > physical > resource
+2948,2,2,0.6666666865348816,2,network > physical
+2949,2,2,0.3333333432674408,1,network
+2950,2,2,1.0000000298023224,3,network > physical > resource
+2951,2,2,0.3333333432674408,1,network
+2952,2,2,0.3333333432674408,1,network
+2953,2,2,0.6666666865348816,2,network > physical
+2954,0,2,0.6666666865348816,2,network > physical
+2955,0,2,1.0000000298023224,3,network > physical > resource
+2956,0,2,1.0000000298023224,3,network > physical > resource
+2957,2,2,1.0000000298023224,3,network > physical > resource
+2958,2,2,0.6666666865348816,2,network > physical
+2959,2,2,0.6666666865348816,2,network > physical
+2960,0,2,1.0000000298023224,3,network > physical > resource
+2961,0,2,0.6666666865348816,2,network > physical
+2962,0,5,0.6666666865348816,2,network > physical
+2963,2,2,0.3333333432674408,1,network
+2964,2,2,0.6666666865348816,2,network > physical
+2965,0,5,0.6666666865348816,2,network > physical
+2966,0,2,0.6666666865348816,2,network > physical
+2967,0,0,0.6666666865348816,2,network > physical
+2968,2,2,1.0000000298023224,3,network > resource > physical
+2969,2,2,0.3333333432674408,1,network
+2970,0,5,0.6666666865348816,2,network > physical
+2971,0,0,1.0000000298023224,3,network > resource > physical
+2972,0,0,0.6666666865348816,2,network > physical
+2973,2,2,0.6666666865348816,2,network > physical
+2974,2,2,0.6666666865348816,2,network > resource
+2975,0,0,0.6666666865348816,2,network > physical
+2976,0,0,0.6666666865348816,2,network > physical
+2977,0,0,0.6666666865348816,2,network > physical
+2978,2,2,1.0000000298023224,3,network > physical > resource
+2979,0,0,0.6666666865348816,2,network > physical
+2980,0,0,1.0000000298023224,3,network > resource > physical
+2981,2,2,1.0000000298023224,3,network > physical > resource
+2982,0,0,1.0000000298023224,3,network > resource > physical
+2983,0,0,1.0000000298023224,3,network > resource > physical
+2984,0,0,0.6666666865348816,2,network > physical
+2985,0,0,0.6666666865348816,2,network > physical
+2986,2,2,1.0000000298023224,3,network > resource > physical
+2987,0,0,0.6666666865348816,2,network > physical
+2988,0,0,0.6666666865348816,2,network > physical
+2989,0,0,1.0000000298023224,3,network > resource > physical
+2990,0,2,0.6666666865348816,2,network > resource
+2991,2,2,0.6666666865348816,2,network > physical
+2992,0,0,1.0000000298023224,3,network > resource > physical
+2993,0,0,0.6666666865348816,2,network > physical
+2994,0,0,0.6666666865348816,2,network > physical
+2995,0,0,1.0000000298023224,3,network > resource > physical
+2996,2,2,0.6666666865348816,2,network > physical
+2997,0,0,0.6666666865348816,2,network > physical
+2998,0,0,1.0000000298023224,3,network > resource > physical
+2999,0,0,0.6666666865348816,2,network > physical
+3000,0,0,0.6666666865348816,2,network > physical
+3001,2,0,0.6666666865348816,2,network > physical
+3002,0,0,0.6666666865348816,2,network > physical
+3003,0,2,0.6666666865348816,2,network > physical
+3004,0,0,1.0000000298023224,3,network > resource > physical
+3005,0,0,0.6666666865348816,2,network > physical
+3006,2,2,0.6666666865348816,2,network > physical
+3007,0,0,0.6666666865348816,2,network > physical
+3008,0,0,0.6666666865348816,2,network > physical
+3009,0,0,0.6666666865348816,2,network > physical
+3010,0,0,1.0000000298023224,3,network > resource > physical
+3011,2,2,0.6666666865348816,2,network > physical
+3012,0,2,1.0000000298023224,3,network > resource > physical
+3013,0,0,1.0000000298023224,3,network > resource > physical
+3014,0,2,1.0000000298023224,3,network > resource > physical
+3015,0,0,0.6666666865348816,2,network > physical
+3016,2,0,1.0000000298023224,3,network > resource > physical
+3017,0,0,0.6666666865348816,2,network > physical
+3018,0,0,0.6666666865348816,2,network > physical
+3019,0,0,0.6666666865348816,2,network > physical
+3020,0,2,1.0000000298023224,3,network > resource > physical
+3021,2,2,0.6666666865348816,2,network > physical
+3022,0,0,1.0000000298023224,3,network > resource > physical
+3023,0,2,0.6666666865348816,2,network > physical
+3024,0,2,0.6666666865348816,2,network > physical
+3025,0,0,1.0000000298023224,3,network > resource > physical
+3026,2,2,0.6666666865348816,2,network > physical
+3027,0,0,0.6666666865348816,2,network > physical
+3028,0,2,1.0000000298023224,3,network > resource > physical
+3029,0,0,0.6666666865348816,2,network > physical
+3030,0,0,0.6666666865348816,2,network > physical
+3031,2,0,1.0000000298023224,3,network > resource > physical
+3032,0,0,0.6666666865348816,2,network > physical
+3033,0,2,0.6666666865348816,2,network > physical
+3034,0,0,1.0000000298023224,3,network > resource > physical
+3035,0,2,1.0000000298023224,3,network > resource > physical
+3036,2,2,0.6666666865348816,2,network > physical
+3037,0,0,0.6666666865348816,2,network > physical
+3038,0,2,0.6666666865348816,2,network > physical
+3039,2,2,0.6666666865348816,2,network > physical
+3040,0,0,1.0000000298023224,3,network > resource > physical
+3041,0,0,0.6666666865348816,2,network > physical
+3042,0,0,0.6666666865348816,2,network > physical
+3043,0,0,1.0000000298023224,3,network > resource > physical
+3044,2,2,0.6666666865348816,2,network > physical
+3045,0,2,1.0000000298023224,3,network > resource > physical
+3046,0,0,0.6666666865348816,2,network > physical
+3047,0,2,1.0000000298023224,3,network > resource > physical
+3048,0,0,0.6666666865348816,2,network > physical
+3049,2,2,1.0000000298023224,3,network > resource > physical
+3050,0,0,0.6666666865348816,2,network > physical
+3051,0,2,1.0000000298023224,3,network > resource > physical
+3052,0,0,1.0000000298023224,3,network > resource > physical
+3053,0,2,1.0000000298023224,3,network > resource > physical
+3054,2,2,0.6666666865348816,2,network > physical
+3055,0,0,1.0000000298023224,3,network > resource > physical
+3056,0,2,0.6666666865348816,2,network > physical
+3057,0,2,1.0000000298023224,3,network > resource > physical
+3058,0,0,1.0000000298023224,3,network > resource > physical
+3059,2,2,0.6666666865348816,2,network > physical
+3060,0,2,1.0000000298023224,3,network > physical > resource
+3061,0,0,1.0000000298023224,3,network > resource > physical
+3062,0,2,0.3333333432674408,1,network
+3063,0,2,0.6666666865348816,2,network > resource
+3064,2,0,0.6666666865348816,2,network > physical
+3065,0,2,1.0000000298023224,3,network > resource > physical
+3066,0,2,0.6666666865348816,2,network > physical
+3067,0,2,1.0000000298023224,3,network > resource > physical
+3068,0,2,0.6666666865348816,2,network > physical
+3069,2,2,0.6666666865348816,2,network > physical
+3070,0,0,1.0000000298023224,3,network > resource > physical
+3071,0,0,0.6666666865348816,2,network > physical
+3072,0,2,0.6666666865348816,2,network > physical
+3073,0,0,1.0000000298023224,3,network > resource > physical
+3074,2,2,0.6666666865348816,2,network > physical
+3075,0,0,0.6666666865348816,2,network > physical
+3076,0,0,1.0000000298023224,3,network > resource > physical
+3077,0,2,1.0000000298023224,3,network > physical > resource
+3078,0,2,0.6666666865348816,2,network > physical
+3079,2,2,1.0000000298023224,3,network > resource > physical
+3080,0,2,0.6666666865348816,2,network > physical
+3081,0,2,1.0000000298023224,3,network > resource > physical
+3082,0,2,1.0000000298023224,3,network > resource > physical
+3083,0,2,1.0000000298023224,3,network > resource > physical
+3084,2,2,0.6666666865348816,2,network > physical
+3085,0,0,1.0000000298023224,3,network > resource > physical
+3086,0,2,0.6666666865348816,2,network > physical
+3087,0,2,1.0000000298023224,3,network > resource > physical
+3088,0,2,1.0000000298023224,3,network > physical > resource
+3089,2,2,0.3333333432674408,1,network
+3090,2,2,0.3333333432674408,1,network
+3091,2,2,0.6666666865348816,2,network > physical
+3092,0,2,0.3333333432674408,1,network
+3093,0,2,0.6666666865348816,2,network > physical
+3094,0,2,0.6666666865348816,2,network > physical
+3095,0,2,0.6666666865348816,2,network > resource
+3096,0,2,0.6666666865348816,2,network > physical
+3097,0,2,0.6666666865348816,2,network > physical
+3098,0,2,0.6666666865348816,2,network > physical
+3099,0,2,0.6666666865348816,2,network > physical
+3100,0,0,1.0000000298023224,3,network > resource > physical
+3101,0,2,1.0000000298023224,3,network > resource > physical
+3102,0,2,0.6666666865348816,2,network > physical
+3103,0,0,1.0000000298023224,3,network > resource > physical
+3104,0,2,0.6666666865348816,2,network > physical
+3105,0,2,0.6666666865348816,2,network > physical
+3106,0,0,1.0000000298023224,3,network > resource > physical
+3107,0,2,1.0000000298023224,3,network > resource > physical
+3108,0,2,0.6666666865348816,2,network > physical
+3109,0,0,1.0000000298023224,3,network > resource > physical
+3110,0,2,0.6666666865348816,2,network > physical
+3111,0,2,0.6666666865348816,2,network > physical
+3112,0,0,0.6666666865348816,2,network > physical
+3113,0,2,1.0000000298023224,3,network > physical > resource
+3114,0,0,0.3333333432674408,1,network
+3115,0,0,0.3333333432674408,1,network
+3116,0,0,0.3333333432674408,1,network
+3117,0,0,0.3333333432674408,1,network
+3118,0,0,0.3333333432674408,1,network
+3119,0,0,0.3333333432674408,1,network
+3120,0,0,0.3333333432674408,1,network
+3121,0,0,0.3333333432674408,1,network
+3122,0,0,0.3333333432674408,1,network
+3909,3,3,0.6666666865348816,2,network > resource
+3910,3,3,1.0000000298023224,3,network > physical > resource
+3911,3,3,0.3333333432674408,1,network
+3912,3,1,0.3333333432674408,1,network
+3913,3,3,0.6666666865348816,2,network > resource
+3914,3,3,0.3333333432674408,1,network
+3915,3,3,0.3333333432674408,1,network
+3916,3,3,0.3333333432674408,1,network
+3917,3,3,0.3333333432674408,1,network
+3918,3,3,0.6666666865348816,2,network > resource
+3919,3,3,0.3333333432674408,1,network
+3920,3,3,0.6666666865348816,2,network > resource
+3921,3,3,0.3333333432674408,1,network
+3922,3,3,0.6666666865348816,2,network > resource
+3923,3,3,0.3333333432674408,1,network
+3924,3,3,0.3333333432674408,1,network
+3925,3,3,0.3333333432674408,1,network
+3926,3,3,0.6666666865348816,2,network > resource
+3927,3,3,1.0000000298023224,3,network > physical > resource
+3928,3,3,0.6666666865348816,2,network > resource
+3929,3,3,0.3333333432674408,1,network
+3930,3,3,1.0000000298023224,3,network > resource > physical
+3931,3,3,0.3333333432674408,1,network
+3932,3,3,0.6666666865348816,2,network > resource
+3933,3,3,0.3333333432674408,1,network
+3934,3,3,0.6666666865348816,2,network > resource
+3935,3,3,0.3333333432674408,1,network
+3936,3,3,0.3333333432674408,1,network
+3937,3,3,0.6666666865348816,2,network > resource
+3938,3,3,0.3333333432674408,1,network
+3939,3,3,0.3333333432674408,1,network
+3940,3,3,0.6666666865348816,2,network > resource
+3941,3,3,0.6666666865348816,2,network > resource
+3942,3,3,0.3333333432674408,1,network
+3943,3,3,0.3333333432674408,1,network
+3944,3,3,0.3333333432674408,1,network
+3945,3,3,0.3333333432674408,1,network
+3946,3,3,0.6666666865348816,2,network > resource
+3947,3,3,0.3333333432674408,1,network
+3948,3,3,1.0000000298023224,3,network > physical > resource
+3949,3,3,1.0000000298023224,3,network > resource > physical
+3950,3,3,0.3333333432674408,1,network
+3951,3,3,0.3333333432674408,1,network
+3952,3,3,0.3333333432674408,1,network
+3953,3,3,0.6666666865348816,2,network > resource
+3954,3,3,0.3333333432674408,1,network
+3955,3,3,0.6666666865348816,2,network > resource
+3956,3,3,1.0000000298023224,3,network > resource > physical
+3957,3,3,0.3333333432674408,1,network
+3958,3,3,0.3333333432674408,1,network
+3959,3,3,0.3333333432674408,1,network
+3960,3,3,1.0000000298023224,3,network > physical > resource
+3961,3,3,0.6666666865348816,2,network > resource
+3962,3,3,0.3333333432674408,1,network
+3963,3,3,0.3333333432674408,1,network
+3964,3,3,0.6666666865348816,2,network > resource
+3965,3,3,0.3333333432674408,1,network
+3966,3,3,0.3333333432674408,1,network
+3967,3,3,0.6666666865348816,2,network > resource
+3968,3,3,0.3333333432674408,1,network
+3969,3,3,0.6666666865348816,2,network > resource
+4458,3,3,0.6666666865348816,2,network > physical
+4459,3,3,1.0000000298023224,3,network > physical > resource
+4460,3,3,1.0000000298023224,3,network > physical > resource
+4461,3,3,0.6666666865348816,2,network > resource
+4462,3,3,0.3333333432674408,1,network
+4463,3,3,0.6666666865348816,2,network > physical
+4464,3,3,1.0000000298023224,3,network > physical > resource
+4465,3,3,0.6666666865348816,2,network > physical
+4466,3,3,1.0000000298023224,3,network > physical > resource
+4467,3,3,0.3333333432674408,1,network
+4468,3,3,1.0000000298023224,3,network > resource > physical
+4469,3,3,1.0000000298023224,3,network > resource > physical
+4470,3,3,1.0000000298023224,3,network > resource > physical
+4471,3,3,1.0000000298023224,3,network > physical > resource
+4472,3,3,1.0000000298023224,3,network > physical > resource
+4473,3,3,0.6666666865348816,2,network > physical
+4474,3,3,0.6666666865348816,2,network > physical
+4475,3,3,0.6666666865348816,2,network > physical
+4476,3,3,0.6666666865348816,2,network > resource
+4477,3,3,0.6666666865348816,2,network > resource
+4478,3,3,0.6666666865348816,2,network > physical
+4479,3,3,0.3333333432674408,1,network
+4480,3,3,0.3333333432674408,1,network
+4481,3,3,0.3333333432674408,1,network
+4482,3,3,0.6666666865348816,2,network > physical
+4483,3,3,0.6666666865348816,2,network > physical
+4484,3,3,0.6666666865348816,2,network > physical
+4485,3,3,0.3333333432674408,1,network
+4486,3,3,0.3333333432674408,1,network
+4487,3,3,0.3333333432674408,1,network
+4488,3,3,0.3333333432674408,1,network
+4489,3,3,1.0000000298023224,3,network > physical > resource
+4490,3,3,1.0000000298023224,3,network > resource > physical
+4491,3,3,0.6666666865348816,2,network > physical
+4492,3,3,1.0000000298023224,3,network > physical > resource
+4493,3,0,0.3333333432674408,1,network
+4494,3,0,0.3333333432674408,1,network
+4495,3,0,0.3333333432674408,1,network
+4496,3,0,0.3333333432674408,1,network
+4497,3,0,0.3333333432674408,1,network
+4498,3,0,0.3333333432674408,1,network
+4499,3,0,0.3333333432674408,1,network
+4500,3,0,0.3333333432674408,1,network
+4501,3,3,0.3333333432674408,1,network
+4502,3,3,1.0000000298023224,3,network > physical > resource
+4503,3,3,0.6666666865348816,2,network > resource
+4504,3,3,1.0000000298023224,3,network > physical > resource
+4505,3,3,0.3333333432674408,1,network
+4506,3,0,0.3333333432674408,1,network
+4507,3,0,0.3333333432674408,1,network
+4508,3,0,0.3333333432674408,1,network
+4509,3,0,0.3333333432674408,1,network
+4510,3,0,0.3333333432674408,1,network
+4511,3,0,0.3333333432674408,1,network
+4512,3,0,0.3333333432674408,1,network
+4513,3,0,0.3333333432674408,1,network
+4514,3,0,0.3333333432674408,1,network
+4515,3,0,0.3333333432674408,1,network
+4516,3,0,0.3333333432674408,1,network
+4517,3,0,0.3333333432674408,1,network
+4518,3,0,0.3333333432674408,1,network
+4580,3,3,0.3333333432674408,1,network
+4581,3,3,1.0000000298023224,3,network > resource > physical
+4582,3,3,0.6666666865348816,2,network > resource
+4583,3,3,0.6666666865348816,2,network > resource
+4584,3,3,0.6666666865348816,2,network > resource
+4585,3,3,1.0000000298023224,3,network > resource > physical
+4586,3,3,0.3333333432674408,1,network
+4587,3,3,0.6666666865348816,2,network > resource
+4588,3,3,0.6666666865348816,2,network > resource
+4589,3,3,0.3333333432674408,1,network
+4590,3,3,1.0000000298023224,3,network > resource > physical
+4591,3,3,1.0000000298023224,3,network > resource > physical
+4592,3,3,1.0000000298023224,3,network > resource > physical
+4593,3,4,0.6666666865348816,2,network > physical
+4594,3,3,1.0000000298023224,3,network > physical > resource
+4595,3,3,0.6666666865348816,2,network > physical
+4596,3,3,0.6666666865348816,2,network > resource
+4597,3,3,0.6666666865348816,2,network > resource
+4598,3,3,0.6666666865348816,2,network > resource
+4599,3,3,0.6666666865348816,2,network > resource
+4600,3,3,1.0000000298023224,3,network > resource > physical
+4601,3,3,0.6666666865348816,2,network > resource
+4602,3,3,0.6666666865348816,2,network > resource
+4603,3,3,1.0000000298023224,3,network > physical > resource
+4604,3,3,1.0000000298023224,3,network > resource > physical
+4605,3,3,0.6666666865348816,2,network > resource
+4606,3,3,0.6666666865348816,2,network > physical
+4607,3,3,1.0000000298023224,3,network > resource > physical
+4608,3,3,0.6666666865348816,2,network > resource
+4609,3,3,0.6666666865348816,2,network > resource
+4610,3,3,0.6666666865348816,2,network > resource
+4611,3,3,1.0000000298023224,3,network > physical > resource
+4612,3,3,0.6666666865348816,2,network > physical
+4613,3,3,0.3333333432674408,1,network
+4614,3,3,0.6666666865348816,2,network > resource
+4615,3,3,0.3333333432674408,1,network
+4616,3,3,0.6666666865348816,2,network > physical
+4617,3,3,0.6666666865348816,2,network > resource
+4618,3,3,0.6666666865348816,2,network > resource
+4619,3,3,0.3333333432674408,1,network
+4620,3,3,0.6666666865348816,2,network > physical
+4621,3,3,0.6666666865348816,2,network > resource
+4622,3,3,1.0000000298023224,3,network > resource > physical
+4623,3,3,0.3333333432674408,1,network
+4624,3,3,0.6666666865348816,2,network > physical
+4625,3,3,0.3333333432674408,1,network
+4626,3,3,0.6666666865348816,2,network > resource
+4627,3,3,1.0000000298023224,3,network > physical > resource
+4628,3,3,0.6666666865348816,2,network > resource
+4629,3,3,0.6666666865348816,2,network > resource
+4630,3,3,0.6666666865348816,2,network > resource
+4631,3,3,0.6666666865348816,2,network > physical
+4632,3,3,0.3333333432674408,1,network
+4633,3,3,1.0000000298023224,3,network > resource > physical
+4634,3,3,0.6666666865348816,2,network > resource
+4635,3,3,0.3333333432674408,1,network
+4636,3,3,0.3333333432674408,1,network
+4637,3,3,1.0000000298023224,3,network > physical > resource
+4638,3,3,0.6666666865348816,2,network > resource
+4639,3,3,0.6666666865348816,2,network > resource
+4640,3,3,0.6666666865348816,2,network > resource
+4702,3,3,0.6666666865348816,2,network > resource
+4703,3,3,0.6666666865348816,2,network > resource
+4704,3,3,0.6666666865348816,2,network > resource
+4705,3,3,1.0000000298023224,3,network > physical > resource
+4706,3,3,0.3333333432674408,1,network
+4707,3,3,0.3333333432674408,1,network
+4708,3,3,0.3333333432674408,1,network
+4709,3,3,0.6666666865348816,2,network > resource
+4710,3,3,0.3333333432674408,1,network
+4711,3,3,0.6666666865348816,2,network > resource
+4712,3,3,0.3333333432674408,1,network
+4713,3,3,0.3333333432674408,1,network
+4714,3,3,1.0000000298023224,3,network > physical > resource
+4715,3,3,1.0000000298023224,3,network > physical > resource
+4716,3,3,0.6666666865348816,2,network > resource
+4717,3,3,1.0000000298023224,3,network > resource > physical
+4718,3,3,0.3333333432674408,1,network
+4719,3,3,0.3333333432674408,1,network
+4720,3,3,0.6666666865348816,2,network > resource
+4721,3,3,0.3333333432674408,1,network
+4722,3,3,0.3333333432674408,1,network
+4723,3,3,0.6666666865348816,2,network > resource
+4724,3,3,0.3333333432674408,1,network
+4725,3,3,0.3333333432674408,1,network
+4726,3,3,0.6666666865348816,2,network > resource
+4727,3,3,0.3333333432674408,1,network
+4728,3,3,0.3333333432674408,1,network
+4729,3,3,0.6666666865348816,2,network > resource
+4730,3,3,0.3333333432674408,1,network
+4731,3,3,0.6666666865348816,2,network > resource
+4732,3,3,0.3333333432674408,1,network
+4733,3,3,0.3333333432674408,1,network
+4734,3,3,0.6666666865348816,2,network > resource
+4735,3,3,0.6666666865348816,2,network > resource
+4736,3,3,0.3333333432674408,1,network
+4737,3,3,0.3333333432674408,1,network
+4738,3,3,0.6666666865348816,2,network > resource
+4739,3,3,0.3333333432674408,1,network
+4740,3,3,0.3333333432674408,1,network
+4741,3,3,0.6666666865348816,2,network > resource
+4742,3,3,0.3333333432674408,1,network
+4743,3,3,0.6666666865348816,2,network > resource
+4744,3,3,0.6666666865348816,2,network > resource
+4745,3,3,0.3333333432674408,1,network
+4746,3,3,0.3333333432674408,1,network
+4747,3,3,0.6666666865348816,2,network > resource
+4748,3,3,0.3333333432674408,1,network
+4749,3,3,0.3333333432674408,1,network
+4750,3,3,0.6666666865348816,2,network > resource
+4751,3,3,0.3333333432674408,1,network
+4752,3,3,0.3333333432674408,1,network
+4753,3,3,0.3333333432674408,1,network
+4754,3,1,0.3333333432674408,1,network
+4755,3,3,0.3333333432674408,1,network
+4756,3,3,0.6666666865348816,2,network > resource
+4757,3,3,0.3333333432674408,1,network
+4758,3,3,0.3333333432674408,1,network
+4759,3,3,0.6666666865348816,2,network > resource
+4760,3,3,0.6666666865348816,2,network > resource
+4761,3,3,0.3333333432674408,1,network
+4762,3,3,0.6666666865348816,2,network > resource
+4885,3,3,0.6666666865348816,2,network > resource
+4886,3,3,1.0000000298023224,3,network > physical > resource
+4887,3,3,1.0000000298023224,3,network > physical > resource
+4888,3,3,1.0000000298023224,3,network > physical > resource
+4889,3,3,1.0000000298023224,3,network > physical > resource
+4890,3,3,1.0000000298023224,3,network > physical > resource
+4891,3,3,0.6666666865348816,2,network > resource
+4892,3,3,0.6666666865348816,2,network > resource
+4893,3,3,1.0000000298023224,3,network > physical > resource
+4894,3,3,1.0000000298023224,3,network > physical > resource
+4895,3,3,0.6666666865348816,2,network > resource
+4896,3,3,1.0000000298023224,3,network > physical > resource
+4897,3,3,1.0000000298023224,3,network > physical > resource
+4898,3,3,1.0000000298023224,3,network > physical > resource
+4899,3,3,1.0000000298023224,3,network > physical > resource
+4900,3,3,1.0000000298023224,3,network > physical > resource
+4901,3,3,0.6666666865348816,2,network > resource
+4902,3,3,1.0000000298023224,3,network > physical > resource
+4903,3,3,1.0000000298023224,3,network > physical > resource
+4904,3,3,0.6666666865348816,2,network > resource
+4905,3,3,0.6666666865348816,2,network > resource
+4906,3,3,0.3333333432674408,1,network
+4907,3,3,0.6666666865348816,2,network > resource
+4908,3,3,0.6666666865348816,2,network > resource
+4909,3,3,0.6666666865348816,2,network > physical
+4910,3,3,0.6666666865348816,2,network > physical
+4911,3,3,0.6666666865348816,2,network > physical
+4912,3,3,0.3333333432674408,1,network
+4913,3,3,1.0000000298023224,3,network > physical > resource
+4914,3,3,0.6666666865348816,2,network > resource
+4915,3,3,0.3333333432674408,1,network
+4916,3,3,0.6666666865348816,2,network > resource
+4917,3,3,0.6666666865348816,2,network > physical
+4918,3,3,1.0000000298023224,3,network > physical > resource
+4919,3,3,0.6666666865348816,2,network > resource
+4920,3,3,0.6666666865348816,2,network > resource
+4921,3,3,0.6666666865348816,2,network > physical
+4922,3,3,1.0000000298023224,3,network > physical > resource
+4923,3,3,0.6666666865348816,2,network > physical
+4924,3,3,0.6666666865348816,2,network > physical
+4925,3,3,1.0000000298023224,3,network > physical > resource
+4926,3,3,0.6666666865348816,2,network > resource
+4927,3,3,0.6666666865348816,2,network > resource
+4928,3,3,0.6666666865348816,2,network > resource
+4929,3,3,1.0000000298023224,3,network > physical > resource
+4930,3,3,0.6666666865348816,2,network > physical
+4931,3,3,0.6666666865348816,2,network > resource
+4932,3,3,0.6666666865348816,2,network > resource
+4933,3,3,0.3333333432674408,1,network
+4934,3,3,0.3333333432674408,1,network
+4935,3,3,0.3333333432674408,1,network
+4936,3,3,0.6666666865348816,2,network > physical
+4937,3,3,0.6666666865348816,2,network > resource
+4938,3,3,0.6666666865348816,2,network > resource
+4939,3,3,0.6666666865348816,2,network > resource
+4940,3,3,0.6666666865348816,2,network > resource
+4941,3,3,0.3333333432674408,1,network
+4942,3,3,1.0000000298023224,3,network > physical > resource
+4943,3,3,0.3333333432674408,1,network
+4944,3,3,1.0000000298023224,3,network > physical > resource
+4945,3,3,1.0000000298023224,3,network > physical > resource
+5535,0,4,0.6666666865348816,2,network > resource
+5536,0,0,1.0000000298023224,3,network > resource > physical
+5537,0,0,1.0000000298023224,3,network > resource > physical
+5538,0,0,1.0000000298023224,3,network > physical > resource
+5539,0,0,1.0000000298023224,3,network > resource > physical
+5540,0,0,1.0000000298023224,3,network > resource > physical
+5541,0,0,1.0000000298023224,3,network > resource > physical
+5542,5,0,1.0000000298023224,3,network > resource > physical
+5543,5,5,0.3333333432674408,1,network
+5544,5,5,1.0000000298023224,3,network > physical > resource
+5545,5,5,0.3333333432674408,1,network
+5546,5,5,0.3333333432674408,1,network
+5547,5,5,0.3333333432674408,1,network
+5548,5,5,0.3333333432674408,1,network
+5549,5,5,0.3333333432674408,1,network
+5550,5,5,1.0000000298023224,3,network > resource > physical
+5551,5,5,0.3333333432674408,1,network
+5552,5,5,0.3333333432674408,1,network
+5553,5,5,0.3333333432674408,1,network
+5554,5,5,0.3333333432674408,1,network
+5555,5,5,0.3333333432674408,1,network
+5556,5,5,1.0000000298023224,3,network > physical > resource
+5557,5,5,0.3333333432674408,1,network
+5558,5,5,0.3333333432674408,1,network
+5559,5,5,0.3333333432674408,1,network
+5560,5,5,0.3333333432674408,1,network
+5561,5,5,0.3333333432674408,1,network
+5562,5,5,1.0000000298023224,3,network > resource > physical
+5563,5,5,0.3333333432674408,1,network
+5564,5,5,0.3333333432674408,1,network
+5565,5,5,0.3333333432674408,1,network
+5566,5,5,0.3333333432674408,1,network
+5567,5,5,0.3333333432674408,1,network
+5568,5,5,1.0000000298023224,3,network > physical > resource
+5569,5,5,0.3333333432674408,1,network
+5570,5,5,0.3333333432674408,1,network
+5571,5,5,0.3333333432674408,1,network
+5572,5,2,0.3333333432674408,1,network
+5573,0,0,1.0000000298023224,3,network > resource > physical
+5574,0,2,0.3333333432674408,1,network
+5575,0,2,0.3333333432674408,1,network
+5576,0,0,1.0000000298023224,3,network > resource > physical
+5577,0,0,1.0000000298023224,3,network > resource > physical
+5578,0,2,0.6666666865348816,2,network > physical
+5579,0,0,1.0000000298023224,3,network > resource > physical
+5580,0,0,1.0000000298023224,3,network > resource > physical
+5581,0,0,1.0000000298023224,3,network > resource > physical
+5582,0,0,1.0000000298023224,3,network > physical > resource
+5583,0,0,1.0000000298023224,3,network > resource > physical
+5584,0,5,0.3333333432674408,1,network
+5585,0,0,1.0000000298023224,3,network > resource > physical
+5586,0,0,0.6666666865348816,2,network > physical
+5587,0,0,1.0000000298023224,3,network > resource > physical
+5588,0,0,1.0000000298023224,3,network > resource > physical
+5589,0,0,1.0000000298023224,3,network > resource > physical
+5590,0,2,0.6666666865348816,2,network > physical
+5591,0,0,1.0000000298023224,3,network > resource > physical
+5592,0,0,1.0000000298023224,3,network > resource > physical
+5593,0,2,0.3333333432674408,1,network
+5594,0,0,1.0000000298023224,3,network > resource > physical
+5595,0,0,1.0000000298023224,3,network > resource > physical
+5596,0,0,1.0000000298023224,3,network > resource > physical
+5597,0,0,1.0000000298023224,3,network > resource > physical
+5598,0,0,0.6666666865348816,2,network > physical
+5599,0,0,1.0000000298023224,3,network > resource > physical
+5600,0,0,1.0000000298023224,3,network > resource > physical
+5601,0,0,1.0000000298023224,3,network > resource > physical
+5602,0,2,0.6666666865348816,2,network > physical
+5603,0,0,1.0000000298023224,3,network > resource > physical
+5604,0,0,0.6666666865348816,2,network > resource
+5605,0,0,1.0000000298023224,3,network > resource > physical
+5606,0,2,0.6666666865348816,2,network > physical
+5607,0,0,1.0000000298023224,3,network > resource > physical
+5608,0,0,1.0000000298023224,3,network > resource > physical
+5609,0,0,1.0000000298023224,3,network > resource > physical
+5610,0,0,0.6666666865348816,2,network > physical
+5611,0,0,1.0000000298023224,3,network > resource > physical
+5612,0,0,1.0000000298023224,3,network > resource > physical
+5613,0,0,1.0000000298023224,3,network > resource > physical
+5614,0,2,0.6666666865348816,2,network > physical
+5615,0,2,0.3333333432674408,1,network
+5616,0,0,1.0000000298023224,3,network > resource > physical
+5617,0,0,1.0000000298023224,3,network > resource > physical
+5618,0,2,0.6666666865348816,2,network > physical
+5619,0,0,1.0000000298023224,3,network > resource > physical
+5620,0,2,0.3333333432674408,1,network
+5621,0,0,1.0000000298023224,3,network > physical > resource
+5622,0,0,0.3333333432674408,1,network
+5623,0,0,0.6666666865348816,2,network > resource
+5624,0,0,0.3333333432674408,1,network
+5625,0,0,0.3333333432674408,1,network
+5626,0,0,0.3333333432674408,1,network
+5627,0,0,0.3333333432674408,1,network
+5628,0,0,0.3333333432674408,1,network
+5629,0,0,0.3333333432674408,1,network
+5630,0,0,0.3333333432674408,1,network
+5631,0,0,0.3333333432674408,1,network
+5632,0,0,0.3333333432674408,1,network
+5633,0,0,0.3333333432674408,1,network
+5634,0,0,0.3333333432674408,1,network
+5635,0,0,0.3333333432674408,1,network
+5737,5,0,1.0000000298023224,3,network > resource > physical
+5738,5,5,0.3333333432674408,1,network
+5739,5,5,1.0000000298023224,3,network > physical > resource
+5740,5,5,1.0000000298023224,3,network > resource > physical
+5741,5,5,0.3333333432674408,1,network
+5742,5,5,0.3333333432674408,1,network
+5743,5,5,1.0000000298023224,3,network > physical > resource
+5744,5,5,0.3333333432674408,1,network
+5745,5,5,0.3333333432674408,1,network
+5746,5,5,1.0000000298023224,3,network > resource > physical
+5747,5,5,0.3333333432674408,1,network
+5748,5,5,0.3333333432674408,1,network
+5749,5,5,1.0000000298023224,3,network > physical > resource
+5750,5,5,0.3333333432674408,1,network
+5751,5,5,0.3333333432674408,1,network
+5752,5,5,0.3333333432674408,1,network
+5753,5,5,0.3333333432674408,1,network
+5754,5,5,0.3333333432674408,1,network
+5755,5,5,1.0000000298023224,3,network > physical > resource
+5756,5,5,0.3333333432674408,1,network
+5757,5,5,0.3333333432674408,1,network
+5758,5,5,1.0000000298023224,3,network > resource > physical
+5759,5,5,0.3333333432674408,1,network
+5760,5,5,0.3333333432674408,1,network
+5761,5,3,0.6666666865348816,2,network > physical
+5762,5,5,0.3333333432674408,1,network
+5763,5,5,1.0000000298023224,3,network > physical > resource
+5764,5,5,0.3333333432674408,1,network
+5765,5,5,0.3333333432674408,1,network
+5766,1,2,0.6666666865348816,2,network > physical
+5767,1,0,1.0000000298023224,3,network > resource > physical
+5768,1,0,1.0000000298023224,3,network > resource > physical
+5769,1,0,1.0000000298023224,3,network > resource > physical
+5770,1,0,1.0000000298023224,3,network > resource > physical
+5771,1,0,1.0000000298023224,3,network > resource > physical
+5772,1,0,1.0000000298023224,3,network > resource > physical
+5773,1,0,1.0000000298023224,3,network > resource > physical
+5774,1,0,0.6666666865348816,2,network > resource
+5775,1,5,0.6666666865348816,2,network > resource
+5776,1,5,0.6666666865348816,2,network > resource
+5777,1,2,0.3333333432674408,1,network
+5778,1,5,0.3333333432674408,1,network
+5779,1,0,1.0000000298023224,3,network > resource > physical
+5780,1,0,1.0000000298023224,3,network > resource > physical
+5781,1,0,1.0000000298023224,3,network > resource > physical
+5782,1,2,0.6666666865348816,2,network > physical
+5783,1,0,1.0000000298023224,3,network > resource > physical
+5784,1,2,0.6666666865348816,2,network > physical
+5785,1,0,1.0000000298023224,3,network > resource > physical
+5786,1,2,0.6666666865348816,2,network > physical
+5787,1,2,0.6666666865348816,2,network > physical
+5788,1,2,0.3333333432674408,1,network
+5789,1,0,1.0000000298023224,3,network > resource > physical
+5790,1,2,0.6666666865348816,2,network > physical
+5791,1,0,1.0000000298023224,3,network > resource > physical
+5792,1,0,1.0000000298023224,3,network > resource > physical
+5793,1,2,0.6666666865348816,2,network > physical
+5794,1,2,0.6666666865348816,2,network > physical
+5795,1,0,1.0000000298023224,3,network > resource > physical
+5796,1,0,1.0000000298023224,3,network > physical > resource
+5797,1,0,1.0000000298023224,3,network > resource > physical
+5798,1,0,1.0000000298023224,3,network > physical > resource
+5799,1,0,1.0000000298023224,3,network > physical > resource
+5800,1,0,1.0000000298023224,3,network > resource > physical
+5801,1,0,1.0000000298023224,3,network > resource > physical
+5802,1,0,0.6666666865348816,2,network > physical
+5803,1,5,0.6666666865348816,2,network > resource
+5804,1,0,1.0000000298023224,3,network > physical > resource
+5805,1,0,1.0000000298023224,3,network > resource > physical
+5806,1,0,1.0000000298023224,3,network > physical > resource
+5807,1,0,1.0000000298023224,3,network > physical > resource
+5808,1,0,1.0000000298023224,3,network > physical > resource
+5809,1,0,1.0000000298023224,3,network > physical > resource
+5810,1,5,0.3333333432674408,1,network
+5811,1,0,1.0000000298023224,3,network > resource > physical
+5812,1,0,1.0000000298023224,3,network > resource > physical
+5813,1,0,1.0000000298023224,3,network > resource > physical
+5814,1,0,0.3333333432674408,1,network
+5815,1,0,0.3333333432674408,1,network
+5816,1,0,0.3333333432674408,1,network
+5817,1,0,0.3333333432674408,1,network
+5818,1,0,0.3333333432674408,1,network
+5819,1,0,0.3333333432674408,1,network
+5820,1,0,0.3333333432674408,1,network
+5821,1,0,0.3333333432674408,1,network
+5822,1,0,0.3333333432674408,1,network
+5823,1,0,0.3333333432674408,1,network
+5824,1,0,0.3333333432674408,1,network
+5825,1,0,0.3333333432674408,1,network
+5826,1,0,0.3333333432674408,1,network
+5827,1,0,0.3333333432674408,1,network
+5828,1,0,0.3333333432674408,1,network
+5829,1,0,0.3333333432674408,1,network
+5830,1,0,0.3333333432674408,1,network
+5831,1,0,0.3333333432674408,1,network
+5832,1,0,0.3333333432674408,1,network
+5833,1,0,0.3333333432674408,1,network
+5834,1,0,0.3333333432674408,1,network
+5835,1,0,0.3333333432674408,1,network
+5836,1,0,0.3333333432674408,1,network
+5837,1,0,0.3333333432674408,1,network
