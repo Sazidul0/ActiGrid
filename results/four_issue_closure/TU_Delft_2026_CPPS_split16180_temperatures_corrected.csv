@@ -1,0 +1,8 @@
+dataset,split_seed,subset,temperature
+TU_Delft_2026_CPPS,16180,physical,5.949765980175889
+TU_Delft_2026_CPPS,16180,resource,4.544036603384719
+TU_Delft_2026_CPPS,16180,network,2.827077700600694
+TU_Delft_2026_CPPS,16180,physical+resource,4.626235561468241
+TU_Delft_2026_CPPS,16180,physical+network,3.0500039375452968
+TU_Delft_2026_CPPS,16180,resource+network,3.77090568130531
+TU_Delft_2026_CPPS,16180,physical+resource+network,3.3338727953864056

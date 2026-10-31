@@ -1,0 +1,12 @@
+candidate_seed,accepted,reason
+42,True,unique
+123,True,unique
+456,True,unique
+789,True,unique
+2027,False,duplicate partition
+31415,True,unique
+27182,True,unique
+16180,True,unique
+14142,True,unique
+17320,True,unique
+9001,True,unique

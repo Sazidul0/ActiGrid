@@ -1,0 +1,2 @@
+dataset,seed,backbone_policy_holdout_unit,backbone_policy_group_overlap,validation_holdout_unit,validation_group_overlap,backbone_rows,voi_train_rows,test_macro_f1,test_cost,threshold
+TU_Delft_2026_CPPS,42,row,47,row,16,2272,974,0.798294401528211,0.7831813576494426,0.26112032919324746

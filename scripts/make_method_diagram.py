@@ -10,6 +10,10 @@ Usage (from the repository root):
 """
 
 from pathlib import Path
+import os
+import tempfile
+
+os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "actigrid-matplotlib"))
 
 import matplotlib
 
@@ -25,17 +29,18 @@ INK, MUTED, RULE, FILL = "#222222", "#6b6b6b", "#c8c8c8", "#efefef"
 
 W, H = 3.5, 1.9  # IEEE single column, inches
 
-plt.rcParams.update({
+# Applied only while drawing, so importing this module leaves other figures alone.
+STYLE = {
     "font.family": "serif",
     "font.serif": ["Nimbus Roman", "Times New Roman", "STIXGeneral"],
     "mathtext.fontset": "stix",
     "font.size": 7,
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
-})
+}
 
-# The drawn state: only the resource source has been acquired so far
-# (the TU Delft policy acquires it first).
+# An illustrative mask after the original TU Delft policy's first acquisition.
+# This is a schematic, not a plot of a particular sample's probabilities.
 SOURCES = [("Physical", False), ("Resource", True), ("Network", False)]
 ROWS = [1.42, 1.04, 0.66]
 
@@ -57,6 +62,11 @@ def arrow(ax, pts, color=INK, lw=0.7, ls="-", head=True):
 
 
 def main():
+    with plt.rc_context(STYLE):
+        draw()
+
+
+def draw():
     fig = plt.figure(figsize=(W, H))
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, W)
@@ -92,20 +102,15 @@ def main():
     ax.text(cx + cw / 2, mask_y + 0.06, "$a$", ha="center", va="center", fontsize=6, color=BLUE, zorder=3)
     ax.text(cx + cw / 2, ROWS[0] + ch / 2 + 0.08, "$z(a)$", ha="center", va="center", fontsize=7)
 
-    # Fusion head and posterior.
+    # Fusion head and posterior. A labeled box avoids invented numeric bars.
     box(ax, 1.98, 0.86, 0.46, 0.36, "fusion\nhead")
     arrow(ax, [(cx + cw, 1.04), (1.98, 1.04)])
-    bars = [0.06, 0.24, 0.05, 0.03, 0.10, 0.04]
-    for i, b in enumerate(bars):
-        ax.add_patch(Rectangle((2.66 + i * 0.045, 0.86), 0.032, b * 1.3,
-                               facecolor=MUTED, edgecolor="none", zorder=2))
-    ax.plot([2.64, 2.94], [0.86, 0.86], color=INK, lw=0.6, zorder=2)
-    ax.text(2.79, 0.76, "$p,\\;H$", ha="center", va="center", fontsize=7)
+    box(ax, 2.62, 0.86, 0.34, 0.36, "$p,\\;H$")
+    ax.text(2.79, 0.76, "posterior", ha="center", va="center", fontsize=6.5)
     arrow(ax, [(2.44, 1.04), (2.62, 1.04)])
 
-    # Policy. Its state s_t = [z, p, H, a, 1 - C_t]: the gated latent and mask
-    # branch off z(a), the posterior and entropy come from the head, and the
-    # cost headroom enters on its own.
+    # Policy. z(a) already includes the masked latents and acquisition mask.
+    # Posterior, entropy, and cost headroom complete the 203-entry TU state.
     box(ax, 2.72, 1.38, 0.62, 0.30, "Double DQN", edge=BLUE, lw=0.9, color=BLUE)
     bx = 1.895
     ax.add_patch(Circle((bx, 1.04), 0.018, facecolor=INK, edgecolor="none", zorder=3))
@@ -125,7 +130,8 @@ def main():
     ax.text(3.40, 0.36, "STOP", ha="right", va="bottom", fontsize=6.5, color=BLUE)
     ax.text(2.79, 0.10, r"diagnosis $\hat{y}$", ha="center", va="center", fontsize=7)
 
-    fig.savefig(OUT / "fig_method.pdf", pad_inches=0.01, bbox_inches="tight")
+    fig.savefig(OUT / "fig_method.pdf", pad_inches=0.01, bbox_inches="tight",
+                metadata={"CreationDate": None, "ModDate": None})
     fig.savefig(OUT / "fig_method.png", pad_inches=0.01, bbox_inches="tight", dpi=300)
     plt.close(fig)
     print("wrote", OUT / "fig_method.pdf")

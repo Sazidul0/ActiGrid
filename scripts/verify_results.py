@@ -4,11 +4,14 @@ Cross-checks three sources against each other:
   * results/reviewer_hardening/  (--stage hardening; log results/logs/reviewer_hardening.log)
   * results/next_addon/          (--stage greedy-voi; log results/logs/greedy_voi.log)
   * results/hgb_sequential/      (--stage hgb-sequential; log results/logs/hgb_sequential.log)
+  * results/four_issue_closure/  (actigrid/four_issue_closure.py, the corrected rerun)
   * the two Kaggle run logs and the stage code in actigrid/
 
 It recomputes every derived file from its per-row inputs (summaries, selections,
 Pareto flags, AUCs, branching shares, path metrics), matches the numbers
-printed in the logs, and finally checks the values quoted in the paper.
+printed in the logs, and checks the values quoted in the earlier,
+three-partition version of the paper. Section 7 checks the corrected rerun;
+scripts/make_paper_tables.py prints the current tables from it.
 Nothing is retrained; no dataset is needed.
 
 Usage (from the repository root):
@@ -26,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HARD = ROOT / "results" / "reviewer_hardening"
 ADDON = ROOT / "results" / "next_addon"
 HGBSEQ = ROOT / "results" / "hgb_sequential"
+CLOSURE = ROOT / "results" / "four_issue_closure"
 LOGS = ROOT / "results" / "logs"
 CODE = ROOT / "actigrid"
 TU, MSU = "TU_Delft_2026_CPPS", "MSU_ORNL_Power"
@@ -393,7 +397,7 @@ note("HGB_CALIBRATION_SUMMARY.csv reports ECE on the calibration half that fits 
      "(in-sample); the paper does not use it.")
 
 # ============================================================================
-section("6. Values quoted in the paper")
+section("6. Values quoted in the earlier, three-partition version of the paper")
 
 
 def rd(ds, name):
@@ -492,6 +496,50 @@ for ds, n in ((TU, 6), (MSU, 31)):
     cal = rd(ds, "mask_calibration_seed42")
     k = sum(float(r["test_ece_temp_scaled"]) < float(r["test_ece_raw"]) for r in cal)
     check(k == n, f"{ds} masks improved by temperature scaling: paper {n}, data {k}/{len(cal)}")
+
+section("7. four_issue_closure/ derived files")
+for ds in DATASETS:
+    seeds = [str(s) for s in __import__("json").loads((CLOSURE / "MULTISESSION_SEEDS.json").read_text())
+             ["tu_seeds" if ds == TU else "msu_seeds"]]
+    check(len(set(seeds)) == 10, f"{ds}: ten distinct partition seeds")
+    for kind in ("static", "sequential", "matched"):
+        parts = [r for s in seeds for r in read(CLOSURE / f"{ds}_split{s}_{kind}_corrected.csv")]
+        check(same_rows(parts, read(CLOSURE / f"{ds}_10split_{kind}_corrected_ALL.csv"), list(parts[0])),
+              f"{ds}: 10split {kind} file = concatenation of the per-partition files")
+    matched = read(CLOSURE / f"{ds}_10split_matched_corrected_ALL.csv")
+    for r in read(CLOSURE / f"{ds}_10split_matched_corrected_SUMMARY.csv"):
+        sel = [x for x in matched if close(x["budget"], r["budget"], 1e-9)]
+        d = [float(x["delta_f1_seq_minus_static"]) for x in sel]
+        check(len(sel) == 10 and close(np.mean(d), r["delta_f1_mean"], 1e-9)
+              and close(np.mean([float(x["seq_test_cost"]) for x in sel]), r["seq_cost_mean"], 1e-9),
+              f"{ds}: budget {float(r['budget']):.3f} summary recomputed from ten partitions")
+    for x in matched:
+        check(close(float(x["seq_test_f1"]) - float(x["static_test_f1"]), x["delta_f1_seq_minus_static"], 1e-12)
+              and float(x["static_cost"]) <= float(x["budget"]) + 1e-9,
+              f"{ds} partition {x['split_seed']} budget {float(x['budget']):.3f}: delta and static budget consistent")
+    dqn = [r for s in seeds[:5] for r in read(CLOSURE / f"{ds}_DQN_split{s}.csv")]
+    for r in read(CLOSURE / f"{ds}_5split_DQN_expansion_SUMMARY.csv"):
+        f1 = [float(x["macro_f1"]) for x in dqn if x["method"] == r["method"]]
+        check(len(f1) == 5 and close(np.mean(f1), r["macro_f1_mean"], 1e-9)
+              and close(np.std(f1, ddof=1), r["macro_f1_sd"], 1e-9),
+              f"{ds}: five-partition {r['method']} summary recomputed")
+    voi = read(CLOSURE / f"{ds}_GreedyVOI_holdout_ALL.csv")
+    check(all(x["backbone_policy_holdout_unit"] == ("row" if ds == TU else "group") for x in voi),
+          f"{ds}: Greedy-VOI holdout unit is {'row' if ds == TU else 'group'} on all three fits")
+    corr = read(CLOSURE / f"{ds}_10split_HGB_corruption_ALL.csv")
+    static = read(CLOSURE / f"{ds}_10split_static_corrected_ALL.csv")
+    seq = read(CLOSURE / f"{ds}_10split_sequential_corrected_ALL.csv")
+    for s in seeds:
+        clean = {x["method"]: x for x in corr if x["split_seed"] == s and x["corruption"] == "clean"}
+        st = [x for x in static if x["split_seed"] == s and x["subset"] == clean["StaticHGB"]["subset_or_order"]][0]
+        check(close(clean["StaticHGB"]["macro_f1"], st["test_macro_f1"], 1e-12),
+              f"{ds} partition {s}: clean static HGB corruption row reproduces its frontier score")
+        q = [x for x in seq if x["split_seed"] == s and x["validation_pareto"] == "True"
+             and x["order"] == clean["SequentialHGB"]["subset_or_order"]]
+        q = min(q, key=lambda x: (-float(x["selection_macro_f1"]), float(x["selection_cost"])))
+        if not close(clean["SequentialHGB"]["macro_f1"], q["test_macro_f1"], 1e-9):
+            note(f"{ds} partition {s}: clean sequential HGB corruption row {float(clean['SequentialHGB']['macro_f1']):.4f} "
+                 f"does not reproduce its frontier score {float(q['test_macro_f1']):.4f} (feature-order bug, see README)")
 
 print(f"\n{len(failures)} failure(s), {len(notes)} note(s)")
 for f in failures:

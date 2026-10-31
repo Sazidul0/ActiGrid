@@ -1,0 +1,48 @@
+{
+  "execution_mode": "full end-to-end checkpointed",
+  "hgb_splits": 10,
+  "dqn_splits": 5,
+  "dqn_episodes": 20000,
+  "dqn_model_seed": 4242,
+  "lambda": 0.5,
+  "tu_split_seeds": [
+    42,
+    123,
+    456,
+    789,
+    31415,
+    16180,
+    14142,
+    17320,
+    9001,
+    10007
+  ],
+  "msu_split_seeds": [
+    42,
+    123,
+    456,
+    789,
+    31415,
+    27182,
+    16180,
+    14142,
+    17320,
+    9001
+  ],
+  "greedy_seeds": [
+    42,
+    123,
+    456
+  ],
+  "hgb_config": {
+    "max_iter": 250,
+    "learning_rate": 0.08,
+    "max_leaf_nodes": 31,
+    "l2_regularization": 0.0001,
+    "early_stopping": false
+  },
+  "msu_imputation": "train-partition median per split",
+  "hgb_corruption": true,
+  "greedy_voi": "backbone/policy holdout",
+  "checkpoint_policy": "after every completed HGB split, DQN split and Greedy seed"
+}

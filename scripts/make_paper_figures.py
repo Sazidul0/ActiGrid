@@ -5,7 +5,7 @@ Usage (from the repository root):
 
 Every plotted number is read from results/; nothing is retrained or hand-typed.
 Run scripts/verify_results.py first; it recomputes every file read here from
-its per-row inputs. Fig. 1 (the method diagram) is drawn by
+its per-row inputs. Paper Fig. 1 (the method diagram) is drawn by
 scripts/make_method_diagram.py.
 
 Sources
@@ -14,9 +14,10 @@ results/next_addon/all_same_backbone_pareto_points.csv
     Seed-42 DQN lambda points, every Greedy-VOI threshold, and the calibrated
     entropy settings that are Pareto optimal on validation (the candidates
     behind the paper's Pareto counts; nothing is filtered on test results).
-results/reviewer_hardening/<ds>_strong_subset_validation_selected.csv
-    Validation-selected static HGB subset models on partition 42 (= primary split).
-results/hgb_sequential/<ds>_split42_sequential_hgb_calibrated.csv
+results/four_issue_closure/<ds>_split42_static_corrected.csv
+    Static HGB subset models on partition 42 (= primary split) from the
+    corrected rerun; the best subset of each size on the selection half.
+results/four_issue_closure/<ds>_split42_sequential_corrected.csv
     Entropy stopping over the per-subset HGB models of partition 42; the
     settings that are Pareto optimal on the policy half of validation.
 results/reviewer_hardening/TU_Delft_2026_CPPS_dqn_branching_seed42.csv
@@ -29,8 +30,12 @@ Writes (into figures/):
 """
 
 import csv
+import os
+import tempfile
 from collections import defaultdict
 from pathlib import Path
+
+os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "actigrid-matplotlib"))
 
 import matplotlib
 
@@ -40,16 +45,17 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
 ROOT = Path(__file__).resolve().parents[1]
-ADDON = ROOT / "results" / "next_addon"
-HARD = ROOT / "results" / "reviewer_hardening"
-HGBSEQ = ROOT / "results" / "hgb_sequential"
+RESULTS = ROOT / "results"
+ADDON = RESULTS / "next_addon"
+HARD = RESULTS / "reviewer_hardening"
+CLOSURE = RESULTS / "four_issue_closure"
 OUT = ROOT / "figures"
 OUT.mkdir(exist_ok=True)
 
 TU, MSU = "TU_Delft_2026_CPPS", "MSU_ORNL_Power"
 SEED = "42"  # partition 42 (= primary split) and initialization seed 42
 
-# Categorical slots in fixed order (checked with the dataviz palette validator).
+# Fixed categorical colors used consistently across panels.
 BLUE, BRICK, OCHRE, GREEN = "#2d68a6", "#b8472f", "#c4951a", "#3b8752"
 INK, MUTED, RULE = "#222222", "#6b6b6b", "#d4d4d4"
 
@@ -91,20 +97,30 @@ def read(path):
         return list(csv.DictReader(f))
 
 
+def best_per_k(rows):
+    """Validation-selected subset for each size k (ties: cheaper, then name)."""
+    best = {}
+    for r in sorted(rows, key=lambda r: (-float(r["selection_macro_f1"]),
+                                         float(r["normalized_cost"]), r["subset"])):
+        best.setdefault(r["k"], r)
+    return best
+
+
 def grid(ax, axis="y"):
     ax.grid(axis=axis, color=RULE, linewidth=0.4)
     ax.set_axisbelow(True)
 
 
 def save(fig, name):
-    fig.savefig(OUT / f"{name}.pdf", bbox_inches="tight", pad_inches=0.02)
+    fig.savefig(OUT / f"{name}.pdf", bbox_inches="tight", pad_inches=0.02,
+                metadata={"CreationDate": None, "ModDate": None})
     fig.savefig(OUT / f"{name}.png", bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
     print("wrote", OUT / f"{name}.pdf")
 
 
 # --------------------------------------------------------------------------
-# Figure 1: Macro-F1 against normalized cost on the primary split.
+# Paper Fig. 2: Macro-F1 against normalized cost on the primary split.
 #
 # The sequential points are exactly the candidates behind the paper's Pareto
 # counts (all_same_backbone_pareto_points.csv): every DQN lambda, every
@@ -116,14 +132,16 @@ def frontier_data(ds):
     for r in read(ADDON / "all_same_backbone_pareto_points.csv"):
         if r["dataset"] == ds and r["seed"] == SEED:
             pts[r["method_family"]].add((float(r["normalized_cost"]), float(r["macro_f1"])))
+    # Tree curves come from the corrected rerun (training-only MSU medians, no
+    # HGB early stopping); the neural curves above come from the hardening run.
+    static = read(CLOSURE / f"{ds}_split{SEED}_static_corrected.csv")
     hgb = sorted((float(r["normalized_cost"]), float(r["test_macro_f1"]))
-                 for r in read(HARD / f"{ds}_strong_subset_validation_selected.csv")
-                 if r["split_seed"] == SEED and r["model"] == "HGB")
+                 for r in best_per_k(static).values())
     # Entropy stopping over the per subset HGB models of split 42 (the primary
     # split): the calibrated settings that are Pareto optimal on the policy
     # half of validation, shown at their test scores.
     hgb_seq = sorted({(float(r["test_cost"]), float(r["test_macro_f1"]))
-                      for r in read(HGBSEQ / f"{ds}_split{SEED}_sequential_hgb_calibrated.csv")
+                      for r in read(CLOSURE / f"{ds}_split{SEED}_sequential_corrected.csv")
                       if r["validation_pareto"] == "True"})
     # One threshold sweep, so cost order is threshold order and a line is meaningful.
     voi = sorted(pts["Greedy-VOI"])
@@ -169,7 +187,7 @@ def fig_frontier():
 
 
 # --------------------------------------------------------------------------
-# Figure 2: decision after the first acquisition, TU Delft DQN seed 42.
+# Paper Fig. 4: decision after the first acquisition, TU Delft DQN seed 42.
 # --------------------------------------------------------------------------
 CLASS_NAMES = {
     "resource_exhaustion": "Resource exh.",
@@ -221,7 +239,7 @@ def fig_branching():
 
 
 # --------------------------------------------------------------------------
-# Figure 3: mask-wise test ECE before and after temperature scaling.
+# Paper Fig. 3: mask-wise test ECE before and after temperature scaling.
 # --------------------------------------------------------------------------
 def fig_calibration():
     fig, axes = plt.subplots(1, 2, figsize=(COL_W, 1.75), sharey=True,
